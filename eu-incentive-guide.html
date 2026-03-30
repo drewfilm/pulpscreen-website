@@ -913,6 +913,8 @@ footer {
   .section { padding: 60px 20px; }
   .hero-stats { flex-wrap: wrap; gap: 24px; }
   .map-container { grid-template-columns: 1fr; }
+  .map-detail { order: -1; }
+  .map-sidebar { max-height: 300px; overflow-y: auto; }
   .detail-grid { grid-template-columns: 1fr; }
   .tools-grid { grid-template-columns: 1fr; }
   .treaty-grid { grid-template-columns: 1fr; }
@@ -1551,7 +1553,8 @@ function showCountryDetail(idx) {
   document.querySelectorAll('.map-country-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.map-country-btn')[idx].classList.add('active');
 
-  document.getElementById('country-detail').innerHTML = `
+  const detailEl = document.getElementById('country-detail');
+  detailEl.innerHTML = `
     <h2>${c.flag} ${c.name}</h2>
     <div class="country-type">${c.typeName} · Feature Films</div>
     <div class="detail-grid">
@@ -1585,6 +1588,11 @@ function showCountryDetail(idx) {
       <p>${c.notes}</p>
     </div>
   `;
+
+  // On mobile, scroll detail into view
+  if (window.innerWidth <= 900) {
+    detailEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 // ===== POPULATE COMPARISON TABLE =====
