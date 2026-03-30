@@ -502,6 +502,8 @@ img { max-width: 100%; height: auto; }
 }
 
 .eu-cell {
+  text-decoration: none;
+  color: inherit;
   aspect-ratio: 1;
   border-radius: 8px;
   background: rgba(255,255,255,0.02);
@@ -760,6 +762,7 @@ img { max-width: 100%; height: auto; }
   .featured-visual { min-height: 360px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
+  .nav-links.show { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,10,10,0.95); backdrop-filter: blur(24px); padding: 20px; gap: 16px; }
   .nav-toggle { display: flex; }
   .footer-links { gap: 24px; }
 }
@@ -791,7 +794,7 @@ img { max-width: 100%; height: auto; }
     <a href="#services" class="nav-link">Services</a>
     <a href="eu-incentive-guide.html" class="nav-link">EU Incentive Guide</a>
     <a href="eu-incentive-guide.html#compare" class="nav-link">Compare Countries</a>
-    <a href="/cdn-cgi/l/email-protection#573e3931381727223b272434253232397934383a" class="nav-cta">Get in Touch</a>
+    <a href="mailto:info@pulpscreen.com" class="nav-cta">Get in Touch</a>
   </div>
 
   <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">
@@ -813,7 +816,7 @@ img { max-width: 100%; height: auto; }
     </p>
     <div class="hero-actions">
       <a href="eu-incentive-guide.html" class="btn btn-primary">EU Incentive Guide →</a>
-      <a href="/cdn-cgi/l/email-protection#5d34333b321d2d28312d2e3e2f383833733e3230" class="btn btn-ghost">Contact Us</a>
+      <a href="mailto:info@pulpscreen.com" class="btn btn-ghost">Contact Us</a>
     </div>
   </div>
 
@@ -850,18 +853,18 @@ img { max-width: 100%; height: auto; }
     <div class="featured-visual">
       <div class="featured-visual-inner">
         <div class="eu-grid">
-          <div class="eu-cell"><span class="flag">🇬🇧</span><span class="rate">25%</span><span class="name">UK</span></div>
-          <div class="eu-cell"><span class="flag">🇮🇪</span><span class="rate">40%</span><span class="name">Ireland</span></div>
-          <div class="eu-cell"><span class="flag">🇫🇷</span><span class="rate">40%</span><span class="name">France</span></div>
-          <div class="eu-cell"><span class="flag">🇩🇪</span><span class="rate">30%</span><span class="name">Germany</span></div>
-          <div class="eu-cell"><span class="flag">🇪🇸</span><span class="rate">50%</span><span class="name">Spain</span></div>
-          <div class="eu-cell"><span class="flag">🇮🇹</span><span class="rate">40%</span><span class="name">Italy</span></div>
-          <div class="eu-cell"><span class="flag">🇭🇺</span><span class="rate">30%</span><span class="name">Hungary</span></div>
-          <div class="eu-cell"><span class="flag">🇨🇿</span><span class="rate">35%</span><span class="name">Czechia</span></div>
-          <div class="eu-cell"><span class="flag">🇧🇪</span><span class="rate">45%</span><span class="name">Belgium</span></div>
-          <div class="eu-cell"><span class="flag">🇬🇷</span><span class="rate">40%</span><span class="name">Greece</span></div>
-          <div class="eu-cell"><span class="flag">🇷🇴</span><span class="rate">35%</span><span class="name">Romania</span></div>
-          <div class="eu-cell"><span class="flag">🇵🇱</span><span class="rate">30%</span><span class="name">Poland</span></div>
+          <a href="eu-incentive-guide.html#country-0" class="eu-cell"><span class="flag">🇬🇧</span><span class="rate">25%</span><span class="name">UK</span></a>
+          <a href="eu-incentive-guide.html#country-1" class="eu-cell"><span class="flag">🇮🇪</span><span class="rate">40%</span><span class="name">Ireland</span></a>
+          <a href="eu-incentive-guide.html#country-2" class="eu-cell"><span class="flag">🇫🇷</span><span class="rate">40%</span><span class="name">France</span></a>
+          <a href="eu-incentive-guide.html#country-3" class="eu-cell"><span class="flag">🇩🇪</span><span class="rate">30%</span><span class="name">Germany</span></a>
+          <a href="eu-incentive-guide.html#country-4" class="eu-cell"><span class="flag">🇪🇸</span><span class="rate">50%</span><span class="name">Spain</span></a>
+          <a href="eu-incentive-guide.html#country-5" class="eu-cell"><span class="flag">🇮🇹</span><span class="rate">40%</span><span class="name">Italy</span></a>
+          <a href="eu-incentive-guide.html#country-6" class="eu-cell"><span class="flag">🇭🇺</span><span class="rate">30%</span><span class="name">Hungary</span></a>
+          <a href="eu-incentive-guide.html#country-7" class="eu-cell"><span class="flag">🇨🇿</span><span class="rate">35%</span><span class="name">Czechia</span></a>
+          <a href="eu-incentive-guide.html#country-8" class="eu-cell"><span class="flag">🇧🇪</span><span class="rate">45%</span><span class="name">Belgium</span></a>
+          <a href="eu-incentive-guide.html#country-9" class="eu-cell"><span class="flag">🇬🇷</span><span class="rate">40%</span><span class="name">Greece</span></a>
+          <a href="eu-incentive-guide.html#country-10" class="eu-cell"><span class="flag">🇷🇴</span><span class="rate">35%</span><span class="name">Romania</span></a>
+          <a href="eu-incentive-guide.html#country-11" class="eu-cell"><span class="flag">🇵🇱</span><span class="rate">30%</span><span class="name">Poland</span></a>
         </div>
       </div>
     </div>
@@ -914,7 +917,7 @@ img { max-width: 100%; height: auto; }
   <div class="cta-inner">
     <h2>Let's build<br>your next project</h2>
     <p>Whether you're packaging a feature, structuring a co-production, or navigating European incentives — we'd love to hear about your project.</p>
-    <a href="/cdn-cgi/l/email-protection#d5bcbbb3ba95a5a0b9a5a6b6a7b0b0bbfbb6bab8" class="btn btn-primary"><span class="__cf_email__" data-cfemail="2841464e4768585d44585b4b5a4d4d46064b4745">[email&#160;protected]</span></a>
+    <a href="mailto:info@pulpscreen.com" class="btn btn-primary">info@pulpscreen.com</a>
   </div>
 </section>
 
@@ -939,7 +942,7 @@ img { max-width: 100%; height: auto; }
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="/cdn-cgi/l/email-protection#6c05020a032c1c19001c1f0f1e090902420f0301">Contact</a>
+        <a href="mailto:info@pulpscreen.com">Contact</a>
       </div>
     </div>
   </div>
@@ -949,7 +952,7 @@ img { max-width: 100%; height: auto; }
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Nav scroll effect
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -967,4 +970,11 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.service-card, .featured-card, .cta-inner').forEach(el => {
-  el.sty
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

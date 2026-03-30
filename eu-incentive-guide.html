@@ -871,9 +871,13 @@ footer {
 
 <!-- ===== NAVIGATION ===== -->
 <nav>
-  <a href="#" class="nav-logo" onclick="showPage('home')">
-    <div class="nav-logo-mark">P</div>
-    <div class="nav-logo-text">PULPSCREEN</div>
+  <a href="/" class="nav-logo">
+    <img src="images/Asset 3@5x.png" alt="Pulpscreen" style="height: 30px;"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div style="display:none; align-items:center; gap:10px;">
+      <div class="nav-logo-mark">P</div>
+      <div class="nav-logo-text">PULPSCREEN</div>
+    </div>
   </a>
   <ul class="nav-links">
     <a class="active" onclick="showPage('home')" id="nav-home">Home</a>
@@ -882,7 +886,7 @@ footer {
     <a onclick="showPage('copro')" id="nav-copro">Co-Production</a>
     <a onclick="showPage('treaties')" id="nav-treaties">Treaties & Funds</a>
   </ul>
-  <a href="/cdn-cgi/l/email-protection#90f9fef6ffd0e0e5fce0e3f3e2f5f5febef3fffd" class="nav-cta">Contact Us</a>
+  <a href="mailto:info@pulpscreen.com" class="nav-cta">Contact Us</a>
 </nav>
 
 <!-- ===== PAGE 1: HOME ===== -->
@@ -1223,8 +1227,14 @@ footer {
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-brand">
-    <div class="nav-logo-mark" style="width: 28px; height: 28px; font-size: 16px;">P</div>
-    <span>PULPSCREEN</span>
+    <a href="/" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
+      <img src="images/Asset 3@5x.png" alt="Pulpscreen" style="height: 24px;"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div style="display:none; align-items:center; gap:8px;">
+        <div class="nav-logo-mark" style="width: 28px; height: 28px; font-size: 16px;">P</div>
+        <span>PULPSCREEN</span>
+      </div>
+    </a>
     <span class="footer-text" style="margin-left: 12px;">Film Production & Finance</span>
   </div>
   <div class="footer-disclaimer">
@@ -1232,7 +1242,7 @@ footer {
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ===== COUNTRY DATA =====
 const countries = [
   {
@@ -1449,4 +1459,39 @@ function populateCompareTable(filter) {
 
 function filterTable(type, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classLi
+  btn.classList.add('active');
+  populateCompareTable(type);
+}
+
+// ===== INITIALIZATION =====
+populateCountryList();
+populateCompareTable('all');
+
+// ===== HASH-BASED ROUTING =====
+function handleHash() {
+  const hash = window.location.hash.replace('#', '');
+  if (!hash) return;
+
+  // Handle direct page navigation: #compare, #copro, #incentives, #treaties
+  const pageMap = { compare: 'compare', copro: 'copro', incentives: 'incentives', treaties: 'treaties' };
+  if (pageMap[hash]) {
+    showPage(pageMap[hash]);
+    return;
+  }
+
+  // Handle country deep links: #country-0, #country-1, etc.
+  const countryMatch = hash.match(/^country-(\d+)$/);
+  if (countryMatch) {
+    const idx = parseInt(countryMatch[1]);
+    if (idx >= 0 && idx < countries.length) {
+      showPage('incentives');
+      setTimeout(() => showCountryDetail(idx), 100);
+    }
+  }
+}
+
+handleHash();
+window.addEventListener('hashchange', handleHash);
+</script>
+</body>
+</html>
