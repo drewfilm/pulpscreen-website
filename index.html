@@ -157,6 +157,52 @@ img { max-width: 100%; height: auto; }
 
 .nav-link:hover { color: var(--white); }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown > .nav-link::after {
+  content: ' ▾';
+  font-size: 8px;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 8px 0;
+  margin-top: 8px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-300);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+  color: var(--white);
+  background: rgba(255,107,43,0.08);
+}
+
 .nav-cta {
   margin-left: 12px;
   padding: 9px 22px;
@@ -652,31 +698,127 @@ img { max-width: 100%; height: auto; }
   z-index: 1;
 }
 
-/* ===== CTA SECTION ===== */
-.cta-section {
+/* ===== CONTACT SECTION ===== */
+.contact-section {
   padding: clamp(60px, 8vw, 120px) clamp(24px, 4vw, 64px);
-  text-align: center;
 }
 
-.cta-inner {
-  max-width: 700px;
+.contact-inner {
+  max-width: 680px;
   margin: 0 auto;
 }
 
-.cta-inner h2 {
+.contact-inner h2 {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(30px, 4vw, 48px);
   letter-spacing: -2px;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
-.cta-inner p {
+.contact-inner > p {
   font-size: 17px;
   line-height: 1.7;
   color: var(--gray-300);
   margin-bottom: 40px;
+  text-align: center;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-form .full-width { grid-column: 1 / -1; }
+
+.form-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-300);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--black-card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: border-color 0.3s;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+.form-group select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.form-group select option { background: var(--black-card); color: var(--white); }
+
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  background: var(--gradient);
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.form-success.show { display: block; }
+
+.form-success h3 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.form-success p { color: var(--gray-300); font-size: 16px; }
+
+.hp-field { position: absolute; left: -9999px; }
+
+@media (max-width: 600px) {
+  .contact-form { grid-template-columns: 1fr; }
 }
 
 /* ===== FOOTER ===== */
@@ -763,6 +905,8 @@ img { max-width: 100%; height: auto; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
   .nav-links.show { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,10,10,0.95); backdrop-filter: blur(24px); padding: 20px; gap: 16px; }
+  .nav-dropdown-menu { display: block; position: static; background: none; backdrop-filter: none; border: none; box-shadow: none; margin: 0; padding: 0 0 0 16px; }
+  .nav-dropdown > .nav-link::after { content: ''; }
   .nav-toggle { display: flex; }
   .footer-links { gap: 24px; }
 }
@@ -792,9 +936,17 @@ img { max-width: 100%; height: auto; }
 
   <div class="nav-links">
     <a href="#services" class="nav-link">Services</a>
-    <a href="eu-incentive-guide.html" class="nav-link">EU Incentive Guide</a>
-    <a href="eu-incentive-guide.html#compare" class="nav-link">Compare Countries</a>
-    <a href="mailto:info@pulpscreen.com" class="nav-cta">Get in Touch</a>
+    <div class="nav-dropdown">
+      <a href="eu-incentive-guide.html" class="nav-link">Co-Production Guide</a>
+      <div class="nav-dropdown-menu">
+        <a href="eu-incentive-guide.html">Guide Home</a>
+        <a href="eu-incentive-guide.html#incentives">Tax Incentives</a>
+        <a href="eu-incentive-guide.html#compare">Compare Countries</a>
+        <a href="eu-incentive-guide.html#copro">Co-Production Framework</a>
+        <a href="eu-incentive-guide.html#treaties">Treaties & Funds</a>
+      </div>
+    </div>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
   </div>
 
   <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">
@@ -816,7 +968,7 @@ img { max-width: 100%; height: auto; }
     </p>
     <div class="hero-actions">
       <a href="eu-incentive-guide.html" class="btn btn-primary">EU Incentive Guide →</a>
-      <a href="mailto:info@pulpscreen.com" class="btn btn-ghost">Contact Us</a>
+      <a href="#contact" class="btn btn-ghost">Contact Us</a>
     </div>
   </div>
 
@@ -865,6 +1017,10 @@ img { max-width: 100%; height: auto; }
           <a href="eu-incentive-guide.html#country-9" class="eu-cell"><span class="flag">🇬🇷</span><span class="rate">40%</span><span class="name">Greece</span></a>
           <a href="eu-incentive-guide.html#country-10" class="eu-cell"><span class="flag">🇷🇴</span><span class="rate">35%</span><span class="name">Romania</span></a>
           <a href="eu-incentive-guide.html#country-11" class="eu-cell"><span class="flag">🇵🇱</span><span class="rate">30%</span><span class="name">Poland</span></a>
+          <a href="eu-incentive-guide.html#country-18" class="eu-cell"><span class="flag">🇨🇾</span><span class="rate">35%</span><span class="name">Cyprus</span></a>
+          <a href="eu-incentive-guide.html#country-19" class="eu-cell"><span class="flag">🇲🇹</span><span class="rate">40%</span><span class="name">Malta</span></a>
+          <a href="eu-incentive-guide.html#country-22" class="eu-cell"><span class="flag">🇳🇱</span><span class="rate">35%</span><span class="name">Netherlands</span></a>
+          <a href="eu-incentive-guide.html#country-28" class="eu-cell"><span class="flag">🇮🇸</span><span class="rate">25%</span><span class="name">Iceland</span></a>
         </div>
       </div>
     </div>
@@ -912,12 +1068,101 @@ img { max-width: 100%; height: auto; }
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
-<section class="cta-section">
-  <div class="cta-inner">
+<!-- ===== CONTACT ===== -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
     <h2>Let's build<br>your next project</h2>
     <p>Whether you're packaging a feature, structuring a co-production, or navigating European incentives — we'd love to hear about your project.</p>
-    <a href="mailto:info@pulpscreen.com" class="btn btn-primary">info@pulpscreen.com</a>
+
+    <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+      <input type="hidden" name="subject" value="New enquiry from pulpscreen.com">
+      <input type="hidden" name="from_name" value="Pulpscreen Website">
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
+
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" name="name" id="name" required placeholder="Your name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" name="email" id="email" required placeholder="you@company.com">
+      </div>
+
+      <div class="form-group">
+        <label for="company">Company</label>
+        <input type="text" name="company" id="company" placeholder="Company or production house">
+      </div>
+
+      <div class="form-group">
+        <label for="project">Project Name (optional)</label>
+        <input type="text" name="project" id="project" placeholder="Working title">
+      </div>
+
+      <div class="form-group">
+        <label for="financing">Are you looking for financing?</label>
+        <select name="financing" id="financing">
+          <option value="" disabled selected>Select...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="Not Sure">Not Sure</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Majority EU Country (if applicable)</label>
+        <select name="country" id="country">
+          <option value="" disabled selected>Select country...</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Ireland">Ireland</option>
+          <option value="France">France</option>
+          <option value="Germany">Germany</option>
+          <option value="Spain">Spain</option>
+          <option value="Italy">Italy</option>
+          <option value="Hungary">Hungary</option>
+          <option value="Czech Republic">Czech Republic</option>
+          <option value="Belgium">Belgium</option>
+          <option value="Greece">Greece</option>
+          <option value="Portugal">Portugal</option>
+          <option value="Croatia">Croatia</option>
+          <option value="Estonia">Estonia</option>
+          <option value="Lithuania">Lithuania</option>
+          <option value="Austria">Austria</option>
+          <option value="Poland">Poland</option>
+          <option value="Romania">Romania</option>
+          <option value="Cyprus">Cyprus</option>
+          <option value="Malta">Malta</option>
+          <option value="Luxembourg">Luxembourg</option>
+          <option value="Finland">Finland</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="Latvia">Latvia</option>
+          <option value="Slovakia">Slovakia</option>
+          <option value="Slovenia">Slovenia</option>
+          <option value="Bulgaria">Bulgaria</option>
+          <option value="Iceland">Iceland</option>
+          <option value="Norway">Norway</option>
+          <option value="Denmark">Denmark</option>
+          <option value="Sweden">Sweden</option>
+          <option value="N/A">Not applicable</option>
+        </select>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" placeholder="Tell us about your project..."></textarea>
+      </div>
+
+      <div class="full-width">
+        <button type="submit" class="form-submit">Send Message →</button>
+      </div>
+    </form>
+
+    <div id="form-success" class="form-success">
+      <h3>Message sent</h3>
+      <p>Thanks for reaching out. We'll be in touch shortly.</p>
+    </div>
   </div>
 </section>
 
@@ -926,8 +1171,12 @@ img { max-width: 100%; height: auto; }
   <div class="footer-inner">
     <div class="footer-left">
       <div class="footer-logo">
-        <div class="nav-logo-mark" style="width:26px;height:26px;font-size:14px;border-radius:5px;">P</div>
-        <span class="nav-wordmark" style="font-size:14px;">Pulpscreen</span>
+        <img src="images/Asset 3@5x.png" alt="Pulpscreen" style="height:24px;width:auto;"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div style="display:none;align-items:center;gap:8px;">
+          <div class="nav-logo-mark" style="width:26px;height:26px;font-size:14px;border-radius:5px;">P</div>
+          <span class="nav-wordmark" style="font-size:14px;">Pulpscreen</span>
+        </div>
       </div>
       <div class="footer-tagline">Film Production & Finance</div>
       <div class="footer-copy">&copy; 2025 Pulpscreen. All rights reserved.</div>
@@ -942,7 +1191,7 @@ img { max-width: 100%; height: auto; }
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="mailto:info@pulpscreen.com">Contact</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </div>
@@ -969,7 +1218,40 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.service-card, .featured-card, .cta-inner').forEach(el => {
+// Contact form AJAX submission
+const contactForm = document.getElementById('contact-form');
+const formSuccess = document.getElementById('form-success');
+const formLoadTime = Date.now();
+
+contactForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // Anti-spam: reject if submitted in under 2 seconds
+  if (Date.now() - formLoadTime < 2000) return;
+
+  const btn = contactForm.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(contactForm)
+    });
+    if (res.ok) {
+      contactForm.style.display = 'none';
+      formSuccess.classList.add('show');
+    } else {
+      btn.textContent = 'Error — try again';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = 'Error — try again';
+    btn.disabled = false;
+  }
+});
+
+document.querySelectorAll('.service-card, .featured-card, .contact-inner').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';

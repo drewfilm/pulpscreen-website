@@ -154,6 +154,58 @@ nav {
 
 .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
 
+.nav-link-main {
+  padding: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--gray-300);
+  text-decoration: none;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-link-main:hover, .nav-link-main.active { color: var(--white); }
+
+/* ===== SUB-NAV ===== */
+.sub-nav {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 48px;
+  height: 44px;
+  background: rgba(17,17,17,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.sub-nav-link {
+  padding: 6px 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 4px;
+}
+
+.sub-nav-link:hover { color: var(--gray-300); }
+
+.sub-nav-link.active {
+  color: var(--white);
+  background: rgba(255,107,43,0.12);
+}
+
 /* ===== PAGE SECTIONS ===== */
 .page { display: none; }
 .page.active { display: block; }
@@ -163,7 +215,7 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 48px 80px;
+  padding: 140px 48px 80px;
   position: relative;
   overflow: hidden;
 }
@@ -855,7 +907,9 @@ footer {
 @media (max-width: 900px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
-  .hero { padding: 120px 20px 60px; }
+  .sub-nav { padding: 0 12px; gap: 2px; overflow-x: auto; justify-content: flex-start; }
+  .sub-nav-link { font-size: 9px; padding: 6px 10px; flex-shrink: 0; }
+  .hero { padding: 140px 20px 60px; }
   .section { padding: 60px 20px; }
   .hero-stats { flex-wrap: wrap; gap: 24px; }
   .map-container { grid-template-columns: 1fr; }
@@ -879,15 +933,21 @@ footer {
       <div class="nav-logo-text">PULPSCREEN</div>
     </div>
   </a>
-  <ul class="nav-links">
-    <a class="active" onclick="showPage('home')" id="nav-home">Home</a>
-    <a onclick="showPage('incentives')" id="nav-incentives">Tax Incentives</a>
-    <a onclick="showPage('compare')" id="nav-compare">Compare Countries</a>
-    <a onclick="showPage('copro')" id="nav-copro">Co-Production</a>
-    <a onclick="showPage('treaties')" id="nav-treaties">Treaties & Funds</a>
-  </ul>
-  <a href="mailto:info@pulpscreen.com" class="nav-cta">Contact Us</a>
+  <div class="nav-links">
+    <a href="/#services" class="nav-link-main">Services</a>
+    <a href="#" class="nav-link-main active" onclick="showPage('home'); return false;">Co-Production Guide</a>
+    <a href="/#contact" class="nav-cta">Get in Touch</a>
+  </div>
 </nav>
+
+<!-- ===== SUB-NAV ===== -->
+<div class="sub-nav" id="sub-nav">
+  <a class="sub-nav-link active" onclick="showPage('home')" id="nav-home">Guide Home</a>
+  <a class="sub-nav-link" onclick="showPage('incentives')" id="nav-incentives">Tax Incentives</a>
+  <a class="sub-nav-link" onclick="showPage('compare')" id="nav-compare">Compare Countries</a>
+  <a class="sub-nav-link" onclick="showPage('copro')" id="nav-copro">Co-Production</a>
+  <a class="sub-nav-link" onclick="showPage('treaties')" id="nav-treaties">Treaties & Funds</a>
+</div>
 
 <!-- ===== PAGE 1: HOME ===== -->
 <div class="page active" id="page-home">
@@ -972,7 +1032,7 @@ footer {
 
 <!-- ===== PAGE 2: INCENTIVES BROWSER ===== -->
 <div class="page" id="page-incentives">
-  <section class="section" style="padding-top:120px;">
+  <section class="section" style="padding-top:140px;">
     <div class="section-header">
       <div class="section-tag">Tax Incentives & Cash Rebates</div>
       <div class="section-title">European Incentive Browser</div>
@@ -992,7 +1052,7 @@ footer {
 
 <!-- ===== PAGE 3: COMPARE ===== -->
 <div class="page" id="page-compare">
-  <section class="section" style="padding-top:120px;">
+  <section class="section" style="padding-top:140px;">
     <div class="section-header">
       <div class="section-tag">Side-by-Side Comparison</div>
       <div class="section-title">Compare EU Incentives</div>
@@ -1029,7 +1089,7 @@ footer {
 
 <!-- ===== PAGE 4: CO-PRODUCTION ===== -->
 <div class="page" id="page-copro">
-  <section class="section" style="padding-top:120px;">
+  <section class="section" style="padding-top:140px;">
     <div class="section-header">
       <div class="section-tag">Co-Production Framework</div>
       <div class="section-title">Structuring EU<br><span class="gradient-text">Co-Productions</span></div>
@@ -1111,7 +1171,7 @@ footer {
 
 <!-- ===== PAGE 5: TREATIES & FUNDS ===== -->
 <div class="page" id="page-treaties">
-  <section class="section" style="padding-top:120px;">
+  <section class="section" style="padding-top:140px;">
     <div class="section-header">
       <div class="section-tag">Treaties & Supra-National Funds</div>
       <div class="section-title">Funding Sources<br>& <span class="gradient-text">Treaty Networks</span></div>
@@ -1370,6 +1430,97 @@ const countries = [
     cap: "Programme budget limits", cultural: "Basic requirements",
     vfx: "Included", timeline: "Post-completion",
     notes: "Romania's 35% cash rebate on eligible local spend makes it one of Eastern Europe's most competitive offerings. Very low minimum spend. Bucharest studios and Transylvanian locations offer production value at substantially lower cost than Western Europe."
+  },
+  {
+    name: "Cyprus", flag: "🇨🇾", rate: "35%", rateNum: 35, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "€200K eligible expenditure",
+    cap: "€750K per project", cultural: "Yes",
+    vfx: "Included", timeline: "Post-completion",
+    notes: "Cyprus offers a 35% cash rebate on qualifying local production expenditure. Minimum eligible spend of €200K. Excellent Mediterranean locations, over 300 days of sunshine per year, and competitive crew costs. Growing infrastructure with English widely spoken across the industry."
+  },
+  {
+    name: "Malta", flag: "🇲🇹", rate: "40%", rateNum: 40, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "€100K local spend",
+    cap: "No per-project cap", cultural: "Cultural benefit assessment",
+    vfx: "Included", timeline: "Post-completion",
+    notes: "Malta's 40% cash rebate is one of Europe's most generous, covering qualifying local expenditure. Additional 2% for cultural productions set in Malta. The Malta Film Commission provides full production support, with Mediterranean Tank Studios offering world-class water facilities."
+  },
+  {
+    name: "Luxembourg", flag: "🇱🇺", rate: "30%", rateNum: 30, type: "shelter",
+    typeName: "Tax Shelter / Financial Incentive", minSpend: "€100K Luxembourg spend",
+    cap: "€30M per project", cultural: "Yes",
+    vfx: "Included", timeline: "Advance & post-completion",
+    notes: "Luxembourg's Film Fund offers certificates generating up to 30% benefit on qualifying Luxembourg spend. Co-productions can access both the tax shelter and direct funding from the Film Fund. Multilingual workforce with strong post-production and VFX facilities."
+  },
+  {
+    name: "Finland", flag: "🇫🇮", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Cash Rebate (Production Incentive)", minSpend: "€150K Finnish spend",
+    cap: "Programme budget limits", cultural: "Yes",
+    vfx: "Included", timeline: "Post-completion",
+    notes: "Finland offers a 25% cash rebate on qualifying Finnish production spend through the Finnish Film Foundation's Production Incentive. Unique Arctic and Nordic locations. Strong crew base concentrated in Helsinki, with growing regional capacity in Lapland and Eastern Finland."
+  },
+  {
+    name: "Netherlands", flag: "🇳🇱", rate: "35%", rateNum: 35, type: "rebate",
+    typeName: "Cash Rebate (Production Incentive)", minSpend: "€100K Dutch spend",
+    cap: "€1.5M per project", cultural: "Yes — Cultural test",
+    vfx: "Included", timeline: "Post-completion",
+    notes: "The Netherlands Film Production Incentive offers a 35% cash rebate on qualifying Dutch production costs. Administered by the Netherlands Film Fund. Amsterdam and other Dutch cities provide diverse urban and historical locations with excellent production infrastructure."
+  },
+  {
+    name: "Latvia", flag: "🇱🇻", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "€150K local spend",
+    cap: "Programme budget limits", cultural: "Yes",
+    vfx: "Included", timeline: "Post-completion",
+    notes: "Latvia offers a 25% cash rebate on qualifying Latvian production expenditure. Additional 5% for productions set in Latvia. Riga provides diverse period architecture at competitive costs. The National Film Centre administers the programme."
+  },
+  {
+    name: "Slovakia", flag: "🇸🇰", rate: "33%", rateNum: 33, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "€300K eligible spend",
+    cap: "€3M per project", cultural: "Yes",
+    vfx: "Included", timeline: "Post-completion",
+    notes: "Slovakia's 33% cash rebate on eligible local expenditure. Bratislava and surrounding castles and countryside offer versatile period and modern locations. Growing studio capacity and competitive crew rates make it an attractive Central European option."
+  },
+  {
+    name: "Slovenia", flag: "🇸🇮", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "€150K local spend",
+    cap: "€500K per project", cultural: "Yes",
+    vfx: "Included", timeline: "Post-completion",
+    notes: "Slovenia offers a 25% cash rebate on qualifying Slovenian expenditure. Diverse landscapes from Alpine to Mediterranean within a compact territory. Ljubljana's growing production infrastructure and competitive costs appeal to mid-budget international productions."
+  },
+  {
+    name: "Bulgaria", flag: "🇧🇬", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "€250K local spend",
+    cap: "Programme budget limits", cultural: "Basic requirements",
+    vfx: "Included", timeline: "Post-completion",
+    notes: "Bulgaria offers a 25% cash rebate on qualifying local production spend. Nu Boyana Studios near Sofia is one of Europe's largest studio complexes. Very competitive crew and facility costs with established experience hosting large international productions."
+  },
+  {
+    name: "Iceland", flag: "🇮🇸", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Cost Reimbursement", minSpend: "ISK 30M (~€200K)",
+    cap: "No per-project cap", cultural: "No formal test",
+    vfx: "Included", timeline: "Post-completion",
+    notes: "Iceland offers a 25% reimbursement on qualifying production costs incurred in Iceland. Unique dramatic landscapes including glaciers, volcanoes, geysers, and black sand beaches. Well-established production infrastructure despite small population. RÚV and local producers provide experienced crews."
+  },
+  {
+    name: "Norway", flag: "🇳🇴", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Cash Rebate (NFI Incentive)", minSpend: "NOK 2M (~€175K)",
+    cap: "NOK 25M per project", cultural: "Yes — Cultural requirements",
+    vfx: "Included", timeline: "Post-completion",
+    notes: "Norway's 25% cash rebate through the Norwegian Film Institute covers qualifying Norwegian production expenditure. Fjords, Arctic landscapes, and Northern Lights provide unmatched natural backdrops. Strong production infrastructure and highly skilled bilingual crews."
+  },
+  {
+    name: "Denmark", flag: "🇩🇰", rate: "N/A", rateNum: 0, type: "credit",
+    typeName: "DFI Support (No Cash Rebate)", minSpend: "Varies by programme",
+    cap: "Varies", cultural: "Yes",
+    vfx: "N/A", timeline: "Varies",
+    notes: "Denmark does not offer a national cash rebate or tax credit for foreign productions. Support is available through the Danish Film Institute's co-production and regional funding programmes. Copenhagen has excellent production infrastructure. Denmark excels in co-production treaties and is a member of Eurimages."
+  },
+  {
+    name: "Sweden", flag: "🇸🇪", rate: "N/A", rateNum: 0, type: "credit",
+    typeName: "Regional Support Only", minSpend: "Varies by region",
+    cap: "Varies", cultural: "N/A",
+    vfx: "N/A", timeline: "Varies",
+    notes: "Sweden has no national production incentive. Regional film funds (Film i Väst, Stockholm Film Fund) provide support for qualifying productions. Strong production infrastructure, particularly in Gothenburg and Stockholm. Sweden's co-production treaties and EU membership provide access to Eurimages and Creative Europe."
   }
 ];
 
@@ -1377,7 +1528,7 @@ const countries = [
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.querySelectorAll('.sub-nav-link').forEach(a => a.classList.remove('active'));
   const navLink = document.getElementById('nav-' + page);
   if (navLink) navLink.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
