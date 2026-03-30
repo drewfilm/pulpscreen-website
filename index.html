@@ -3,75 +3,968 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PULPSCREEN - Film Production & Finance</title>
+<title>PULPSCREEN — Film Production & Finance</title>
+<meta name="description" content="Pulpscreen — Film Production and Finance. EU Co-Production guides, tax incentive tools, and production expertise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Verdana, sans-serif;
-  }
-  .bg-image {
-    background-image: url('images/Pulpscreen Background.jpg');
-    height: 100%;
-    width:100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    text-align: center;
-  }
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with opacity */
-    z-index: 1;
-  }
-  .content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  .logo {
-    width: 70%;
-    max-width: 700px;
-  }
-  .header {
-    width: 70%;
-    font-size: 20px;
-    color: #fff;
-    font-weight: 300;
-    padding-top: 50pt;
-    margin: 0 auto;
-  }
-  .contact-link {
-    position: absolute;
-    bottom: 50pt;
-    left: 0;
-    right: 0;
-    color: #FF853F;
-    font-size: 20px;
-    text-decoration: none;
-    z-index: 2;
-  }
+/* ============================================
+   PULPSCREEN — HOMEPAGE
+   Aesthetic: Cinematic Dark Editorial
+   Colors: Black + Orange→Pink Gradient
+   ============================================ */
+
+:root {
+  --black: #0A0A0A;
+  --black-deep: #050505;
+  --black-card: #111111;
+  --black-card-hover: #161616;
+  --black-border: #1E1E1E;
+  --orange: #FF6B2B;
+  --orange-warm: #FF853F;
+  --pink: #FF2D7B;
+  --gradient: linear-gradient(135deg, #FF6B2B 0%, #FF4757 50%, #FF2D7B 100%);
+  --gradient-text: linear-gradient(90deg, #FF6B2B, #FF2D7B);
+  --gradient-soft: linear-gradient(135deg, rgba(255,107,43,0.07), rgba(255,45,123,0.07));
+  --white: #FFFFFF;
+  --gray-100: #EEEEEE;
+  --gray-300: #AAAAAA;
+  --gray-500: #666666;
+  --gray-700: #333333;
+  --font-display: 'Outfit', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'DM Sans', sans-serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 10000;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gradient); border-radius: 3px; }
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; }
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(24px, 4vw, 64px);
+  background: rgba(5,5,5,0.6);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.4s;
+}
+
+.nav.scrolled {
+  background: rgba(5,5,5,0.92);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-logo img {
+  height: 32px;
+  width: auto;
+}
+
+.nav-logo-fallback {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-mark {
+  width: 34px;
+  height: 34px;
+  background: var(--gradient);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  padding: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--gray-300);
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-link:hover { color: var(--white); }
+
+.nav-cta {
+  margin-left: 12px;
+  padding: 9px 22px;
+  background: var(--gradient);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(255,107,43,0.25);
+}
+
+/* Mobile nav */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 1px;
+  transition: all 0.3s;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px clamp(24px, 6vw, 80px) 80px;
+  overflow: hidden;
+}
+
+/* Background image layer */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('images/Pulpscreen Background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.35) saturate(0.7);
+  transform: scale(1.05);
+  transition: transform 8s ease-out;
+}
+
+.hero:hover .hero-bg {
+  transform: scale(1.0);
+}
+
+/* Gradient overlay on top of image */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(255,107,43,0.06) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(5,5,5,0.3) 0%, rgba(5,5,5,0.1) 40%, rgba(5,5,5,0.85) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+.hero-logo {
+  width: clamp(200px, 45vw, 480px);
+  margin-bottom: 20px;
+  animation: heroFadeIn 1.2s var(--ease-out-expo) both;
+  /* Filter to ensure the logo blends well on the dark bg */
+  filter: drop-shadow(0 4px 40px rgba(0,0,0,0.5));
+}
+
+.hero-subtitle {
+  font-family: var(--font-mono);
+  font-size: clamp(11px, 1.2vw, 14px);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--orange-warm);
+  margin-bottom: 40px;
+  animation: heroFadeIn 1.2s var(--ease-out-expo) 0.15s both;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(18px, 2.2vw, 26px);
+  line-height: 1.7;
+  color: var(--gray-100);
+  max-width: 650px;
+  margin: 0 auto 52px;
+  animation: heroFadeIn 1.2s var(--ease-out-expo) 0.3s both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: heroFadeIn 1.2s var(--ease-out-expo) 0.45s both;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: all 0.35s var(--ease-out-expo);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(255,107,43,0.3);
+}
+
+.btn-ghost {
+  background: rgba(255,255,255,0.04);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+/* Scroll indicator */
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: heroFadeIn 1.2s var(--ease-out-expo) 0.9s both;
+}
+
+.hero-scroll span {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--orange), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== FEATURED TOOL — EU INCENTIVE GUIDE ===== */
+.featured {
+  padding: clamp(60px, 8vw, 120px) clamp(24px, 4vw, 64px);
+}
+
+.featured-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 24px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+  position: relative;
+  transition: border-color 0.4s;
+}
+
+.featured-card:hover {
+  border-color: rgba(255,107,43,0.25);
+}
+
+.featured-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient);
+}
+
+.featured-text {
+  padding: clamp(36px, 4vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,107,43,0.3);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  width: fit-content;
+  margin-bottom: 28px;
+}
+
+.featured-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  animation: featurePulse 2s infinite;
+}
+
+@keyframes featurePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.featured-text h2 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(28px, 3.5vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.featured-text h2 .grad {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.featured-text p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--gray-300);
+  margin-bottom: 36px;
+  max-width: 460px;
+}
+
+.featured-stats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.featured-stat .num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 28px;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.featured-stat .lbl {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+.featured-visual {
+  position: relative;
+  background: var(--black-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Simulated EU map / abstract visual */
+.featured-visual-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 40px;
+  width: 100%;
+}
+
+.eu-cell {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.4s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.eu-cell:hover {
+  background: rgba(255,107,43,0.06);
+  border-color: rgba(255,107,43,0.25);
+  transform: scale(1.04);
+}
+
+.eu-cell .flag {
+  font-size: 20px;
+}
+
+.eu-cell .rate {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.eu-cell .name {
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+/* Glow behind the grid */
+.featured-visual::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,107,43,0.1) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* ===== SERVICES ===== */
+.services {
+  padding: 40px clamp(24px, 4vw, 64px) clamp(80px, 10vw, 140px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-header {
+  margin-bottom: 56px;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 4vw, 48px);
+  letter-spacing: -2px;
+  line-height: 1.1;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 16px;
+  padding: 36px 32px;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-soft);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.service-card:hover {
+  border-color: rgba(255,107,43,0.2);
+  transform: translateY(-4px);
+}
+
+.service-card:hover::after { opacity: 1; }
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255,107,43,0.06);
+  border: 1px solid rgba(255,107,43,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gray-300);
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+  padding: clamp(60px, 8vw, 120px) clamp(24px, 4vw, 64px);
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-inner h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 4vw, 48px);
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.cta-inner p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--gray-300);
+  margin-bottom: 40px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 48px clamp(24px, 4vw, 64px) 36px;
+  border-top: 1px solid var(--black-border);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo img { height: 24px; }
+
+.footer-tagline {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gray-500);
+  letter-spacing: 1px;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: var(--gray-700);
+  margin-top: 8px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 32px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 14px;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  color: var(--gray-300);
+  padding: 4px 0;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover { color: var(--white); }
+
+.footer-disclaimer {
+  max-width: 1200px;
+  margin: 32px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  font-size: 10px;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 960px) {
+  .featured-card { grid-template-columns: 1fr; }
+  .featured-visual { min-height: 360px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .footer-links { gap: 24px; }
+}
+
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .featured-stats { flex-wrap: wrap; gap: 20px; }
+  .footer-inner { flex-direction: column; }
+  .footer-links { flex-direction: column; gap: 28px; }
+  .eu-grid { grid-template-columns: repeat(3, 1fr); padding: 24px; }
+}
 </style>
 </head>
 <body>
 
-<div class="bg-image">
-  <div class="overlay"></div>
-  <div class="content">
-    <img src="images/Asset 3@5x.png" alt="PulpScreen Logo" class="logo">
-    <h4 class="header">Film Production and Finance</h4>
-    <a href="mailto:info@pulpscreen.com" class="contact-link">Contact Us</a>
-  </div>
-</div>
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav-logo">
+    <!-- Tries to load your actual logo; falls back to styled text -->
+    <img src="images/Asset 3@5x.png" alt="Pulpscreen"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="nav-logo-fallback" style="display:none;">
+      <div class="nav-logo-mark">P</div>
+      <span class="nav-wordmark">Pulpscreen</span>
+    </div>
+  </a>
 
-</body>
-</html>
+  <div class="nav-links">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="eu-incentive-guide.html" class="nav-link">EU Incentive Guide</a>
+    <a href="eu-incentive-guide.html#compare" class="nav-link">Compare Countries</a>
+    <a href="/cdn-cgi/l/email-protection#573e3931381727223b272434253232397934383a" class="nav-cta">Get in Touch</a>
+  </div>
+
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <img src="images/Asset 3@5x.png" alt="PULPSCREEN" class="hero-logo"
+         onerror="this.outerHTML='<div style=\'font-family:Outfit,sans-serif;font-weight:900;font-size:clamp(48px,8vw,80px);letter-spacing:6px;background:linear-gradient(90deg,#FF6B2B,#FF2D7B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;animation:heroFadeIn 1.2s cubic-bezier(0.16,1,0.3,1) both;\'>PULPSCREEN</div>'">
+    <div class="hero-subtitle">Film Production & Finance</div>
+    <p class="hero-headline">
+      Structuring international co-productions and navigating production incentives across Europe and beyond.
+    </p>
+    <div class="hero-actions">
+      <a href="eu-incentive-guide.html" class="btn btn-primary">EU Incentive Guide →</a>
+      <a href="/cdn-cgi/l/email-protection#5d34333b321d2d28312d2e3e2f383833733e3230" class="btn btn-ghost">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ===== FEATURED TOOL ===== -->
+<section class="featured">
+  <div class="featured-card">
+    <div class="featured-text">
+      <div class="featured-badge">New Tool · 2025–2026</div>
+      <h2>EU Co-Production<br>& <span class="grad">Incentive Guide</span></h2>
+      <p>Navigate European tax incentives, cash rebates, and co-production frameworks for feature film production. Interactive tools covering 20+ territories.</p>
+      <div class="featured-stats">
+        <div class="featured-stat">
+          <div class="num">20+</div>
+          <div class="lbl">Territories</div>
+        </div>
+        <div class="featured-stat">
+          <div class="num">50%</div>
+          <div class="lbl">Max Rate</div>
+        </div>
+        <div class="featured-stat">
+          <div class="num">43</div>
+          <div class="lbl">Treaty States</div>
+        </div>
+      </div>
+      <a href="eu-incentive-guide.html" class="btn btn-primary">Explore the Guide →</a>
+    </div>
+
+    <div class="featured-visual">
+      <div class="featured-visual-inner">
+        <div class="eu-grid">
+          <div class="eu-cell"><span class="flag">🇬🇧</span><span class="rate">25%</span><span class="name">UK</span></div>
+          <div class="eu-cell"><span class="flag">🇮🇪</span><span class="rate">40%</span><span class="name">Ireland</span></div>
+          <div class="eu-cell"><span class="flag">🇫🇷</span><span class="rate">40%</span><span class="name">France</span></div>
+          <div class="eu-cell"><span class="flag">🇩🇪</span><span class="rate">30%</span><span class="name">Germany</span></div>
+          <div class="eu-cell"><span class="flag">🇪🇸</span><span class="rate">50%</span><span class="name">Spain</span></div>
+          <div class="eu-cell"><span class="flag">🇮🇹</span><span class="rate">40%</span><span class="name">Italy</span></div>
+          <div class="eu-cell"><span class="flag">🇭🇺</span><span class="rate">30%</span><span class="name">Hungary</span></div>
+          <div class="eu-cell"><span class="flag">🇨🇿</span><span class="rate">35%</span><span class="name">Czechia</span></div>
+          <div class="eu-cell"><span class="flag">🇧🇪</span><span class="rate">45%</span><span class="name">Belgium</span></div>
+          <div class="eu-cell"><span class="flag">🇬🇷</span><span class="rate">40%</span><span class="name">Greece</span></div>
+          <div class="eu-cell"><span class="flag">🇷🇴</span><span class="rate">35%</span><span class="name">Romania</span></div>
+          <div class="eu-cell"><span class="flag">🇵🇱</span><span class="rate">30%</span><span class="name">Poland</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div class="section-tag">What We Do</div>
+    <div class="section-title">Production & Finance</div>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🎬</div>
+      <h3>Feature Film Production</h3>
+      <p>End-to-end production management for narrative features, from development through delivery across international markets.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💰</div>
+      <h3>Production Finance</h3>
+      <p>Structuring financing plans that leverage tax incentives, co-production treaties, gap financing, and equity investment.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🤝</div>
+      <h3>Co-Production</h3>
+      <p>Navigating the European Convention, bilateral treaties, and multi-territory co-production structures to maximize soft money.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Incentive Advisory</h3>
+      <p>Identifying and securing the optimal tax incentives and cash rebates across EU territories for your specific project.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌍</div>
+      <h3>International Sales Strategy</h3>
+      <p>Aligning production and finance decisions with distribution strategy to maximize territorial pre-sales and market value.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📜</div>
+      <h3>Business Affairs</h3>
+      <p>Deal structuring, rights management, and production legal coordination across multiple jurisdictions and partners.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Let's build<br>your next project</h2>
+    <p>Whether you're packaging a feature, structuring a co-production, or navigating European incentives — we'd love to hear about your project.</p>
+    <a href="/cdn-cgi/l/email-protection#d5bcbbb3ba95a5a0b9a5a6b6a7b0b0bbfbb6bab8" class="btn btn-primary"><span class="__cf_email__" data-cfemail="2841464e4768585d44585b4b5a4d4d46064b4745">[email&#160;protected]</span></a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">
+        <div class="nav-logo-mark" style="width:26px;height:26px;font-size:14px;border-radius:5px;">P</div>
+        <span class="nav-wordmark" style="font-size:14px;">Pulpscreen</span>
+      </div>
+      <div class="footer-tagline">Film Production & Finance</div>
+      <div class="footer-copy">&copy; 2025 Pulpscreen. All rights reserved.</div>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="eu-incentive-guide.html">EU Incentive Guide</a>
+        <a href="eu-incentive-guide.html#compare">Compare Countries</a>
+        <a href="eu-incentive-guide.html#copro">Co-Production Guide</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/cdn-cgi/l/email-protection#6c05020a032c1c19001c1f0f1e090902420f0301">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-disclaimer">
+    This site is for informational purposes only. Incentive rates and regulations change frequently. Always verify current legislation with official film commissions and consult qualified legal and tax advisors before making production decisions.
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Intersection Observer for fade-in animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.service-card, .featured-card, .cta-inner').forEach(el => {
+  el.sty
