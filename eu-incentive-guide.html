@@ -609,6 +609,91 @@ body::before {
   color: var(--gray-300);
 }
 
+/* ===== REGIONAL PROGRAMMES ===== */
+.detail-regions {
+  margin-top: 24px;
+}
+
+.detail-regions h4 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.regions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.region-card {
+  padding: 16px;
+  background: var(--black);
+  border: 1px solid var(--black-border);
+  border-radius: 10px;
+  transition: border-color 0.2s;
+}
+
+.region-card:hover { border-color: rgba(255,107,43,0.25); }
+
+.region-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  gap: 8px;
+}
+
+.region-card h5 {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.region-rate {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--orange);
+  white-space: nowrap;
+}
+
+.region-type {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 8px;
+}
+
+.region-card p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--gray-300);
+  margin-bottom: 8px;
+}
+
+.region-link {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--orange);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.region-link:hover { color: var(--white); }
+
+@media (max-width: 600px) {
+  .regions-grid { grid-template-columns: 1fr; }
+}
+
 /* ===== COMPARISON TABLE ===== */
 .compare-table-wrap {
   overflow-x: auto;
@@ -1271,6 +1356,12 @@ const countries = [
     typeName: "Cash Rebate (AVEC)", minSpend: "10% UK-based core expenditure",
     cap: "No per-project cap", cultural: "Yes — Points-based Cultural Test",
     vfx: "29.25% (VFX uplift, no cap)", timeline: "Post-completion audit",
+    regions: [
+      { name: "Screen Scotland", rate: "£200K–£500K grants", type: "Grant", url: "https://www.screen.scot/", desc: "Production Growth Fund with 10:1 spend ratio. Strong crew base in Glasgow and Edinburgh." },
+      { name: "Northern Ireland Screen", rate: "Recoupable loans", type: "Loan", url: "https://www.northernirelandscreen.co.uk/", desc: "Belfast studios (Titanic Studios). Game of Thrones legacy infrastructure." },
+      { name: "Ffilm Cymru Wales", rate: "Up to £600K", type: "Grant", url: "https://ffrwm.co.uk/", desc: "Welsh production fund. Supports features and series with Welsh cultural connection." },
+      { name: "BFI NETWORK", rate: "Varies", type: "Grant", url: "https://network.bfi.org.uk/", desc: "Delegated regional funds supporting emerging filmmakers across England." }
+    ],
     notes: "The UK's Audio-Visual Expenditure Credit (AVEC) is one of the most bankable structures globally. Official co-productions automatically pass the cultural test. As of April 2025, VFX qualifies at 29.25% with the expenditure cap removed entirely. Studios benefit from 40% business rate relief through 2034. Generated £4.2B in production spend from film and TV."
   },
   {
@@ -1285,21 +1376,42 @@ const countries = [
     typeName: "Cash Rebate (TRIP)", minSpend: "€250K in France",
     cap: "€30M per project", cultural: "Yes — CNC cultural points system",
     vfx: "40% if French VFX exceeds €2M", timeline: "Post-completion audit",
-    notes: "The Tax Rebate for International Productions (TRIP) runs at 30% on eligible French expenditure, jumping to 40% if French VFX exceeds €2M. France operates 61 bilateral co-production treaties — the most robust network in Europe. The CNC administers joint funds with Italy and Germany."
+    notes: "The Tax Rebate for International Productions (TRIP) runs at 30% on eligible French expenditure, jumping to 40% if French VFX exceeds €2M. France operates 61 bilateral co-production treaties — the most robust network in Europe. The CNC administers joint funds with Italy and Germany.",
+    regions: [
+      { name: "Île-de-France", rate: "Grants up to €730K", type: "Grant", url: "https://www.filmparisregion.com/en/why-paris-region/financing-your-production", desc: "Largest French regional fund (~€16M/year). Supports 130+ productions annually. Requires 50% shooting in region." },
+      { name: "Région Sud (PACA)", rate: "Selective grants", type: "Grant", url: "https://www.regionsud.fr/", desc: "Active policy supporting Marseille studios. One of few regional funds accessible to non-French international productions." },
+      { name: "Nouvelle-Aquitaine", rate: "Up to €7.2M budget", type: "Grant", url: "https://les-music.nouvelle-aquitaine.fr/", desc: "Growing fund with €7.2M annual budget. Supports features, docs, and series with local production requirements." },
+      { name: "Auvergne-Rhône-Alpes", rate: "Co-production model", type: "Grant", url: "https://www.auvergnerhonealpes.fr/", desc: "~€3M annual budget. Operates as co-production investment rather than pure grant." },
+      { name: "Occitanie", rate: "Selective grants", type: "Grant", url: "https://www.laregion.fr/", desc: "Regional fund supporting productions filming in the south of France. Growing studio infrastructure in Montpellier and Toulouse." },
+      { name: "Bretagne", rate: "Selective grants", type: "Grant", url: "https://www.films-bretagne.com/", desc: "Supports productions with strong Breton cultural connection or significant regional spend." }
+    ]
   },
   {
     name: "Germany", region: "western", flag: "🇩🇪", rate: "25–30%", rateNum: 30, type: "rebate",
     typeName: "Cash Rebate (DFFF / GMPF)", minSpend: "€25K+ (varies by scheme)",
     cap: "€25M (GMPF) / varies", cultural: "Yes — Cultural eligibility test",
     vfx: "Included in grant rate", timeline: "Interim payments possible",
-    notes: "Germany's DFFF and GMPF programs increased from 25% to 30% in 2024. Multiple regional funds (Medienboard Berlin-Brandenburg, FFF Bayern, Film- und Medienstiftung NRW) can stack on top of federal incentives. Strong infrastructure in Berlin, Munich, and Cologne."
+    notes: "Germany's DFFF and GMPF programs increased from 25% to 30% in 2024. Multiple regional funds (Medienboard Berlin-Brandenburg, FFF Bayern, Film- und Medienstiftung NRW) can stack on top of federal incentives. Strong infrastructure in Berlin, Munich, and Cologne.",
+    regions: [
+      { name: "Berlin-Brandenburg (Medienboard)", rate: "Up to 50%", type: "Loan", url: "https://www.medienboard.de/en/", desc: "€47M budget. Up to 50% of production budget. 150% regional spend requirement. Germany's largest regional fund." },
+      { name: "Bavaria (FFF Bayern)", rate: "Up to 30%", type: "Loan", url: "https://www.fff-bayern.de/en/", desc: "€42M budget. Conditionally repayable loans up to 30%. Munich studios and Alpine locations." },
+      { name: "NRW (Film- und Medienstiftung)", rate: "30–80%", type: "Loan", url: "https://www.filmstiftung.de/en/", desc: "€35–40M budget. Up to 80% for low-budget projects. Cologne and Düsseldorf studio infrastructure." },
+      { name: "Hamburg/Schleswig-Holstein (MOIN)", rate: "Selective", type: "Loan", url: "https://mfrg.de/en/", desc: "~€20M budget. Supports features, series, and docs with regional spend requirement." },
+      { name: "Central Germany (MDM)", rate: "Selective", type: "Loan", url: "https://www.mdm-online.de/en/", desc: "€16.3M budget. Covers Saxony, Saxony-Anhalt, and Thuringia. Babelsberg-adjacent locations." }
+    ]
   },
   {
     name: "Spain (National)", region: "southern", flag: "🇪🇸", rate: "30–40%", rateNum: 40, type: "credit",
     typeName: "Tax Deduction (Art. 36.1 LIS)", minSpend: "€2M+ feature budget",
     cap: "€20M per project", cultural: "Yes — Cultural certificate required",
     vfx: "Included", timeline: "Tax filing cycle",
-    notes: "Spain's national scheme provides 30% on first €1M of qualifying spend and 25% thereafter. However, the real opportunity is in the regional uplifts: the Canary Islands offer 45–50%, Basque Country 35–70%, and Navarre 35%. These are among Europe's highest rates, though regional caps limit scalability for large features."
+    notes: "Spain's national scheme provides 30% on first €1M of qualifying spend and 25% thereafter. However, the real opportunity is in the regional uplifts: the Canary Islands offer 45–50%, Basque Country 35–70%, and Navarre 35%. These are among Europe's highest rates, though regional caps limit scalability for large features.",
+    regions: [
+      { name: "Basque Country (Bizkaia)", rate: "Up to 70%", type: "Tax Credit", url: "https://www.bizkaia.eus/", desc: "Spain's most generous regional incentive at up to 70%. Bilbao and San Sebastián locations." },
+      { name: "Navarra", rate: "35–40%", type: "Tax Credit", url: "https://www.navarra.es/", desc: "35–40% regional tax credit stackable with national incentive." },
+      { name: "Catalonia", rate: "National rate + grants", type: "Grant", url: "https://www.catalanfilms.cat/en/", desc: "Barcelona studios. Catalan Film Commission supports international co-productions." },
+      { name: "Mallorca", rate: "National rate + grants", type: "Grant", url: "https://www.mallorcafilmcommission.com/en/", desc: "Island locations. Growing production hub with international crew base." }
+    ]
   },
   {
     name: "Spain — Canary Islands", region: "southern", flag: "🇮🇨", rate: "45–50%", rateNum: 50, type: "credit",
@@ -1313,7 +1425,14 @@ const countries = [
     typeName: "Tax Credit", minSpend: "€200K Italian spend (features)",
     cap: "€20M per project", cultural: "Yes — Cultural test",
     vfx: "Included in base rate", timeline: "Post-completion",
-    notes: "Italy offers a 40% tax credit on qualifying Italian expenditure for feature films. Joint development funds exist with France and Germany. Strong post-production infrastructure in Rome. Italy is one of the most active co-production partners in Europe."
+    notes: "Italy offers a 40% tax credit on qualifying Italian expenditure for feature films. Joint development funds exist with France and Germany. Strong post-production infrastructure in Rome. Italy is one of the most active co-production partners in Europe.",
+    regions: [
+      { name: "Lazio (Roma Lazio Film Commission)", rate: "Grants €19–23M/year", type: "Grant", url: "https://www.romalaziofilmcommission.it/en/", desc: "Italy's largest regional fund. Rome studios (Cinecittà). Supports international productions." },
+      { name: "Puglia (Apulia Film Commission)", rate: "40–60% grants", type: "Grant", url: "https://www.apuliafilmcommission.it/en/", desc: "€5M annual budget. High grant rates for productions filming in Puglia." },
+      { name: "Trentino-Alto Adige (IDM)", rate: "Up to 30%", type: "Grant", url: "https://www.idm-suedtirol.com/en/film", desc: "IDM Film Fund + Trentino Film Fund. Alpine and Dolomites locations." },
+      { name: "Sardinia", rate: "Selective grants", type: "Grant", url: "https://www.sardegnafilmcommission.it/en/", desc: "Mediterranean island locations at competitive costs." },
+      { name: "Friuli Venezia Giulia", rate: "Tiered by filming days", type: "Grant", url: "https://www.fvgfilmcommission.com/en/", desc: "Grants scaled by number of filming days in the region." }
+    ]
   },
   {
     name: "Hungary", region: "eastern", flag: "🇭🇺", rate: "30%", rateNum: 30, type: "credit",
@@ -1551,6 +1670,14 @@ const countries = [
     typeName: "Refundable Tax Credit (Federal + Provincial)", minSpend: "No federal minimum",
     cap: "Varies; PSTC uncapped", cultural: "CPTC requires Canadian content; PSTC does not",
     vfx: "Yes — BC DAVE 16%, Ontario OCASE 18%, Quebec 16% animation bonus", timeline: "18–24 months post filing",
+    regions: [
+      { name: "British Columbia", rate: "FIBC 40% + PSTC 36%", type: "Tax Credit", url: "https://www.creativebc.com/", desc: "Vancouver is Hollywood North. FIBC 40% domestic, PSTC 36% service. DAVE 16% for VFX." },
+      { name: "Ontario", rate: "OFTTC 35% + OPSTC 21.5%", type: "Tax Credit", url: "https://www.ontario.ca/page/ontario-film-television-tax-credit", desc: "Toronto studios. OFTTC 35% domestic, OPSTC 21.5% service. OCASE 18% for VFX/post." },
+      { name: "Quebec", rate: "QFTTC 32–40% + QPSTC 25%", type: "Tax Credit", url: "https://www.sodec.gouv.qc.ca/", desc: "Montreal studios. QFTTC up to 40% with bonuses. Additional 16% for computer animation." },
+      { name: "Alberta", rate: "22–30%", type: "Tax Credit", url: "https://www.albertamediafund.ca/", desc: "Calgary and Edmonton. Competitive rates with growing infrastructure." },
+      { name: "Manitoba", rate: "Up to 65% cost-of-salaries", type: "Tax Credit", url: "https://www.manitobafilm.com/", desc: "Highest effective rate in Canada for labour costs. Winnipeg studios." },
+      { name: "Nova Scotia", rate: "32–42%", type: "Tax Credit", url: "https://www.novascotia.ca/", desc: "Atlantic Canada's production hub. Halifax studios with period architecture." }
+    ],
     notes: "Two-tier federal system: CPTC (25% of qualified labour, effective ~15% of budget) for Canadian-content productions; PSTC (16% of qualified labour, uncapped) for foreign service productions. Stackable with provincial credits: BC up to 36%, Ontario up to 35%, Quebec up to 40%. Combined federal+provincial can offset up to 60% of costs. Eurimages associate member. World's largest bilateral treaty network with 60+ countries."
   },
   {
@@ -1558,6 +1685,13 @@ const countries = [
     typeName: "Refundable Tax Offset", minSpend: "AUD 1M–20M depending on offset",
     cap: "Uncapped for all three offsets", cultural: "Producer Offset requires SAC test; Location Offset does not",
     vfx: "PDV Offset: dedicated 30% for post/VFX", timeline: "Year-round applications",
+    regions: [
+      { name: "New South Wales (Screen NSW)", rate: "10% + AUD 380M package", type: "Rebate", url: "https://www.screen.nsw.gov.au/", desc: "Sydney studios (Fox Studios). Made in NSW fund with 10% additional rebate." },
+      { name: "Victoria (VicScreen)", rate: "10% VSI", type: "Rebate", url: "https://vicscreen.vic.gov.au/", desc: "Melbourne studios (Docklands). Victorian Screen Incentive 10% on top of federal offsets." },
+      { name: "Queensland (Screen Queensland)", rate: "15% PDV", type: "Rebate", url: "https://www.screenqueensland.com.au/", desc: "Gold Coast studios (Village Roadshow). 15% PDV rebate + discretionary PAS grants." },
+      { name: "Western Australia (Screenwest)", rate: "20% PDV", type: "Rebate", url: "https://www.screenwest.com.au/", desc: "Highest state PDV rebate in Australia at 20%. Perth and regional WA locations." },
+      { name: "South Australia (SAFC)", rate: "10% PDV", type: "Rebate", url: "https://www.safilm.com.au/", desc: "Adelaide Studios. 10% PDV rebate plus payroll tax exemptions for productions." }
+    ],
     notes: "Three refundable tax offsets: Producer Offset 40% for features / 30% for other formats; Location Offset 30% for large-budget international productions (increased from 16.5% in 2023); PDV Offset 30% for post/VFX done in Australia regardless of shoot location. Record AUD 2.7B production spend 2024/25. Bilateral treaties with UK, France, Germany, Italy, Ireland."
   },
   {
@@ -1712,6 +1846,23 @@ function showCountryDetail(idx) {
       <h4>Key Notes for Producers</h4>
       <p>${c.notes}</p>
     </div>
+    ${c.regions ? `
+    <div class="detail-regions">
+      <h4>Regional Programmes</h4>
+      <div class="regions-grid">
+        ${c.regions.map(r => `
+          <div class="region-card">
+            <div class="region-card-header">
+              <h5>${r.name}</h5>
+              <span class="region-rate">${r.rate}</span>
+            </div>
+            <span class="region-type">${r.type}</span>
+            <p>${r.desc}</p>
+            ${r.url ? `<a href="${r.url}" target="_blank" rel="noopener" class="region-link">Official Site →</a>` : ''}
+          </div>
+        `).join('')}
+      </div>
+    </div>` : ''}
   `;
 
   // Scroll detail panel into view
