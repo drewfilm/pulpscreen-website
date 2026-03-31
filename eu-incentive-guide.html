@@ -67,7 +67,7 @@ body::before {
 ::-webkit-scrollbar-thumb { background: var(--gradient); border-radius: 3px; }
 
 /* ===== NAVIGATION ===== */
-.nav {
+nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -989,7 +989,7 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .nav { padding: 0 20px; }
+  nav { padding: 0 20px; }
   .nav-links { display: none; }
   .nav-links.show { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,10,10,0.95); backdrop-filter: blur(24px); padding: 20px; gap: 16px; z-index: 100; }
   .nav-toggle { display: flex; }
@@ -1013,32 +1013,21 @@ footer {
 <body>
 
 <!-- ===== NAVIGATION ===== -->
-<nav class="nav" id="nav">
+<nav>
   <a href="/" class="nav-logo">
-    <img src="images/Asset 3@5x.png" alt="Pulpscreen"
+    <img src="images/Asset 3@5x.png" alt="Pulpscreen" style="height: 30px;"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-    <div class="nav-logo-fallback" style="display:none;">
+    <div style="display:none; align-items:center; gap:10px;">
       <div class="nav-logo-mark">P</div>
-      <span class="nav-wordmark">Pulpscreen</span>
+      <div class="nav-logo-text">PULPSCREEN</div>
     </div>
   </a>
-
   <div class="nav-links">
     <a href="/#services" class="nav-link">Services</a>
-    <div class="nav-dropdown">
-      <a href="/eu-incentive-guide.html" class="nav-link">Co-Production Guide</a>
-      <div class="nav-dropdown-menu">
-        <a href="/eu-incentive-guide.html">Guide Home</a>
-        <a href="/eu-incentive-guide.html#incentives">Tax Incentives</a>
-        <a href="/eu-incentive-guide.html#compare">Compare Countries</a>
-        <a href="/eu-incentive-guide.html#copro">Co-Production Framework</a>
-        <a href="/eu-incentive-guide.html#treaties">Treaties & Funds</a>
-      </div>
-    </div>
+    <a href="#" class="nav-link active" onclick="showPage('home'); return false;">Co-Production Guide</a>
     <a href="/#contact" class="nav-cta">Get in Touch</a>
   </div>
-
-  <div class="lang-switch">
+    <div class="lang-switch">
     <div class="lang-current"><span class="flag">🇬🇧</span> EN</div>
     <div class="lang-dropdown">
       <a href="/eu-incentive-guide.html" class="active"><span class="flag">🇬🇧</span> English</a>
