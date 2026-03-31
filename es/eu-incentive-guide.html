@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>PULPSCREEN — Guia de Coproduccion e Incentivos de la UE</title>
+<meta name="description" content="Navega por los incentivos fiscales europeos, reembolsos y marcos de coproduccion para la produccion de largometrajes en mas de 30 territorios.">
+<meta property="og:title" content="PULPSCREEN — Guia de Coproduccion e Incentivos de la UE">
+<meta property="og:description" content="Navega por los incentivos fiscales europeos, reembolsos y marcos de coproduccion para la produccion de largometrajes en mas de 30 territorios.">
+<meta property="og:image" content="https://www.pulpscreen.com/images/og-image.png">
+<meta property="og:url" content="https://www.pulpscreen.com/es/eu-incentive-guide.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pulpscreen">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PULPSCREEN — Guia de Coproduccion e Incentivos de la UE">
+<meta name="twitter:description" content="Navega por los incentivos fiscales europeos, reembolsos y marcos de coproduccion para la produccion de largometrajes en mas de 30 territorios.">
+<meta name="twitter:image" content="https://www.pulpscreen.com/images/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0A0A0A;
+  --black-light: #111111;
+  --black-card: #161616;
+  --black-border: #222222;
+  --orange: #FF6B2B;
+  --pink: #FF2D7B;
+  --gradient: linear-gradient(135deg, #FF6B2B 0%, #FF4757 50%, #FF2D7B 100%);
+  --gradient-text: linear-gradient(90deg, #FF6B2B, #FF2D7B);
+  --gradient-subtle: linear-gradient(135deg, rgba(255,107,43,0.08), rgba(255,45,123,0.08));
+  --gradient-border: linear-gradient(135deg, rgba(255,107,43,0.3), rgba(255,45,123,0.3));
+  --white: #FFFFFF;
+  --gray-100: #F5F5F5;
+  --gray-300: #AAAAAA;
+  --gray-500: #666666;
+  --gray-700: #333333;
+  --font-display: 'Outfit', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== NOISE OVERLAY ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gradient); border-radius: 3px; }
+
+/* ===== NAVIGATION ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 48px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--black-border);
+  transition: all 0.3s ease;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-logo-mark {
+  width: 36px;
+  height: 36px;
+  background: var(--gradient);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--black);
+}
+
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: var(--white);
+}
+
+.nav-links {
+  display: flex;
+  gap: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--gray-300);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: var(--gradient);
+}
+
+.nav-cta {
+  padding: 10px 24px;
+  background: var(--gradient);
+  border: none;
+  border-radius: 6px;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.lang-switch a {
+  padding: 5px 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-300);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.lang-switch a.active {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+}
+
+.lang-switch a:hover:not(.active) { color: var(--white); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 1px;
+  transition: all 0.3s;
+}
+
+.nav-link-main {
+  padding: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--gray-300);
+  text-decoration: none;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-link-main:hover, .nav-link-main.active { color: var(--white); }
+
+/* ===== SUB-NAV ===== */
+.sub-nav {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 48px;
+  height: 44px;
+  background: rgba(17,17,17,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.sub-nav-link {
+  padding: 6px 16px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 4px;
+}
+
+.sub-nav-link:hover { color: var(--gray-300); }
+
+.sub-nav-link.active {
+  color: var(--white);
+  background: rgba(255,107,43,0.12);
+}
+
+/* ===== PAGE SECTIONS ===== */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255,107,43,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -300px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,45,123,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255,107,43,0.3);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 32px;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.hero-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1.02;
+  letter-spacing: -3px;
+  margin-bottom: 28px;
+  animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.hero h1 .gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--gray-300);
+  max-width: 640px;
+  margin-bottom: 48px;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.btn-primary {
+  padding: 16px 36px;
+  background: var(--gradient);
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255,107,43,0.3);
+}
+
+.btn-secondary {
+  padding: 16px 36px;
+  background: transparent;
+  border: 1px solid var(--black-border);
+  border-radius: 8px;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--gray-500);
+  background: rgba(255,255,255,0.03);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== HERO STATS BAR ===== */
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid var(--black-border);
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-stat .number {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 36px;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-stat .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-top: 4px;
+}
+
+/* ===== SECTION HEADERS ===== */
+.section {
+  padding: 100px 48px;
+}
+
+.section-header {
+  margin-bottom: 64px;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(32px, 4vw, 52px);
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 17px;
+  color: var(--gray-300);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ===== TOOLS GRID (Wrapbook-inspired) ===== */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.tool-card {
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 16px;
+  padding: 36px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-subtle);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.tool-card:hover {
+  border-color: rgba(255,107,43,0.3);
+  transform: translateY(-4px);
+}
+
+.tool-card:hover::before { opacity: 1; }
+
+.tool-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--gradient-subtle);
+  border: 1px solid rgba(255,107,43,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.tool-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.tool-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--gray-300);
+  position: relative;
+  z-index: 1;
+}
+
+.tool-card-arrow {
+  position: absolute;
+  bottom: 36px;
+  right: 36px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.tool-card:hover .tool-card-arrow {
+  background: var(--gradient);
+  transform: translate(2px, -2px);
+}
+
+/* ===== EU MAP PAGE ===== */
+.map-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  min-height: calc(100vh - 200px);
+}
+
+.map-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.map-country-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 10px;
+  color: var(--gray-300);
+  font-family: var(--font-body);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.map-country-btn:hover,
+.map-country-btn.active {
+  border-color: rgba(255,107,43,0.4);
+  color: var(--white);
+  background: rgba(255,107,43,0.05);
+}
+
+.map-country-btn .rate {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.map-detail {
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 16px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-detail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient);
+}
+
+.map-detail h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 36px;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.map-detail .country-type {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 32px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.detail-item {
+  padding: 20px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+  border: 1px solid var(--black-border);
+}
+
+.detail-item .label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 8px;
+}
+
+.detail-item .value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.detail-item .value.highlight {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.detail-notes {
+  padding: 20px;
+  background: rgba(255,107,43,0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255,107,43,0.1);
+}
+
+.detail-notes h4 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.detail-notes p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--gray-300);
+}
+
+/* ===== COMPARISON TABLE ===== */
+.compare-table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid var(--black-border);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.compare-table thead {
+  background: var(--black-card);
+  position: sticky;
+  top: 0;
+}
+
+.compare-table th {
+  padding: 18px 20px;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  border-bottom: 1px solid var(--black-border);
+  white-space: nowrap;
+}
+
+.compare-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  vertical-align: top;
+}
+
+.compare-table tr:hover td {
+  background: rgba(255,107,43,0.02);
+}
+
+.compare-table .country-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.compare-table .rate-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--gradient);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--white);
+}
+
+.compare-table .type-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--black-border);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gray-300);
+}
+
+/* ===== CO-PRODUCTION PAGE ===== */
+.copro-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  counter-reset: step;
+}
+
+.copro-step {
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 14px;
+  padding: 32px;
+  position: relative;
+  counter-increment: step;
+  transition: all 0.3s;
+}
+
+.copro-step:hover {
+  border-color: rgba(255,107,43,0.3);
+}
+
+.copro-step::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 48px;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.25;
+  position: absolute;
+  top: 16px;
+  right: 20px;
+}
+
+.copro-step h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.copro-step p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--gray-300);
+}
+
+/* ===== TREATY CARDS ===== */
+.treaty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 24px;
+}
+
+.treaty-card {
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s;
+}
+
+.treaty-card:hover {
+  border-color: rgba(255,107,43,0.3);
+  transform: translateY(-2px);
+}
+
+.treaty-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.treaty-flag {
+  font-size: 28px;
+}
+
+.treaty-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.treaty-card .subtitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gray-500);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.treaty-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.treaty-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.treaty-detail-row .td-label {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.treaty-detail-row .td-value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* ===== FILTER BAR ===== */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 100px;
+  color: var(--gray-300);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--orange);
+  color: var(--white);
+  background: rgba(255,107,43,0.08);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 64px 48px 40px;
+  border-top: 1px solid var(--black-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand span {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: var(--gray-500);
+  font-family: var(--font-mono);
+}
+
+.footer-disclaimer {
+  max-width: 600px;
+  font-size: 11px;
+  color: var(--gray-500);
+  line-height: 1.7;
+  text-align: right;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-links.show { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,10,10,0.95); backdrop-filter: blur(24px); padding: 20px; gap: 16px; z-index: 100; }
+  .nav-toggle { display: flex; }
+  .sub-nav { padding: 0 12px; gap: 2px; overflow-x: auto; justify-content: flex-start; }
+  .sub-nav-link { font-size: 9px; padding: 6px 10px; flex-shrink: 0; }
+  .hero { padding: 140px 20px 60px; }
+  .section { padding: 60px 20px; }
+  .hero-stats { flex-wrap: wrap; gap: 24px; }
+  .map-container { grid-template-columns: 1fr; }
+  .map-detail { order: -1; }
+  .map-sidebar { max-height: 300px; overflow-y: auto; }
+  .detail-grid { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .treaty-grid { grid-template-columns: 1fr; }
+  footer { padding: 40px 20px; flex-direction: column; text-align: center; }
+  .footer-disclaimer { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="../images/Asset 3@5x.png" alt="Pulpscreen" style="height: 30px;"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div style="display:none; align-items:center; gap:10px;">
+      <div class="nav-logo-mark">P</div>
+      <div class="nav-logo-text">PULPSCREEN</div>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="/#services" class="nav-link-main">Servicios</a>
+    <a href="#" class="nav-link-main active" onclick="showPage('home'); return false;">Guia de Coproduccion</a>
+    <a href="/#contact" class="nav-cta">Contactenos</a>
+  </div>
+  <div class="lang-switch">
+    <a href="/eu-incentive-guide.html">EN</a>
+    <a href="/fr/eu-incentive-guide.html">FR</a>
+    <a href="/es/eu-incentive-guide.html" class="active">ES</a>
+    <a href="/de/eu-incentive-guide.html">DE</a>
+    <a href="/it/eu-incentive-guide.html">IT</a>
+  </div>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== SUB-NAV ===== -->
+<div class="sub-nav" id="sub-nav">
+  <a class="sub-nav-link active" onclick="showPage('home')" id="nav-home">Inicio</a>
+  <a class="sub-nav-link" onclick="showPage('incentives')" id="nav-incentives">Incentivos Fiscales</a>
+  <a class="sub-nav-link" onclick="showPage('compare')" id="nav-compare">Comparar Paises</a>
+  <a class="sub-nav-link" onclick="showPage('copro')" id="nav-copro">Coproduccion</a>
+  <a class="sub-nav-link" onclick="showPage('treaties')" id="nav-treaties">Tratados y Fondos</a>
+</div>
+
+<!-- ===== PAGE 1: HOME ===== -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Largometrajes · Edicion 2025–2026</div>
+      <h1>Coproduccion UE<br>y <span class="gradient-text">Guia de Incentivos</span></h1>
+      <p>Navega por los incentivos fiscales europeos, reembolsos y marcos de coproduccion para la produccion de largometrajes. Datos verificados en mas de 20 territorios para ayudarte a maximizar tu presupuesto.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" onclick="showPage('incentives')">Explorar Incentivos →</a>
+        <a class="btn-secondary" onclick="showPage('copro')">Guia de Coproduccion</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="number">20+</div>
+          <div class="label">Territorios UE / EEE</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">50%</div>
+          <div class="label">Tasa Maxima de Reembolso</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">43</div>
+          <div class="label">Signatarios de la Convencion</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">€25M+</div>
+          <div class="label">Fondo Anual Eurimages</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-tag">Herramientas y Recursos</div>
+      <div class="section-title">Maximiza tu<br>presupuesto de produccion</div>
+      <p class="section-desc">Herramientas interactivas para ayudarte a identificar el incentivo europeo y la estructura de coproduccion adecuados para tu proximo largometraje.</p>
+    </div>
+    <div class="tools-grid">
+      <a class="tool-card" onclick="showPage('incentives')">
+        <div class="tool-card-icon">📊</div>
+        <h3>Navegador de Incentivos por Pais</h3>
+        <p>Explora creditos fiscales, reembolsos y incentivos de produccion en todos los territorios de la UE/EEE. Filtra por tasa, tipo y elegibilidad.</p>
+        <div class="tool-card-arrow">→</div>
+      </a>
+      <a class="tool-card" onclick="showPage('compare')">
+        <div class="tool-card-icon">⚖️</div>
+        <h3>Comparacion Lado a Lado</h3>
+        <p>Compara tasas de incentivos, umbrales de gasto minimo, requisitos de pruebas culturales y topes en multiples paises en una sola vista.</p>
+        <div class="tool-card-arrow">→</div>
+      </a>
+      <a class="tool-card" onclick="showPage('copro')">
+        <div class="tool-card-icon">🤝</div>
+        <h3>Marco de Coproduccion</h3>
+        <p>Guia paso a paso para estructurar coproducciones en la UE, desde la Convencion Europea hasta tratados bilaterales y la acumulacion de incentivos.</p>
+        <div class="tool-card-arrow">→</div>
+      </a>
+      <a class="tool-card" onclick="showPage('treaties')">
+        <div class="tool-card-icon">📜</div>
+        <h3>Directorio de Tratados y Fondos</h3>
+        <p>Directorio de tratados de coproduccion activos, financiacion de Eurimages y fondos supranacionales disponibles para largometrajes europeos.</p>
+        <div class="tool-card-arrow">→</div>
+      </a>
+      <a class="tool-card" onclick="showPage('incentives')">
+        <div class="tool-card-icon">🎯</div>
+        <h3>Buscador de Incentivos</h3>
+        <p>Introduce tu rango de presupuesto y detalles de produccion para ver que territorios europeos ofrecen el mejor incentivo para tu proyecto.</p>
+        <div class="tool-card-arrow">→</div>
+      </a>
+      <a class="tool-card" onclick="showPage('compare')">
+        <div class="tool-card-icon">💰</div>
+        <h3>Calculadora de Impacto Presupuestario</h3>
+        <p>Estima cuanto dinero blando puedes recuperar de incentivos segun el gasto elegible, incluyendo mejoras de VFX y bonificaciones regionales.</p>
+        <div class="tool-card-arrow">→</div>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== PAGE 2: INCENTIVES BROWSER ===== -->
+<div class="page" id="page-incentives">
+  <section class="section" style="padding-top:140px;">
+    <div class="section-header">
+      <div class="section-tag">Incentivos Fiscales y Reembolsos</div>
+      <div class="section-title">Navegador de Incentivos Europeos</div>
+      <p class="section-desc">Selecciona un pais para ver informacion detallada sobre incentivos para la produccion de largometrajes.</p>
+    </div>
+
+    <div class="map-container">
+      <div class="map-sidebar" id="country-list">
+        <!-- populated by JS -->
+      </div>
+      <div class="map-detail" id="country-detail">
+        <p style="color: var(--gray-500); font-size: 15px; margin-top: 32px;">← Selecciona un pais para ver los detalles del incentivo</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== PAGE 3: COMPARE ===== -->
+<div class="page" id="page-compare">
+  <section class="section" style="padding-top:140px;">
+    <div class="section-header">
+      <div class="section-tag">Comparacion Lado a Lado</div>
+      <div class="section-title">Comparar Incentivos de la UE</div>
+      <p class="section-desc">Todos los principales incentivos europeos para largometrajes en una tabla. Ordena, examina e identifica el mejor ajuste para tu produccion.</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterTable('all', this)">Todos los Paises</button>
+      <button class="filter-btn" onclick="filterTable('rebate', this)">Reembolso</button>
+      <button class="filter-btn" onclick="filterTable('credit', this)">Credito Fiscal</button>
+      <button class="filter-btn" onclick="filterTable('shelter', this)">Tax Shelter</button>
+    </div>
+
+    <div class="compare-table-wrap">
+      <table class="compare-table" id="compare-table">
+        <thead>
+          <tr>
+            <th>Pais</th>
+            <th>Tasa</th>
+            <th>Tipo</th>
+            <th>Gasto Min.</th>
+            <th>Tope por Proyecto</th>
+            <th>Prueba Cultural</th>
+            <th>Mejora VFX</th>
+          </tr>
+        </thead>
+        <tbody id="compare-tbody">
+          <!-- populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- ===== PAGE 4: CO-PRODUCTION ===== -->
+<div class="page" id="page-copro">
+  <section class="section" style="padding-top:140px;">
+    <div class="section-header">
+      <div class="section-tag">Marco de Coproduccion</div>
+      <div class="section-title">Estructurando<br><span class="gradient-text">Coproducciones en la UE</span></div>
+      <p class="section-desc">Como aprovechar la Convencion Europea, los tratados bilaterales y la acumulacion de incentivos para construir tu estructura de capital para largometrajes.</p>
+    </div>
+
+    <div style="margin-bottom: 80px;">
+      <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 24px; margin-bottom: 8px;">¿Por que coproducir en Europa?</h3>
+      <p style="color: var(--gray-300); font-size: 15px; line-height: 1.8; max-width: 800px; margin-bottom: 32px;">
+        Las coproducciones bilaterales bien estructuradas pueden reunir entre el 35 y el 50% del presupuesto en dinero blando antes de recurrir al capital propio. La Convencion Europea sobre Coproduccion Cinematografica abarca 43 paises bajo un unico marco multilateral. El gasto de cada territorio coproductor califica para el incentivo nacional de ese pais, lo que significa que tu pelicula se trata como una produccion "nacional" en todos los paises participantes simultaneamente.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 700px;">
+        <div style="text-align: center; padding: 24px; background: var(--black-card); border: 1px solid var(--black-border); border-radius: 12px;">
+          <div style="font-family: var(--font-display); font-weight: 900; font-size: 32px; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">35–50%</div>
+          <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-500); margin-top: 4px;">Dinero Blando Acumulado</div>
+        </div>
+        <div style="text-align: center; padding: 24px; background: var(--black-card); border: 1px solid var(--black-border); border-radius: 12px;">
+          <div style="font-family: var(--font-display); font-weight: 900; font-size: 32px; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">5%</div>
+          <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-500); margin-top: 4px;">Contribucion Min.</div>
+        </div>
+        <div style="text-align: center; padding: 24px; background: var(--black-card); border: 1px solid var(--black-border); border-radius: 12px;">
+          <div style="font-family: var(--font-display); font-weight: 900; font-size: 32px; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">43</div>
+          <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-500); margin-top: 4px;">Estados de la Convencion</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-tag" style="margin-bottom: 24px;">Proceso Paso a Paso</div>
+    <div class="copro-flow">
+      <div class="copro-step">
+        <h3>Identificar Territorios Socios</h3>
+        <p>Mapea tus necesidades creativas y financieras frente a territorios con incentivos solidos, bases de equipo tecnico y localizaciones. Considera el idioma, el acceso a tratados y la elegibilidad para Eurimages.</p>
+      </div>
+      <div class="copro-step">
+        <h3>Verificar Cobertura de Tratados</h3>
+        <p>Determina si se aplica la Convencion Europea o si necesitas un tratado bilateral. La revision de 2018 de la Convencion redujo la contribucion minima multilateral al 5% (desde el 10%).</p>
+      </div>
+      <div class="copro-step">
+        <h3>Estructurar la Division</h3>
+        <p>Cada socio debe contribuir un minimo del 5-20% (varia segun el tratado). Las contribuciones creativas y tecnicas deben equilibrar las participaciones financieras. El umbral del 20% del socio minoritario es critico.</p>
+      </div>
+      <div class="copro-step">
+        <h3>Solicitar Estatus Nacional</h3>
+        <p>Presenta la solicitud ante el organismo cinematografico de cada pais para obtener el "Estatus de Coproduccion Aprobada". Las coproducciones oficiales pasan automaticamente las pruebas culturales en la mayoria de los territorios (p. ej., Reino Unido, Francia).</p>
+      </div>
+      <div class="copro-step">
+        <h3>Acumular los Incentivos</h3>
+        <p>El gasto elegible de cada territorio desbloquea su incentivo nacional de forma independiente. AVEC del Reino Unido (25%) + Section 481 de Irlanda (32-40%) + financiacion de Eurimages = estructura de capital importante.</p>
+      </div>
+      <div class="copro-step">
+        <h3>Solicitar a Eurimages</h3>
+        <p>El fondo de coproduccion del Consejo de Europa anade otra capa de capital. Las coproducciones europeas elegibles pueden acceder a subvenciones de hasta 500.000 euros. A menudo pasado por alto por productores no pertenecientes a la UE.</p>
+      </div>
+      <div class="copro-step">
+        <h3>Obtener la Preaprobacion</h3>
+        <p>La mayoria de los programas requieren certificacion antes del rodaje principal. Presenta la solicitud con un minimo de 4 a 6 semanas antes del inicio del rodaje. Las solicitudes tardias pueden descalificar el gasto.</p>
+      </div>
+      <div class="copro-step">
+        <h3>Auditoria y Reclamacion</h3>
+        <p>Tras la postproduccion, presenta informes de gastos auditados a cada territorio. Presupuesta contadores publicos cualificados en cada jurisdiccion. Los fallos en la auditoria pueden reducir tu reembolso efectivo entre un 10 y un 20%.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 80px;">
+      <div class="section-tag" style="margin-bottom: 24px;">Consideraciones Clave</div>
+      <div class="detail-notes" style="max-width: 800px;">
+        <h4>Notas Importantes para Productores de Largometrajes</h4>
+        <p>
+          <strong>La Regla del 20%:</strong> La contribucion financiera y creativa minima requerida del socio minoritario. Si caes por debajo, se te clasifica como una produccion de servicios sin derecho al incentivo local.<br><br>
+          <strong>Asignacion de Derechos:</strong> Los tratados de coproduccion exigen que los derechos se dividan en proporcion a la contribucion financiera de cada socio. Esto afecta tu estrategia de distribucion.<br><br>
+          <strong>Requisitos de Residencia:</strong> Algunos territorios exigen que el productor o el personal clave resida en el pais durante la produccion. Verifica antes de comprometerte.<br><br>
+          <strong>Realidad del Flujo de Caja:</strong> Los incentivos se pagan tras la finalizacion y la auditoria. Si necesitas liquidez anticipada, tendras que financiar contra el credito esperado y pagar comisiones. Modela de forma realista.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== PAGE 5: TREATIES & FUNDS ===== -->
+<div class="page" id="page-treaties">
+  <section class="section" style="padding-top:140px;">
+    <div class="section-header">
+      <div class="section-tag">Tratados y Fondos Supranacionales</div>
+      <div class="section-title">Fuentes de Financiacion<br>y <span class="gradient-text">Redes de Tratados</span></div>
+      <p class="section-desc">Marcos multilaterales clave y organismos de financiacion disponibles para coproducciones europeas de largometrajes.</p>
+    </div>
+
+    <div class="treaty-grid">
+      <div class="treaty-card">
+        <div class="treaty-card-header">
+          <div class="treaty-flag">🇪🇺</div>
+          <div>
+            <h3>Convencion Europea</h3>
+            <div class="subtitle">Consejo de Europa · 43 Estados</div>
+          </div>
+        </div>
+        <div class="treaty-details">
+          <div class="treaty-detail-row"><span class="td-label">Tipo</span><span class="td-value">Marco Multilateral</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Contribucion Min.</span><span class="td-value">5% (revisado 2018)</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Signatarios</span><span class="td-value">43 paises</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Beneficio Clave</span><span class="td-value">Trato nacional en todos los territorios</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Contenido Elegible</span><span class="td-value">Largometrajes (convencion de series pendiente)</span></div>
+        </div>
+      </div>
+
+      <div class="treaty-card">
+        <div class="treaty-card-header">
+          <div class="treaty-flag">🎬</div>
+          <div>
+            <h3>Eurimages</h3>
+            <div class="subtitle">Fondo del Consejo de Europa</div>
+          </div>
+        </div>
+        <div class="treaty-details">
+          <div class="treaty-detail-row"><span class="td-label">Tipo</span><span class="td-value">Fondo de Subvenciones para Coproduccion</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Presupuesto Anual</span><span class="td-value">~€25M+</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Subvencion Max.</span><span class="td-value">Hasta €500K por proyecto</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Requisito</span><span class="td-value">Min. 2 estados miembros de Eurimages</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Beneficio Clave</span><span class="td-value">Capa de capital adicional sobre incentivos nacionales</span></div>
+        </div>
+      </div>
+
+      <div class="treaty-card">
+        <div class="treaty-card-header">
+          <div class="treaty-flag">🇪🇺</div>
+          <div>
+            <h3>Creative Europe MEDIA</h3>
+            <div class="subtitle">Comision Europea</div>
+          </div>
+        </div>
+        <div class="treaty-details">
+          <div class="treaty-detail-row"><span class="td-label">Tipo</span><span class="td-value">Fondo de Desarrollo y Distribucion</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Programa</span><span class="td-value">Ciclo 2021–2027</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Presupuesto</span><span class="td-value">€2.440M programa total</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Apoyo a Largometrajes</span><span class="td-value">Desarrollo, codesarrollo, distribucion</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Beneficio Clave</span><span class="td-value">Financiacion de catalogo, acceso a mercados, formacion</span></div>
+        </div>
+      </div>
+
+      <div class="treaty-card">
+        <div class="treaty-card-header">
+          <div class="treaty-flag">🇫🇷</div>
+          <div>
+            <h3>Red Bilateral de Francia</h3>
+            <div class="subtitle">Administrada por el CNC · 61 Tratados</div>
+          </div>
+        </div>
+        <div class="treaty-details">
+          <div class="treaty-detail-row"><span class="td-label">Tratados Activos</span><span class="td-value">61 acuerdos bilaterales</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Corredores Clave</span><span class="td-value">FR-DE, FR-IT, FR-BE, FR-UK</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Fondos Conjuntos</span><span class="td-value">Mini-Tratados con Italia, Alemania</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Acumulacion de Incentivos</span><span class="td-value">30–40% TRIP + territorio socio</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Beneficio Clave</span><span class="td-value">Ecosistema de fondos mas robusto de la UE</span></div>
+        </div>
+      </div>
+
+      <div class="treaty-card">
+        <div class="treaty-card-header">
+          <div class="treaty-flag">🌍</div>
+          <div>
+            <h3>Ibermedia</h3>
+            <div class="subtitle">Coproduccion Iberoamericana</div>
+          </div>
+        </div>
+        <div class="treaty-details">
+          <div class="treaty-detail-row"><span class="td-label">Tipo</span><span class="td-value">Fondo Multilateral</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Miembros</span><span class="td-value">Espana, Portugal + America Latina</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Enfoque</span><span class="td-value">Coproduccion y desarrollo de largometrajes</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Beneficio Clave</span><span class="td-value">Puente entre mercados UE y latinoamericanos</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Combinar Con</span><span class="td-value">Incentivos regionales de Espana (hasta 50%)</span></div>
+        </div>
+      </div>
+
+      <div class="treaty-card">
+        <div class="treaty-card-header">
+          <div class="treaty-flag">🎥</div>
+          <div>
+            <h3>Fondo Nordico de Cine y TV</h3>
+            <div class="subtitle">Consejo Nordico</div>
+          </div>
+        </div>
+        <div class="treaty-details">
+          <div class="treaty-detail-row"><span class="td-label">Tipo</span><span class="td-value">Fondo Complementario / Coproduccion</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Miembros</span><span class="td-value">DK, FI, IS, NO, SE</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Enfoque</span><span class="td-value">Coproducciones nordicas con distribucion</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Subvencion Max.</span><span class="td-value">Varia segun tipo de proyecto</span></div>
+          <div class="treaty-detail-row"><span class="td-label">Beneficio Clave</span><span class="td-value">Combinar con incentivos nacionales nordicos</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-brand">
+    <a href="/" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;">
+      <img src="../images/Asset 3@5x.png" alt="Pulpscreen" style="height: 24px;"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div style="display:none; align-items:center; gap:8px;">
+        <div class="nav-logo-mark" style="width: 28px; height: 28px; font-size: 16px;">P</div>
+        <span>PULPSCREEN</span>
+      </div>
+    </a>
+    <span class="footer-text" style="margin-left: 12px;">Produccion y Financiacion Cinematografica</span>
+  </div>
+  <div class="footer-disclaimer">
+    Esta guia es solo para fines informativos. Las tasas de incentivos y las regulaciones cambian con frecuencia. Siempre verifique la legislacion vigente con las comisiones de cine oficiales y consulte a asesores legales y fiscales cualificados antes de tomar decisiones de produccion. Datos actualizados a Q1 2026.
+  </div>
+</footer>
+
+<script>
+// ===== COUNTRY DATA =====
+const countries = [
+  {
+    name: "Reino Unido", flag: "🇬🇧", rate: "25%", rateNum: 25, type: "credit",
+    typeName: "Reembolso (AVEC)", minSpend: "10% gasto basico en el R. Unido",
+    cap: "Sin tope por proyecto", cultural: "Si — Prueba cultural por puntos",
+    vfx: "29,25% (mejora VFX, sin tope)", timeline: "Auditoria post-finalizacion",
+    notes: "El Credito de Gasto Audiovisual del Reino Unido (AVEC) es una de las estructuras mas bancables a nivel mundial. Las coproducciones oficiales pasan automaticamente la prueba cultural. Desde abril de 2025, los VFX califican al 29,25% con el tope de gasto eliminado por completo. Los estudios se benefician de un 40% de desgravacion en impuestos comerciales hasta 2034. Genero 4.200 millones de libras en gasto de produccion de cine y television."
+  },
+  {
+    name: "Irlanda", flag: "🇮🇪", rate: "32–40%", rateNum: 40, type: "credit",
+    typeName: "Credito Fiscal (Section 481)", minSpend: "€250K coste total de produccion",
+    cap: "32% del menor entre gasto elegible u 80% del presupuesto", cultural: "Si — Certificado cultural de Revenue",
+    vfx: "Incluido en la tasa base", timeline: "Post-finalizacion",
+    notes: "La tasa base de Section 481 es del 32%, con un incremento del 8% para peliculas con presupuesto inferior a 20 millones de euros, lo que significa que los largometrajes independientes pueden acceder al 40%. Solida base de equipo tecnico en ingles con acceso a tratados de coproduccion de la UE. La infraestructura de Dublin se ha puesto al nivel de su profundo grupo de talento."
+  },
+  {
+    name: "Francia", flag: "🇫🇷", rate: "30–40%", rateNum: 40, type: "rebate",
+    typeName: "Reembolso (TRIP)", minSpend: "€250K en Francia",
+    cap: "€30M por proyecto", cultural: "Si — Sistema de puntos culturales del CNC",
+    vfx: "40% si los VFX franceses superan €2M", timeline: "Auditoria post-finalizacion",
+    notes: "El Reembolso Fiscal para Producciones Internacionales (TRIP) funciona al 30% sobre el gasto elegible frances, subiendo al 40% si los VFX franceses superan los 2 millones de euros. Francia opera 61 tratados bilaterales de coproduccion, la red mas robusta de Europa. El CNC administra fondos conjuntos con Italia y Alemania."
+  },
+  {
+    name: "Alemania", flag: "🇩🇪", rate: "25–30%", rateNum: 30, type: "rebate",
+    typeName: "Reembolso (DFFF / GMPF)", minSpend: "€25K+ (varia segun programa)",
+    cap: "€25M (GMPF) / varia", cultural: "Si — Prueba de elegibilidad cultural",
+    vfx: "Incluido en la tasa de subvencion", timeline: "Pagos parciales posibles",
+    notes: "Los programas DFFF y GMPF de Alemania aumentaron del 25% al 30% en 2024. Multiples fondos regionales (Medienboard Berlin-Brandenburg, FFF Bayern, Film- und Medienstiftung NRW) pueden acumularse sobre los incentivos federales. Fuerte infraestructura en Berlin, Munich y Colonia."
+  },
+  {
+    name: "Espana (Nacional)", flag: "🇪🇸", rate: "30–40%", rateNum: 40, type: "credit",
+    typeName: "Deduccion Fiscal (Art. 36.1 LIS)", minSpend: "€2M+ presupuesto de largometraje",
+    cap: "€20M por proyecto", cultural: "Si — Certificado cultural requerido",
+    vfx: "Incluido", timeline: "Ciclo de declaracion fiscal",
+    notes: "El esquema nacional de Espana proporciona el 30% sobre el primer millon de euros de gasto elegible y el 25% del resto. Sin embargo, la verdadera oportunidad esta en los incrementos regionales: las Islas Canarias ofrecen el 45-50%, el Pais Vasco el 35-70% y Navarra el 35%. Estas son de las tasas mas altas de Europa, aunque los topes regionales limitan la escalabilidad para grandes largometrajes."
+  },
+  {
+    name: "Espana — Islas Canarias", flag: "🇮🇨", rate: "45–50%", rateNum: 50, type: "credit",
+    typeName: "Credito Fiscal Regional", minSpend: "Varia",
+    cap: "Se aplican topes regionales", cultural: "Si",
+    vfx: "Incluido", timeline: "Ciclo de declaracion fiscal",
+    notes: "Las Islas Canarias ofrecen las tasas nominales mas altas de Europa, del 45 al 50%. Localizaciones diversas que van desde paisajes volcanicos hasta playas. Infraestructura en crecimiento. Ideal para largometrajes de presupuesto medio que se ajusten a los topes regionales. Combinar con el esquema nacional de Espana para obtener el maximo beneficio."
+  },
+  {
+    name: "Italia", flag: "🇮🇹", rate: "40%", rateNum: 40, type: "credit",
+    typeName: "Credito Fiscal", minSpend: "€200K gasto italiano (largometrajes)",
+    cap: "€20M por proyecto", cultural: "Si — Prueba cultural",
+    vfx: "Incluido en la tasa base", timeline: "Post-finalizacion",
+    notes: "Italia ofrece un credito fiscal del 40% sobre el gasto italiano elegible para largometrajes. Existen fondos de desarrollo conjunto con Francia y Alemania. Fuerte infraestructura de postproduccion en Roma. Italia es uno de los socios de coproduccion mas activos en Europa."
+  },
+  {
+    name: "Hungria", flag: "🇭🇺", rate: "30%", rateNum: 30, type: "credit",
+    typeName: "Reembolso Fiscal", minSpend: "Sin gasto minimo",
+    cap: "Sin tope por proyecto / sin tope anual", cultural: "Si — Prueba cultural (flexible)",
+    vfx: "Incluido en la tasa base", timeline: "Auditoria post-finalizacion",
+    notes: "El reembolso fiscal del 30% de Hungria no tiene gasto minimo, ni tope por proyecto, ni tope fiscal anual, lo que lo convierte en uno de los programas mas fiables y accesibles de Europa. Hasta el 25% del gasto elegible puede ser no hungaro. Extendido hasta 2030. Budapest alberga estudios de clase mundial (Origo, Korda). Grandes producciones incluyen Blade Runner 2049 y Dune."
+  },
+  {
+    name: "Republica Checa", flag: "🇨🇿", rate: "25–35%", rateNum: 35, type: "rebate",
+    typeName: "Reembolso", minSpend: "CZK 15M (~€600K)",
+    cap: "€18M por proyecto (triplicado en 2025)", cultural: "Si",
+    vfx: "35% para animacion/digital", timeline: "Auditoria post-finalizacion",
+    notes: "La Republica Checa casi triplico su tope por proyecto a 18 millones de euros a partir de enero de 2025, y aumento la tasa para trabajo de animacion/digital al 35%. Praga se esta convirtiendo rapidamente en un centro de VFX. Los Estudios Barrandov proporcionan una infraestructura excelente. Los documentales con mas de 70 minutos de duracion ahora califican."
+  },
+  {
+    name: "Belgica", flag: "🇧🇪", rate: "25–45%", rateNum: 45, type: "shelter",
+    typeName: "Tax Shelter + Reembolso", minSpend: "€125K gasto elegible",
+    cap: "Varia segun mecanismo", cultural: "Si — Criterios culturales europeos",
+    vfx: "Incluido", timeline: "Tax Shelter: durante produccion; Reembolso: post-finalizacion",
+    notes: "Belgica coproduce el 72% de sus peliculas a nivel internacional, la tasa mas alta de Europa. El Tax Shelter puede proporcionar del 25 al 30% de los gastos elegibles del EEE, financiando hasta el 40-45% de los gastos elegibles belgas. Bruselas y Valonia ofrecen apoyo regional adicional. Socio ideal de coproduccion minoritaria."
+  },
+  {
+    name: "Grecia", flag: "🇬🇷", rate: "40%", rateNum: 40, type: "rebate",
+    typeName: "Reembolso", minSpend: "€60K (largometrajes)",
+    cap: "€5M por proyecto", cultural: "Requisitos basicos",
+    vfx: "Incluido", timeline: "30 dias tras presentacion de auditoria",
+    notes: "Grecia asigno 105 millones de euros para su programa de reembolso. La tasa del 40% se encuentra entre los reembolsos en efectivo mas altos de Europa. El pago se procesa en 30 dias tras la auditoria aprobada. Localizaciones impresionantes y costes de equipo competitivos hacen de Grecia una opcion cada vez mas atractiva."
+  },
+  {
+    name: "Portugal", flag: "🇵🇹", rate: "25–30%", rateNum: 30, type: "rebate",
+    typeName: "Reembolso", minSpend: "€500K gasto portugues",
+    cap: "€4M por proyecto", cultural: "Requisitos basicos",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "Portugal ofrece un reembolso del 25-30% sobre el gasto de produccion portugues elegible. Lisboa y Oporto ofrecen una infraestructura en crecimiento. Fuerte conexion con mercados lusofonos a traves de Ibermedia. Tarifas de equipo competitivas en comparacion con Europa Occidental."
+  },
+  {
+    name: "Croacia", flag: "🇭🇷", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Reembolso", minSpend: "HRK 3,7M (~€500K)",
+    cap: "Sin tope anual", cultural: "Requisitos basicos",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "El reembolso del 25% de Croacia cubre el gasto de produccion elegible, incluyendo equipo tecnico, instalaciones y postproduccion. Dubrovnik y las localizaciones costeras ganaron visibilidad gracias a grandes producciones. Infraestructura de estudio en crecimiento en Zagreb."
+  },
+  {
+    name: "Estonia", flag: "🇪🇪", rate: "30%", rateNum: 30, type: "rebate",
+    typeName: "Reembolso", minSpend: "Varia",
+    cap: "Limites del presupuesto del programa", cultural: "Requiere elementos creativos estonios",
+    vfx: "Incluido", timeline: "30 dias tras auditoria",
+    notes: "Estonia ofrece hasta un 30% de reembolso sobre los costes de produccion elegibles. Requiere cineastas, actores o elementos narrativos estonios. Fondos regionales adicionales disponibles: Fondo de Cine de Tartu (20% sobre gasto local) y Fondo de Cine de Viru (hasta 40% sobre costes locales en el condado de Ida-Viru)."
+  },
+  {
+    name: "Lituania", flag: "🇱🇹", rate: "30%", rateNum: 30, type: "credit",
+    typeName: "Incentivo Fiscal", minSpend: "€43K",
+    cap: "€3M por proyecto", cultural: "Si",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "Lituania proporciona un incentivo fiscal del 30% sobre el gasto de produccion lituano elegible. El bajo umbral de gasto minimo lo hace accesible para largometrajes independientes. Vilna ofrece costes competitivos y una base de equipo tecnico en crecimiento."
+  },
+  {
+    name: "Austria", flag: "🇦🇹", rate: "25–30%", rateNum: 30, type: "rebate",
+    typeName: "Subvencion / Reembolso (FISA+)", minSpend: "€2,3M presupuesto (largometrajes)",
+    cap: "€1,1M por proyecto", cultural: "Si",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "Austria ofrece hasta un 25-30% de subvencion a traves del programa FISA+ para el gasto de produccion austriaco elegible. Disponible para producciones austriacas, coproducciones y producciones internacionales que utilicen una empresa de servicios austriaca. Viena y Tirol ofrecen localizaciones diversas."
+  },
+  {
+    name: "Polonia", flag: "🇵🇱", rate: "30%", rateNum: 30, type: "rebate",
+    typeName: "Reembolso", minSpend: "PLN 1M (~€230K)",
+    cap: "PLN 15M por proyecto", cultural: "Si — Prueba cultural",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "El reembolso del 30% de Polonia cubre el gasto de produccion polaco elegible. Costes de equipo competitivos y fuerte talento tecnico. Infraestructura de estudio en crecimiento en Varsovia y Breslavia. El Instituto Polaco de Cine administra el programa."
+  },
+  {
+    name: "Rumania", flag: "🇷🇴", rate: "35%", rateNum: 35, type: "rebate",
+    typeName: "Reembolso", minSpend: "€100K",
+    cap: "Limites del presupuesto del programa", cultural: "Requisitos basicos",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "El reembolso del 35% de Rumania sobre el gasto local elegible lo convierte en una de las ofertas mas competitivas de Europa del Este. Gasto minimo muy bajo. Los estudios de Bucarest y las localizaciones de Transilvania ofrecen valor de produccion a un coste sustancialmente menor que Europa Occidental."
+  },
+  {
+    name: "Chipre", flag: "🇨🇾", rate: "35%", rateNum: 35, type: "rebate",
+    typeName: "Reembolso", minSpend: "€200K gasto elegible",
+    cap: "€750K por proyecto", cultural: "Si",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "Chipre ofrece un reembolso del 35% sobre el gasto de produccion local elegible. Gasto minimo elegible de 200.000 euros. Excelentes localizaciones mediterraneas, mas de 300 dias de sol al ano y costes de equipo competitivos. Infraestructura en crecimiento con ingles ampliamente hablado en la industria."
+  },
+  {
+    name: "Malta", flag: "🇲🇹", rate: "40%", rateNum: 40, type: "rebate",
+    typeName: "Reembolso", minSpend: "€100K gasto local",
+    cap: "Sin tope por proyecto", cultural: "Evaluacion de beneficio cultural",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "El reembolso del 40% de Malta es uno de los mas generosos de Europa, cubriendo el gasto local elegible. Un 2% adicional para producciones culturales ambientadas en Malta. La Comision de Cine de Malta proporciona apoyo integral a la produccion, con los Mediterranean Tank Studios ofreciendo instalaciones acuaticas de clase mundial."
+  },
+  {
+    name: "Luxemburgo", flag: "🇱🇺", rate: "30%", rateNum: 30, type: "shelter",
+    typeName: "Tax Shelter / Incentivo Financiero", minSpend: "€100K gasto luxemburgues",
+    cap: "€30M por proyecto", cultural: "Si",
+    vfx: "Incluido", timeline: "Anticipo y post-finalizacion",
+    notes: "El Fondo de Cine de Luxemburgo ofrece certificados que generan hasta un 30% de beneficio sobre el gasto luxemburgues elegible. Las coproducciones pueden acceder tanto al tax shelter como a la financiacion directa del Fondo de Cine. Personal multilingue con solidas instalaciones de postproduccion y VFX."
+  },
+  {
+    name: "Finlandia", flag: "🇫🇮", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Reembolso (Incentivo de Produccion)", minSpend: "€150K gasto finlandes",
+    cap: "Limites del presupuesto del programa", cultural: "Si",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "Finlandia ofrece un reembolso del 25% sobre el gasto de produccion finlandes elegible a traves del Incentivo de Produccion de la Fundacion Finlandesa de Cine. Localizaciones unicas articas y nordicas. Solida base de equipo tecnico concentrada en Helsinki, con capacidad regional creciente en Laponia y el este de Finlandia."
+  },
+  {
+    name: "Paises Bajos", flag: "🇳🇱", rate: "35%", rateNum: 35, type: "rebate",
+    typeName: "Reembolso (Incentivo de Produccion)", minSpend: "€100K gasto holandes",
+    cap: "€1,5M por proyecto", cultural: "Si — Prueba cultural",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "El Incentivo de Produccion Cinematografica de los Paises Bajos ofrece un reembolso del 35% sobre los costes de produccion holandeses elegibles. Administrado por el Fondo de Cine de los Paises Bajos. Amsterdam y otras ciudades holandesas proporcionan localizaciones urbanas e historicas diversas con excelente infraestructura de produccion."
+  },
+  {
+    name: "Letonia", flag: "🇱🇻", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Reembolso", minSpend: "€150K gasto local",
+    cap: "Limites del presupuesto del programa", cultural: "Si",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "Letonia ofrece un reembolso del 25% sobre el gasto de produccion leton elegible. Un 5% adicional para producciones ambientadas en Letonia. Riga proporciona arquitectura de epoca diversa a costes competitivos. El Centro Nacional de Cine administra el programa."
+  },
+  {
+    name: "Eslovaquia", flag: "🇸🇰", rate: "33%", rateNum: 33, type: "rebate",
+    typeName: "Reembolso", minSpend: "€300K gasto elegible",
+    cap: "€3M por proyecto", cultural: "Si",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "Reembolso del 33% de Eslovaquia sobre el gasto local elegible. Bratislava y los castillos y paisajes circundantes ofrecen localizaciones versatiles de epoca y modernas. Capacidad de estudio en crecimiento y tarifas de equipo competitivas la convierten en una opcion atractiva en Europa Central."
+  },
+  {
+    name: "Eslovenia", flag: "🇸🇮", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Reembolso", minSpend: "€150K gasto local",
+    cap: "€500K por proyecto", cultural: "Si",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "Eslovenia ofrece un reembolso del 25% sobre el gasto esloveno elegible. Paisajes diversos desde alpinos hasta mediterraneos en un territorio compacto. La infraestructura de produccion en crecimiento de Liubliana y sus costes competitivos atraen a producciones internacionales de presupuesto medio."
+  },
+  {
+    name: "Bulgaria", flag: "🇧🇬", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Reembolso", minSpend: "€250K gasto local",
+    cap: "Limites del presupuesto del programa", cultural: "Requisitos basicos",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "Bulgaria ofrece un reembolso del 25% sobre el gasto de produccion local elegible. Los Estudios Nu Boyana cerca de Sofia son uno de los complejos de estudio mas grandes de Europa. Costes de equipo e instalaciones muy competitivos con experiencia consolidada albergando grandes producciones internacionales."
+  },
+  {
+    name: "Islandia", flag: "🇮🇸", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Reembolso de Costes", minSpend: "ISK 30M (~€200K)",
+    cap: "Sin tope por proyecto", cultural: "Sin prueba formal",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "Islandia ofrece un reembolso del 25% sobre los costes de produccion elegibles incurridos en Islandia. Paisajes dramaticos unicos que incluyen glaciares, volcanes, geiseres y playas de arena negra. Infraestructura de produccion bien establecida a pesar de su pequena poblacion. RUV y productores locales proporcionan equipos experimentados."
+  },
+  {
+    name: "Noruega", flag: "🇳🇴", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Reembolso (Incentivo del NFI)", minSpend: "NOK 2M (~€175K)",
+    cap: "NOK 25M por proyecto", cultural: "Si — Requisitos culturales",
+    vfx: "Incluido", timeline: "Post-finalizacion",
+    notes: "El reembolso del 25% de Noruega a traves del Instituto Noruego de Cine cubre el gasto de produccion noruego elegible. Fiordos, paisajes articos y auroras boreales proporcionan fondos naturales inigualables. Fuerte infraestructura de produccion y equipos tecnicos bilingues altamente cualificados."
+  },
+  {
+    name: "Dinamarca", flag: "🇩🇰", rate: "N/A", rateNum: 0, type: "credit",
+    typeName: "Apoyo del DFI (Sin Reembolso)", minSpend: "Varia segun programa",
+    cap: "Varia", cultural: "Si",
+    vfx: "N/A", timeline: "Varia",
+    notes: "Dinamarca no ofrece un reembolso nacional ni credito fiscal para producciones extranjeras. El apoyo esta disponible a traves de los programas de coproduccion y financiacion regional del Instituto Danes de Cine. Copenhague tiene una excelente infraestructura de produccion. Dinamarca destaca en tratados de coproduccion y es miembro de Eurimages."
+  },
+  {
+    name: "Suecia", flag: "🇸🇪", rate: "N/A", rateNum: 0, type: "credit",
+    typeName: "Solo Apoyo Regional", minSpend: "Varia segun region",
+    cap: "Varia", cultural: "N/A",
+    vfx: "N/A", timeline: "Varia",
+    notes: "Suecia no tiene incentivo nacional de produccion. Los fondos regionales de cine (Film i Vast, Stockholm Film Fund) proporcionan apoyo para producciones elegibles. Fuerte infraestructura de produccion, particularmente en Gotemburgo y Estocolmo. Los tratados de coproduccion de Suecia y su pertenencia a la UE proporcionan acceso a Eurimages y Creative Europe."
+  }
+];
+
+// ===== PAGE NAVIGATION =====
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.sub-nav-link').forEach(a => a.classList.remove('active'));
+  const navLink = document.getElementById('nav-' + page);
+  if (navLink) navLink.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== POPULATE COUNTRY LIST =====
+function populateCountryList() {
+  const list = document.getElementById('country-list');
+  countries.forEach((c, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'map-country-btn';
+    btn.innerHTML = `<span>${c.flag} ${c.name}</span><span class="rate">${c.rate}</span>`;
+    btn.onclick = () => showCountryDetail(i);
+    list.appendChild(btn);
+  });
+}
+
+function showCountryDetail(idx) {
+  const c = countries[idx];
+  document.querySelectorAll('.map-country-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.map-country-btn')[idx].classList.add('active');
+
+  const detailEl = document.getElementById('country-detail');
+  detailEl.innerHTML = `
+    <h2>${c.flag} ${c.name}</h2>
+    <div class="country-type">${c.typeName} · Largometrajes</div>
+    <div class="detail-grid">
+      <div class="detail-item">
+        <div class="label">Tasa de Incentivo</div>
+        <div class="value highlight">${c.rate}</div>
+      </div>
+      <div class="detail-item">
+        <div class="label">Tipo de Incentivo</div>
+        <div class="value">${c.typeName}</div>
+      </div>
+      <div class="detail-item">
+        <div class="label">Gasto Minimo</div>
+        <div class="value" style="font-size: 16px;">${c.minSpend}</div>
+      </div>
+      <div class="detail-item">
+        <div class="label">Tope por Proyecto</div>
+        <div class="value" style="font-size: 16px;">${c.cap}</div>
+      </div>
+      <div class="detail-item">
+        <div class="label">Prueba Cultural</div>
+        <div class="value" style="font-size: 16px;">${c.cultural}</div>
+      </div>
+      <div class="detail-item">
+        <div class="label">Mejora VFX</div>
+        <div class="value" style="font-size: 16px;">${c.vfx}</div>
+      </div>
+    </div>
+    <div class="detail-notes">
+      <h4>Notas Clave para Productores</h4>
+      <p>${c.notes}</p>
+    </div>
+  `;
+
+  // On mobile, scroll detail into view
+  if (window.innerWidth <= 900) {
+    detailEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// ===== POPULATE COMPARISON TABLE =====
+function populateCompareTable(filter) {
+  const tbody = document.getElementById('compare-tbody');
+  tbody.innerHTML = '';
+  const filtered = filter === 'all' ? countries : countries.filter(c => c.type === filter);
+
+  filtered.forEach(c => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td><span class="country-name">${c.flag} ${c.name}</span></td>
+      <td><span class="rate-badge">${c.rate}</span></td>
+      <td><span class="type-badge">${c.typeName.split('(')[0].trim()}</span></td>
+      <td style="font-size:13px; color: var(--gray-300);">${c.minSpend}</td>
+      <td style="font-size:13px; color: var(--gray-300);">${c.cap}</td>
+      <td style="font-size:13px; color: var(--gray-300);">${c.cultural}</td>
+      <td style="font-size:13px; color: var(--gray-300);">${c.vfx}</td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+function filterTable(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  populateCompareTable(type);
+}
+
+// ===== INITIALIZATION =====
+populateCountryList();
+populateCompareTable('all');
+
+// ===== HASH-BASED ROUTING =====
+function handleHash() {
+  const hash = window.location.hash.replace('#', '');
+  if (!hash) return;
+
+  // Handle direct page navigation: #compare, #copro, #incentives, #treaties
+  const pageMap = { compare: 'compare', copro: 'copro', incentives: 'incentives', treaties: 'treaties' };
+  if (pageMap[hash]) {
+    showPage(pageMap[hash]);
+    return;
+  }
+
+  // Handle country deep links: #country-0, #country-1, etc.
+  const countryMatch = hash.match(/^country-(\d+)$/);
+  if (countryMatch) {
+    const idx = parseInt(countryMatch[1]);
+    if (idx >= 0 && idx < countries.length) {
+      showPage('incentives');
+      setTimeout(() => showCountryDetail(idx), 100);
+    }
+  }
+}
+
+handleHash();
+window.addEventListener('hashchange', handleHash);
+
+// Close mobile menu on anchor link click
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('show');
+  });
+});
+
+// Language persistence
+(function() {
+  const currentLang = document.documentElement.lang || 'es';
+  const stored = localStorage.getItem('pulpscreen-lang');
+  const path = window.location.pathname;
+  const hash = window.location.hash;
+  const langs = ['en','fr','es','de','it'];
+
+  if (stored && stored !== currentLang && langs.includes(stored)) {
+    const basePath = path.replace(/^\/(fr|es|de|it)\//, '/');
+    const newPath = stored === 'en' ? basePath : '/' + stored + basePath;
+    window.location.replace(newPath + hash);
+    return;
+  }
+
+  document.querySelectorAll('.lang-switch a').forEach(a => {
+    a.addEventListener('click', function() {
+      const href = this.getAttribute('href');
+      const lang = href === '/' ? 'en' : (href.match(/^\/(fr|es|de|it)\//) || [])[1] || 'en';
+      localStorage.setItem('pulpscreen-lang', lang);
+    });
+  });
+
+  if (!stored) localStorage.setItem('pulpscreen-lang', currentLang);
+})();
+</script>
+</body>
+</html>

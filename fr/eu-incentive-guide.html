@@ -196,6 +196,25 @@ nav {
 
 .lang-switch a:hover:not(.active) { color: var(--white); }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 1px;
+  transition: all 0.3s;
+}
+
 .nav-link-main {
   padding: 8px 18px;
   font-family: var(--font-mono);
@@ -949,6 +968,8 @@ footer {
 @media (max-width: 900px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
+  .nav-links.show { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,10,10,0.95); backdrop-filter: blur(24px); padding: 20px; gap: 16px; z-index: 100; }
+  .nav-toggle { display: flex; }
   .sub-nav { padding: 0 12px; gap: 2px; overflow-x: auto; justify-content: flex-start; }
   .sub-nav-link { font-size: 9px; padding: 6px 10px; flex-shrink: 0; }
   .hero { padding: 140px 20px 60px; }
@@ -980,12 +1001,18 @@ footer {
   <div class="nav-links">
     <a href="/#services" class="nav-link-main">Services</a>
     <a href="#" class="nav-link-main active" onclick="showPage('home'); return false;">Guide de Coproduction</a>
-    <div class="lang-switch">
-      <a href="/eu-incentive-guide.html">EN</a>
-      <a href="/fr/eu-incentive-guide.html" class="active">FR</a>
-    </div>
     <a href="/#contact" class="nav-cta">Nous Contacter</a>
   </div>
+  <div class="lang-switch">
+    <a href="/eu-incentive-guide.html">EN</a>
+    <a href="/fr/eu-incentive-guide.html" class="active">FR</a>
+    <a href="/es/eu-incentive-guide.html">ES</a>
+    <a href="/de/eu-incentive-guide.html">DE</a>
+    <a href="/it/eu-incentive-guide.html">IT</a>
+  </div>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- ===== SUB-NAV ===== -->
@@ -1704,16 +1731,19 @@ window.addEventListener('hashchange', handleHash);
   const stored = localStorage.getItem('pulpscreen-lang');
   const path = window.location.pathname;
   const hash = window.location.hash;
+  const langs = ['en','fr','es','de','it'];
 
-  if (stored === 'en' && currentLang === 'fr') {
-    const enPath = path.replace(/^\/fr\/?/, '/');
-    window.location.replace(enPath + hash);
+  if (stored && stored !== currentLang && langs.includes(stored)) {
+    const basePath = path.replace(/^\/(fr|es|de|it)\//, '/');
+    const newPath = stored === 'en' ? basePath : '/' + stored + basePath;
+    window.location.replace(newPath + hash);
     return;
   }
 
   document.querySelectorAll('.lang-switch a').forEach(a => {
-    a.addEventListener('click', function(e) {
-      const lang = this.classList.contains('active') ? currentLang : (this.href.includes('/fr/') ? 'fr' : 'en');
+    a.addEventListener('click', function() {
+      const href = this.getAttribute('href');
+      const lang = href.match(/^\/(fr|es|de|it)\//) ? href.match(/^\/(fr|es|de|it)\//)[1] : 'en';
       localStorage.setItem('pulpscreen-lang', lang);
     });
   });

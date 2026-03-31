@@ -986,13 +986,16 @@ img { max-width: 100%; height: auto; }
         <a href="eu-incentive-guide.html#treaties">Treaties & Funds</a>
       </div>
     </div>
-    <div class="lang-switch">
-      <a href="/" class="active">EN</a>
-      <a href="/fr/">FR</a>
-    </div>
     <a href="#contact" class="nav-cta">Get in Touch</a>
   </div>
 
+  <div class="lang-switch">
+    <a href="/" class="active">EN</a>
+    <a href="/fr/">FR</a>
+    <a href="/es/">ES</a>
+    <a href="/de/">DE</a>
+    <a href="/it/">IT</a>
+  </div>
   <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -1301,29 +1304,35 @@ document.querySelectorAll('.service-card, .featured-card, .contact-inner').forEa
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
 });
+// Close mobile menu on anchor link click
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('show');
+  });
+});
+
 // Language persistence
 (function() {
   const currentLang = document.documentElement.lang || 'en';
   const stored = localStorage.getItem('pulpscreen-lang');
   const path = window.location.pathname;
   const hash = window.location.hash;
+  const langs = ['en','fr','es','de','it'];
 
-  // Redirect if stored language doesn't match current page
-  if (stored === 'fr' && currentLang === 'en') {
-    const frPath = '/fr' + (path === '/' ? '/' : path);
-    window.location.replace(frPath + hash);
+  if (stored && stored !== currentLang && langs.includes(stored)) {
+    const newPath = stored === 'en' ? path.replace(/^\/(fr|es|de|it)\//, '/') : '/' + stored + (path === '/' ? '/' : path);
+    window.location.replace(newPath + hash);
     return;
   }
 
-  // Store language on lang-switch click
   document.querySelectorAll('.lang-switch a').forEach(a => {
-    a.addEventListener('click', function(e) {
-      const lang = this.classList.contains('active') ? currentLang : (this.href.includes('/fr/') ? 'fr' : 'en');
+    a.addEventListener('click', function() {
+      const href = this.getAttribute('href');
+      const lang = href === '/' ? 'en' : (href.match(/^\/(fr|es|de|it)\//) || [])[1] || 'en';
       localStorage.setItem('pulpscreen-lang', lang);
     });
   });
 
-  // Set current language in storage if not set
   if (!stored) localStorage.setItem('pulpscreen-lang', currentLang);
 })();
 </script>
