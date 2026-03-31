@@ -694,6 +694,74 @@ body::before {
   .regions-grid { grid-template-columns: 1fr; }
 }
 
+/* ===== INCENTIVE FINDER ===== */
+.finder-controls { margin-bottom: 24px; }
+
+.finder-search input {
+  width: 100%;
+  padding: 12px 18px;
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 8px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.finder-search input:focus { border-color: rgba(255,107,43,0.4); }
+.finder-search input::placeholder { color: var(--gray-500); }
+
+.finder-filters {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.finder-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.finder-filter-group label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+.finder-filter-group select {
+  padding: 8px 14px;
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 6px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+}
+
+.finder-filter-group select option { background: var(--black-card); }
+
+.finder-count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gray-500);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+
 /* ===== COMPARISON TABLE ===== */
 .compare-table-wrap {
   overflow-x: auto;
@@ -981,10 +1049,10 @@ footer {
 <!-- ===== SUB-NAV ===== -->
 <div class="sub-nav" id="sub-nav">
   <a class="sub-nav-link active" onclick="showPage('home')" id="nav-home">Guide Home</a>
-  <a class="sub-nav-link" onclick="showPage('incentives')" id="nav-incentives">Tax Incentives</a>
-  <a class="sub-nav-link" onclick="showPage('compare')" id="nav-compare">Compare Countries</a>
+  <a class="sub-nav-link" onclick="showPage('incentives')" id="nav-incentives">Browse Countries</a>
+  <a class="sub-nav-link" onclick="showPage('compare')" id="nav-compare">Incentive Finder</a>
   <a class="sub-nav-link" onclick="showPage('copro')" id="nav-copro">Co-Production</a>
-  <a class="sub-nav-link" onclick="showPage('treaties')" id="nav-treaties">Treaties & Funds</a>
+  <a class="sub-nav-link" onclick="showPage('treaties')" id="nav-treaties">Funding Sources</a>
 </div>
 
 <!-- ===== PAGE 1: HOME ===== -->
@@ -996,7 +1064,7 @@ footer {
       <h1>EU Co-Production<br>& <span class="gradient-text">Incentive Guide</span></h1>
       <p>Navigate European tax incentives, cash rebates, and co-production frameworks for feature film production. Verified data across 50 territories to help you maximize your budget.</p>
       <div class="hero-actions">
-        <a class="btn-primary" onclick="showPage('incentives')">Explore Incentives →</a>
+        <a class="btn-primary" onclick="showPage('incentives')">Browse Countries →</a>
         <a class="btn-secondary" onclick="showPage('copro')">Co-Production Guide</a>
       </div>
       <div class="hero-stats">
@@ -1028,13 +1096,13 @@ footer {
     </div>
     <div class="tools-grid">
       <a class="tool-card" onclick="showPage('incentives')">
-        <h3>Country Incentive Browser</h3>
-        <p>Browse tax credits, cash rebates, and production incentives across every EU/EEA territory. Filter by rate, type, and eligibility.</p>
+        <h3>Browse Countries</h3>
+        <p>Explore 50 territories with detailed incentive data, regional programmes, grants, and official programme links.</p>
         <div class="tool-card-arrow">→</div>
       </a>
       <a class="tool-card" onclick="showPage('compare')">
-        <h3>Side-by-Side Comparison</h3>
-        <p>Compare incentive rates, minimum spend thresholds, cultural test requirements, and caps across multiple countries in one view.</p>
+        <h3>Incentive Finder</h3>
+        <p>Search and filter across all incentive programmes worldwide — national, regional, and grants. Filter by type, rate, and region.</p>
         <div class="tool-card-arrow">→</div>
       </a>
       <a class="tool-card" onclick="showPage('copro')">
@@ -1043,8 +1111,8 @@ footer {
         <div class="tool-card-arrow">→</div>
       </a>
       <a class="tool-card" onclick="showPage('treaties')">
-        <h3>Treaties & Fund Directory</h3>
-        <p>Directory of active co-production treaties, Eurimages funding, and supra-national funds available for European feature films.</p>
+        <h3>Funding Sources</h3>
+        <p>Eurimages, Creative Europe MEDIA, bilateral treaties, grant programmes, and application deadlines.</p>
         <div class="tool-card-arrow">→</div>
       </a>
       <a class="tool-card" onclick="showPage('incentives')">
@@ -1067,7 +1135,7 @@ footer {
   <section class="section" style="padding-top:140px;">
     <div class="section-header">
       <div class="section-tag">Tax Incentives & Cash Rebates</div>
-      <div class="section-title">European Incentive Browser</div>
+      <div class="section-title">Browse Countries</div>
       <p class="section-desc">Select a country to view detailed incentive information for feature film production.</p>
     </div>
 
@@ -1100,29 +1168,62 @@ footer {
 <div class="page" id="page-compare">
   <section class="section" style="padding-top:140px;">
     <div class="section-header">
-      <div class="section-tag">Side-by-Side Comparison</div>
-      <div class="section-title">Compare EU Incentives</div>
-      <p class="section-desc">All major European feature film incentives in one table. Sort, scan, and identify the best fit for your production.</p>
+      <div class="section-tag">Search All Programmes</div>
+      <div class="section-title">Incentive Finder</div>
+      <p class="section-desc">Search and filter across all incentive programmes worldwide — national, regional, and grants. Find the right fit for your production.</p>
     </div>
 
-    <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterTable('all', this)">All Countries</button>
-      <button class="filter-btn" onclick="filterTable('rebate', this)">Cash Rebate</button>
-      <button class="filter-btn" onclick="filterTable('credit', this)">Tax Credit</button>
-      <button class="filter-btn" onclick="filterTable('shelter', this)">Tax Shelter</button>
+    <div class="finder-controls">
+      <div class="finder-search">
+        <input type="text" id="finder-search" placeholder="Search by country, programme, or keyword..." autocomplete="off">
+      </div>
+      <div class="finder-filters">
+        <div class="finder-filter-group">
+          <label>Type</label>
+          <select id="finder-type">
+            <option value="all">All Types</option>
+            <option value="rebate">Cash Rebate</option>
+            <option value="credit">Tax Credit</option>
+            <option value="grant">Grant</option>
+            <option value="shelter">Tax Shelter</option>
+          </select>
+        </div>
+        <div class="finder-filter-group">
+          <label>Region</label>
+          <select id="finder-region">
+            <option value="all">All Regions</option>
+            <option value="western">Western Europe</option>
+            <option value="southern">Southern Europe</option>
+            <option value="nordic">Nordic & Baltic</option>
+            <option value="eastern">Eastern Europe</option>
+            <option value="international">International</option>
+          </select>
+        </div>
+        <div class="finder-filter-group">
+          <label>Min Rate</label>
+          <select id="finder-rate">
+            <option value="0">Any Rate</option>
+            <option value="20">20%+</option>
+            <option value="25">25%+</option>
+            <option value="30">30%+</option>
+            <option value="35">35%+</option>
+            <option value="40">40%+</option>
+          </select>
+        </div>
+      </div>
+      <div class="finder-count" id="finder-count"></div>
     </div>
 
     <div class="compare-table-wrap">
       <table class="compare-table" id="compare-table">
         <thead>
           <tr>
-            <th>Country</th>
+            <th>Country / Programme</th>
             <th>Rate</th>
             <th>Type</th>
+            <th>Level</th>
             <th>Min. Spend</th>
-            <th>Project Cap</th>
-            <th>Cultural Test</th>
-            <th>VFX Uplift</th>
+            <th>Cap</th>
           </tr>
         </thead>
         <tbody id="compare-tbody">
@@ -1870,35 +1971,82 @@ function showCountryDetail(idx) {
 }
 
 // ===== POPULATE COMPARISON TABLE =====
-function populateCompareTable(filter) {
-  const tbody = document.getElementById('compare-tbody');
-  tbody.innerHTML = '';
-  const filtered = filter === 'all' ? countries : countries.filter(c => c.type === filter);
+// ===== INCENTIVE FINDER =====
+function buildProgrammeList() {
+  // Build flat list of ALL programmes (national + regional)
+  const programmes = [];
+  countries.forEach((c, idx) => {
+    // National programme
+    programmes.push({
+      country: c.name, flag: c.flag, region: c.region,
+      programme: c.typeName, rate: c.rate, rateNum: c.rateNum,
+      type: c.type, level: 'National',
+      minSpend: c.minSpend, cap: c.cap, countryIdx: idx
+    });
+    // Regional programmes
+    if (c.regions) {
+      c.regions.forEach(r => {
+        programmes.push({
+          country: c.name, flag: c.flag, region: c.region,
+          programme: r.name, rate: r.rate, rateNum: 0,
+          type: r.type.toLowerCase().includes('grant') ? 'grant' : r.type.toLowerCase().includes('credit') ? 'credit' : 'rebate',
+          level: 'Regional',
+          minSpend: '—', cap: '—', countryIdx: idx,
+          url: r.url
+        });
+      });
+    }
+  });
+  return programmes;
+}
 
-  filtered.forEach(c => {
+const allProgrammes = buildProgrammeList();
+
+function populateFinder() {
+  const tbody = document.getElementById('compare-tbody');
+  const countEl = document.getElementById('finder-count');
+  tbody.innerHTML = '';
+
+  const search = (document.getElementById('finder-search')?.value || '').toLowerCase();
+  const typeFilter = document.getElementById('finder-type')?.value || 'all';
+  const regionFilter = document.getElementById('finder-region')?.value || 'all';
+  const rateFilter = parseInt(document.getElementById('finder-rate')?.value || '0');
+
+  const filtered = allProgrammes.filter(p => {
+    if (search && !p.country.toLowerCase().includes(search) && !p.programme.toLowerCase().includes(search)) return false;
+    if (typeFilter !== 'all' && p.type !== typeFilter) return false;
+    if (regionFilter !== 'all' && p.region !== regionFilter) return false;
+    if (rateFilter > 0 && p.rateNum < rateFilter) return false;
+    return true;
+  });
+
+  if (countEl) countEl.textContent = filtered.length + ' programmes found';
+
+  filtered.forEach(p => {
     const row = document.createElement('tr');
+    row.style.cursor = 'pointer';
+    row.onclick = () => { showPage('incentives'); showCountryDetail(p.countryIdx); };
     row.innerHTML = `
-      <td><span class="country-name">${c.flag} ${c.name}</span></td>
-      <td><span class="rate-badge">${c.rate}</span></td>
-      <td><span class="type-badge">${c.typeName.split('(')[0].trim()}</span></td>
-      <td style="font-size:13px; color: var(--gray-300);">${c.minSpend}</td>
-      <td style="font-size:13px; color: var(--gray-300);">${c.cap}</td>
-      <td style="font-size:13px; color: var(--gray-300);">${c.cultural}</td>
-      <td style="font-size:13px; color: var(--gray-300);">${c.vfx}</td>
+      <td><span class="country-name">${p.flag} ${p.country}</span><br><span style="font-size:11px;color:var(--gray-500);">${p.programme}</span></td>
+      <td><span class="rate-badge">${p.rate}</span></td>
+      <td><span class="type-badge">${p.type === 'rebate' ? 'Rebate' : p.type === 'credit' ? 'Credit' : p.type === 'grant' ? 'Grant' : 'Other'}</span></td>
+      <td style="font-size:12px;color:${p.level === 'Regional' ? 'var(--orange)' : 'var(--gray-300)'};">${p.level}</td>
+      <td style="font-size:12px; color: var(--gray-300);">${p.minSpend}</td>
+      <td style="font-size:12px; color: var(--gray-300);">${p.cap}</td>
     `;
     tbody.appendChild(row);
   });
 }
 
-function filterTable(type, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  populateCompareTable(type);
-}
+// Finder event listeners
+['finder-search', 'finder-type', 'finder-region', 'finder-rate'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener(el.tagName === 'INPUT' ? 'input' : 'change', populateFinder);
+});
 
 // ===== INITIALIZATION =====
 populateCountryList();
-populateCompareTable('all');
+populateFinder();
 
 // ===== HASH-BASED ROUTING =====
 function handleHash() {

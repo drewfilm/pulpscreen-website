@@ -5,11 +5,11 @@
 (function() {
   const path = window.location.pathname;
   const langs = {
-    en: { flag: '🇬🇧', code: 'EN', svc: 'Services', guide: 'Co-Production Guide', guideHome: 'Guide Home', taxInc: 'Tax Incentives', compare: 'Compare Countries', copro: 'Co-Production Framework', treaties: 'Treaties & Funds', cta: 'Get in Touch', homePath: '/', guidePath: '/eu-incentive-guide.html' },
-    fr: { flag: '🇫🇷', code: 'FR', svc: 'Services', guide: 'Guide de Coproduction', guideHome: 'Accueil du Guide', taxInc: 'Incitations Fiscales', compare: 'Comparer les Pays', copro: 'Cadre de Coproduction', treaties: 'Traités et Fonds', cta: 'Nous Contacter', homePath: '/fr/', guidePath: '/fr/eu-incentive-guide.html' },
-    es: { flag: '🇪🇸', code: 'ES', svc: 'Servicios', guide: 'Guía de Coproducción', guideHome: 'Inicio de la Guía', taxInc: 'Incentivos Fiscales', compare: 'Comparar Países', copro: 'Marco de Coproducción', treaties: 'Tratados y Fondos', cta: 'Contáctenos', homePath: '/es/', guidePath: '/es/eu-incentive-guide.html' },
-    de: { flag: '🇩🇪', code: 'DE', svc: 'Leistungen', guide: 'Koproduktions-Guide', guideHome: 'Guide Startseite', taxInc: 'Steuerliche Anreize', compare: 'Länder vergleichen', copro: 'Koproduktionsrahmen', treaties: 'Abkommen & Fonds', cta: 'Kontakt', homePath: '/de/', guidePath: '/de/eu-incentive-guide.html' },
-    it: { flag: '🇮🇹', code: 'IT', svc: 'Servizi', guide: 'Guida alla Coproduzione', guideHome: 'Home della Guida', taxInc: 'Incentivi Fiscali', compare: 'Confronta Paesi', copro: 'Quadro di Coproduzione', treaties: 'Trattati e Fondi', cta: 'Contattaci', homePath: '/it/', guidePath: '/it/eu-incentive-guide.html' },
+    en: { flag: '🇬🇧', code: 'EN', svc: 'Services', guide: 'Co-Production Guide', guideHome: 'Guide Home', taxInc: 'Browse Countries', compare: 'Incentive Finder', copro: 'Co-Production', treaties: 'Funding Sources', cta: 'Get in Touch', homePath: '/', guidePath: '/eu-incentive-guide.html' },
+    fr: { flag: '🇫🇷', code: 'FR', svc: 'Services', guide: 'Guide de Coproduction', guideHome: 'Accueil du Guide', taxInc: 'Parcourir les Pays', compare: 'Recherche d\'Incitations', copro: 'Coproduction', treaties: 'Sources de Financement', cta: 'Nous Contacter', homePath: '/fr/', guidePath: '/fr/eu-incentive-guide.html' },
+    es: { flag: '🇪🇸', code: 'ES', svc: 'Servicios', guide: 'Guía de Coproducción', guideHome: 'Inicio de la Guía', taxInc: 'Explorar Países', compare: 'Buscador de Incentivos', copro: 'Coproducción', treaties: 'Fuentes de Financiación', cta: 'Contáctenos', homePath: '/es/', guidePath: '/es/eu-incentive-guide.html' },
+    de: { flag: '🇩🇪', code: 'DE', svc: 'Leistungen', guide: 'Koproduktions-Guide', guideHome: 'Guide Startseite', taxInc: 'Länder durchsuchen', compare: 'Anreiz-Finder', copro: 'Koproduktion', treaties: 'Finanzierungsquellen', cta: 'Kontakt', homePath: '/de/', guidePath: '/de/eu-incentive-guide.html' },
+    it: { flag: '🇮🇹', code: 'IT', svc: 'Servizi', guide: 'Guida alla Coproduzione', guideHome: 'Home della Guida', taxInc: 'Esplora Paesi', compare: 'Ricerca Incentivi', copro: 'Coproduzione', treaties: 'Fonti di Finanziamento', cta: 'Contattaci', homePath: '/it/', guidePath: '/it/eu-incentive-guide.html' },
   };
 
   // Detect current language from URL
