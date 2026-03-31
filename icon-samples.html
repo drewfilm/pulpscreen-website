@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Icon Style Samples — Pulpscreen</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Icon Options — Pulpscreen</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --black: #0A0A0A;
@@ -13,317 +13,554 @@
   --gradient: linear-gradient(135deg, #FF6B2B 0%, #FF4757 50%, #FF2D7B 100%);
   --white: #FFFFFF;
   --gray-300: #AAAAAA;
+  --gray-500: #666;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--black); color: var(--white); font-family: 'Outfit', sans-serif; padding: 40px; }
-h1 { font-size: 32px; margin-bottom: 8px; }
-.subtitle { color: var(--gray-300); margin-bottom: 48px; font-size: 16px; }
-.section { margin-bottom: 60px; }
-.section h2 {
-  font-size: 20px; font-weight: 700; margin-bottom: 8px;
-  background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+body { background: var(--black); color: var(--white); font-family: 'Outfit', sans-serif; padding: 40px 24px; max-width: 1200px; margin: 0 auto; }
+h1 { font-size: 28px; margin-bottom: 6px; }
+.subtitle { color: var(--gray-300); margin-bottom: 48px; font-size: 15px; }
+
+.icon-section { margin-bottom: 56px; border-bottom: 1px solid #222; padding-bottom: 40px; }
+.icon-section:last-child { border-bottom: none; }
+
+.icon-section h2 {
+  font-size: 18px; font-weight: 700; margin-bottom: 4px;
 }
-.section p { color: var(--gray-300); font-size: 14px; margin-bottom: 24px; }
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.card {
-  background: #111; border: 1px solid #222; border-radius: 16px; padding: 32px;
-  display: flex; flex-direction: column; align-items: flex-start;
+.icon-section .label {
+  font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--gray-500); margin-bottom: 20px;
 }
+.options {
+  display: flex; gap: 16px; flex-wrap: wrap;
+}
+.option {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 16px; border-radius: 12px; border: 1px solid #222;
+  background: #111; min-width: 100px; cursor: default;
+  transition: border-color 0.2s;
+}
+.option:hover { border-color: rgba(255,107,43,0.3); }
+.option .num {
+  font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1px;
+  color: var(--gray-500); text-transform: uppercase;
+}
+.option .desc {
+  font-size: 11px; color: var(--gray-300); text-align: center; max-width: 90px;
+}
+
 .icon-box {
-  width: 56px; height: 56px; border-radius: 14px; display: flex;
-  align-items: center; justify-content: center; margin-bottom: 16px;
+  width: 56px; height: 56px; border-radius: 14px;
+  background: rgba(255,107,43,0.08);
+  border: 1px solid rgba(255,107,43,0.2);
+  display: flex; align-items: center; justify-content: center;
 }
-.card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-.card span { font-size: 12px; color: var(--gray-300); }
+.icon-box svg { width: 28px; height: 28px; }
 
-/* ===== STYLE A: Line gradient ===== */
-.style-a .icon-box {
-  background: rgba(255,107,43,0.06);
-  border: 1px solid rgba(255,107,43,0.15);
-}
-.style-a .icon-box svg {
-  width: 28px; height: 28px;
-}
+.divider { font-size: 11px; color: var(--gray-500); margin: 48px 0 12px; font-family: 'Space Mono', monospace; letter-spacing: 2px; text-transform: uppercase; }
 
-/* ===== STYLE B: Filled gradient ===== */
-.style-b .icon-box {
-  background: var(--gradient);
-  border: none;
+@media (max-width: 600px) {
+  .options { gap: 12px; }
+  .option { min-width: 80px; padding: 12px; }
 }
-.style-b .icon-box svg { width: 26px; height: 26px; }
-
-/* ===== STYLE C: Retro/pulp ===== */
-.style-c .icon-box {
-  background: linear-gradient(145deg, #1a1510, #2a2218);
-  border: 2px solid rgba(255,179,71,0.3);
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-}
-.style-c .icon-box::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px);
-  pointer-events: none;
-}
-.style-c .icon-box svg { width: 26px; height: 26px; position: relative; z-index: 1; }
-
-@media (max-width: 700px) { .grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 450px) { .grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
-<h1>Icon Style Comparison</h1>
-<p class="subtitle">Same 6 service icons rendered in 3 different brand styles</p>
+<h1>Icon Options</h1>
+<p class="subtitle">Style: Gradient line icons on subtle dark boxes. 5 options each, pick your favorite per slot.</p>
 
-<!-- STYLE A: Line Gradient -->
-<div class="section">
-  <h2>A — SVG Line Icons with Gradient</h2>
-  <p>Clean line-art stroked with the orange-to-pink gradient. Minimal, modern, professional.</p>
-  <div class="grid style-a">
+<p class="divider">Homepage — Service Cards</p>
 
-    <div class="card">
+<!-- 1. FEATURE FILM PRODUCTION -->
+<div class="icon-section">
+  <h2>Feature Film Production</h2>
+  <div class="label">Homepage service card</div>
+  <div class="options">
+
+    <div class="option">
+      <div class="num">1</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="ga" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
-          <path d="M4 8l4-4h16l4 4v18a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="url(#ga)" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M4 8h24M12 4v4" stroke="url(#ga)" stroke-width="2"/>
-          <circle cx="16" cy="18" r="4" stroke="url(#ga)" stroke-width="2"/>
-          <path d="M14 18l2-1.5 2 1.5" stroke="url(#ga)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g1" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M4 8l4-4h16l4 4v18a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="url(#g1)" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+          <path d="M4 8h24" stroke="url(#g1)" stroke-width="1.8"/>
+          <path d="M10 4v4M16 4v4M22 4v4" stroke="url(#g1)" stroke-width="1.5"/>
         </svg>
       </div>
-      <h3>Feature Film Production</h3>
-      <span>Clapperboard / Film</span>
+      <div class="desc">Clapperboard</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">2</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="gb" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
-          <rect x="6" y="10" width="20" height="16" rx="2" stroke="url(#gb)" stroke-width="2"/>
-          <path d="M10 10V8a6 6 0 0112 0v2" stroke="url(#gb)" stroke-width="2"/>
-          <circle cx="16" cy="19" r="2" stroke="url(#gb)" stroke-width="2"/>
-          <path d="M16 21v2" stroke="url(#gb)" stroke-width="2" stroke-linecap="round"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g1b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <circle cx="16" cy="16" r="10" stroke="url(#g1b)" stroke-width="1.8"/>
+          <circle cx="16" cy="16" r="4" stroke="url(#g1b)" stroke-width="1.8"/>
+          <circle cx="16" cy="16" r="1.5" fill="url(#g1b)"/>
+          <path d="M16 6v2M16 24v2M6 16h2M24 16h2" stroke="url(#g1b)" stroke-width="1.2"/>
         </svg>
       </div>
-      <h3>Production Finance</h3>
-      <span>Locked Vault / Finance</span>
+      <div class="desc">Film Reel</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">3</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="gc" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
-          <path d="M8 16a8 8 0 1116 0" stroke="url(#gc)" stroke-width="2" stroke-linecap="round"/>
-          <path d="M16 24a8 8 0 1116 0" stroke="url(#gc)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-          <circle cx="16" cy="16" r="3" stroke="url(#gc)" stroke-width="2"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g1c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <rect x="5" y="8" width="22" height="16" rx="2" stroke="url(#g1c)" stroke-width="1.8"/>
+          <path d="M5 12h22" stroke="url(#g1c)" stroke-width="1.2"/>
+          <path d="M5 20h22" stroke="url(#g1c)" stroke-width="1.2"/>
+          <rect x="8" y="11" width="4" height="3" rx="0.5" stroke="url(#g1c)" stroke-width="1" opacity="0.6"/>
+          <rect x="14" y="11" width="4" height="3" rx="0.5" stroke="url(#g1c)" stroke-width="1" opacity="0.6"/>
+          <rect x="20" y="11" width="4" height="3" rx="0.5" stroke="url(#g1c)" stroke-width="1" opacity="0.6"/>
         </svg>
       </div>
-      <h3>Co-Production</h3>
-      <span>Interlocking Circles</span>
+      <div class="desc">Film Strip</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">4</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="gd" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
-          <rect x="4" y="6" width="24" height="20" rx="2" stroke="url(#gd)" stroke-width="2"/>
-          <path d="M4 12h24M10 6v6M22 6v6" stroke="url(#gd)" stroke-width="2"/>
-          <path d="M9 17l3 3 5-6" stroke="url(#gd)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g1d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M8 6v20M24 6v20" stroke="url(#g1d)" stroke-width="1.8"/>
+          <rect x="10" y="8" width="12" height="7" rx="1" stroke="url(#g1d)" stroke-width="1.5"/>
+          <rect x="10" y="17" width="12" height="7" rx="1" stroke="url(#g1d)" stroke-width="1.5"/>
+          <circle cx="8" cy="8" r="1.5" fill="url(#g1d)"/>
+          <circle cx="8" cy="15" r="1.5" fill="url(#g1d)"/>
+          <circle cx="8" cy="24" r="1.5" fill="url(#g1d)"/>
+          <circle cx="24" cy="8" r="1.5" fill="url(#g1d)"/>
+          <circle cx="24" cy="15" r="1.5" fill="url(#g1d)"/>
+          <circle cx="24" cy="24" r="1.5" fill="url(#g1d)"/>
         </svg>
       </div>
-      <h3>Incentive Advisory</h3>
-      <span>Checklist / Clipboard</span>
+      <div class="desc">Filmstrip Vertical</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">5</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="ge" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
-          <circle cx="16" cy="16" r="11" stroke="url(#ge)" stroke-width="2"/>
-          <path d="M6 16h20M16 5c-3 3-5 7-5 11s2 8 5 11c3-3 5-7 5-11s-2-8-5-11z" stroke="url(#ge)" stroke-width="2"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g1e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <rect x="6" y="10" width="20" height="14" rx="2" stroke="url(#g1e)" stroke-width="1.8"/>
+          <polygon points="14,14 14,20 20,17" fill="url(#g1e)" opacity="0.8"/>
+          <path d="M6 7h20" stroke="url(#g1e)" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </div>
-      <h3>International Sales</h3>
-      <span>Globe</span>
+      <div class="desc">Cinema Screen</div>
     </div>
 
-    <div class="card">
-      <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="gf" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
-          <path d="M6 6h14l6 6v14a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2z" stroke="url(#gf)" stroke-width="2"/>
-          <path d="M20 6v6h6" stroke="url(#gf)" stroke-width="2"/>
-          <path d="M10 16h12M10 20h8M10 24h10" stroke="url(#gf)" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <h3>Business Affairs</h3>
-      <span>Document / Contract</span>
-    </div>
   </div>
 </div>
 
-<!-- STYLE B: Filled Gradient -->
-<div class="section">
-  <h2>B — Filled Gradient Icons</h2>
-  <p>Solid gradient-filled icons. Bold, eye-catching, matches the CTA button style.</p>
-  <div class="grid style-b">
+<!-- 2. PRODUCTION FINANCE -->
+<div class="icon-section">
+  <h2>Production Finance</h2>
+  <div class="label">Homepage service card</div>
+  <div class="options">
 
-    <div class="card">
+    <div class="option">
+      <div class="num">1</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 8l4-4h16l4 4v18a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M4 8h24M12 4v4" stroke="white" stroke-width="2"/>
-          <circle cx="16" cy="18" r="4" stroke="white" stroke-width="2"/>
-          <path d="M14 18l2-1.5 2 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g2a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <rect x="4" y="12" width="24" height="14" rx="2" stroke="url(#g2a)" stroke-width="1.8"/>
+          <path d="M4 17h24" stroke="url(#g2a)" stroke-width="1.5"/>
+          <rect x="7" y="20" width="6" height="3" rx="1" stroke="url(#g2a)" stroke-width="1.2"/>
+          <path d="M8 12V9a4 4 0 018 0v3" stroke="url(#g2a)" stroke-width="1.5" opacity="0.5"/>
         </svg>
       </div>
-      <h3>Feature Film Production</h3>
-      <span>White on gradient fill</span>
+      <div class="desc">Wallet</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">2</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="10" width="20" height="16" rx="2" stroke="white" stroke-width="2"/>
-          <path d="M10 10V8a6 6 0 0112 0v2" stroke="white" stroke-width="2"/>
-          <circle cx="16" cy="19" r="2" stroke="white" stroke-width="2"/>
-          <path d="M16 21v2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g2b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <circle cx="16" cy="16" r="10" stroke="url(#g2b)" stroke-width="1.8"/>
+          <path d="M16 10v4l3 3" stroke="url(#g2b)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 8h6" stroke="url(#g2b)" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </div>
-      <h3>Production Finance</h3>
-      <span>White on gradient fill</span>
+      <div class="desc">Time is Money</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">3</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 16a8 8 0 1116 0" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <path d="M16 24a8 8 0 1116 0" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-          <circle cx="16" cy="16" r="3" stroke="white" stroke-width="2"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g2c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M16 4v24M10 8h12M8 28h16" stroke="url(#g2c)" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M10 8l-2 10h16l-2-10" stroke="url(#g2c)" stroke-width="1.5"/>
+          <circle cx="16" cy="14" r="2" fill="url(#g2c)" opacity="0.6"/>
         </svg>
       </div>
-      <h3>Co-Production</h3>
-      <span>White on gradient fill</span>
+      <div class="desc">Balance Scale</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">4</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="6" width="24" height="20" rx="2" stroke="white" stroke-width="2"/>
-          <path d="M4 12h24M10 6v6M22 6v6" stroke="white" stroke-width="2"/>
-          <path d="M9 17l3 3 5-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g2d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <rect x="6" y="6" width="20" height="20" rx="3" stroke="url(#g2d)" stroke-width="1.8"/>
+          <path d="M6 14h20" stroke="url(#g2d)" stroke-width="1.5"/>
+          <path d="M14 14v12" stroke="url(#g2d)" stroke-width="1.5"/>
+          <path d="M10 18h2M10 22h2M18 18h4M18 22h4" stroke="url(#g2d)" stroke-width="1.2" stroke-linecap="round"/>
         </svg>
       </div>
-      <h3>Incentive Advisory</h3>
-      <span>White on gradient fill</span>
+      <div class="desc">Spreadsheet</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">5</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="11" stroke="white" stroke-width="2"/>
-          <path d="M6 16h20M16 5c-3 3-5 7-5 11s2 8 5 11c3-3 5-7 5-11s-2-8-5-11z" stroke="white" stroke-width="2"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g2e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <circle cx="16" cy="16" r="10" stroke="url(#g2e)" stroke-width="1.8"/>
+          <text x="16" y="21" text-anchor="middle" fill="url(#g2e)" font-family="Outfit" font-weight="700" font-size="14">$</text>
         </svg>
       </div>
-      <h3>International Sales</h3>
-      <span>White on gradient fill</span>
+      <div class="desc">Dollar Coin</div>
     </div>
 
-    <div class="card">
-      <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 6h14l6 6v14a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2z" stroke="white" stroke-width="2"/>
-          <path d="M20 6v6h6" stroke="white" stroke-width="2"/>
-          <path d="M10 16h12M10 20h8M10 24h10" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <h3>Business Affairs</h3>
-      <span>White on gradient fill</span>
-    </div>
   </div>
 </div>
 
-<!-- STYLE C: Retro Pulp -->
-<div class="section">
-  <h2>C — Retro / Pulp Magazine Style</h2>
-  <p>Warm amber tones, subtle scanlines, vintage editorial feel matching the 404 page aesthetic.</p>
-  <div class="grid style-c">
+<!-- 3. CO-PRODUCTION -->
+<div class="icon-section">
+  <h2>Co-Production</h2>
+  <div class="label">Homepage service card</div>
+  <div class="options">
 
-    <div class="card">
+    <div class="option">
+      <div class="num">1</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 8l4-4h16l4 4v18a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="#FFB347" stroke-width="2" stroke-linejoin="round"/>
-          <path d="M4 8h24M12 4v4" stroke="#FFB347" stroke-width="2"/>
-          <circle cx="16" cy="18" r="4" stroke="#FF6B2B" stroke-width="2"/>
-          <path d="M14 18l2-1.5 2 1.5" stroke="#FF6B2B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g3a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <circle cx="12" cy="16" r="7" stroke="url(#g3a)" stroke-width="1.8"/>
+          <circle cx="20" cy="16" r="7" stroke="url(#g3a)" stroke-width="1.8" opacity="0.6"/>
         </svg>
       </div>
-      <h3>Feature Film Production</h3>
-      <span>Amber + orange on dark</span>
+      <div class="desc">Venn Overlap</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">2</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="6" y="10" width="20" height="16" rx="2" stroke="#FFB347" stroke-width="2"/>
-          <path d="M10 10V8a6 6 0 0112 0v2" stroke="#FFB347" stroke-width="2"/>
-          <circle cx="16" cy="19" r="2" stroke="#FF6B2B" stroke-width="2"/>
-          <path d="M16 21v2" stroke="#FF6B2B" stroke-width="2" stroke-linecap="round"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g3b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M10 20a6 6 0 110-8M22 20a6 6 0 100-8" stroke="url(#g3b)" stroke-width="1.8"/>
+          <path d="M12 16h8" stroke="url(#g3b)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="10" cy="16" r="2" fill="url(#g3b)" opacity="0.5"/>
+          <circle cx="22" cy="16" r="2" fill="url(#g3b)" opacity="0.5"/>
         </svg>
       </div>
-      <h3>Production Finance</h3>
-      <span>Amber + orange on dark</span>
+      <div class="desc">Handshake Link</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">3</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 16a8 8 0 1116 0" stroke="#FFB347" stroke-width="2" stroke-linecap="round"/>
-          <path d="M16 24a8 8 0 1116 0" stroke="#FF6B2B" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-          <circle cx="16" cy="16" r="3" stroke="#FFB347" stroke-width="2"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g3c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M6 22l6-6 4 4 4-8 6 6" stroke="url(#g3c)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="6" cy="22" r="2" fill="url(#g3c)" opacity="0.4"/>
+          <circle cx="26" cy="18" r="2" fill="url(#g3c)" opacity="0.4"/>
         </svg>
       </div>
-      <h3>Co-Production</h3>
-      <span>Amber + orange on dark</span>
+      <div class="desc">Network Path</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">4</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="4" y="6" width="24" height="20" rx="2" stroke="#FFB347" stroke-width="2"/>
-          <path d="M4 12h24M10 6v6M22 6v6" stroke="#FFB347" stroke-width="2"/>
-          <path d="M9 17l3 3 5-6" stroke="#FF6B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g3d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <rect x="4" y="10" width="10" height="12" rx="2" stroke="url(#g3d)" stroke-width="1.8"/>
+          <rect x="18" y="10" width="10" height="12" rx="2" stroke="url(#g3d)" stroke-width="1.8"/>
+          <path d="M14 14h4M14 18h4" stroke="url(#g3d)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 2"/>
         </svg>
       </div>
-      <h3>Incentive Advisory</h3>
-      <span>Amber + orange on dark</span>
+      <div class="desc">Two Screens</div>
     </div>
 
-    <div class="card">
+    <div class="option">
+      <div class="num">5</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="11" stroke="#FFB347" stroke-width="2"/>
-          <path d="M6 16h20M16 5c-3 3-5 7-5 11s2 8 5 11c3-3 5-7 5-11s-2-8-5-11z" stroke="#FF6B2B" stroke-width="2"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g3e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M16 6l-8 6v12l8 4 8-4V12z" stroke="url(#g3e)" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M16 18v10M8 12l8 6 8-6" stroke="url(#g3e)" stroke-width="1.5"/>
         </svg>
       </div>
-      <h3>International Sales</h3>
-      <span>Amber + orange on dark</span>
+      <div class="desc">3D Box / Package</div>
     </div>
 
-    <div class="card">
+  </div>
+</div>
+
+<!-- 4. INCENTIVE ADVISORY -->
+<div class="icon-section">
+  <h2>Incentive Advisory</h2>
+  <div class="label">Homepage service card</div>
+  <div class="options">
+
+    <div class="option">
+      <div class="num">1</div>
       <div class="icon-box">
-        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 6h14l6 6v14a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2z" stroke="#FFB347" stroke-width="2"/>
-          <path d="M20 6v6h6" stroke="#FFB347" stroke-width="2"/>
-          <path d="M10 16h12M10 20h8M10 24h10" stroke="#FF6B2B" stroke-width="2" stroke-linecap="round"/>
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g4a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <circle cx="16" cy="16" r="10" stroke="url(#g4a)" stroke-width="1.8"/>
+          <path d="M12 16l3 3 6-7" stroke="url(#g4a)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <h3>Business Affairs</h3>
-      <span>Amber + orange on dark</span>
+      <div class="desc">Checkmark</div>
     </div>
+
+    <div class="option">
+      <div class="num">2</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g4b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <circle cx="20" cy="12" r="7" stroke="url(#g4b)" stroke-width="1.8"/>
+          <path d="M14 17l-6 9h16" stroke="url(#g4b)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 9v6M17 12h6" stroke="url(#g4b)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="desc">Magnify + Plus</div>
+    </div>
+
+    <div class="option">
+      <div class="num">3</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g4c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M16 6l3 6h6l-5 4 2 7-6-4-6 4 2-7-5-4h6z" stroke="url(#g4c)" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="desc">Star / Rating</div>
+    </div>
+
+    <div class="option">
+      <div class="num">4</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g4d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M6 26V10M12 26V14M18 26V8M24 26V12" stroke="url(#g4d)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M6 10l6 4 6-6 6 4" stroke="url(#g4d)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="desc">Bar Chart</div>
+    </div>
+
+    <div class="option">
+      <div class="num">5</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g4e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M16 6v20M6 16h20" stroke="url(#g4e)" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="10" stroke="url(#g4e)" stroke-width="1.8"/>
+          <path d="M10 10l4 4M18 10l4 4" stroke="url(#g4e)" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="desc">Compass / Target</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 5. INTERNATIONAL SALES -->
+<div class="icon-section">
+  <h2>International Sales Strategy</h2>
+  <div class="label">Homepage service card</div>
+  <div class="options">
+
+    <div class="option">
+      <div class="num">1</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g5a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <circle cx="16" cy="16" r="11" stroke="url(#g5a)" stroke-width="1.8"/>
+          <path d="M5 12h22M5 20h22" stroke="url(#g5a)" stroke-width="1.2" opacity="0.5"/>
+          <ellipse cx="16" cy="16" rx="5" ry="11" stroke="url(#g5a)" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="desc">Globe</div>
+    </div>
+
+    <div class="option">
+      <div class="num">2</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g5b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M8 24V14l8-8 8 8v10a2 2 0 01-2 2H10a2 2 0 01-2-2z" stroke="url(#g5b)" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M4 14l12-10 12 10" stroke="url(#g5b)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 26v-6h6v6" stroke="url(#g5b)" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="desc">Market / House</div>
+    </div>
+
+    <div class="option">
+      <div class="num">3</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g5c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M6 26l8-8 4 4 8-10" stroke="url(#g5c)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 12h6v6" stroke="url(#g5c)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="desc">Growth Arrow</div>
+    </div>
+
+    <div class="option">
+      <div class="num">4</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g5d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M6 22V10l10-4 10 4v12l-10 4z" stroke="url(#g5d)" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M6 10l10 4 10-4M16 14v12" stroke="url(#g5d)" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="desc">Open Box / Shipping</div>
+    </div>
+
+    <div class="option">
+      <div class="num">5</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g5e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <rect x="4" y="8" width="24" height="16" rx="2" stroke="url(#g5e)" stroke-width="1.8"/>
+          <path d="M4 8l12 9 12-9" stroke="url(#g5e)" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <div class="desc">Envelope / Deal</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 6. BUSINESS AFFAIRS -->
+<div class="icon-section">
+  <h2>Business Affairs</h2>
+  <div class="label">Homepage service card</div>
+  <div class="options">
+
+    <div class="option">
+      <div class="num">1</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g6a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M8 6h10l6 6v14a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2z" stroke="url(#g6a)" stroke-width="1.8"/>
+          <path d="M18 6v6h6" stroke="url(#g6a)" stroke-width="1.8"/>
+          <path d="M10 16h12M10 20h8M10 24h10" stroke="url(#g6a)" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="desc">Contract Doc</div>
+    </div>
+
+    <div class="option">
+      <div class="num">2</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g6b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <rect x="6" y="8" width="20" height="16" rx="2" stroke="url(#g6b)" stroke-width="1.8"/>
+          <path d="M10 8V6h12v2" stroke="url(#g6b)" stroke-width="1.5"/>
+          <path d="M6 14h20" stroke="url(#g6b)" stroke-width="1.5"/>
+          <rect x="13" y="12" width="6" height="4" rx="1" fill="url(#g6b)" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="desc">Briefcase</div>
+    </div>
+
+    <div class="option">
+      <div class="num">3</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g6c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <circle cx="16" cy="12" r="5" stroke="url(#g6c)" stroke-width="1.8"/>
+          <path d="M8 26c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="url(#g6c)" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M20 10l4-4M22 6h4v4" stroke="url(#g6c)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="desc">Person / Legal</div>
+    </div>
+
+    <div class="option">
+      <div class="num">4</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g6d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <rect x="4" y="4" width="11" height="11" rx="2" stroke="url(#g6d)" stroke-width="1.8"/>
+          <rect x="17" y="4" width="11" height="11" rx="2" stroke="url(#g6d)" stroke-width="1.8"/>
+          <rect x="4" y="17" width="11" height="11" rx="2" stroke="url(#g6d)" stroke-width="1.8"/>
+          <rect x="17" y="17" width="11" height="11" rx="2" stroke="url(#g6d)" stroke-width="1.8"/>
+        </svg>
+      </div>
+      <div class="desc">Grid / Dashboard</div>
+    </div>
+
+    <div class="option">
+      <div class="num">5</div>
+      <div class="icon-box">
+        <svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g6e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs>
+          <path d="M16 4l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" stroke="url(#g6e)" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M6 24h20M8 28h16" stroke="url(#g6e)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="desc">Award / Stamp</div>
+    </div>
+
+  </div>
+</div>
+
+<p class="divider">EU Guide — Tool Cards</p>
+
+<!-- 7-12: EU Guide Tool Cards -->
+<div class="icon-section">
+  <h2>Country Incentive Browser</h2>
+  <div class="label">EU guide tool card</div>
+  <div class="options">
+    <div class="option"><div class="num">1</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g7a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><rect x="4" y="4" width="24" height="24" rx="3" stroke="url(#g7a)" stroke-width="1.8"/><path d="M4 12h24" stroke="url(#g7a)" stroke-width="1.5"/><path d="M12 12v16" stroke="url(#g7a)" stroke-width="1.5"/><circle cx="8" cy="8" r="1.5" fill="url(#g7a)"/><circle cx="20" cy="8" r="1.5" fill="url(#g7a)" opacity="0.4"/></svg></div><div class="desc">Data Table</div></div>
+    <div class="option"><div class="num">2</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g7b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><circle cx="14" cy="14" r="9" stroke="url(#g7b)" stroke-width="1.8"/><path d="M21 21l6 6" stroke="url(#g7b)" stroke-width="2" stroke-linecap="round"/><path d="M11 11h6M11 14h4M11 17h5" stroke="url(#g7b)" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="desc">Search List</div></div>
+    <div class="option"><div class="num">3</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g7c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><rect x="6" y="4" width="8" height="12" rx="2" stroke="url(#g7c)" stroke-width="1.5"/><rect x="18" y="8" width="8" height="12" rx="2" stroke="url(#g7c)" stroke-width="1.5"/><rect x="6" y="20" width="8" height="8" rx="2" stroke="url(#g7c)" stroke-width="1.5"/><rect x="18" y="24" width="8" height="4" rx="1" stroke="url(#g7c)" stroke-width="1.5"/></svg></div><div class="desc">Cards Grid</div></div>
+    <div class="option"><div class="num">4</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g7d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M16 4l2 4h-4zM4 16l4-2v4zM28 16l-4-2v4zM16 28l-2-4h4z" fill="url(#g7d)" opacity="0.6"/><circle cx="16" cy="16" r="4" stroke="url(#g7d)" stroke-width="1.8"/><circle cx="16" cy="16" r="10" stroke="url(#g7d)" stroke-width="1.2" stroke-dasharray="3 3"/></svg></div><div class="desc">Compass Rose</div></div>
+    <div class="option"><div class="num">5</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g7e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M16 4a12 12 0 110 24 12 12 0 010-24z" stroke="url(#g7e)" stroke-width="1.8"/><path d="M16 4c4 4 4 20 0 24M16 4c-4 4-4 20 0 24" stroke="url(#g7e)" stroke-width="1.2"/><path d="M5 12h22M5 20h22" stroke="url(#g7e)" stroke-width="1" opacity="0.5"/></svg></div><div class="desc">Globe Detail</div></div>
+  </div>
+</div>
+
+<div class="icon-section">
+  <h2>Side-by-Side Comparison</h2>
+  <div class="label">EU guide tool card</div>
+  <div class="options">
+    <div class="option"><div class="num">1</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g8a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M16 4v24M10 8H4v16h6M22 8h6v16h-6" stroke="url(#g8a)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 14h4M20 14h4M8 18h4M20 18h4" stroke="url(#g8a)" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="desc">Split View</div></div>
+    <div class="option"><div class="num">2</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g8b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M16 6v4l-4 3v6l4 3v4M16 6v4l4 3v6l-4 3v4" stroke="url(#g8b)" stroke-width="1.8" stroke-linejoin="round"/><circle cx="16" cy="16" r="2" fill="url(#g8b)"/></svg></div><div class="desc">Scale Balance</div></div>
+    <div class="option"><div class="num">3</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g8c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M6 26V10M12 26V16M18 26V12M24 26V8" stroke="url(#g8c)" stroke-width="3" stroke-linecap="round"/></svg></div><div class="desc">Bar Comparison</div></div>
+    <div class="option"><div class="num">4</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g8d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M8 10h16M8 16h16M8 22h16" stroke="url(#g8d)" stroke-width="1.5" stroke-linecap="round"/><path d="M4 10h2M4 16h2M4 22h2M26 10h2M26 16h2M26 22h2" stroke="url(#g8d)" stroke-width="2" stroke-linecap="round"/></svg></div><div class="desc">Rows / List</div></div>
+    <div class="option"><div class="num">5</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g8e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M6 8h8v8H6zM18 8h8v8h-8zM6 18h8v8H6zM18 18h8v8h-8z" stroke="url(#g8e)" stroke-width="1.5"/><path d="M14 12h4M14 22h4" stroke="url(#g8e)" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/></svg></div><div class="desc">Matrix Grid</div></div>
+  </div>
+</div>
+
+<div class="icon-section">
+  <h2>Co-Production Framework</h2>
+  <div class="label">EU guide tool card</div>
+  <div class="options">
+    <div class="option"><div class="num">1</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g9a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M16 6v4M16 22v4M6 16h4M22 16h4" stroke="url(#g9a)" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="16" r="6" stroke="url(#g9a)" stroke-width="1.8"/><circle cx="16" cy="6" r="2" fill="url(#g9a)" opacity="0.5"/><circle cx="16" cy="26" r="2" fill="url(#g9a)" opacity="0.5"/><circle cx="6" cy="16" r="2" fill="url(#g9a)" opacity="0.5"/><circle cx="26" cy="16" r="2" fill="url(#g9a)" opacity="0.5"/></svg></div><div class="desc">Hub Network</div></div>
+    <div class="option"><div class="num">2</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g9b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M4 16h6l3-8 4 16 3-8h8" stroke="url(#g9b)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="desc">Pulse / Flow</div></div>
+    <div class="option"><div class="num">3</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g9c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><rect x="4" y="6" width="10" height="8" rx="2" stroke="url(#g9c)" stroke-width="1.5"/><rect x="18" y="6" width="10" height="8" rx="2" stroke="url(#g9c)" stroke-width="1.5"/><rect x="11" y="18" width="10" height="8" rx="2" stroke="url(#g9c)" stroke-width="1.5"/><path d="M9 14v2l7 2M23 14v2l-7 2" stroke="url(#g9c)" stroke-width="1.2" opacity="0.6"/></svg></div><div class="desc">Org Chart</div></div>
+    <div class="option"><div class="num">4</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g9d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M6 6h8v8H6zM18 18h8v8h-8z" stroke="url(#g9d)" stroke-width="1.8"/><path d="M14 10l4 4M14 22l4-4" stroke="url(#g9d)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 3"/></svg></div><div class="desc">Connect Blocks</div></div>
+    <div class="option"><div class="num">5</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g9e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><circle cx="8" cy="8" r="4" stroke="url(#g9e)" stroke-width="1.5"/><circle cx="24" cy="8" r="4" stroke="url(#g9e)" stroke-width="1.5"/><circle cx="16" cy="24" r="4" stroke="url(#g9e)" stroke-width="1.5"/><path d="M11 11l2 7M21 11l-2 7M12 8h8" stroke="url(#g9e)" stroke-width="1.2" opacity="0.5"/></svg></div><div class="desc">Triangle Link</div></div>
+  </div>
+</div>
+
+<div class="icon-section">
+  <h2>Treaties & Fund Directory</h2>
+  <div class="label">EU guide tool card</div>
+  <div class="options">
+    <div class="option"><div class="num">1</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g10a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M6 4h12l6 6v18H6z" stroke="url(#g10a)" stroke-width="1.8" stroke-linejoin="round"/><path d="M18 4v6h6" stroke="url(#g10a)" stroke-width="1.8"/><path d="M11 16a2 2 0 114 0M13 18v2" stroke="url(#g10a)" stroke-width="1.5" stroke-linecap="round"/><path d="M9 22h10" stroke="url(#g10a)" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="desc">Legal Doc</div></div>
+    <div class="option"><div class="num">2</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g10b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M6 6h20v4H6zM6 14h20v4H6zM6 22h20v4H6z" stroke="url(#g10b)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="10" cy="8" r="1" fill="url(#g10b)"/><circle cx="10" cy="16" r="1" fill="url(#g10b)"/><circle cx="10" cy="24" r="1" fill="url(#g10b)"/></svg></div><div class="desc">File Stack</div></div>
+    <div class="option"><div class="num">3</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g10c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M4 26V8l4-4h16l4 4v18" stroke="url(#g10c)" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 10h24" stroke="url(#g10c)" stroke-width="1.5"/><path d="M10 14h4M10 18h8M10 22h6" stroke="url(#g10c)" stroke-width="1.2" stroke-linecap="round"/></svg></div><div class="desc">Archive Book</div></div>
+    <div class="option"><div class="num">4</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g10d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><circle cx="16" cy="16" r="11" stroke="url(#g10d)" stroke-width="1.8"/><path d="M10 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="url(#g10d)" stroke-width="1.5"/><path d="M16 8v2M8 16h2M22 16h2" stroke="url(#g10d)" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="desc">Meter / Gauge</div></div>
+    <div class="option"><div class="num">5</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g10e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><rect x="4" y="6" width="24" height="20" rx="2" stroke="url(#g10e)" stroke-width="1.8"/><path d="M4 12h24" stroke="url(#g10e)" stroke-width="1.5"/><path d="M12 6v6M20 6v6" stroke="url(#g10e)" stroke-width="1.5"/><path d="M9 17h2M15 17h2M21 17h2M9 21h2M15 21h2" stroke="url(#g10e)" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="desc">Calendar</div></div>
+  </div>
+</div>
+
+<div class="icon-section">
+  <h2>Incentive Finder</h2>
+  <div class="label">EU guide tool card</div>
+  <div class="options">
+    <div class="option"><div class="num">1</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g11a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><circle cx="14" cy="14" r="9" stroke="url(#g11a)" stroke-width="1.8"/><path d="M21 21l6 6" stroke="url(#g11a)" stroke-width="2" stroke-linecap="round"/><path d="M11 14h6M14 11v6" stroke="url(#g11a)" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="desc">Search +</div></div>
+    <div class="option"><div class="num">2</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g11b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M16 4l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" stroke="url(#g11b)" stroke-width="1.8" stroke-linejoin="round"/></svg></div><div class="desc">Star Find</div></div>
+    <div class="option"><div class="num">3</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g11c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><circle cx="16" cy="16" r="11" stroke="url(#g11c)" stroke-width="1.8"/><circle cx="16" cy="16" r="5" stroke="url(#g11c)" stroke-width="1.5"/><circle cx="16" cy="16" r="1.5" fill="url(#g11c)"/></svg></div><div class="desc">Bullseye</div></div>
+    <div class="option"><div class="num">4</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g11d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M16 4v6M16 22v6M4 16h6M22 16h6" stroke="url(#g11d)" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="16" r="4" stroke="url(#g11d)" stroke-width="1.8"/></svg></div><div class="desc">Crosshair</div></div>
+    <div class="option"><div class="num">5</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g11e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M6 6l4 4M22 6l4 4M6 22l4 4M22 22l4 4" stroke="url(#g11e)" stroke-width="1.5" stroke-linecap="round"/><path d="M16 6a10 10 0 0110 10 10 10 0 01-10 10A10 10 0 016 16 10 10 0 0116 6z" stroke="url(#g11e)" stroke-width="1.8"/><path d="M12 16l3 3 5-6" stroke="url(#g11e)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="desc">Discover Check</div></div>
+  </div>
+</div>
+
+<div class="icon-section">
+  <h2>Budget Impact Calculator</h2>
+  <div class="label">EU guide tool card</div>
+  <div class="options">
+    <div class="option"><div class="num">1</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g12a" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><rect x="6" y="4" width="20" height="24" rx="3" stroke="url(#g12a)" stroke-width="1.8"/><path d="M10 10h12" stroke="url(#g12a)" stroke-width="1.5"/><rect x="10" y="14" width="5" height="4" rx="1" stroke="url(#g12a)" stroke-width="1.2"/><rect x="17" y="14" width="5" height="4" rx="1" stroke="url(#g12a)" stroke-width="1.2"/><rect x="10" y="20" width="5" height="4" rx="1" stroke="url(#g12a)" stroke-width="1.2"/><rect x="17" y="20" width="5" height="4" rx="1" stroke="url(#g12a)" stroke-width="1.2"/></svg></div><div class="desc">Calculator</div></div>
+    <div class="option"><div class="num">2</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g12b" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><circle cx="16" cy="16" r="11" stroke="url(#g12b)" stroke-width="1.8"/><path d="M16 8v8l5 5" stroke="url(#g12b)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 6l2-2M24 8l2-2" stroke="url(#g12b)" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/></svg></div><div class="desc">Timer / Speed</div></div>
+    <div class="option"><div class="num">3</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g12c" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M4 24l6-6 4 3 6-8 6 4v7H4z" stroke="url(#g12c)" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 24l6-6 4 3 6-8 6 4" stroke="url(#g12c)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="desc">Impact Chart</div></div>
+    <div class="option"><div class="num">4</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g12d" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><circle cx="16" cy="16" r="10" stroke="url(#g12d)" stroke-width="1.8"/><path d="M16 6a10 10 0 010 20" stroke="url(#g12d)" stroke-width="3" stroke-linecap="round" opacity="0.3"/><text x="16" y="20" text-anchor="middle" fill="url(#g12d)" font-family="Outfit" font-weight="700" font-size="10">%</text></svg></div><div class="desc">Percentage</div></div>
+    <div class="option"><div class="num">5</div><div class="icon-box"><svg viewBox="0 0 32 32" fill="none"><defs><linearGradient id="g12e" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#FF6B2B"/><stop offset="1" stop-color="#FF2D7B"/></linearGradient></defs><path d="M6 24h4v-8H6zM12 24h4v-12h-4zM18 24h4v-16h-4zM24 24h4V6h-4z" stroke="url(#g12e)" stroke-width="1.5" fill="none"/><path d="M4 24h26" stroke="url(#g12e)" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="desc">Stacked Bars</div></div>
   </div>
 </div>
 
