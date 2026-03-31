@@ -420,6 +420,70 @@ body::before {
   gap: 8px;
 }
 
+.country-search input {
+  width: 100%;
+  padding: 10px 16px;
+  background: var(--black);
+  border: 1px solid var(--black-border);
+  border-radius: 8px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.country-search input:focus { border-color: rgba(255,107,43,0.4); }
+
+.country-search input::placeholder { color: var(--gray-500); }
+
+.region-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.region-btn {
+  padding: 5px 12px;
+  background: transparent;
+  border: 1px solid var(--black-border);
+  border-radius: 20px;
+  color: var(--gray-500);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.region-btn:hover { border-color: rgba(255,107,43,0.3); color: var(--gray-300); }
+
+.region-btn.active {
+  background: rgba(255,107,43,0.12);
+  border-color: rgba(255,107,43,0.4);
+  color: var(--white);
+}
+
+.country-count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--gray-500);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+#country-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
 .map-country-btn {
   display: flex;
   align-items: center;
@@ -924,8 +988,22 @@ footer {
     </div>
 
     <div class="map-container">
-      <div class="map-sidebar" id="country-list">
-        <!-- populated by JS -->
+      <div class="map-sidebar">
+        <div class="country-search">
+          <input type="text" id="country-search" placeholder="Rechercher un pays..." autocomplete="off">
+        </div>
+        <div class="region-filters" id="region-filters">
+          <button class="region-btn active" data-region="all">Tous</button>
+          <button class="region-btn" data-region="western">Ouest</button>
+          <button class="region-btn" data-region="southern">Sud</button>
+          <button class="region-btn" data-region="nordic">Nordique et Baltique</button>
+          <button class="region-btn" data-region="eastern">Est</button>
+          <button class="region-btn" data-region="international">International</button>
+        </div>
+        <div class="country-count" id="country-count"></div>
+        <div id="country-list">
+          <!-- populated by JS -->
+        </div>
       </div>
       <div class="map-detail" id="country-detail">
         <p style="color: var(--gray-500); font-size: 15px; margin-top: 32px;">← Sélectionnez un pays pour voir les détails</p>
@@ -1190,350 +1268,350 @@ footer {
 // ===== COUNTRY DATA =====
 const countries = [
   {
-    name: "Royaume-Uni", flag: "🇬🇧", rate: "25%", rateNum: 25, type: "credit",
+    name: "Royaume-Uni", region: "western", flag: "🇬🇧", rate: "25%", rateNum: 25, type: "credit",
     typeName: "Remboursement (AVEC)", minSpend: "10% UK-based core expenditure",
     cap: "No per-project cap", cultural: "Yes — Points-based Cultural Test",
     vfx: "29.25% (VFX uplift, no cap)", timeline: "Post-completion audit",
     notes: "Le crédit de dépenses audiovisuelles (AVEC) du Royaume-Uni est l'une des structures les plus fiables au monde. Les coproductions officielles réussissent automatiquement le test culturel. Depuis avril 2025, les VFX sont éligibles à 29,25 % sans plafond de dépenses. Les studios bénéficient d'un allègement de 40 % sur les taux d'imposition des entreprises jusqu'en 2034. Le programme a généré 4,2 milliards de livres en dépenses de production pour le cinéma et la télévision."
   },
   {
-    name: "Irlande", flag: "🇮🇪", rate: "32–40%", rateNum: 40, type: "credit",
+    name: "Irlande", region: "western", flag: "🇮🇪", rate: "32–40%", rateNum: 40, type: "credit",
     typeName: "Crédit d'Impôt (Section 481)", minSpend: "€250K total production cost",
     cap: "32% of lower of eligible spend or 80% of budget", cultural: "Yes — Revenue cultural certificate",
     vfx: "Included in base rate", timeline: "Post-completion",
     notes: "Le taux de base de la Section 481 est de 32 %, avec une majoration de 8 % pour les films dont le budget total est inférieur à 20 M€ — ce qui signifie que les longs métrages indépendants peuvent accéder à 40 %. Base solide d'équipes anglophones avec accès aux traités de coproduction de l'UE. L'infrastructure de Dublin a rattrapé son vivier de talents."
   },
   {
-    name: "France", flag: "🇫🇷", rate: "30–40%", rateNum: 40, type: "rebate",
+    name: "France", region: "western", flag: "🇫🇷", rate: "30–40%", rateNum: 40, type: "rebate",
     typeName: "Remboursement (TRIP)", minSpend: "€250K in France",
     cap: "€30M per project", cultural: "Yes — CNC cultural points system",
     vfx: "40% if French VFX exceeds €2M", timeline: "Post-completion audit",
     notes: "Le crédit d'impôt pour les productions internationales (TRIP) est de 30 % sur les dépenses françaises éligibles, passant à 40 % si les VFX français dépassent 2 M€. La France dispose de 61 traités bilatéraux de coproduction — le réseau le plus complet d'Europe. Le CNC administre des fonds conjoints avec l'Italie et l'Allemagne."
   },
   {
-    name: "Allemagne", flag: "🇩🇪", rate: "25–30%", rateNum: 30, type: "rebate",
+    name: "Allemagne", region: "western", flag: "🇩🇪", rate: "25–30%", rateNum: 30, type: "rebate",
     typeName: "Remboursement (DFFF / GMPF)", minSpend: "€25K+ (varies by scheme)",
     cap: "€25M (GMPF) / varies", cultural: "Yes — Cultural eligibility test",
     vfx: "Included in grant rate", timeline: "Interim payments possible",
     notes: "Les programmes DFFF et GMPF de l'Allemagne sont passés de 25 % à 30 % en 2024. De nombreux fonds régionaux (Medienboard Berlin-Brandenburg, FFF Bayern, Film- und Medienstiftung NRW) peuvent se cumuler avec les incitations fédérales. Infrastructures solides à Berlin, Munich et Cologne."
   },
   {
-    name: "Espagne (National)", flag: "🇪🇸", rate: "30–40%", rateNum: 40, type: "credit",
+    name: "Espagne (National)", region: "southern", flag: "🇪🇸", rate: "30–40%", rateNum: 40, type: "credit",
     typeName: "Crédit d'Impôt (Art. 36.1 LIS)", minSpend: "€2M+ feature budget",
     cap: "€20M per project", cultural: "Yes — Cultural certificate required",
     vfx: "Included", timeline: "Tax filing cycle",
     notes: "Le dispositif national espagnol offre 30 % sur le premier million d'euros de dépenses éligibles et 25 % au-delà. Cependant, la véritable opportunité réside dans les majorations régionales : les Îles Canaries offrent 45–50 %, le Pays Basque 35–70 % et la Navarre 35 %. Ce sont parmi les taux les plus élevés d'Europe, bien que les plafonds régionaux limitent l'évolutivité pour les gros budgets."
   },
   {
-    name: "Espagne — Îles Canaries", flag: "🇮🇨", rate: "45–50%", rateNum: 50, type: "credit",
+    name: "Espagne — Îles Canaries", region: "southern", flag: "🇮🇨", rate: "45–50%", rateNum: 50, type: "credit",
     typeName: "Crédit d'Impôt Régional", minSpend: "Varies",
     cap: "Regional caps apply", cultural: "Yes",
     vfx: "Included", timeline: "Tax filing cycle",
     notes: "Les Îles Canaries offrent les taux les plus élevés d'Europe, entre 45 et 50 %. Des décors variés allant des paysages volcaniques aux plages. Infrastructure en développement. Idéal pour les budgets moyens pouvant s'inscrire dans les plafonds régionaux. À combiner avec le dispositif national espagnol pour un bénéfice maximal."
   },
   {
-    name: "Italie", flag: "🇮🇹", rate: "40%", rateNum: 40, type: "credit",
+    name: "Italie", region: "southern", flag: "🇮🇹", rate: "40%", rateNum: 40, type: "credit",
     typeName: "Crédit d'Impôt", minSpend: "€200K Italian spend (features)",
     cap: "€20M per project", cultural: "Yes — Cultural test",
     vfx: "Included in base rate", timeline: "Post-completion",
     notes: "L'Italie offre un crédit d'impôt de 40 % sur les dépenses italiennes éligibles pour les longs métrages. Des fonds de développement conjoints existent avec la France et l'Allemagne. Solide infrastructure de post-production à Rome. L'Italie est l'un des partenaires de coproduction les plus actifs en Europe."
   },
   {
-    name: "Hongrie", flag: "🇭🇺", rate: "30%", rateNum: 30, type: "credit",
+    name: "Hongrie", region: "eastern", flag: "🇭🇺", rate: "30%", rateNum: 30, type: "credit",
     typeName: "Remboursement", minSpend: "No minimum spend",
     cap: "No per-project cap / no annual cap", cultural: "Yes — Cultural test (flexible)",
     vfx: "Included in base rate", timeline: "Post-completion audit",
     notes: "Le remboursement fiscal de 30 % de la Hongrie n'a pas de dépense minimum, pas de plafond par projet et pas de plafond annuel — ce qui en fait l'un des programmes les plus fiables et accessibles d'Europe. Jusqu'à 25 % des dépenses éligibles peuvent être non hongroises. Prolongé jusqu'en 2030. Budapest abrite des studios de classe mondiale (Origo, Korda). Parmi les productions majeures : Blade Runner 2049 et Dune."
   },
   {
-    name: "République Tchèque", flag: "🇨🇿", rate: "25–35%", rateNum: 35, type: "rebate",
+    name: "République Tchèque", region: "eastern", flag: "🇨🇿", rate: "25–35%", rateNum: 35, type: "rebate",
     typeName: "Remboursement", minSpend: "CZK 15M (~€600K)",
     cap: "€18M per project (tripled in 2025)", cultural: "Yes",
     vfx: "35% for animation/digital", timeline: "Post-completion audit",
     notes: "La République tchèque a presque triplé son plafond par projet à 18 M€ à compter de janvier 2025, et a relevé le taux pour l'animation/le numérique à 35 %. Prague devient rapidement un centre VFX. Les studios Barrandov offrent une excellente infrastructure. Les documentaires de plus de 70 minutes sont désormais éligibles."
   },
   {
-    name: "Belgique", flag: "🇧🇪", rate: "25–45%", rateNum: 45, type: "shelter",
+    name: "Belgique", region: "western", flag: "🇧🇪", rate: "25–45%", rateNum: 45, type: "shelter",
     typeName: "Tax Shelter + Remboursement", minSpend: "€125K eligible expenditure",
     cap: "Varies by mechanism", cultural: "Yes — European cultural criteria",
     vfx: "Included", timeline: "Tax Shelter: during production; Rebate: post-completion",
     notes: "La Belgique coproduit 72 % de ses films à l'international — le taux le plus élevé d'Europe. Le Tax Shelter peut fournir 25 à 30 % des dépenses EEE éligibles, finançant jusqu'à 40–45 % des dépenses belges éligibles. Bruxelles et la Wallonie offrent un soutien régional supplémentaire. Partenaire idéal pour les coproductions minoritaires."
   },
   {
-    name: "Grèce", flag: "🇬🇷", rate: "40%", rateNum: 40, type: "rebate",
+    name: "Grèce", region: "southern", flag: "🇬🇷", rate: "40%", rateNum: 40, type: "rebate",
     typeName: "Remboursement", minSpend: "€60K (features)",
     cap: "€5M per project", cultural: "Basic requirements",
     vfx: "Included", timeline: "30 days post-audit submission",
     notes: "La Grèce a alloué 105 M€ à son programme de remboursement. Le taux de 40 % est parmi les remboursements directs les plus élevés d'Europe. Le paiement est traité dans les 30 jours suivant l'audit approuvé. Des décors exceptionnels et des coûts d'équipe compétitifs font de la Grèce une option de plus en plus attractive."
   },
   {
-    name: "Portugal", flag: "🇵🇹", rate: "25–30%", rateNum: 30, type: "rebate",
+    name: "Portugal", region: "southern", flag: "🇵🇹", rate: "25–30%", rateNum: 30, type: "rebate",
     typeName: "Remboursement", minSpend: "€500K Portuguese spend",
     cap: "€4M per project", cultural: "Basic requirements",
     vfx: "Included", timeline: "Post-completion",
     notes: "Le Portugal offre un remboursement de 25 à 30 % sur les dépenses de production portugaises éligibles. Lisbonne et Porto disposent d'infrastructures en développement. Forte connexion aux marchés lusophones via Ibermedia. Tarifs d'équipe compétitifs par rapport à l'Europe de l'Ouest."
   },
   {
-    name: "Croatie", flag: "🇭🇷", rate: "25%", rateNum: 25, type: "rebate",
+    name: "Croatie", region: "southern", flag: "🇭🇷", rate: "25%", rateNum: 25, type: "rebate",
     typeName: "Remboursement", minSpend: "HRK 3.7M (~€500K)",
     cap: "No annual cap", cultural: "Basic requirements",
     vfx: "Included", timeline: "Post-completion",
     notes: "Le remboursement de 25 % de la Croatie couvre les dépenses de production éligibles, y compris les équipes, les installations et la post-production. Dubrovnik et les sites côtiers ont gagné en visibilité grâce à des productions majeures. Infrastructure de studios en développement à Zagreb."
   },
   {
-    name: "Estonie", flag: "🇪🇪", rate: "30%", rateNum: 30, type: "rebate",
+    name: "Estonie", region: "nordic", flag: "🇪🇪", rate: "30%", rateNum: 30, type: "rebate",
     typeName: "Remboursement", minSpend: "Varies",
     cap: "Programme budget limits", cultural: "Requires Estonian creative elements",
     vfx: "Included", timeline: "30 days post-audit",
     notes: "L'Estonie offre un remboursement allant jusqu'à 30 % sur les coûts de production éligibles. Nécessite des cinéastes, acteurs ou éléments narratifs estoniens. Des fonds régionaux supplémentaires sont disponibles : Tartu Film Fund (20 % sur les dépenses locales) et Viru Film Fund (jusqu'à 40 % sur les coûts locaux dans le comté d'Ida-Viru)."
   },
   {
-    name: "Lituanie", flag: "🇱🇹", rate: "30%", rateNum: 30, type: "credit",
+    name: "Lituanie", region: "nordic", flag: "🇱🇹", rate: "30%", rateNum: 30, type: "credit",
     typeName: "Crédit d'Impôt", minSpend: "€43K",
     cap: "€3M per project", cultural: "Yes",
     vfx: "Included", timeline: "Post-completion",
     notes: "La Lituanie offre une incitation fiscale de 30 % sur les dépenses de production lituaniennes éligibles. Le faible seuil de dépense minimum le rend accessible aux longs métrages indépendants. Vilnius offre des coûts compétitifs et une base d'équipes en croissance."
   },
   {
-    name: "Autriche", flag: "🇦🇹", rate: "25–30%", rateNum: 30, type: "rebate",
+    name: "Autriche", region: "western", flag: "🇦🇹", rate: "25–30%", rateNum: 30, type: "rebate",
     typeName: "Subvention / Remboursement (FISA+)", minSpend: "€2.3M budget (features)",
     cap: "€1.1M per project", cultural: "Yes",
     vfx: "Included", timeline: "Post-completion",
     notes: "L'Autriche offre une subvention de 25 à 30 % via le programme FISA+ pour les dépenses de production autrichiennes éligibles. Disponible pour les productions autrichiennes, les coproductions et les productions internationales utilisant une société de services autrichienne. Vienne et le Tyrol offrent des décors variés."
   },
   {
-    name: "Pologne", flag: "🇵🇱", rate: "30%", rateNum: 30, type: "rebate",
+    name: "Pologne", region: "eastern", flag: "🇵🇱", rate: "30%", rateNum: 30, type: "rebate",
     typeName: "Remboursement", minSpend: "PLN 1M (~€230K)",
     cap: "PLN 15M per project", cultural: "Yes — Cultural test",
     vfx: "Included", timeline: "Post-completion",
     notes: "Le remboursement de 30 % de la Pologne couvre les dépenses de production polonaises éligibles. Coûts d'équipe compétitifs et solides talents techniques. Infrastructure de studios en développement à Varsovie et Wroclaw. L'Institut Polonais du Film administre le programme."
   },
   {
-    name: "Roumanie", flag: "🇷🇴", rate: "35%", rateNum: 35, type: "rebate",
+    name: "Roumanie", region: "eastern", flag: "🇷🇴", rate: "35%", rateNum: 35, type: "rebate",
     typeName: "Remboursement", minSpend: "€100K",
     cap: "Programme budget limits", cultural: "Basic requirements",
     vfx: "Included", timeline: "Post-completion",
     notes: "Le remboursement de 35 % de la Roumanie sur les dépenses locales éligibles en fait l'une des offres les plus compétitives d'Europe de l'Est. Dépense minimum très basse. Les studios de Bucarest et les décors de Transylvanie offrent une valeur de production à un coût nettement inférieur à celui de l'Europe de l'Ouest."
   },
   {
-    name: "Chypre", flag: "🇨🇾", rate: "35%", rateNum: 35, type: "rebate",
+    name: "Chypre", region: "southern", flag: "🇨🇾", rate: "35%", rateNum: 35, type: "rebate",
     typeName: "Remboursement", minSpend: "€200K eligible expenditure",
     cap: "€750K per project", cultural: "Yes",
     vfx: "Included", timeline: "Post-completion",
     notes: "Chypre offre un remboursement de 35 % sur les dépenses de production locales éligibles. Dépense éligible minimale de 200 000 €. Excellents décors méditerranéens, plus de 300 jours d'ensoleillement par an et coûts d'équipe compétitifs. Infrastructure en développement avec l'anglais largement parlé dans l'industrie."
   },
   {
-    name: "Malte", flag: "🇲🇹", rate: "40%", rateNum: 40, type: "rebate",
+    name: "Malte", region: "southern", flag: "🇲🇹", rate: "40%", rateNum: 40, type: "rebate",
     typeName: "Remboursement", minSpend: "€100K local spend",
     cap: "No per-project cap", cultural: "Cultural benefit assessment",
     vfx: "Included", timeline: "Post-completion",
     notes: "Le remboursement de 40 % de Malte est l'un des plus généreux d'Europe, couvrant les dépenses locales éligibles. 2 % supplémentaires pour les productions culturelles se déroulant à Malte. La Malta Film Commission fournit un soutien complet à la production, avec les Mediterranean Tank Studios offrant des installations aquatiques de classe mondiale."
   },
   {
-    name: "Luxembourg", flag: "🇱🇺", rate: "30%", rateNum: 30, type: "shelter",
+    name: "Luxembourg", region: "western", flag: "🇱🇺", rate: "30%", rateNum: 30, type: "shelter",
     typeName: "Tax Shelter / Incitation Financière", minSpend: "€100K Luxembourg spend",
     cap: "€30M per project", cultural: "Yes",
     vfx: "Included", timeline: "Advance & post-completion",
     notes: "Le Film Fund du Luxembourg offre des certificats générant jusqu'à 30 % d'avantage sur les dépenses luxembourgeoises éligibles. Les coproductions peuvent accéder à la fois au Tax Shelter et au financement direct du Film Fund. Main-d'oeuvre multilingue avec de solides installations de post-production et de VFX."
   },
   {
-    name: "Finlande", flag: "🇫🇮", rate: "25%", rateNum: 25, type: "rebate",
+    name: "Finlande", region: "nordic", flag: "🇫🇮", rate: "25%", rateNum: 25, type: "rebate",
     typeName: "Remboursement (Production Incentive)", minSpend: "€150K Finnish spend",
     cap: "Programme budget limits", cultural: "Yes",
     vfx: "Included", timeline: "Post-completion",
     notes: "La Finlande offre un remboursement de 25 % sur les dépenses de production finlandaises éligibles via l'incitation à la production de la Fondation Finlandaise du Film. Décors arctiques et nordiques uniques. Solide base d'équipes concentrée à Helsinki, avec une capacité régionale croissante en Laponie et en Finlande orientale."
   },
   {
-    name: "Pays-Bas", flag: "🇳🇱", rate: "35%", rateNum: 35, type: "rebate",
+    name: "Pays-Bas", region: "western", flag: "🇳🇱", rate: "35%", rateNum: 35, type: "rebate",
     typeName: "Remboursement (Production Incentive)", minSpend: "€100K Dutch spend",
     cap: "€1.5M per project", cultural: "Yes — Cultural test",
     vfx: "Included", timeline: "Post-completion",
     notes: "L'incitation à la production cinématographique des Pays-Bas offre un remboursement de 35 % sur les coûts de production néerlandais éligibles. Administrée par le Netherlands Film Fund. Amsterdam et d'autres villes néerlandaises offrent des décors urbains et historiques variés avec une excellente infrastructure de production."
   },
   {
-    name: "Lettonie", flag: "🇱🇻", rate: "25%", rateNum: 25, type: "rebate",
+    name: "Lettonie", region: "nordic", flag: "🇱🇻", rate: "25%", rateNum: 25, type: "rebate",
     typeName: "Remboursement", minSpend: "€150K local spend",
     cap: "Programme budget limits", cultural: "Yes",
     vfx: "Included", timeline: "Post-completion",
     notes: "La Lettonie offre un remboursement de 25 % sur les dépenses de production lettones éligibles. 5 % supplémentaires pour les productions se déroulant en Lettonie. Riga offre une architecture d'époque variée à des coûts compétitifs. Le Centre National du Film administre le programme."
   },
   {
-    name: "Slovaquie", flag: "🇸🇰", rate: "33%", rateNum: 33, type: "rebate",
+    name: "Slovaquie", region: "eastern", flag: "🇸🇰", rate: "33%", rateNum: 33, type: "rebate",
     typeName: "Remboursement", minSpend: "€300K eligible spend",
     cap: "€3M per project", cultural: "Yes",
     vfx: "Included", timeline: "Post-completion",
     notes: "Le remboursement de 33 % de la Slovaquie sur les dépenses locales éligibles. Bratislava et ses châteaux et campagnes environnants offrent des décors polyvalents, historiques et modernes. Capacité de studios en croissance et tarifs d'équipe compétitifs en font une option attrayante en Europe centrale."
   },
   {
-    name: "Slovénie", flag: "🇸🇮", rate: "25%", rateNum: 25, type: "rebate",
+    name: "Slovénie", region: "southern", flag: "🇸🇮", rate: "25%", rateNum: 25, type: "rebate",
     typeName: "Remboursement", minSpend: "€150K local spend",
     cap: "€500K per project", cultural: "Yes",
     vfx: "Included", timeline: "Post-completion",
     notes: "La Slovénie offre un remboursement de 25 % sur les dépenses slovènes éligibles. Des paysages variés, des Alpes à la Méditerranée, dans un territoire compact. L'infrastructure de production en développement de Ljubljana et ses coûts compétitifs séduisent les productions internationales à budget moyen."
   },
   {
-    name: "Bulgarie", flag: "🇧🇬", rate: "25%", rateNum: 25, type: "rebate",
+    name: "Bulgarie", region: "eastern", flag: "🇧🇬", rate: "25%", rateNum: 25, type: "rebate",
     typeName: "Remboursement", minSpend: "€250K local spend",
     cap: "Programme budget limits", cultural: "Basic requirements",
     vfx: "Included", timeline: "Post-completion",
     notes: "La Bulgarie offre un remboursement de 25 % sur les dépenses de production locales éligibles. Les studios Nu Boyana près de Sofia constituent l'un des plus grands complexes de studios d'Europe. Coûts d'équipe et d'installations très compétitifs avec une expérience établie dans l'accueil de grandes productions internationales."
   },
   {
-    name: "Islande", flag: "🇮🇸", rate: "25%", rateNum: 25, type: "rebate",
+    name: "Islande", region: "nordic", flag: "🇮🇸", rate: "25%", rateNum: 25, type: "rebate",
     typeName: "Remboursement", minSpend: "ISK 30M (~€200K)",
     cap: "No per-project cap", cultural: "No formal test",
     vfx: "Included", timeline: "Post-completion",
     notes: "L'Islande offre un remboursement de 25 % sur les coûts de production éligibles engagés en Islande. Des paysages dramatiques uniques comprenant glaciers, volcans, geysers et plages de sable noir. Infrastructure de production bien établie malgré une faible population. RÚV et les producteurs locaux fournissent des équipes expérimentées."
   },
   {
-    name: "Norvège", flag: "🇳🇴", rate: "25%", rateNum: 25, type: "rebate",
+    name: "Norvège", region: "nordic", flag: "🇳🇴", rate: "25%", rateNum: 25, type: "rebate",
     typeName: "Remboursement (NFI Incentive)", minSpend: "NOK 2M (~€175K)",
     cap: "NOK 25M per project", cultural: "Yes — Cultural requirements",
     vfx: "Included", timeline: "Post-completion",
     notes: "Le remboursement de 25 % de la Norvège via l'Institut Norvégien du Film couvre les dépenses de production norvégiennes éligibles. Fjords, paysages arctiques et aurores boréales offrent des décors naturels inégalés. Solide infrastructure de production et équipes bilingues hautement qualifiées."
   },
   {
-    name: "Danemark", flag: "🇩🇰", rate: "N/A", rateNum: 0, type: "credit",
+    name: "Danemark", region: "nordic", flag: "🇩🇰", rate: "N/A", rateNum: 0, type: "credit",
     typeName: "Soutien DFI (Pas de Remboursement)", minSpend: "Varies by programme",
     cap: "Varies", cultural: "Yes",
     vfx: "N/A", timeline: "Varies",
     notes: "Le Danemark n'offre pas de remboursement national ni de crédit d'impôt pour les productions étrangères. Un soutien est disponible via les programmes de coproduction et de financement régional de l'Institut Danois du Film. Copenhague dispose d'une excellente infrastructure de production. Le Danemark excelle dans les traités de coproduction et est membre d'Eurimages."
   },
   {
-    name: "Suède", flag: "🇸🇪", rate: "N/A", rateNum: 0, type: "credit",
+    name: "Suède", region: "nordic", flag: "🇸🇪", rate: "N/A", rateNum: 0, type: "credit",
     typeName: "Soutien Régional Uniquement", minSpend: "Varies by region",
     cap: "Varies", cultural: "N/A",
     vfx: "N/A", timeline: "Varies",
     notes: "La Suède ne dispose pas d'incitation nationale à la production. Les fonds régionaux du film (Film i Väst, Stockholm Film Fund) apportent un soutien aux productions éligibles. Solide infrastructure de production, notamment à Göteborg et Stockholm. Les traités de coproduction de la Suède et son appartenance à l'UE donnent accès à Eurimages et Creative Europe."
   },
   {
-    name: "Géorgie", flag: "🇬🇪", rate: "20–25%", rateNum: 25, type: "rebate",
+    name: "Géorgie", region: "eastern", flag: "🇬🇪", rate: "20–25%", rateNum: 25, type: "rebate",
     typeName: "Remboursement", minSpend: "~€160K (GEL 500K for features)",
     cap: "~€330K auto-approved; higher requires govt approval", cultural: "Yes — Cultural test for +5%",
     vfx: "Eligible; +1% bonus for local post-production", timeline: "Within 90 days of submission",
     notes: "Programme Film in Georgia lancé en 2016. Remboursement de base de 20% sur les dépenses locales qualifiées avec 2–5% supplémentaires via le test culturel. Enregistrement en tant qu'entité juridique en Géorgie requis. Au moins 50% du budget total doit être en place lors de la demande. Plafond salarial des non-résidents de 15% du budget qualifié. Paysages variés des montagnes à la côte de la mer Noire."
   },
   {
-    name: "Serbie", flag: "🇷🇸", rate: "25–30%", rateNum: 30, type: "rebate",
+    name: "Serbie", region: "eastern", flag: "🇷🇸", rate: "25–30%", rateNum: 30, type: "rebate",
     typeName: "Remboursement", minSpend: "€300K for features; €50K for docs",
     cap: "No per-project cap; ~€17M annual programme", cultural: "No",
     vfx: "25% at €150K minimum", timeline: "Within 60 days of approval",
     notes: "Nouvelle réglementation adoptée en mars 2025. Remboursement de base de 25% sur les dépenses serbes qualifiées ; 30% pour les longs métrages dépassant €5M de dépenses. Candidatures tout au long de l'année. Le demandeur doit être une société enregistrée en Serbie. L'un des incentifs les plus compétitifs des Balkans avec une infrastructure de studios en croissance à Belgrade."
   },
   {
-    name: "Suisse", flag: "🇨🇭", rate: "20–40%", rateNum: 40, type: "rebate",
+    name: "Suisse", region: "western", flag: "🇨🇭", rate: "20–40%", rateNum: 40, type: "rebate",
     typeName: "Remboursement / Soutien à la Production (PICS + Régional)", minSpend: "Varies by canton",
     cap: "PICS: CHF 600K per project", cultural: "Yes — Swiss authorship requirements",
     vfx: "Eligible under PICS and regional schemes", timeline: "Varies by programme",
     notes: "Système à plusieurs niveaux plutôt qu'un seul incentif national. PICS (national) offre 20–40% avec un budget annuel de CHF 6M. Les cantons régionaux offrent des remboursements supplémentaires : Valais 15–35%, Genève jusqu'à 30%, Zurich jusqu'à CHF 30K. Possibilité de cumuler PICS avec les incentifs régionaux. Solides installations de post-production et VFX."
   },
   {
-    name: "Bosnie-Herzégovine", flag: "🇧🇦", rate: "30%", rateNum: 30, type: "rebate",
+    name: "Bosnie-Herzégovine", region: "southern", flag: "🇧🇦", rate: "30%", rateNum: 30, type: "rebate",
     typeName: "Remboursement (Canton de Sarajevo)", minSpend: "€50K local spend",
     cap: "~€1M annual budget", cultural: "No",
     vfx: "Not specified", timeline: "Uncertain; process varies",
     notes: "Remboursement de 30% disponible via le Canton de Sarajevo/Film Fund Sarajevo. Taux attractif mais limité par un petit budget annuel (~€1M) et des processus de candidature incertains. Les productions font souvent appel à des équipes et du matériel des pays voisins comme la Croatie. L'accès aux traités de coproduction reste précieux."
   },
   {
-    name: "Monténégro", flag: "🇲🇪", rate: "25%", rateNum: 25, type: "rebate",
+    name: "Monténégro", region: "southern", flag: "🇲🇪", rate: "25%", rateNum: 25, type: "rebate",
     typeName: "Remboursement", minSpend: "€100K qualified expenditure",
     cap: "Subject to annual budget", cultural: "Yes — 15 points minimum",
     vfx: "Not specified", timeline: "Contact Film Centre of Montenegro",
     notes: "Jusqu'à 25% de remboursement sur les dépenses qualifiées pour les longs métrages, documentaires, téléfilms et séries. Score minimum de 15 points requis au test culturel couvrant l'utilisation des capacités de production monténégrines, des équipes locales et des talents. Littoral adriatique et paysages montagneux spectaculaires."
   },
   {
-    name: "Macédoine du Nord", flag: "🇲🇰", rate: "20%", rateNum: 20, type: "rebate",
+    name: "Macédoine du Nord", region: "southern", flag: "🇲🇰", rate: "20%", rateNum: 20, type: "rebate",
     typeName: "Remboursement", minSpend: "€100K",
     cap: "Annual grant budget ~€1.6M", cultural: "No",
     vfx: "Eligible as local expenditure", timeline: "Apply 15 days before filming; paid post-completion",
     notes: "Remboursement de 20% sur les dépenses macédoniennes qualifiées introduit en 2014. Attribution selon l'ordre d'arrivée. Le demandeur doit être basé en Macédoine du Nord et avoir produit au moins un long métrage. L'Agence du Film offre également des subventions de production séparées."
   },
   {
-    name: "Albanie", flag: "🇦🇱", rate: "25–30%", rateNum: 30, type: "rebate",
+    name: "Albanie", region: "southern", flag: "🇦🇱", rate: "25–30%", rateNum: 30, type: "rebate",
     typeName: "Remboursement", minSpend: "~€100K",
     cap: "Subject to annual budget", cultural: "No",
     vfx: "Not specified", timeline: "Apply before principal photography",
     notes: "Remboursement de 25–30% des dépenses locales éligibles administré par le Centre National de Cinématographie Albanais. Les productions internationales doivent travailler avec un partenaire de production albanais. Localisations méditerranéennes attrayantes (côte Adriatique/Ionienne, Alpes albanaises) à moindre coût qu'en Europe occidentale."
   },
   {
-    name: "Arménie", flag: "🇦🇲", rate: "25–35%", rateNum: 35, type: "rebate",
+    name: "Arménie", region: "eastern", flag: "🇦🇲", rate: "25–35%", rateNum: 35, type: "rebate",
     typeName: "Remboursement", minSpend: "Not specified",
     cap: "Not specified", cultural: "Yes — +10% for Armenian culture",
     vfx: "Eligible", timeline: "Programme adopted April 2025",
     notes: "Nouveau programme de remboursement adopté en avril 2025. Remboursement de base de 25% sur les produits/services des sociétés résidentes arméniennes. Bonus supplémentaire de 10% pour les projets promouvant la culture arménienne (total 35%). Couvre les productions conjointes étrangères-arméniennes. Le secteur créatif génère plus de 60% des revenus audiovisuels provenant de clients internationaux."
   },
   {
-    name: "Turquie", flag: "🇹🇷", rate: "30% + 18% VAT", rateNum: 30, type: "rebate",
+    name: "Turquie", region: "southern", flag: "🇹🇷", rate: "30% + 18% VAT", rateNum: 30, type: "rebate",
     typeName: "Remboursement + Remboursement TVA", minSpend: "TL 6M for features; TL 1M for docs/series",
     cap: "No specific per-project cap", cultural: "Yes — Points-based (50/100 minimum)",
     vfx: "Eligible", timeline: "Post-completion with rough cut",
     notes: "Jusqu'à 30% de remboursement sur toutes les dépenses turques éligibles en vertu de la loi 5224, plus remboursement TVA séparé jusqu'à 18%. Test culturel basé sur des points couvrant le contenu culturel, l'implication de citoyens turcs et l'utilisation de l'infrastructure locale. Doit avoir produit au moins 2 longs métrages ou 1 saison de série TV au cours des 5 dernières années. Infrastructure de studios majeure à Istanbul et Antalya."
   },
   {
-    name: "Canada", flag: "🇨🇦", rate: "16–60% combined", rateNum: 60, type: "credit",
+    name: "Canada", region: "international", flag: "🇨🇦", rate: "16–60% combined", rateNum: 60, type: "credit",
     typeName: "Crédit d'Impôt Remboursable (Fédéral + Provincial)", minSpend: "No federal minimum",
     cap: "Varies; PSTC uncapped", cultural: "CPTC requires Canadian content; PSTC does not",
     vfx: "Yes — BC DAVE 16%, Ontario OCASE 18%, Quebec 16% animation bonus", timeline: "18–24 months post filing",
     notes: "Système fédéral à deux niveaux : CIPC (25% de la main-d'œuvre qualifiée, ~15% effectif du budget) pour les productions à contenu canadien ; PSTC (16% de la main-d'œuvre qualifiée, non plafonné) pour les productions de services étrangers. Cumulable avec les crédits provinciaux : CB jusqu'à 36%, Ontario jusqu'à 35%, Québec jusqu'à 40%. Le combiné fédéral+provincial peut compenser jusqu'à 60% des coûts. Membre associé d'Eurimages. Plus grand réseau bilatéral de traités au monde avec plus de 60 pays."
   },
   {
-    name: "Australie", flag: "🇦🇺", rate: "30–40%", rateNum: 40, type: "credit",
+    name: "Australie", region: "international", flag: "🇦🇺", rate: "30–40%", rateNum: 40, type: "credit",
     typeName: "Crédit d'Impôt Remboursable", minSpend: "AUD 1M–20M depending on offset",
     cap: "Uncapped for all three offsets", cultural: "Producer Offset requires SAC test; Location Offset does not",
     vfx: "PDV Offset: dedicated 30% for post/VFX", timeline: "Year-round applications",
     notes: "Trois crédits d'impôt remboursables : Producer Offset 40% pour les longs métrages / 30% pour les autres formats ; Location Offset 30% pour les productions internationales à gros budget (augmenté de 16,5% en 2023) ; PDV Offset 30% pour la post-production/VFX réalisés en Australie quel que soit le lieu de tournage. Record de AUD 2,7 milliards de dépenses de production en 2024/25. Traités bilatéraux avec le Royaume-Uni, la France, l'Allemagne, l'Italie, l'Irlande."
   },
   {
-    name: "Nouvelle-Zélande", flag: "🇳🇿", rate: "20–40%", rateNum: 40, type: "grant",
+    name: "Nouvelle-Zélande", region: "international", flag: "🇳🇿", rate: "20–40%", rateNum: 40, type: "grant",
     typeName: "Subvention de Production Audiovisuelle (NZSPR)", minSpend: "Varies by component",
     cap: "$6M domestic; international uncapped", cultural: "NZ domestic requires NZ content",
     vfx: "PDV Rebate: 20% + 5% uplift from Jan 2026", timeline: "Year-round applications",
     notes: "Renommé de NZSPG en NZSPR. Trois composantes : NZ domestique (40% du QNZPE) ; International (20% de base + 5% de majoration = 25%) ; PDV (20% jusqu'à $25M, 18% au-delà). Infrastructure de production de classe mondiale construite grâce aux franchises Le Seigneur des Anneaux et Avatar. Traités bilatéraux avec le Royaume-Uni, la France."
   },
   {
-    name: "Inde", flag: "🇮🇳", rate: "30–40%", rateNum: 40, type: "rebate",
+    name: "Inde", region: "international", flag: "🇮🇳", rate: "30–40%", rateNum: 40, type: "rebate",
     typeName: "Remboursement (Programme d'Incentifs pour Films Étrangers)", minSpend: "~$300K (INR 2.5 Crore)",
     cap: "~$3.6M (INR 300M)", cultural: "5% bonus for Significant Indian Content",
     vfx: "Digital animation eligible", timeline: "Must apply before principal photography",
     notes: "Incentif fédéral de 30% de remboursement sur les dépenses de production qualifiées. Bonus de 5% pour l'emploi de plus de 15% de main-d'œuvre indienne. 5% supplémentaires pour le Contenu Indien Significatif (total 40%). Augmenté de 30% en 2024. Divers gouvernements d'État offrent des incentifs supplémentaires. Traités bilatéraux avec le Royaume-Uni, la France, l'Australie."
   },
   {
-    name: "Chine", flag: "🇨🇳", rate: "N/A", rateNum: 0, type: "shelter",
+    name: "Chine", region: "international", flag: "🇨🇳", rate: "N/A", rateNum: 0, type: "shelter",
     typeName: "Accord de Coproduction / Incentifs Municipaux", minSpend: "N/A",
     cap: "Municipal varies", cultural: "Yes — China Film Administration criteria",
     vfx: "Municipal incentives may cover post/VFX", timeline: "Varies",
     notes: "Pas de remboursement national formel. La valeur principale réside dans l'accès au marché via le statut officiel de coproduction par la China Film Co-production Corporation, contournant le quota de films étrangers. Plus grand marché cinématographique mondial : $7,45 milliards de recettes au box-office domestique. Certaines municipalités offrent des incentifs locaux. Le traité de coproduction donne accès au marché théâtral chinois et au financement public."
   },
   {
-    name: "Corée du Sud", flag: "🇰🇷", rate: "25–30%", rateNum: 30, type: "grant",
+    name: "Corée du Sud", region: "international", flag: "🇰🇷", rate: "25–30%", rateNum: 30, type: "grant",
     typeName: "Subvention d'Incentif de Localisation (KOFIC)", minSpend: "~$44K–$700K depending on tier",
     cap: "~$176K–$265K depending on tier", cultural: "No",
     vfx: "Eligible", timeline: "Apply 30–90 days before filming",
     notes: "Incentif de localisation KOFIC : 25% pour 10+ jours de tournage et $700K+ de dépenses ; 20% pour 3+ jours avec des dépenses moindres. Séoul offre jusqu'à 30%. Le capital étranger doit dépasser 80% du coût de production. Budget annuel limité, candidature précoce essentielle. Traités bilatéraux avec la France, l'Australie."
   },
   {
-    name: "Afrique du Sud", flag: "🇿🇦", rate: "25–35%", rateNum: 35, type: "rebate",
+    name: "Afrique du Sud", region: "international", flag: "🇿🇦", rate: "25–35%", rateNum: 35, type: "rebate",
     typeName: "Remboursement (Incentif Cinématographique DTIC)", minSpend: "R1.5M for foreign productions",
     cap: "R50M per project", cultural: "No",
     vfx: "Post-production bonus: 27.5% at R10M+; 30% at R15M+", timeline: "Severe delays (2025–2026)",
     notes: "Le DTIC administre l'incentif pour les productions étrangères : 25% des dépenses sud-africaines, pouvant atteindre 27,5–30% avec des dépenses significatives de post-production locale. CRITIQUE : En 2025–2026, le système de remboursement est en crise — plus de R660M de créances impayées, comité inactif depuis plus d'un an. Statut du programme incertain en attente de résolution gouvernementale. Traités bilatéraux avec le Royaume-Uni, la France, l'Australie."
   },
   {
-    name: "Brésil", flag: "🇧🇷", rate: "20–35%", rateNum: 35, type: "rebate",
+    name: "Brésil", region: "international", flag: "🇧🇷", rate: "20–35%", rateNum: 35, type: "rebate",
     typeName: "Remboursement Municipal + Mécanisme Fiscal Fédéral", minSpend: "~$350K (BRL 2M) for city rebates",
     cap: "Varies by programme", cultural: "Yes — Co-productions require 40% equity + 2/3 Brazilian crew",
     vfx: "Eligible under city rebate programmes", timeline: "Apply before production",
     notes: "Pas de remboursement national structuré. Remboursements au niveau des villes : Rio 30–35%, São Paulo 20–30% des dépenses locales éligibles. Incentifs fédéraux via le Fonds Sectoriel de l'Audiovisuel (FSA/ANCINE) et des mécanismes fiscaux. Les coproductions nécessitent un partenaire brésilien formel. L'arbitrage de devises offre des avantages de coûts supplémentaires. Traité bilatéral avec le Royaume-Uni, la France."
   },
   {
-    name: "Israël", flag: "🇮🇱", rate: "30–40%", rateNum: 40, type: "rebate",
+    name: "Israël", region: "international", flag: "🇮🇱", rate: "30–40%", rateNum: 40, type: "rebate",
     typeName: "Remboursement (Fonds pour les Productions Étrangères)", minSpend: "~$140K (500K shekels)",
     cap: "~$4.8M per production", cultural: "No",
     vfx: "+10% for post-production and animation (total 40%)", timeline: "80% during filming; 20% on completion",
     notes: "Remboursement de 30% sur les coûts de production éligibles. 10% supplémentaires pour la post-production et l'animation. Lancé initialement en 2022 ; le statut de renouvellement doit être confirmé. Répartition du paiement : 80% pendant la production, 20% à l'achèvement. Traités bilatéraux avec le Royaume-Uni, la France, l'Australie."
   },
   {
-    name: "Argentine", flag: "🇦🇷", rate: "20–30%", rateNum: 30, type: "rebate",
+    name: "Argentine", region: "international", flag: "🇦🇷", rate: "20–30%", rateNum: 30, type: "rebate",
     typeName: "Remboursement (National + Municipal)", minSpend: "~$675K for Buenos Aires city",
     cap: "~$625K ceiling (Buenos Aires)", cultural: "No",
     vfx: "Eligible", timeline: "4–6 weeks initial approval; 6–12 months for rebate",
@@ -1552,21 +1630,54 @@ function showPage(page) {
 }
 
 // ===== POPULATE COUNTRY LIST =====
+let currentRegion = 'all';
+let currentSearch = '';
+
 function populateCountryList() {
   const list = document.getElementById('country-list');
-  countries.forEach((c, i) => {
+  const countEl = document.getElementById('country-count');
+  list.innerHTML = '';
+
+  const filtered = countries.filter((c, i) => {
+    const matchRegion = currentRegion === 'all' || c.region === currentRegion;
+    const matchSearch = !currentSearch || c.name.toLowerCase().includes(currentSearch.toLowerCase());
+    return matchRegion && matchSearch;
+  });
+
+  countEl.textContent = filtered.length + ' ' + (filtered.length === 1 ? 'pays' : 'pays');
+
+  filtered.forEach((c) => {
+    const idx = countries.indexOf(c);
     const btn = document.createElement('button');
     btn.className = 'map-country-btn';
+    btn.dataset.index = idx;
     btn.innerHTML = `<span>${c.flag} ${c.name}</span><span class="rate">${c.rate}</span>`;
-    btn.onclick = () => showCountryDetail(i);
+    btn.onclick = () => showCountryDetail(idx);
     list.appendChild(btn);
   });
 }
 
+// Search handler
+document.getElementById('country-search').addEventListener('input', function() {
+  currentSearch = this.value;
+  populateCountryList();
+});
+
+// Region filter handlers
+document.querySelectorAll('.region-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.region-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    currentRegion = this.dataset.region;
+    populateCountryList();
+  });
+});
+
 function showCountryDetail(idx) {
   const c = countries[idx];
   document.querySelectorAll('.map-country-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.map-country-btn')[idx].classList.add('active');
+  const activeBtn = document.querySelector(`.map-country-btn[data-index="${idx}"]`);
+  if (activeBtn) activeBtn.classList.add('active');
 
   const detailEl = document.getElementById('country-detail');
   detailEl.innerHTML = `
