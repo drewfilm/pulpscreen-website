@@ -1,0 +1,1039 @@
+{
+  "metadata": {
+    "title": "United Kingdom Film Production Funding Programmes",
+    "lastUpdated": "2026-03-31",
+    "sources": [
+      "https://www.gov.uk/guidance/claim-audio-visual-expenditure-credits-for-corporation-tax",
+      "https://www.bfi.org.uk",
+      "https://britishfilmcommission.org.uk",
+      "https://www.screen.scot",
+      "https://northernirelandscreen.co.uk",
+      "https://ffilmcymruwales.com",
+      "https://filmlondon.org.uk",
+      "https://www.screenyorkshire.co.uk",
+      "https://liverpoolfilmoffice.tv"
+    ]
+  },
+  "programmes": [
+    {
+      "id": "hmrc-avec-film",
+      "name": "Audio Visual Expenditure Credit (AVEC) — Film",
+      "governingBody": "HMRC / BFI (certification)",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["feature-film"],
+      "rate": {
+        "base": 34,
+        "display": "34% gross on qualifying UK core expenditure (25.5% net after 25% corporation tax)"
+      },
+      "annualBudget": {
+        "display": "Uncapped (no annual programme budget limit)"
+      },
+      "minSpend": {
+        "display": "Minimum 10% of core expenditure must be UK spend"
+      },
+      "cap": {
+        "display": "80% of total core expenditure qualifies (no per-project monetary cap)"
+      },
+      "deadlines": {
+        "frequency": "Rolling (claimed via Company Tax Return)",
+        "notes": "BFI certification required. Interim and final certificates. Processing approx 8 weeks from submission."
+      },
+      "eligibility": "UK-registered Film Production Company (FPC). Film must be intended for theatrical release. Must pass BFI cultural test or qualify as official co-production. At least 10% of core expenditure used/consumed in the UK. Replaced legacy Film Tax Relief from 1 Jan 2024; all productions must use AVEC from 1 Apr 2027.",
+      "officialUrl": "https://www.gov.uk/guidance/claim-audio-visual-expenditure-credits-for-corporation-tax",
+      "alternateUrl": "https://www.bfi.org.uk/apply-british-certification-expenditure-credits/about-uk-creative-industry-expenditure-credits",
+      "status": "active"
+    },
+    {
+      "id": "hmrc-avec-hetv",
+      "name": "Audio Visual Expenditure Credit (AVEC) — High-End Television",
+      "governingBody": "HMRC / BFI (certification)",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["tv-series", "tv-film"],
+      "rate": {
+        "base": 34,
+        "display": "34% gross on qualifying UK core expenditure (25.5% net after 25% corporation tax)"
+      },
+      "annualBudget": {
+        "display": "Uncapped (no annual programme budget limit)"
+      },
+      "minSpend": {
+        "display": "Minimum 10% of core expenditure must be UK spend; minimum cost per hour of programme of GBP1M"
+      },
+      "cap": {
+        "display": "80% of total core expenditure qualifies (no per-project monetary cap)"
+      },
+      "deadlines": {
+        "frequency": "Rolling (claimed via Company Tax Return)",
+        "notes": "BFI certification required. Interim and final certificates."
+      },
+      "eligibility": "UK-registered Television Production Company (TPC). Programme must be slot length of at least 30 minutes, be intended for broadcast, and cost at least GBP1M per broadcast hour. Must pass BFI cultural test or qualify as official co-production. At least 10% of core expenditure used/consumed in the UK.",
+      "officialUrl": "https://www.gov.uk/guidance/claim-audio-visual-expenditure-credits-for-corporation-tax",
+      "alternateUrl": "https://britishfilmcommission.org.uk/plan-your-production/accessing-uk-tax-reliefs/",
+      "status": "active"
+    },
+    {
+      "id": "hmrc-avec-animation",
+      "name": "Audio Visual Expenditure Credit (AVEC) — Animation",
+      "governingBody": "HMRC / BFI (certification)",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["animation"],
+      "rate": {
+        "base": 39,
+        "display": "39% gross on qualifying UK core expenditure (29.25% net after 25% corporation tax)"
+      },
+      "annualBudget": {
+        "display": "Uncapped (no annual programme budget limit)"
+      },
+      "minSpend": {
+        "display": "Minimum 10% of core expenditure must be UK spend; at least 51% of core costs must relate to animation"
+      },
+      "cap": {
+        "display": "80% of total core expenditure qualifies"
+      },
+      "deadlines": {
+        "frequency": "Rolling (claimed via Company Tax Return)",
+        "notes": "BFI certification required."
+      },
+      "eligibility": "UK-registered production company. Programme must be at least 51% animated. Must pass BFI cultural test or qualify as official co-production.",
+      "officialUrl": "https://www.gov.uk/guidance/claim-audio-visual-expenditure-credits-for-corporation-tax",
+      "status": "active"
+    },
+    {
+      "id": "hmrc-avec-childrens-tv",
+      "name": "Audio Visual Expenditure Credit (AVEC) — Children's Television",
+      "governingBody": "HMRC / BFI (certification)",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["tv-series", "tv-film", "animation"],
+      "rate": {
+        "base": 39,
+        "display": "39% gross on qualifying UK core expenditure (29.25% net after 25% corporation tax)"
+      },
+      "annualBudget": {
+        "display": "Uncapped (no annual programme budget limit)"
+      },
+      "minSpend": {
+        "display": "Minimum 10% of core expenditure must be UK spend"
+      },
+      "cap": {
+        "display": "80% of total core expenditure qualifies"
+      },
+      "deadlines": {
+        "frequency": "Rolling (claimed via Company Tax Return)",
+        "notes": "BFI certification required."
+      },
+      "eligibility": "UK-registered production company. Programme must be made for a primary audience of under-16s as certified by Ofcom or BFI. Must pass BFI cultural test.",
+      "officialUrl": "https://www.gov.uk/guidance/claim-audio-visual-expenditure-credits-for-corporation-tax",
+      "status": "active"
+    },
+    {
+      "id": "hmrc-avec-vfx-uplift",
+      "name": "AVEC Enhanced VFX Rate",
+      "governingBody": "HMRC / BFI (certification)",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "vfx-post"],
+      "rate": {
+        "base": 39,
+        "display": "39% gross on qualifying UK VFX costs (29.25% net); uplift from 34% standard AVEC rate for film/HETV"
+      },
+      "annualBudget": {
+        "display": "Uncapped"
+      },
+      "minSpend": {
+        "display": "No separate minimum; project must already qualify for standard AVEC at 34%"
+      },
+      "cap": {
+        "display": "80% cap on qualifying costs removed for VFX expenditure; no per-project monetary cap"
+      },
+      "deadlines": {
+        "frequency": "Rolling (claimed on Company Tax Return for completion period only)",
+        "notes": "Enhanced rate claimable only once BFI final certificate issued. Interim claims at standard 34%. Qualifying VFX costs incurred from 1 Jan 2025 eligible; claims accepted from 1 Apr 2025."
+      },
+      "eligibility": "Films and HETV claiming the standard 34% AVEC rate only. Not available to IFTC-qualifying films. Final BFI certificate required before enhanced rate can be claimed. VFX costs must be used and consumed in the UK.",
+      "officialUrl": "https://www.gov.uk/government/publications/corporation-tax-additional-tax-credit-for-visual-effects-vfx-expenditure/additional-tax-relief-for-visual-effects-vfx",
+      "status": "active"
+    },
+    {
+      "id": "hmrc-iftc",
+      "name": "Independent Film Tax Credit (IFTC)",
+      "governingBody": "HMRC / BFI (certification)",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["feature-film"],
+      "rate": {
+        "base": 53,
+        "display": "53% gross (39.75% net after 25% corp tax) on qualifying expenditure up to GBP15M core budget; tapered between GBP15M-23.5M"
+      },
+      "annualBudget": {
+        "display": "Uncapped (no annual programme budget limit)"
+      },
+      "minSpend": {
+        "display": "Minimum 10% of core expenditure must be UK spend. No minimum budget."
+      },
+      "cap": {
+        "amount": 6360000,
+        "display": "Max credit GBP6.36M gross (GBP4.77M net) per film. 80% of core expenditure qualifies. Tapers above GBP15M core budget up to GBP23.5M ceiling."
+      },
+      "deadlines": {
+        "frequency": "Rolling (claimed via Company Tax Return)",
+        "notes": "Principal photography must have begun on or after 1 Apr 2024. HMRC accepting claims from 1 Apr 2025. BFI IFTC certificates available from 30 Oct 2024."
+      },
+      "eligibility": "UK-registered Film Production Company. Film intended for theatrical release. Core production expenditure up to GBP23.5M. Must pass standard BFI cultural test PLUS additional IFTC test requiring at least one of: UK writer, UK director, or certified official co-production. Cannot be combined with enhanced VFX rate on same film. TV programmes excluded.",
+      "officialUrl": "https://www.gov.uk/government/publications/uk-independent-film-tax-credit/hmt-hmrc-policy-note-uk-independent-film-tax-credit",
+      "alternateUrl": "https://britishfilmcommission.org.uk/plan-your-production/accessing-uk-tax-reliefs/",
+      "status": "active"
+    },
+    {
+      "id": "hmrc-eis-film",
+      "name": "Enterprise Investment Scheme (EIS) — Film",
+      "governingBody": "HMRC",
+      "level": "national",
+      "category": "equity",
+      "format": ["feature-film", "tv-series", "documentary", "animation"],
+      "rate": {
+        "display": "30% income tax relief for investors; CGT exemption on gains; CGT deferral; loss relief; IHT exemption after 2 years"
+      },
+      "annualBudget": {
+        "display": "No dedicated film budget; part of wider EIS scheme"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Company can raise up to GBP5M per year via EIS (GBP12M lifetime). Individual investor relief capped at GBP1M/year (GBP2M if invested in knowledge-intensive companies)."
+      },
+      "deadlines": {
+        "frequency": "Rolling (advance assurance from HMRC recommended before share issue)",
+        "notes": "Shares must be held for minimum 3 years. Risk-to-capital condition must be met."
+      },
+      "eligibility": "UK company carrying on a qualifying trade. Since 2018 'risk to capital' condition applies: single-project SPVs are largely disqualified. Company must demonstrate long-term growth plan, not merely fund a single production. Recent tribunal cases (2021-2025) have clarified that ongoing production companies can qualify. SEIS (Seed EIS) also available for smaller raises up to GBP250K.",
+      "officialUrl": "https://www.gov.uk/guidance/venture-capital-schemes-apply-to-use-the-enterprise-investment-scheme",
+      "status": "active",
+      "notes": "Difficult for single-film SPVs post-2018 risk-to-capital rules. Best suited to ongoing production companies with a slate of projects."
+    },
+    {
+      "id": "bfi-filmmaking-fund-discovery",
+      "name": "BFI Filmmaking Fund — Discovery Feature Funding",
+      "governingBody": "BFI (National Lottery)",
+      "level": "national",
+      "category": "grant",
+      "format": ["feature-film"],
+      "amount": {
+        "max": 1000000,
+        "currency": "GBP",
+        "display": "Up to GBP1,000,000 per project"
+      },
+      "annualBudget": {
+        "display": "Part of GBP61M Filmmaking & Talent Development allocation for 2026-2029 (approx GBP20.3M/year)"
+      },
+      "minSpend": {
+        "display": "Production budget between GBP1M and GBP3.5M"
+      },
+      "cap": {
+        "amount": 1000000,
+        "display": "GBP1,000,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling (apply at least 20 weeks before first day of principal photography)",
+        "notes": "Open and accepting applications on a rolling basis."
+      },
+      "eligibility": "For projects with debut directors and production budgets between GBP1M-3.5M. UK-based producers via a UK-registered limited company. Must meet BFI Diversity Standards. Projects the commercial sector is unable to fully back.",
+      "officialUrl": "https://www.bfi.org.uk/get-funding-support/create-films-tv-or-new-formats-storytelling/bfi-filmmaking-fund-discovery-impact-feature-funding",
+      "contactEmail": "productioncoordinator@bfi.org.uk",
+      "status": "active"
+    },
+    {
+      "id": "bfi-filmmaking-fund-impact",
+      "name": "BFI Filmmaking Fund — Impact Feature Funding",
+      "governingBody": "BFI (National Lottery)",
+      "level": "national",
+      "category": "grant",
+      "format": ["feature-film"],
+      "amount": {
+        "max": 1250000,
+        "currency": "GBP",
+        "display": "Up to GBP1,250,000 per project"
+      },
+      "annualBudget": {
+        "display": "Part of GBP61M Filmmaking & Talent Development allocation for 2026-2029 (approx GBP20.3M/year)"
+      },
+      "minSpend": {
+        "display": "Production budget above GBP1M (experienced directors) or above GBP3.5M (debut directors)"
+      },
+      "cap": {
+        "amount": 1250000,
+        "display": "GBP1,250,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling (apply at least 20 weeks before first day of principal photography)",
+        "notes": "Open and accepting applications on a rolling basis."
+      },
+      "eligibility": "For projects with experienced directors with production budgets above GBP1M, or debut directors with budgets above GBP3.5M. UK-based producers via a UK-registered limited company. Must meet BFI Diversity Standards.",
+      "officialUrl": "https://www.bfi.org.uk/get-funding-support/create-films-tv-or-new-formats-storytelling/bfi-filmmaking-fund-discovery-impact-feature-funding",
+      "contactEmail": "productioncoordinator@bfi.org.uk",
+      "status": "active"
+    },
+    {
+      "id": "bfi-development-fund",
+      "name": "BFI National Lottery Development Funding",
+      "governingBody": "BFI (National Lottery)",
+      "level": "national",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "documentary", "animation"],
+      "amount": {
+        "display": "Variable; determined by project needs and stage of development"
+      },
+      "annualBudget": {
+        "display": "Part of GBP61M Filmmaking & Talent Development (2026-2029)"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Rolling (applications open year-round, except annual closure 1-30 April)",
+        "notes": "Annual closure window 1 Apr - 30 Apr each year."
+      },
+      "eligibility": "UK-based producers via UK-registered limited company. Projects at various stages of development. Must meet BFI Diversity Standards.",
+      "officialUrl": "https://www.bfi.org.uk/get-funding-support/create-films-tv-or-new-formats-storytelling/development-funding",
+      "contactEmail": "developmentcoordinator@bfi.org.uk",
+      "status": "active"
+    },
+    {
+      "id": "bfi-network-short-film-fund",
+      "name": "BFI NETWORK England Short Film Funding",
+      "governingBody": "BFI (National Lottery)",
+      "level": "national",
+      "category": "grant",
+      "format": ["short-film", "animation"],
+      "amount": {
+        "min": 5000,
+        "max": 25000,
+        "currency": "GBP",
+        "display": "GBP5,000 to GBP25,000 per project"
+      },
+      "annualBudget": {
+        "display": "Part of GBP9.3M BFI NETWORK annual budget"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 25000,
+        "display": "GBP25,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Annual rounds",
+        "notes": "Most recent round closed 18 Mar 2026 (for productions starting Nov 2026 - Oct 2027). Next round scheduled spring 2027."
+      },
+      "eligibility": "Early career filmmakers (producers, writers, directors) based in England. Minimum two individuals across director and producer roles. Director/producers not eligible. Original fictional shortform projects up to 15 minutes. Live action, animation, immersive/VR.",
+      "officialUrl": "https://www.bfi.org.uk/get-funding-support/bfi-network/bfi-network-england-short-film-funding",
+      "contactEmail": "bfinetworkfunding@bfi.org.uk",
+      "status": "active"
+    },
+    {
+      "id": "bfi-network-early-development",
+      "name": "BFI NETWORK England Early Development Fund",
+      "governingBody": "BFI (National Lottery)",
+      "level": "national",
+      "category": "grant",
+      "format": ["feature-film", "animation"],
+      "amount": {
+        "min": 3000,
+        "max": 5000,
+        "currency": "GBP",
+        "display": "GBP3,000 to GBP5,000 to develop a treatment"
+      },
+      "annualBudget": {
+        "display": "Part of GBP9.3M BFI NETWORK annual budget"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 5000,
+        "display": "GBP5,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Periodic rounds",
+        "notes": "Most recent round closed 18 Nov 2025."
+      },
+      "eligibility": "Long-form live-action, immersive and animation fiction projects. Applicant must be over 18, not in full-time education, have written at least one produced work with industry recognition, and not have received a commercial distribution deal in the last 5 years for longform works.",
+      "officialUrl": "https://www.bfi.org.uk/get-funding-support/bfi-network/bfi-network-funding-finder/bfi-network-england-early-development-fund",
+      "status": "active"
+    },
+    {
+      "id": "bfi-future-takes",
+      "name": "BFI & Film4 Future Takes",
+      "governingBody": "BFI / Film4",
+      "level": "national",
+      "category": "grant",
+      "format": ["short-film"],
+      "amount": {
+        "min": 60000,
+        "max": 90000,
+        "currency": "GBP",
+        "display": "GBP60,000 to GBP90,000 per project"
+      },
+      "annualBudget": {
+        "display": "Not publicly disclosed"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 90000,
+        "display": "GBP90,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Periodic rounds",
+        "notes": "Applications currently closed."
+      },
+      "eligibility": "UK-based teams of writers, directors and producers. Scripted live-action or hybrid documentary with scripted/dramatised elements. Intended running time up to 25 minutes.",
+      "officialUrl": "https://www.bfi.org.uk/get-funding-support/create-films-tv-or-new-formats-storytelling/future-takes/applying-bfi-film4-future-takes",
+      "status": "active"
+    },
+    {
+      "id": "bfi-doc-society-features-fund",
+      "name": "BFI Doc Society Features Fund",
+      "governingBody": "BFI / Doc Society",
+      "level": "national",
+      "category": "grant",
+      "format": ["documentary"],
+      "amount": {
+        "max": 150000,
+        "currency": "GBP",
+        "display": "Up to GBP150,000 per project (typical: GBP30K for development, GBP50K-80K for production)"
+      },
+      "annualBudget": {
+        "display": "Part of GBP7.2M documentary funding & talent development over 2026-2029"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 150000,
+        "display": "GBP150,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Periodic rounds",
+        "notes": "New funding structure being developed for 2026-2029. Details expected from early 2026."
+      },
+      "eligibility": "UK filmmakers. Applications must be made by the project's dedicated individual producer, through a limited company registered and centrally managed in the UK. Feature documentary film or immersive non-fiction.",
+      "officialUrl": "https://bfi.docsociety.org/bfi-doc-features/",
+      "status": "active"
+    },
+    {
+      "id": "bfi-doc-society-rad-fund",
+      "name": "BFI Doc Society RAD (Research & Development) Fund",
+      "governingBody": "BFI / Doc Society",
+      "level": "national",
+      "category": "grant",
+      "format": ["documentary"],
+      "amount": {
+        "min": 5000,
+        "max": 10000,
+        "currency": "GBP",
+        "display": "Up to GBP5,000 (first/second-time directors) or up to GBP10,000 (producers with multiple projects)"
+      },
+      "annualBudget": {
+        "display": "Part of documentary allocation within BFI National Lottery Funding Plan"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 10000,
+        "display": "GBP10,000 per applicant"
+      },
+      "deadlines": {
+        "frequency": "Periodic rounds",
+        "notes": "Film applications closed 6 Oct 2025. New structure for 2026-2029 being developed."
+      },
+      "eligibility": "UK-based first or second-time feature documentary directors or director/producer teams. Applicants must be over 18, not in full-time education. Producer must reside in UK.",
+      "officialUrl": "https://bfi.docsociety.org/bfi-doc-rad/",
+      "status": "active"
+    },
+    {
+      "id": "uk-global-screen-fund-copro",
+      "name": "UK Global Screen Fund — International Co-production",
+      "governingBody": "BFI (DCMS-funded)",
+      "level": "national",
+      "category": "co-production-fund",
+      "format": ["feature-film", "documentary", "animation"],
+      "amount": {
+        "max": 300000,
+        "currency": "GBP",
+        "display": "Grants up to GBP300,000 per project"
+      },
+      "annualBudget": {
+        "display": "Part of GBP18M+/year total UKGSF budget for 2026-2029 (increased from GBP7M)"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 300000,
+        "display": "GBP300,000 per project"
+      },
+      "deadlines": {
+        "frequency": "2 rounds per year",
+        "notes": "Current round opened 12 Feb 2026, closes 9 Apr 2026 (Fast Track deadline 12 Mar 2026). Next round scheduled Sep 2026. From 2026: Minority Co-production (feature film all genres, TV documentary & animation) and Majority Co-production (animation & documentary, launching Sep 2026)."
+      },
+      "eligibility": "UK producers in co-production with international partners. Fiction or animation: principal photography/animation must begin within specified window. Documentary: must be completed within deadline. To date, 62 co-productions supported across 34 territories.",
+      "officialUrl": "https://www.bfi.org.uk/get-funding-support/funding-support-international-activity/uk-global-screen-fund/uk-global-screen-fund-ukgsf-international-co-production",
+      "status": "active"
+    },
+    {
+      "id": "uk-global-screen-fund-distribution",
+      "name": "UK Global Screen Fund — International Distribution",
+      "governingBody": "BFI (DCMS-funded)",
+      "level": "national",
+      "category": "grant",
+      "format": ["feature-film", "documentary", "animation"],
+      "amount": {
+        "display": "Variable (148 awards totalling over GBP3.58M to date)"
+      },
+      "annualBudget": {
+        "display": "Part of GBP18M+/year total UKGSF budget for 2026-2029"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "P&A assessed on rolling basis; Festival Launch strand re-opens 1 Apr annually",
+        "notes": "Two strands: Prints & Advertising (P&A) and Festival Launch."
+      },
+      "eligibility": "UK independent screen content for international distribution. P&A support and festival launch support.",
+      "officialUrl": "https://www.bfi.org.uk/get-funding-support/funding-support-international-activity/uk-global-screen-fund-ukgsf",
+      "status": "active"
+    },
+    {
+      "id": "uk-global-screen-fund-business-dev",
+      "name": "UK Global Screen Fund — International Business Development",
+      "governingBody": "BFI (DCMS-funded)",
+      "level": "national",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "documentary", "animation"],
+      "amount": {
+        "min": 50000,
+        "max": 200000,
+        "currency": "GBP",
+        "display": "GBP50,000 to GBP200,000 over a three-year period"
+      },
+      "annualBudget": {
+        "display": "Part of GBP18M+/year total UKGSF budget for 2026-2029"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 200000,
+        "display": "GBP200,000 total over three years"
+      },
+      "deadlines": {
+        "frequency": "Periodic rounds",
+        "notes": "Strategies must start in early 2026 and span three years. New GBP50,000 Challenger award for early-stage business development introduced."
+      },
+      "eligibility": "UK screen companies seeking to develop international business capabilities. Non-repayable grants.",
+      "officialUrl": "https://www.bfi.org.uk/get-funding-support/funding-support-international-activity/uk-global-screen-fund/uk-global-screen-fund-international-business-development",
+      "status": "active"
+    },
+    {
+      "id": "screen-scotland-film-dev-prod",
+      "name": "Screen Scotland Film Development and Production Fund",
+      "governingBody": "Screen Scotland / Creative Scotland",
+      "level": "regional",
+      "region": "Scotland",
+      "category": "grant",
+      "format": ["feature-film", "documentary", "animation"],
+      "amount": {
+        "min": 3000,
+        "max": 500000,
+        "currency": "GBP",
+        "display": "Development: GBP3,000-50,000. Production: GBP100,000-500,000."
+      },
+      "annualBudget": {
+        "amount": 4000000,
+        "display": "GBP4M/year for film development and production combined"
+      },
+      "minSpend": {
+        "display": "N/A (but projects must involve Scotland-based talent)"
+      },
+      "cap": {
+        "amount": 500000,
+        "display": "GBP500,000 per project (production); GBP50,000 per project (development)"
+      },
+      "deadlines": {
+        "frequency": "Rolling (no deadlines)",
+        "notes": "Development decisions within 6 weeks. Production decisions within 10 weeks. Apply at least 12 weeks before pre-production start."
+      },
+      "eligibility": "Feature film producers and screenwriters based in Scotland, or producers developing projects with Scottish writing/directing talent. Live-action, animation and documentary. Must meet at least one BFI Diversity Standard. Screen Scotland cannot fully fund any production.",
+      "officialUrl": "https://www.screen.scot/funding-and-support/funding/film-development-and-production-fund",
+      "status": "active"
+    },
+    {
+      "id": "screen-scotland-production-growth-fund",
+      "name": "Screen Scotland Production Growth Fund",
+      "governingBody": "Screen Scotland / Creative Scotland",
+      "level": "regional",
+      "region": "Scotland",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "animation"],
+      "amount": {
+        "min": 200000,
+        "max": 500000,
+        "currency": "GBP",
+        "display": "GBP200,000 to GBP500,000 per project"
+      },
+      "annualBudget": {
+        "amount": 2000000,
+        "display": "GBP2M/year"
+      },
+      "minSpend": {
+        "display": "Minimum Scottish Spend Ratio of 10:1 (e.g. GBP200K award requires GBP2M Scottish spend)"
+      },
+      "cap": {
+        "amount": 500000,
+        "display": "GBP500,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling",
+        "notes": "Non-recoupable grant paid retrospectively. Compatible with UK tax reliefs (AVEC)."
+      },
+      "eligibility": "UK-registered production companies. Large-scale film and TV productions filming and/or produced in Scotland. Must demonstrate significant economic benefit to Scotland. Open to national and international companies.",
+      "officialUrl": "https://www.screen.scot/funding-and-support/funding/production-growth-fund",
+      "status": "active"
+    },
+    {
+      "id": "screen-scotland-broadcast-content-fund",
+      "name": "Screen Scotland Broadcast Content Fund",
+      "governingBody": "Screen Scotland / Creative Scotland",
+      "level": "regional",
+      "region": "Scotland",
+      "category": "grant",
+      "format": ["tv-series", "tv-film", "documentary", "animation"],
+      "amount": {
+        "min": 10000,
+        "max": 500000,
+        "currency": "GBP",
+        "display": "Development: GBP10,000-50,000 (single) or up to GBP100,000 (slate). Production: GBP100,000-500,000."
+      },
+      "annualBudget": {
+        "display": "TV has GBP5M combined across Broadcast Content Fund and Production Growth Fund"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 500000,
+        "display": "GBP500,000 per project (production)"
+      },
+      "deadlines": {
+        "frequency": "Rolling",
+        "notes": "Clear and demonstrable need for public funding required."
+      },
+      "eligibility": "Scottish production companies headquartered or with a substantial base in Scotland, with an established track record in broadcast production. All genres of broadcast content. Must have broadcaster interest/commitment. Projects should reflect or promote Scottish culture, creativity and diversity.",
+      "officialUrl": "https://www.screen.scot/funding-and-support/funding/broadcast-content-fund",
+      "status": "active"
+    },
+    {
+      "id": "screen-scotland-pgf-project-post",
+      "name": "Screen Scotland PGF Project Post (Post-Production Pilot)",
+      "governingBody": "Screen Scotland / Creative Scotland",
+      "level": "regional",
+      "region": "Scotland",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "vfx-post"],
+      "amount": {
+        "display": "Variable (within Production Growth Fund budget)"
+      },
+      "annualBudget": {
+        "display": "Part of GBP2M Production Growth Fund"
+      },
+      "minSpend": {
+        "display": "Post-production/VFX work must be completed in Scotland"
+      },
+      "cap": {
+        "display": "Within PGF limits"
+      },
+      "deadlines": {
+        "frequency": "Time-limited pilot (2025/26)",
+        "notes": "Aims to attract post-production/VFX work that would otherwise be completed elsewhere."
+      },
+      "eligibility": "Large-scale film and TV productions. Must create inclusive employment opportunities for post-production/VFX specialists and facilities in Scotland.",
+      "officialUrl": "https://www.screen.scot/news/2024/january/pgf-project-post-production-growth-fund-post-production-pilot-programme",
+      "status": "active"
+    },
+    {
+      "id": "ni-screen-production-fund",
+      "name": "Northern Ireland Screen Fund — Production",
+      "governingBody": "Northern Ireland Screen",
+      "level": "regional",
+      "region": "Northern Ireland",
+      "category": "loan",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation"],
+      "amount": {
+        "max": 800000,
+        "currency": "GBP",
+        "display": "Up to GBP800,000 for film/TV; up to GBP500,000 for interactive content"
+      },
+      "annualBudget": {
+        "display": "Not publicly disclosed (part of Northern Ireland Screen's overall budget)"
+      },
+      "minSpend": {
+        "display": "N/A (but must demonstrate direct economic benefit to Northern Ireland)"
+      },
+      "cap": {
+        "amount": 800000,
+        "display": "GBP800,000 per project (25% of overall project budget ceiling)"
+      },
+      "deadlines": {
+        "frequency": "Rolling (discuss project with NI Screen before applying)",
+        "notes": "Production must have at least 65% of funding in place before applying. Recoupable loan with profit participation (or grant in limited circumstances)."
+      },
+      "eligibility": "All legally incorporated companies who can fulfil British Cultural Criteria and project criteria. Must demonstrate direct economic benefit to Northern Ireland. Productions must contribute to building a sustainable screen industry in NI. Feature film should ideally have sales agent attached and UK/US distribution.",
+      "officialUrl": "https://northernirelandscreen.co.uk/funding/production-funding/",
+      "status": "active"
+    },
+    {
+      "id": "ni-screen-development-fund",
+      "name": "Northern Ireland Screen Fund — Development",
+      "governingBody": "Northern Ireland Screen",
+      "level": "regional",
+      "region": "Northern Ireland",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "documentary", "animation"],
+      "amount": {
+        "display": "Variable; determined case-by-case"
+      },
+      "annualBudget": {
+        "display": "Not publicly disclosed"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Rolling",
+        "notes": "Discuss project with NI Screen before applying."
+      },
+      "eligibility": "Companies developing projects with Northern Ireland talent and/or set in Northern Ireland. Must demonstrate potential economic benefit to the region.",
+      "officialUrl": "https://northernirelandscreen.co.uk/funding/development/",
+      "status": "active"
+    },
+    {
+      "id": "ni-screen-ilbf",
+      "name": "Northern Ireland Screen — Irish Language Broadcast Fund (ILBF)",
+      "governingBody": "Northern Ireland Screen (BFI-funded)",
+      "level": "regional",
+      "region": "Northern Ireland",
+      "category": "grant",
+      "format": ["tv-series", "tv-film", "documentary", "animation", "web-series"],
+      "amount": {
+        "display": "Variable per project; development and production funding available"
+      },
+      "annualBudget": {
+        "display": "Approx GBP1M/year (part of GBP2M shared with Ulster-Scots Broadcast Fund)"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "2-3 funding rounds per year",
+        "notes": "Must demonstrate content will reach a substantial audience in Northern Ireland, usually via broadcaster commitment (BBC NI, TG4, RTE). Annual commissioning documents published with each broadcaster."
+      },
+      "eligibility": "Independent production companies producing Irish language content. Must evidence broadcaster commitment or substantial audience reach in Northern Ireland. Supports TV, radio, digital and audio content.",
+      "officialUrl": "https://northernirelandscreen.co.uk/irish-language-broadcast-fund/",
+      "status": "active"
+    },
+    {
+      "id": "ni-screen-usbf",
+      "name": "Northern Ireland Screen — Ulster-Scots Broadcast Fund (USBF)",
+      "governingBody": "Northern Ireland Screen (BFI-funded)",
+      "level": "regional",
+      "region": "Northern Ireland",
+      "category": "grant",
+      "format": ["tv-series", "tv-film", "documentary"],
+      "amount": {
+        "display": "Variable per project; e.g. scripted digital shorts (4x5min) tariff GBP40,000"
+      },
+      "annualBudget": {
+        "display": "Approx GBP1M/year (part of GBP2M shared with ILBF)"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Specific calls announced throughout 2025-26",
+        "notes": "Funding for film, television and digital projects relating to Ulster-Scots heritage, culture and language. Broadcasts on BBC NI, RTE, GB News, That's TV and other platforms."
+      },
+      "eligibility": "Independent production companies producing Ulster-Scots content. Must evidence broadcaster commitment. Over 350 hours of content supported to date.",
+      "officialUrl": "https://northernirelandscreen.co.uk/ulster-scots-broadcast-fund/",
+      "status": "active"
+    },
+    {
+      "id": "ffilm-cymru-feature-production",
+      "name": "Ffilm Cymru Wales — Feature Film Production Fund",
+      "governingBody": "Ffilm Cymru Wales / Creative Wales / Arts Council of Wales",
+      "level": "regional",
+      "region": "Wales",
+      "category": "grant",
+      "format": ["feature-film", "documentary", "animation"],
+      "amount": {
+        "min": 150000,
+        "max": 600000,
+        "currency": "GBP",
+        "display": "Up to GBP600,000 per project (most awards GBP150,000-400,000)"
+      },
+      "annualBudget": {
+        "display": "Approx GBP3M/year total across all Ffilm Cymru funds (from Arts Council of Wales lottery + Creative Wales)"
+      },
+      "minSpend": {
+        "display": "N/A (but Creative Wales funding prioritises Wales-based talent)"
+      },
+      "cap": {
+        "amount": 600000,
+        "display": "GBP600,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling (subject to fund availability)",
+        "notes": "Arts Council of Wales production funding fully allocated for current year (to Apr 2026). Creative Wales production funding remains available."
+      },
+      "eligibility": "Welsh filmmakers or Wales-based filmmakers. Priority given to early-career Welsh filmmakers, under-represented filmmakers, Welsh Language film, and films depicting Welsh culture. Creative Wales funding delivered via Ffilm Cymru through a single application process accessing both lottery and government funds.",
+      "officialUrl": "https://ffilmcymruwales.com/funding-and-training/feature-film-production",
+      "status": "active"
+    },
+    {
+      "id": "ffilm-cymru-feature-development",
+      "name": "Ffilm Cymru Wales — Feature Film Development Fund",
+      "governingBody": "Ffilm Cymru Wales / BFI NETWORK / Arts Council of Wales",
+      "level": "regional",
+      "region": "Wales",
+      "category": "grant",
+      "format": ["feature-film", "documentary"],
+      "amount": {
+        "min": 1000,
+        "max": 24999,
+        "currency": "GBP",
+        "display": "Small awards up to GBP10,000; large awards up to GBP24,999"
+      },
+      "annualBudget": {
+        "amount": 600000,
+        "display": "Approx GBP600,000/year in lottery funding for feature film/documentary development"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 24999,
+        "display": "GBP24,999 per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling (subject to fund availability)",
+        "notes": "Currently paused due to exceptionally high demand (until Apr 2026). Combines National Lottery (via Arts Council of Wales) and BFI NETWORK funding."
+      },
+      "eligibility": "Welsh and Wales-based filmmakers. Feature film and documentary development at various stages. Small awards (up to GBP10K) or large awards (up to GBP24,999) for a specific stage of development.",
+      "officialUrl": "https://ffilmcymruwales.com/funding-and-training/feature-film-development",
+      "status": "active"
+    },
+    {
+      "id": "ffilm-cymru-sinema-cymru",
+      "name": "Sinema Cymru (Welsh Language Film Fund)",
+      "governingBody": "Ffilm Cymru Wales / S4C / Creative Wales",
+      "level": "regional",
+      "region": "Wales",
+      "category": "grant",
+      "format": ["feature-film"],
+      "amount": {
+        "min": 10000,
+        "max": 30000,
+        "currency": "GBP",
+        "display": "Up to GBP30,000 per project (GBP10,000 for earlier-stage projects)"
+      },
+      "annualBudget": {
+        "display": "Not publicly disclosed"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 30000,
+        "display": "GBP30,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Periodic rounds",
+        "notes": "Second round announced. Aims to develop multiple Welsh-language feature films per year, with at least one progressing to production funding annually."
+      },
+      "eligibility": "Welsh-language feature film projects. Collaboration between S4C, Ffilm Cymru Wales and Welsh Government via Creative Wales. Projects should be ready for production within 12 months (for full awards).",
+      "officialUrl": "https://ffilmcymruwales.com/",
+      "status": "active"
+    },
+    {
+      "id": "film-london-microwave",
+      "name": "Film London Microwave",
+      "governingBody": "Film London",
+      "level": "regional",
+      "region": "London",
+      "category": "grant",
+      "format": ["feature-film", "documentary", "animation"],
+      "amount": {
+        "max": 100000,
+        "currency": "GBP",
+        "display": "Up to GBP100,000 per film (cash and in-kind support)"
+      },
+      "annualBudget": {
+        "display": "Not publicly disclosed"
+      },
+      "minSpend": {
+        "display": "N/A (micro-budget feature film scheme)"
+      },
+      "cap": {
+        "amount": 100000,
+        "display": "GBP100,000 per film"
+      },
+      "deadlines": {
+        "frequency": "Periodic rounds",
+        "notes": "Currently not open for applications. Film London is working towards a relaunch and reboot of the Microwave scheme. Subscribe to Film London's newsletter for updates."
+      },
+      "eligibility": "Filmmakers based in London. Full-length feature films for micro-budgets. Open to documentary, fiction, animation, and moving image artists. Previously run in partnership with BBC Films and BFI.",
+      "officialUrl": "https://filmlondon.org.uk/microwave",
+      "status": "suspended"
+    },
+    {
+      "id": "film-london-pfm",
+      "name": "Film London Production Finance Market (PFM)",
+      "governingBody": "Film London / BFI London Film Festival",
+      "level": "regional",
+      "region": "London",
+      "category": "co-production-fund",
+      "format": ["feature-film", "documentary", "animation"],
+      "amount": {
+        "display": "N/A (financing event, not a direct fund)"
+      },
+      "annualBudget": {
+        "display": "N/A"
+      },
+      "minSpend": {
+        "display": "Main strand: budgets above EUR1M"
+      },
+      "cap": {
+        "display": "N/A"
+      },
+      "deadlines": {
+        "frequency": "Annual (October, alongside BFI London Film Festival)",
+        "notes": "Two-day financing event. Main strand for established producers with budgets above EUR1M. UPstream@PFM strand for early-stage IP including film, TV, games, podcasting, publishing and theatre."
+      },
+      "eligibility": "Feature film projects including animation and feature documentaries. Established producers (main strand) or early-stage IP (UPstream).",
+      "officialUrl": "https://filmlondon.org.uk/production-finance-market-pfm",
+      "status": "active"
+    },
+    {
+      "id": "liverpool-lcr-production-fund",
+      "name": "Liverpool City Region Production Fund",
+      "governingBody": "Liverpool Film Office / Liverpool City Region Combined Authority",
+      "level": "regional",
+      "region": "Liverpool City Region",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "tv-film"],
+      "amount": {
+        "display": "Typically up to 20% of production budget"
+      },
+      "annualBudget": {
+        "amount": 3000000,
+        "display": "GBP3M (from Liverpool City Region Combined Authority)"
+      },
+      "minSpend": {
+        "display": "N/A (but productions must film in Liverpool City Region)"
+      },
+      "cap": {
+        "amount": 500000,
+        "display": "GBP500,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling (Expression of Interest required before full application)",
+        "notes": "Fund re-opened for applications after a short pause (Autumn 2025 relaunch). Compatible with UK tax credits (AVEC). International co-productions with Liverpool-based producers encouraged."
+      },
+      "eligibility": "Open to local, national and international companies. Productions must film in the Liverpool City Region. Expression of Interest (EOI) required prior to full application. Must deliver economic benefit to the region. Over 1,564 productions supported in the last five years.",
+      "officialUrl": "https://liverpoolfilmoffice.tv/production-fund/",
+      "status": "active"
+    },
+    {
+      "id": "screen-yorkshire-content-fund",
+      "name": "Yorkshire Content Fund",
+      "governingBody": "Screen Yorkshire",
+      "level": "regional",
+      "region": "Yorkshire and the Humber",
+      "category": "equity",
+      "format": ["feature-film", "tv-series", "documentary", "animation"],
+      "amount": {
+        "max": 500000,
+        "currency": "GBP",
+        "display": "Up to GBP500,000 per project"
+      },
+      "annualBudget": {
+        "display": "Not publicly disclosed (public-private investment fund)"
+      },
+      "minSpend": {
+        "display": "N/A (but projects must be produced in or connected to Yorkshire and the Humber)"
+      },
+      "cap": {
+        "amount": 500000,
+        "display": "GBP500,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling",
+        "notes": "Public-private investment fund (equity investment, not a grant). Credits include This Is England, Peaky Blinders, The Duke, All Creatures Great and Small."
+      },
+      "eligibility": "Film, TV, video games and digital content producers either based in Yorkshire or wishing to film/establish a base in the region. Equity investment model.",
+      "officialUrl": "https://www.screenyorkshire.co.uk/content-funding/",
+      "status": "active"
+    },
+    {
+      "id": "creative-wales-independent-film-production",
+      "name": "Creative Wales Independent Feature Film Production Fund",
+      "governingBody": "Creative Wales (Welsh Government) / Ffilm Cymru Wales",
+      "level": "regional",
+      "region": "Wales",
+      "category": "grant",
+      "format": ["feature-film"],
+      "amount": {
+        "display": "Part of GBP1M/year fund; award amounts determined case-by-case"
+      },
+      "annualBudget": {
+        "amount": 1000000,
+        "display": "GBP1M/year"
+      },
+      "minSpend": {
+        "display": "N/A (prioritises Wales-based talent)"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Rolling (via single application process through Ffilm Cymru)",
+        "notes": "Streamlined funding model: single application accesses both Arts Council of Wales lottery and Welsh Government film funds."
+      },
+      "eligibility": "Independent feature films with Welsh talent at their core. Delivered via Ffilm Cymru Wales. Prioritises Wales-based talent.",
+      "officialUrl": "https://ffilmcymruwales.com/ffilm-cymru-wales-creative-wales-independent-feature-film-production-fund-info-faqs",
+      "status": "active"
+    }
+  ]
+}
