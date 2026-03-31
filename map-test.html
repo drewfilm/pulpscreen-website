@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Interactive Europe Map — PULPSCREEN</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0A0A0A;
+  --black-card: #111;
+  --orange: #FF6B2B;
+  --pink: #FF2D7B;
+  --gradient: linear-gradient(135deg, #FF6B2B 0%, #FF4757 50%, #FF2D7B 100%);
+  --white: #FFFFFF;
+  --gray-300: #AAAAAA;
+  --gray-500: #666;
+  --font-display: 'Outfit', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.header p {
+  color: var(--gray-300);
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Map container */
+.map-wrap {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.map-wrap svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Country paths */
+.map-country {
+  fill: #1a1a1a;
+  stroke: rgba(255,255,255,0.06);
+  stroke-width: 0.5;
+  cursor: pointer;
+  transition: fill 0.25s, stroke 0.25s;
+}
+
+.map-country:hover {
+  fill: url(#mapGrad);
+  stroke: rgba(255,107,43,0.5);
+  stroke-width: 1;
+}
+
+.map-bg {
+  fill: #0f0f0f;
+  stroke: rgba(255,255,255,0.03);
+  stroke-width: 0.3;
+  pointer-events: none;
+}
+
+/* Tooltip */
+.map-tooltip {
+  position: fixed;
+  display: none;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,107,43,0.2);
+  border-radius: 8px;
+  padding: 10px 16px;
+  pointer-events: none;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.map-tooltip .tt-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.map-tooltip .tt-rate {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.map-tooltip .tt-type {
+  font-size: 11px;
+  color: var(--gray-500);
+}
+
+/* Legend */
+.map-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 28px;
+  background: var(--gradient);
+  border-radius: 8px;
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.back-link:hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>European Incentive Map</h1>
+    <p>Click a country to explore its film production incentives, tax credits, and cash rebates.</p>
+  </div>
+
+  <div class="map-wrap">
+    <svg viewBox="0 0 800 650" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FF6B2B"/>
+          <stop offset="50%" stop-color="#FF4757"/>
+          <stop offset="100%" stop-color="#FF2D7B"/>
+        </linearGradient>
+      </defs>
+
+      <!-- NON-INTERACTIVE BACKGROUND COUNTRIES -->
+      <!-- Switzerland -->
+      <path class="map-bg" d="M350 370 L365 362 L380 368 L382 380 L370 388 L355 385 Z"/>
+      <!-- Serbia -->
+      <path class="map-bg" d="M460 385 L475 375 L488 382 L492 400 L480 415 L465 408 L458 395 Z"/>
+      <!-- Bosnia -->
+      <path class="map-bg" d="M430 385 L445 375 L460 385 L458 400 L442 408 L430 400 Z"/>
+      <!-- Montenegro -->
+      <path class="map-bg" d="M445 408 L458 400 L465 412 L455 425 L442 418 Z"/>
+      <!-- North Macedonia -->
+      <path class="map-bg" d="M465 420 L480 415 L490 425 L485 440 L470 438 L462 428 Z"/>
+      <!-- Albania -->
+      <path class="map-bg" d="M455 425 L465 420 L470 438 L468 455 L455 450 L450 438 Z"/>
+      <!-- Moldova -->
+      <path class="map-bg" d="M530 310 L545 300 L555 312 L552 330 L540 335 L528 325 Z"/>
+      <!-- Belarus -->
+      <path class="map-bg" d="M500 240 L540 230 L570 245 L575 275 L545 290 L510 280 L495 260 Z"/>
+      <!-- Ukraine -->
+      <path class="map-bg" d="M545 290 L575 275 L620 280 L650 300 L640 340 L600 355 L555 345 L540 335 L530 310 Z"/>
+      <!-- Turkey (European part) -->
+      <path class="map-bg" d="M520 430 L550 420 L570 430 L565 450 L540 455 L520 445 Z"/>
+      <!-- Russia (Kaliningrad hint) -->
+      <path class="map-bg" d="M500 210 L515 205 L520 215 L510 222 L498 218 Z"/>
+
+      <!-- ===== INTERACTIVE COUNTRIES ===== -->
+
+      <!-- Iceland [27] -->
+      <path class="map-country" data-index="27" data-name="Iceland" data-rate="25%" data-flag="🇮🇸"
+            d="M80 80 L115 70 L145 78 L155 95 L140 115 L105 120 L75 108 L70 92 Z"/>
+
+      <!-- Norway [28] -->
+      <path class="map-country" data-index="28" data-name="Norway" data-rate="25%" data-flag="🇳🇴"
+            d="M390 50 L405 42 L420 55 L425 80 L418 110 L410 145 L400 175 L388 200 L380 215 L375 195 L378 165 L382 130 L385 95 L388 65 Z"/>
+
+      <!-- Sweden [30] -->
+      <path class="map-country" data-index="30" data-name="Sweden" data-rate="N/A" data-flag="🇸🇪"
+            d="M400 100 L415 95 L428 110 L435 140 L430 175 L422 210 L415 240 L405 255 L395 245 L390 215 L395 180 L398 145 L400 115 Z"/>
+
+      <!-- Finland [21] -->
+      <path class="map-country" data-index="21" data-name="Finland" data-rate="25%" data-flag="🇫🇮"
+            d="M440 70 L465 60 L485 75 L495 110 L490 150 L480 190 L465 215 L445 225 L435 210 L430 175 L435 140 L438 100 Z"/>
+
+      <!-- Denmark [29] -->
+      <path class="map-country" data-index="29" data-name="Denmark" data-rate="N/A" data-flag="🇩🇰"
+            d="M365 225 L378 218 L388 228 L392 245 L385 258 L372 260 L362 250 L360 238 Z"/>
+
+      <!-- Estonia [13] -->
+      <path class="map-country" data-index="13" data-name="Estonia" data-rate="30%" data-flag="🇪🇪"
+            d="M470 215 L495 210 L505 222 L500 235 L482 238 L468 228 Z"/>
+
+      <!-- Latvia [23] -->
+      <path class="map-country" data-index="23" data-name="Latvia" data-rate="25%" data-flag="🇱🇻"
+            d="M468 238 L500 235 L510 248 L505 262 L488 268 L470 260 L465 248 Z"/>
+
+      <!-- Lithuania [14] -->
+      <path class="map-country" data-index="14" data-name="Lithuania" data-rate="30%" data-flag="🇱🇹"
+            d="M465 260 L488 268 L498 280 L492 295 L475 300 L460 290 L458 275 Z"/>
+
+      <!-- United Kingdom [0] -->
+      <path class="map-country" data-index="0" data-name="United Kingdom" data-rate="25%" data-flag="🇬🇧"
+            d="M260 200 L275 185 L290 188 L298 205 L295 225 L288 245 L278 260 L268 275 L255 280 L248 268 L252 248 L255 230 L258 215 Z"/>
+      <!-- Scotland part -->
+      <path class="map-country" data-index="0" data-name="United Kingdom" data-rate="25%" data-flag="🇬🇧"
+            d="M255 165 L275 155 L290 165 L288 185 L275 195 L260 200 L250 190 L248 178 Z"/>
+
+      <!-- Ireland [1] -->
+      <path class="map-country" data-index="1" data-name="Ireland" data-rate="32–40%" data-flag="🇮🇪"
+            d="M215 215 L235 205 L248 215 L250 235 L242 252 L228 258 L215 250 L208 235 Z"/>
+
+      <!-- Netherlands [22] -->
+      <path class="map-country" data-index="22" data-name="Netherlands" data-rate="35%" data-flag="🇳🇱"
+            d="M325 265 L340 258 L348 268 L345 282 L335 288 L322 282 L320 272 Z"/>
+
+      <!-- Belgium [9] -->
+      <path class="map-country" data-index="9" data-name="Belgium" data-rate="25–45%" data-flag="🇧🇪"
+            d="M315 290 L335 288 L345 295 L342 308 L330 315 L318 308 L312 298 Z"/>
+
+      <!-- Luxembourg [20] -->
+      <path class="map-country" data-index="20" data-name="Luxembourg" data-rate="30%" data-flag="🇱🇺"
+            d="M340 308 L350 305 L355 315 L350 322 L340 320 L338 312 Z"/>
+
+      <!-- Germany [3] -->
+      <path class="map-country" data-index="3" data-name="Germany" data-rate="25–30%" data-flag="🇩🇪"
+            d="M355 260 L395 250 L415 265 L420 295 L415 330 L400 348 L380 355 L360 348 L345 330 L340 308 L342 295 L348 275 Z"/>
+
+      <!-- Poland [16] -->
+      <path class="map-country" data-index="16" data-name="Poland" data-rate="30%" data-flag="🇵🇱"
+            d="M420 265 L460 260 L490 275 L495 305 L485 330 L460 340 L435 335 L420 318 L415 295 Z"/>
+
+      <!-- Czech Republic [8] -->
+      <path class="map-country" data-index="8" data-name="Czech Republic" data-rate="25–35%" data-flag="🇨🇿"
+            d="M375 330 L400 325 L420 332 L425 348 L410 358 L388 360 L372 352 L370 340 Z"/>
+
+      <!-- Slovakia [24] -->
+      <path class="map-country" data-index="24" data-name="Slovakia" data-rate="33%" data-flag="🇸🇰"
+            d="M425 338 L450 330 L470 340 L472 355 L458 365 L438 362 L425 352 Z"/>
+
+      <!-- Austria [15] -->
+      <path class="map-country" data-index="15" data-name="Austria" data-rate="25–30%" data-flag="🇦🇹"
+            d="M365 360 L395 355 L420 358 L435 365 L430 380 L410 388 L385 385 L365 378 L358 368 Z"/>
+
+      <!-- France [2] -->
+      <path class="map-country" data-index="2" data-name="France" data-rate="30–40%" data-flag="🇫🇷"
+            d="M265 310 L295 295 L325 300 L340 320 L345 348 L338 380 L325 405 L305 420 L280 418 L260 400 L250 375 L252 345 L258 325 Z"/>
+
+      <!-- Spain [4] (including mainland) -->
+      <path class="map-country" data-index="4" data-name="Spain" data-rate="30–50%" data-flag="🇪🇸"
+            d="M220 420 L260 408 L290 420 L310 435 L305 465 L290 490 L265 500 L235 495 L210 480 L200 455 L205 435 Z"/>
+
+      <!-- Portugal [11] -->
+      <path class="map-country" data-index="11" data-name="Portugal" data-rate="25–30%" data-flag="🇵🇹"
+            d="M195 435 L210 430 L218 450 L215 475 L205 490 L192 485 L188 465 L190 448 Z"/>
+
+      <!-- Italy [6] -->
+      <path class="map-country" data-index="6" data-name="Italy" data-rate="40%" data-flag="🇮🇹"
+            d="M370 395 L390 388 L405 395 L412 415 L408 440 L398 460 L385 480 L375 495 L365 488 L368 465 L372 440 L370 418 Z"/>
+      <!-- Sicily -->
+      <path class="map-country" data-index="6" data-name="Italy" data-rate="40%" data-flag="🇮🇹"
+            d="M378 500 L395 495 L405 505 L398 515 L382 512 Z"/>
+      <!-- Sardinia -->
+      <path class="map-country" data-index="6" data-name="Italy" data-rate="40%" data-flag="🇮🇹"
+            d="M348 440 L360 435 L365 450 L358 465 L345 460 L342 448 Z"/>
+
+      <!-- Slovenia [25] -->
+      <path class="map-country" data-index="25" data-name="Slovenia" data-rate="25%" data-flag="🇸🇮"
+            d="M395 375 L415 370 L428 378 L425 390 L412 395 L398 390 Z"/>
+
+      <!-- Croatia [12] -->
+      <path class="map-country" data-index="12" data-name="Croatia" data-rate="25%" data-flag="🇭🇷"
+            d="M415 370 L435 365 L450 375 L455 395 L448 410 L435 420 L420 415 L412 400 L408 388 L415 378 Z"/>
+
+      <!-- Hungary [7] -->
+      <path class="map-country" data-index="7" data-name="Hungary" data-rate="30%" data-flag="🇭🇺"
+            d="M430 355 L458 348 L480 358 L488 378 L478 395 L455 398 L438 390 L428 378 Z"/>
+
+      <!-- Romania [17] -->
+      <path class="map-country" data-index="17" data-name="Romania" data-rate="35%" data-flag="🇷🇴"
+            d="M480 340 L510 330 L535 340 L545 360 L538 385 L515 395 L492 390 L480 370 L478 355 Z"/>
+
+      <!-- Bulgaria [26] -->
+      <path class="map-country" data-index="26" data-name="Bulgaria" data-rate="25%" data-flag="🇧🇬"
+            d="M492 395 L520 390 L540 400 L542 420 L528 435 L505 430 L490 418 L488 405 Z"/>
+
+      <!-- Greece [10] -->
+      <path class="map-country" data-index="10" data-name="Greece" data-rate="40%" data-flag="🇬🇷"
+            d="M468 435 L488 425 L505 435 L510 455 L502 475 L488 490 L475 485 L465 468 L462 450 Z"/>
+      <!-- Peloponnese -->
+      <path class="map-country" data-index="10" data-name="Greece" data-rate="40%" data-flag="🇬🇷"
+            d="M470 490 L485 488 L492 500 L485 515 L472 512 L465 500 Z"/>
+      <!-- Crete -->
+      <path class="map-country" data-index="10" data-name="Greece" data-rate="40%" data-flag="🇬🇷"
+            d="M478 535 L505 530 L518 538 L510 548 L485 545 L475 540 Z"/>
+
+      <!-- Cyprus [18] -->
+      <path class="map-country" data-index="18" data-name="Cyprus" data-rate="35%" data-flag="🇨🇾"
+            d="M575 480 L595 475 L608 482 L605 495 L590 500 L578 495 L572 488 Z"/>
+
+      <!-- Malta [19] -->
+      <path class="map-country" data-index="19" data-name="Malta" data-rate="40%" data-flag="🇲🇹"
+            d="M390 530 L398 526 L404 532 L400 540 L392 538 Z"/>
+
+    </svg>
+
+    <!-- Tooltip -->
+    <div class="map-tooltip" id="map-tooltip">
+      <div class="tt-name" id="tt-name"></div>
+      <div class="tt-rate" id="tt-rate"></div>
+    </div>
+  </div>
+
+  <div class="map-legend">
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.1);"></div>
+      <span>Incentive available</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:linear-gradient(135deg,#FF6B2B,#FF2D7B);"></div>
+      <span>Selected / Hover</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" style="background:#0f0f0f;border:1px solid rgba(255,255,255,0.05);"></div>
+      <span>Not covered</span>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="/eu-incentive-guide.html" class="back-link">Open Full Guide</a>
+  </div>
+</div>
+
+<script>
+const tooltip = document.getElementById('map-tooltip');
+const ttName = document.getElementById('tt-name');
+const ttRate = document.getElementById('tt-rate');
+
+// Hover
+document.querySelectorAll('.map-country').forEach(el => {
+  el.addEventListener('mouseenter', function(e) {
+    const flag = this.dataset.flag;
+    const name = this.dataset.name;
+    const rate = this.dataset.rate;
+    ttName.textContent = flag + ' ' + name;
+    ttRate.textContent = rate === 'N/A' ? 'No national incentive' : 'Incentive rate: ' + rate;
+    tooltip.style.display = 'block';
+  });
+
+  el.addEventListener('mousemove', function(e) {
+    tooltip.style.left = (e.clientX + 14) + 'px';
+    tooltip.style.top = (e.clientY - 10) + 'px';
+  });
+
+  el.addEventListener('mouseleave', function() {
+    tooltip.style.display = 'none';
+  });
+
+  // Touch support
+  el.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const flag = this.dataset.flag;
+    const name = this.dataset.name;
+    const rate = this.dataset.rate;
+    ttName.textContent = flag + ' ' + name;
+    ttRate.textContent = rate === 'N/A' ? 'No national incentive' : 'Incentive rate: ' + rate;
+    tooltip.style.display = 'block';
+    tooltip.style.left = (touch.clientX + 14) + 'px';
+    tooltip.style.top = (touch.clientY - 50) + 'px';
+
+    // Auto-hide after 2s on mobile
+    setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+  });
+
+  // Click -> go to guide
+  el.addEventListener('click', function() {
+    const idx = this.dataset.index;
+    window.location.href = '/eu-incentive-guide.html#country-' + idx;
+  });
+});
+
+// Hide tooltip on scroll
+window.addEventListener('scroll', () => { tooltip.style.display = 'none'; });
+</script>
+
+</body>
+</html>
