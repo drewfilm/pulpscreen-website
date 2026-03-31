@@ -215,7 +215,6 @@ nav {
   z-index: 1001;
 }
 
-.lang-switch:hover .lang-dropdown,
 .lang-switch.open .lang-dropdown { display: block; }
 
 .lang-dropdown a {
@@ -1018,6 +1017,7 @@ footer {
   .nav-links { display: none; }
   .nav-links.show { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,10,10,0.95); backdrop-filter: blur(24px); padding: 20px; gap: 16px; z-index: 100; }
   .nav-toggle { display: flex; }
+  .lang-switch { margin-left: auto; margin-right: 8px; }
   .sub-nav { padding: 0 12px; gap: 2px; overflow-x: auto; justify-content: flex-start; }
   .sub-nav-link { font-size: 9px; padding: 6px 10px; flex-shrink: 0; }
   .hero { padding: 140px 20px 60px; }
@@ -1775,6 +1775,17 @@ function handleHash() {
 
 handleHash();
 window.addEventListener('hashchange', handleHash);
+
+// Language dropdown toggle (click, not hover)
+document.querySelectorAll('.lang-current').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.closest('.lang-switch').classList.toggle('open');
+  });
+});
+document.addEventListener('click', () => {
+  document.querySelectorAll('.lang-switch.open').forEach(el => el.classList.remove('open'));
+});
 
 // Language persistence
 (function() {

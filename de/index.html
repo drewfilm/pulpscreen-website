@@ -264,7 +264,6 @@ img { max-width: 100%; height: auto; }
   z-index: 1001;
 }
 
-.lang-switch:hover .lang-dropdown,
 .lang-switch.open .lang-dropdown { display: block; }
 
 .lang-dropdown a {
@@ -996,6 +995,7 @@ img { max-width: 100%; height: auto; }
   .nav-dropdown-menu { display: block; position: static; background: none; backdrop-filter: none; border: none; box-shadow: none; margin: 0; padding: 0 0 0 16px; }
   .nav-dropdown > .nav-link::after { content: ''; }
   .nav-toggle { display: flex; }
+  .lang-switch { margin-left: auto; margin-right: 8px; }
   .footer-links { gap: 24px; }
 }
 
@@ -1360,6 +1360,17 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
   a.addEventListener('click', () => {
     document.querySelector('.nav-links').classList.remove('show');
   });
+});
+
+// Language dropdown toggle (click, not hover)
+document.querySelectorAll('.lang-current').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    this.closest('.lang-switch').classList.toggle('open');
+  });
+});
+document.addEventListener('click', () => {
+  document.querySelectorAll('.lang-switch.open').forEach(el => el.classList.remove('open'));
 });
 
 // Language persistence
