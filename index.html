@@ -1291,6 +1291,31 @@ document.querySelectorAll('.service-card, .featured-card, .contact-inner').forEa
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
 });
+// Language persistence
+(function() {
+  const currentLang = document.documentElement.lang || 'en';
+  const stored = localStorage.getItem('pulpscreen-lang');
+  const path = window.location.pathname;
+  const hash = window.location.hash;
+
+  // Redirect if stored language doesn't match current page
+  if (stored === 'fr' && currentLang === 'en') {
+    const frPath = '/fr' + (path === '/' ? '/' : path);
+    window.location.replace(frPath + hash);
+    return;
+  }
+
+  // Store language on lang-switch click
+  document.querySelectorAll('.lang-switch a').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const lang = this.classList.contains('active') ? currentLang : (this.href.includes('/fr/') ? 'fr' : 'en');
+      localStorage.setItem('pulpscreen-lang', lang);
+    });
+  });
+
+  // Set current language in storage if not set
+  if (!stored) localStorage.setItem('pulpscreen-lang', currentLang);
+})();
 </script>
 </body>
 </html>

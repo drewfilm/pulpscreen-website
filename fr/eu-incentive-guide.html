@@ -1685,6 +1685,29 @@ function handleHash() {
 
 handleHash();
 window.addEventListener('hashchange', handleHash);
+
+// Language persistence
+(function() {
+  const currentLang = document.documentElement.lang || 'fr';
+  const stored = localStorage.getItem('pulpscreen-lang');
+  const path = window.location.pathname;
+  const hash = window.location.hash;
+
+  if (stored === 'en' && currentLang === 'fr') {
+    const enPath = path.replace(/^\/fr\/?/, '/');
+    window.location.replace(enPath + hash);
+    return;
+  }
+
+  document.querySelectorAll('.lang-switch a').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const lang = this.classList.contains('active') ? currentLang : (this.href.includes('/fr/') ? 'fr' : 'en');
+      localStorage.setItem('pulpscreen-lang', lang);
+    });
+  });
+
+  if (!stored) localStorage.setItem('pulpscreen-lang', currentLang);
+})();
 </script>
 </body>
 </html>
