@@ -168,33 +168,82 @@ nav {
 .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
 
 .lang-switch {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  margin-left: 8px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 5px;
-  padding: 2px;
+  position: relative;
+  margin-left: 12px;
 }
 
-.lang-switch a {
-  padding: 5px 10px;
+.lang-current {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--gray-300);
+  text-transform: uppercase;
+  transition: border-color 0.2s;
+}
+
+.lang-current:hover { border-color: rgba(255,255,255,0.2); }
+
+.lang-current .flag { font-size: 16px; line-height: 1; }
+
+.lang-current::after {
+  content: '';
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--gray-300);
+  margin-left: 2px;
+}
+
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 150px;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 6px 0;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+  z-index: 1001;
+}
+
+.lang-switch:hover .lang-dropdown,
+.lang-switch.open .lang-dropdown { display: block; }
+
+.lang-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--gray-300);
   text-decoration: none;
-  border-radius: 4px;
-  transition: all 0.2s;
+  transition: color 0.2s, background 0.2s;
 }
 
-.lang-switch a.active {
-  background: rgba(255,255,255,0.1);
+.lang-dropdown a .flag { font-size: 16px; }
+
+.lang-dropdown a:hover {
   color: var(--white);
+  background: rgba(255,107,43,0.08);
 }
 
-.lang-switch a:hover:not(.active) { color: var(--white); }
+.lang-dropdown a.active {
+  color: var(--white);
+  background: rgba(255,255,255,0.06);
+}
 
 .nav-toggle {
   display: none;
@@ -1003,12 +1052,15 @@ footer {
     <a href="#" class="nav-link-main active" onclick="showPage('home'); return false;">Guide de Coproduction</a>
     <a href="/#contact" class="nav-cta">Nous Contacter</a>
   </div>
-  <div class="lang-switch">
-    <a href="/eu-incentive-guide.html">EN</a>
-    <a href="/fr/eu-incentive-guide.html" class="active">FR</a>
-    <a href="/es/eu-incentive-guide.html">ES</a>
-    <a href="/de/eu-incentive-guide.html">DE</a>
-    <a href="/it/eu-incentive-guide.html">IT</a>
+    <div class="lang-switch">
+    <div class="lang-current"><span class="flag">🇫🇷</span> FR</div>
+    <div class="lang-dropdown">
+      <a href="/eu-incentive-guide.html"><span class="flag">🇬🇧</span> English</a>
+      <a href="/fr/eu-incentive-guide.html" class="active"><span class="flag">🇫🇷</span> Français</a>
+      <a href="/es/eu-incentive-guide.html"><span class="flag">🇪🇸</span> Español</a>
+      <a href="/de/eu-incentive-guide.html"><span class="flag">🇩🇪</span> Deutsch</a>
+      <a href="/it/eu-incentive-guide.html"><span class="flag">🇮🇹</span> Italiano</a>
+    </div>
   </div>
   <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">
     <span></span><span></span><span></span>
