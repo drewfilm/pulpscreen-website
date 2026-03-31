@@ -1,0 +1,961 @@
+{
+  "metadata": {
+    "title": "Canada Film Production Funding Programmes",
+    "lastUpdated": "2026-03-31",
+    "sources": [
+      "https://www.canada.ca/en/canadian-heritage/services/funding/cavco-tax-credits.html",
+      "https://telefilm.ca/en",
+      "https://cmf-fmc.ca",
+      "https://production.nfbonf.ca",
+      "https://creativebc.com",
+      "https://www.ontariocreates.ca",
+      "https://sodec.gouv.qc.ca",
+      "https://www.alberta.ca/film-television-tax-credit",
+      "https://www.mbfilmmusic.ca",
+      "https://screennovascotia.com",
+      "https://www.creativesask.ca",
+      "https://www2.gnb.ca",
+      "https://www.fondsquebecor.ca"
+    ]
+  },
+  "programmes": [
+    {
+      "id": "cptc",
+      "name": "Canadian Film or Video Production Tax Credit (CPTC)",
+      "governingBody": "CAVCO / Canada Revenue Agency",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "short-film", "web-series"],
+      "rate": {
+        "base": 25,
+        "effectiveMax": 15,
+        "display": "25% of qualified labour expenditure (max effective rate ~15% of net production cost, since qualified labour is capped at 60% of net cost)"
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "display": "No minimum spend; production must meet Canadian content requirements (CAVCO certification)"
+      },
+      "cap": {
+        "display": "No per-project or annual cap on credit amount"
+      },
+      "deadlines": {
+        "frequency": "Rolling (Part A certificate can be applied for before/during production; Part B after completion)",
+        "notes": "CAVCO service standard: 180 calendar days processing time (85% target). 2025 advertising guidelines updated."
+      },
+      "eligibility": "Canadian-controlled production company (Canadian ownership and control required). Production must qualify as Canadian content under CAVCO point system. Must obtain Part A and Part B certificates from CAVCO. Excludes news, current affairs, sports, game shows, reality TV, advertising, pornography. Stacks with provincial credits (though provincial credits reduce net cost base).",
+      "officialUrl": "https://www.canada.ca/en/canadian-heritage/services/funding/cavco-tax-credits/canadian-film-video-production.html",
+      "alternateUrl": "https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/rc4164/canadian-film-video-production-tax-credit-guide-form-t1131.html",
+      "status": "active"
+    },
+    {
+      "id": "pstc",
+      "name": "Film or Video Production Services Tax Credit (PSTC)",
+      "governingBody": "CAVCO / Canada Revenue Agency",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "short-film", "web-series"],
+      "rate": {
+        "base": 16,
+        "display": "16% of qualified Canadian labour expenditure"
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "amount": 1000000,
+        "display": "C$1,000,000 minimum total production cost (within 24 months of principal photography); for series: C$100,000/episode (<30 min) or C$200,000/episode (>=30 min)",
+        "basis": "total production cost"
+      },
+      "cap": {
+        "display": "No per-project or annual cap on credit amount"
+      },
+      "deadlines": {
+        "frequency": "Rolling (accreditation certificate from CAVCO required)",
+        "notes": "CAVCO service standard: 180 calendar days processing time (85% target)"
+      },
+      "eligibility": "Available to both Canadian and foreign-owned corporations with a permanent establishment in Canada. No Canadian content requirement. Production must be an accredited production (accreditation certificate from CAVCO). Cannot be combined with CPTC for the same production. Excludes news, current affairs, sports, game shows, reality TV, advertising, pornography.",
+      "officialUrl": "https://www.canada.ca/en/canadian-heritage/services/funding/cavco-tax-credits/film-video-production-services.html",
+      "alternateUrl": "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/film-media-tax-credits/film-video-production-services-tax-credit-overview.html",
+      "status": "active"
+    },
+    {
+      "id": "telefilm-production-program",
+      "name": "Telefilm Canada Production Program",
+      "governingBody": "Telefilm Canada",
+      "level": "national",
+      "category": "equity",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Equity investment; typically ~1/3 of eligible Canadian production costs"
+      },
+      "annualBudget": {
+        "display": "Part of Telefilm's ~C$144.5M total annual investment (2024-25); C$150M over 3 years renewed from 2026-27"
+      },
+      "minSpend": {
+        "display": "Minimum C$200,000 offer of financing from Telefilm"
+      },
+      "cap": {
+        "display": "Greenlight financing: min C$50,000, max 25% of participation up to C$500,000. English big-budget: ~C$25.8M across 12 films; French: ~C$17.75M across 12 films per round"
+      },
+      "deadlines": {
+        "frequency": "Multiple submission windows per year (separate for English/French markets, big/low budget streams)",
+        "notes": "2026-27 opening dates announced. Minority co-productions have specific submission dates."
+      },
+      "eligibility": "Canadian-owned and controlled production companies. Feature films only. Must hold CAVCO Part A certificate (or equivalent). Streams: Big Budget, Low Budget, Indigenous, Minority Co-production. Recoupment from distribution revenues. 2025-26 changes: simplified recoupment, greater flexibility for Indigenous international creative talent.",
+      "officialUrl": "https://telefilm.ca/en/programmes/production-program",
+      "status": "active"
+    },
+    {
+      "id": "telefilm-development-program",
+      "name": "Telefilm Canada Development Program",
+      "governingBody": "Telefilm Canada",
+      "level": "national",
+      "category": "grant",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Non-repayable contribution for development costs"
+      },
+      "annualBudget": {
+        "display": "Part of Telefilm's overall annual budget; C$420,000 special envelope for animated features"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Prequalified Stream: Tier A up to C$100,000, Tier B up to C$60,000, Tier C up to C$35,000 (2024-25 rates)"
+      },
+      "deadlines": {
+        "frequency": "Multiple submission windows per year",
+        "notes": "Four streams: Prequalified, General, Indigenous, Black People and People of Colour. Reopened for 2025-2026. Springboard Initiative for high-ranked unsuccessful Production Program applicants."
+      },
+      "eligibility": "Canadian-owned and controlled production companies. Feature film projects at the development stage. Separate streams for equity-seeking groups.",
+      "officialUrl": "https://telefilm.ca/en/programmes/development-program",
+      "status": "active"
+    },
+    {
+      "id": "telefilm-talent-to-watch",
+      "name": "Telefilm Canada Talent to Watch Program",
+      "governingBody": "Telefilm Canada",
+      "level": "national",
+      "category": "grant",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Production financing for first feature films"
+      },
+      "annualBudget": {
+        "display": "~C$3.45M invested in 17 projects (2025-26 cohort)"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "~C$200,000 per project (average)"
+      },
+      "deadlines": {
+        "frequency": "Annual submission window",
+        "notes": "2026 submissions open April 14-28, 2026. Streams: Industry Partner, Indigenous, Festival Selection. ~500 applicants, 17 selected."
+      },
+      "eligibility": "Emerging filmmakers producing their first feature film. Three selection streams: Industry Partner (via designated industry partner organizations), Indigenous, and Festival Selection.",
+      "officialUrl": "https://telefilm.ca/en/programmes/talent-to-watch-program",
+      "status": "active"
+    },
+    {
+      "id": "cmf-convergent-stream",
+      "name": "Canada Media Fund - Convergent Stream (Linear Content)",
+      "governingBody": "Canada Media Fund (CMF)",
+      "level": "national",
+      "category": "grant",
+      "format": ["tv-series", "tv-film", "documentary", "animation", "web-series"],
+      "rate": {
+        "display": "Varies by programme; equity investment or licence fee top-up"
+      },
+      "annualBudget": {
+        "amount": 289424000,
+        "display": "C$289.4M for Linear content (English C$190.1M + French C$99.3M) out of C$346M total CMF budget (2025-26)"
+      },
+      "minSpend": {
+        "display": "Varies by programme stream"
+      },
+      "cap": {
+        "display": "Varies by programme; regional cap of 60% of total IDM programme funding per year"
+      },
+      "deadlines": {
+        "frequency": "Multiple deadlines per year by programme",
+        "notes": "See cmf-fmc.ca/our-programs/program-deadlines/ for full schedule. Predevelopment: first-come first-served (June-December 2025)."
+      },
+      "eligibility": "Canadian production companies with a Canadian broadcaster trigger (licence fee commitment). Must obtain CAVCO certification. Content must be broadcast/distributed on a Canadian platform. Described video required for projects with budgets over C$500,000 (from 2025-26).",
+      "officialUrl": "https://cmf-fmc.ca/our-programs/",
+      "alternateUrl": "https://cmf-fmc.ca/our-programs/program-deadlines/",
+      "status": "active"
+    },
+    {
+      "id": "cmf-experimental-stream",
+      "name": "Canada Media Fund - Experimental Stream (Innovation & Experimentation Program)",
+      "governingBody": "Canada Media Fund (CMF)",
+      "level": "national",
+      "category": "grant",
+      "format": ["web-series", "animation"],
+      "rate": {
+        "display": "Up to 75% of eligible costs for projects >C$750K; Lower Budget Stream for projects <=C$750K"
+      },
+      "annualBudget": {
+        "amount": 41971000,
+        "display": "C$42M for IDM/Experimental (English C$29.6M + French C$12.4M) out of C$346M total CMF budget (2025-26)"
+      },
+      "minSpend": {
+        "display": "Varies; Lower Budget Stream for projects up to C$750,000"
+      },
+      "cap": {
+        "display": "Max contribution: lesser of 75% of eligible costs or programme-specific caps"
+      },
+      "deadlines": {
+        "frequency": "Multiple deadlines per year",
+        "notes": "Includes Commercial Projects Program with audience engagement criteria. Innovation & Experimentation now includes Lower Budget Stream for emerging producers."
+      },
+      "eligibility": "Canadian production companies. Interactive digital media, video games, VR/AR, immersive storytelling. Must demonstrate innovation and experimentation.",
+      "officialUrl": "https://cmf-fmc.ca/program/innovation-experimentation-program/",
+      "status": "active"
+    },
+    {
+      "id": "cmf-indigenous-program",
+      "name": "Canada Media Fund - Indigenous Program",
+      "governingBody": "Canada Media Fund (CMF) / Indigenous Screen Office (ISO)",
+      "level": "national",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "web-series"],
+      "rate": {
+        "display": "Non-repayable contribution when CMF financing is above 40% of eligible costs (from 2025-26)"
+      },
+      "annualBudget": {
+        "display": "Part of C$346M total CMF budget (2025-26); dedicated Indigenous envelope"
+      },
+      "minSpend": {
+        "display": "Varies by stream"
+      },
+      "cap": {
+        "display": "Varies by stream and project type"
+      },
+      "deadlines": {
+        "frequency": "Multiple deadlines per year",
+        "notes": "From 2025-26, administered by the Indigenous Screen Office (ISO). Development and predevelopment combined into single programme. Peer selection overseen by ISO."
+      },
+      "eligibility": "Indigenous-led production companies and creators. Administered by the Indigenous Screen Office. Non-repayable contributions available above 40% threshold.",
+      "officialUrl": "https://cmf-fmc.ca/our-programs/",
+      "status": "active"
+    },
+    {
+      "id": "nfb-filmmaker-assistance-program",
+      "name": "NFB Filmmaker Assistance Program (FAP)",
+      "governingBody": "National Film Board of Canada (NFB)",
+      "level": "national",
+      "category": "grant",
+      "format": ["feature-film", "documentary", "short-film", "animation"],
+      "rate": {
+        "display": "In-kind post-production services or cash contribution for local post-production"
+      },
+      "annualBudget": {
+        "display": "Part of NFB's overall budget; ~26 projects funded per cycle (FAP + ACIC combined)"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Up to C$7,500 for short films; up to C$15,000 for feature-length films (local post-production). Full in-kind post-production services at NFB Montreal for those who travel."
+      },
+      "deadlines": {
+        "frequency": "3 terms per year",
+        "notes": "Term 2: November 14, 2025 (5pm EST); Term 3: March 14, 2026 (5pm EST). ACIC (French-language equivalent) runs on same schedule."
+      },
+      "eligibility": "Independent anglophone Canadian filmmakers (FAP) or francophone filmmakers (ACIC). Film must be in post-production or near completion. 10% cost-share for filmmakers within 150km of Montreal; 100% NFB-covered for those travelling from further away. EDI and regional representation criteria in selection.",
+      "officialUrl": "https://production.nfbonf.ca/en/filmmaker-assistance-program-fap/",
+      "alternateUrl": "https://www.canada.ca/en/national-film-board.html",
+      "status": "active"
+    },
+    {
+      "id": "bc-fibc",
+      "name": "Film Incentive BC (FIBC)",
+      "governingBody": "Creative BC / Province of British Columbia",
+      "level": "provincial",
+      "region": "british-columbia",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "short-film"],
+      "rate": {
+        "base": 40,
+        "regional": 12.5,
+        "distantLocation": 6,
+        "training": 3,
+        "dave": 16,
+        "scriptwriting": 35,
+        "display": "40% basic (increased from 35% for productions starting after Dec 31, 2024) + 12.5% regional + 6% distant location + 3% training + 16% DAVE + 35% scriptwriting. Combined rate can exceed 70%."
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "display": "Must meet Canadian content requirements (CAVCO certification). Production must be produced by a BC-based Canadian-controlled corporation."
+      },
+      "cap": {
+        "display": "No per-project or annual cap"
+      },
+      "deadlines": {
+        "frequency": "Rolling (certification through Creative BC)",
+        "notes": "Filing deadline extended from 18 to 36 months for tax years beginning on/after Feb 17, 2026. Completion certificate filing requirement eliminated for FIBC (from Feb 17, 2026)."
+      },
+      "eligibility": "Canadian-controlled corporation with permanent establishment in BC. Must qualify as Canadian content (CAVCO certified). Regional/distant location credits restored for animation from Jan 1, 2025 (physical office requirement). Accreditation certificate fee: C$19,000 for productions starting after Dec 31, 2024.",
+      "officialUrl": "https://creativebc.com/motion-picture-tax-credits/film-incentive-bc/",
+      "alternateUrl": "https://www2.gov.bc.ca/gov/content/taxes/income-taxes/corporate/credits/film-tv",
+      "status": "active"
+    },
+    {
+      "id": "bc-pstc",
+      "name": "BC Production Services Tax Credit (BC PSTC)",
+      "governingBody": "Creative BC / Province of British Columbia",
+      "level": "provincial",
+      "region": "british-columbia",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "vfx-post"],
+      "rate": {
+        "base": 36,
+        "regional": 6,
+        "distantLocation": 6,
+        "dave": 16,
+        "majorProduction": 2,
+        "display": "36% basic (increased from 28% for productions starting after Dec 31, 2024) + 6% regional + 6% distant location + 16% DAVE + 2% major production (>C$200M BC costs). Combined rate can exceed 60%."
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "display": "No minimum spend requirement"
+      },
+      "cap": {
+        "display": "No per-project or annual cap"
+      },
+      "deadlines": {
+        "frequency": "Rolling (accreditation through Creative BC)",
+        "notes": "Notice of intent requirement eliminated for notices due on/after Feb 17, 2026. Filing deadline extended from 18 to 36 months. Accreditation fee: C$19,000 for productions starting after Dec 31, 2024."
+      },
+      "eligibility": "Available to both Canadian and foreign-owned corporations with permanent establishment in BC. No Canadian content requirement. Major Production credit (2%) for BC costs >C$200M (effective Jan 1, 2025). Regional/distant location credits restored for animation from Jan 1, 2025.",
+      "officialUrl": "https://creativebc.com/motion-picture-tax-credits/production-services-tax-credit/",
+      "alternateUrl": "https://www2.gov.bc.ca/gov/content/taxes/income-taxes/corporate/credits/production-services",
+      "status": "active"
+    },
+    {
+      "id": "bc-dave",
+      "name": "BC Digital Animation, Visual Effects and Post-Production Tax Credit (DAVE)",
+      "governingBody": "Creative BC / Province of British Columbia",
+      "level": "provincial",
+      "region": "british-columbia",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "animation", "vfx-post"],
+      "rate": {
+        "base": 16,
+        "display": "16% of eligible BC labour expenditure directly attributable to digital animation, VFX, and post-production activities"
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; supplemental credit claimed alongside FIBC or BC PSTC"
+      },
+      "minSpend": {
+        "display": "Must be eligible for either FIBC or BC PSTC"
+      },
+      "cap": {
+        "display": "No per-project cap"
+      },
+      "deadlines": {
+        "frequency": "Rolling (claimed alongside FIBC or BC PSTC)",
+        "notes": "Eligible activities: digital animation, visual effects, post-production. Labour paid to BC-based individuals and corporations."
+      },
+      "eligibility": "Corporation must claim either FIBC or BC PSTC. Eligible expenditures must be for digital animation, VFX, or post-production activities performed in BC by BC-based workers.",
+      "officialUrl": "https://creativebc.com/motion-picture-tax-credits/film-incentive-bc/",
+      "alternateUrl": "https://creativebc.com/wp-content/uploads/2025/07/DAVE_Tax_Credit_Info_Bulletin_FAQ.pdf",
+      "status": "active"
+    },
+    {
+      "id": "on-ofttc",
+      "name": "Ontario Film and Television Tax Credit (OFTTC)",
+      "governingBody": "Ontario Creates / Ontario Ministry of Finance",
+      "level": "provincial",
+      "region": "ontario",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "short-film"],
+      "rate": {
+        "base": 35,
+        "regional": 10,
+        "firstTimeProducer": 40,
+        "display": "35% of qualified Ontario labour expenditure + 10% regional bonus (outside GTA, requires 85%+ location days outside GTA or 100% outside GTA). First-time producers: 40% on first C$240,000 in qualifying labour."
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "display": "Must meet Canadian content requirements"
+      },
+      "cap": {
+        "display": "No per-project or annual cap"
+      },
+      "deadlines": {
+        "frequency": "Rolling (certification through Ontario Creates)"
+      },
+      "eligibility": "Canadian-controlled corporation with permanent establishment in Ontario. Must qualify as Canadian content (CAVCO certified). Cannot be combined with OPSTC for the same production.",
+      "officialUrl": "https://www.ontariocreates.ca/tax-incentives/ofttc",
+      "status": "active"
+    },
+    {
+      "id": "on-opstc",
+      "name": "Ontario Production Services Tax Credit (OPSTC)",
+      "governingBody": "Ontario Creates / Ontario Ministry of Finance",
+      "level": "provincial",
+      "region": "ontario",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "vfx-post"],
+      "rate": {
+        "base": 21.5,
+        "display": "21.5% of qualified Ontario production expenditures (broader base than OFTTC: includes labour, service contracts, and tangible property)"
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "display": "No minimum spend specified; must have permanent establishment in Ontario"
+      },
+      "cap": {
+        "display": "No per-project or annual cap"
+      },
+      "deadlines": {
+        "frequency": "Rolling (certification through Ontario Creates)"
+      },
+      "eligibility": "Available to both Canadian and foreign-owned corporations with permanent establishment in Ontario. No Canadian content requirement. Cannot be combined with OFTTC for the same production. Broader expenditure base than labour-only credits.",
+      "officialUrl": "https://www.ontariocreates.ca/tax-incentives/opstc",
+      "status": "active"
+    },
+    {
+      "id": "on-ocase",
+      "name": "Ontario Computer Animation and Special Effects Tax Credit (OCASE)",
+      "governingBody": "Ontario Creates / Ontario Ministry of Finance",
+      "level": "provincial",
+      "region": "ontario",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "animation", "vfx-post"],
+      "rate": {
+        "base": 18,
+        "display": "18% of eligible Ontario labour expenditure for digital animation and VFX work"
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "amount": 25000,
+        "display": "Minimum C$25,000 in Ontario labour expenditures per production (from March 26, 2024: standalone eligibility, no longer requires OFTTC/OPSTC qualification)",
+        "basis": "Ontario labour expenditures"
+      },
+      "cap": {
+        "display": "No cap on eligible labour expenditures"
+      },
+      "deadlines": {
+        "frequency": "Rolling (certification through Ontario Creates)"
+      },
+      "eligibility": "Available to both Canadian and foreign-owned corporations. From March 26, 2024: standalone credit, no longer requires OFTTC or OPSTC qualification. Minimum C$25,000 Ontario labour expenditures required. Can be used in conjunction with either OFTTC or OPSTC.",
+      "officialUrl": "https://www.ontariocreates.ca/tax-incentives/ocase",
+      "status": "active"
+    },
+    {
+      "id": "on-ip-fund-linear",
+      "name": "Ontario Creates IP Fund - Linear Content Stream",
+      "governingBody": "Ontario Creates",
+      "level": "provincial",
+      "region": "ontario",
+      "category": "grant",
+      "format": ["feature-film", "documentary", "web-series"],
+      "rate": {
+        "display": "Development: up to 50% of Ontario spend (C$5,000 min, C$25,000 max). Production - Drama: up to 10% of Ontario spend (max C$400,000). Production - Documentary: up to 10% (max C$200,000). Digital Series: up to 30% (max C$200,000)."
+      },
+      "annualBudget": {
+        "display": "Part of Ontario Creates overall budget; replaced former Film Fund and IDM Fund"
+      },
+      "minSpend": {
+        "display": "C$5,000 minimum request for development"
+      },
+      "cap": {
+        "display": "C$400,000 per dramatic feature; C$200,000 per documentary feature or digital series"
+      },
+      "deadlines": {
+        "frequency": "2x/year",
+        "notes": "Next deadlines: April 21, 2026 and September 22, 2026. Non-repayable contributions."
+      },
+      "eligibility": "Ontario-based production companies. Launched 2025, replacing former Film Fund and IDM Fund. Supports feature film (drama and documentary) and digital series at development and production stages.",
+      "officialUrl": "https://www.ontariocreates.ca/investment-programs/content-creation/intellectual-property-fund/linear-content-stream",
+      "status": "active"
+    },
+    {
+      "id": "qc-qfttc",
+      "name": "Refundable Tax Credit for Quebec Film and Television Production (QFTTC)",
+      "governingBody": "SODEC / Revenu Quebec",
+      "level": "provincial",
+      "region": "quebec",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "short-film"],
+      "rate": {
+        "base": 32,
+        "frenchLanguage": 40,
+        "display": "32% base rate on eligible labour expenditures; up to 40% for French-language fiction and animated fiction films. Labour capped at 50% of production costs."
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "display": "Must meet Quebec content requirements; SODEC approval certificate required"
+      },
+      "cap": {
+        "display": "Labour expenditures capped at 50% of production costs"
+      },
+      "deadlines": {
+        "frequency": "Rolling (SODEC advance ruling or certificate required)",
+        "notes": "2026 budget amendments apply to productions with applications submitted after March 18, 2026"
+      },
+      "eligibility": "Quebec-based production companies. Must obtain SODEC Approval Certificate attesting eligibility. French-language productions receive enhanced rate. Cannot combine with QPSTC for same production.",
+      "officialUrl": "https://www.quebec-elan.org/en/quebec-relations/refundable-tax-credit-for-quebec-film-and-television-production/",
+      "alternateUrl": "https://sodec.gouv.qc.ca/domaines-dintervention/cinema-et-television/",
+      "status": "active"
+    },
+    {
+      "id": "qc-qpstc",
+      "name": "Refundable Tax Credit for Film Production Services in Quebec (QPSTC)",
+      "governingBody": "SODEC / Revenu Quebec",
+      "level": "provincial",
+      "region": "quebec",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "vfx-post"],
+      "rate": {
+        "base": 25,
+        "vfxBonus": 20,
+        "display": "25% of qualified expenditures (all-spend: labour + qualified properties) + additional 20% on labour for computer-aided animation, VFX, and chroma-key shooting"
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "display": "No minimum spend; SODEC approval certificate required"
+      },
+      "cap": {
+        "display": "No per-project cap"
+      },
+      "deadlines": {
+        "frequency": "Rolling (SODEC approval certificate required)",
+        "notes": "Cannot combine with QFTTC or other Quebec tax credits (except Quebec Film Dubbing Tax Credit, if dubbing costs excluded from QPSTC)"
+      },
+      "eligibility": "Available to both Canadian and foreign-owned corporations. All-spend base (not just labour). VR and AR productions eligible if they meet standard criteria. Cannot combine with QFTTC for same production.",
+      "officialUrl": "https://sodec.gouv.qc.ca/wp-content/uploads/refundable-tax-credit-film-television-production-services-sept-2025.pdf",
+      "alternateUrl": "https://www.bctq.ca/filming-in-quebec-2/",
+      "status": "active"
+    },
+    {
+      "id": "qc-sodec-production-aid",
+      "name": "SODEC Production Assistance Program (Programme d'aide a la production)",
+      "governingBody": "SODEC",
+      "level": "provincial",
+      "region": "quebec",
+      "category": "grant",
+      "format": ["feature-film", "documentary", "short-film", "tv-series", "animation"],
+      "rate": {
+        "display": "Up to 65% of admissible expenses"
+      },
+      "annualBudget": {
+        "display": "Part of SODEC's overall cultural industries budget"
+      },
+      "minSpend": {
+        "display": "Varies by volet (component)"
+      },
+      "cap": {
+        "amount": 4000000,
+        "display": "C$4,000,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Multiple deadlines per year by volet",
+        "notes": "Volet 1 (feature fiction): ~April and October. Volet 3 (documentary): ~January and July. Volet 4 (shorts/digital): ~February and May. All applications via SOD@cces portal."
+      },
+      "eligibility": "Quebec-based production enterprise. Administrators and producers must have relevant professional experience. First-time applicants must contact SODEC at least one month before submission. All documents must be in French (per Charte de la langue francaise). Includes minority co-production support.",
+      "officialUrl": "https://sodec.gouv.qc.ca/domaines-dintervention/cinema-et-television/aide-financiere/production/",
+      "alternateUrl": "https://sodec.gouv.qc.ca/wp-content/uploads/programme-aide-production-2025-2026.pdf",
+      "status": "active"
+    },
+    {
+      "id": "qc-quebecor-fund",
+      "name": "Quebecor Fund - Television Production Assistance Program",
+      "governingBody": "Quebecor Fund",
+      "level": "provincial",
+      "region": "quebec",
+      "category": "grant",
+      "format": ["tv-series", "documentary", "animation"],
+      "rate": {
+        "display": "Varies by component; contributions of C$500K-C$2.2M per round"
+      },
+      "annualBudget": {
+        "amount": 5000000,
+        "display": "~C$5M/year (from BDU contributions via Videotron). Total disbursed to date: >C$147.1M since 1999."
+      },
+      "minSpend": {
+        "display": "Must have Canadian broadcaster commitment"
+      },
+      "cap": {
+        "display": "Varies by component and round"
+      },
+      "deadlines": {
+        "frequency": "2-3 submission rounds per year (April 1 and October 1 typical)",
+        "notes": "Next deadline: April 1, 2026 at 5:00 pm. Two components: Support for Creation of IP, and Support for Production of IP for International Markets. Permanent envelope for OLMC producers from Oct 2025."
+      },
+      "eligibility": "Canadian production companies. Must have broadcaster support. 425 projects supported since inception involving 105 production companies. Genre breakdown: 48% drama, 20% children/youth, 19% documentary, 13% variety/performing arts.",
+      "officialUrl": "https://www.fondsquebecor.ca/en/",
+      "status": "active"
+    },
+    {
+      "id": "qc-quebecor-export",
+      "name": "Quebecor Fund - Export Assistance Program (EXAP)",
+      "governingBody": "Quebecor Fund",
+      "level": "provincial",
+      "region": "quebec",
+      "category": "grant",
+      "format": ["tv-series", "documentary", "animation", "feature-film"],
+      "rate": {
+        "display": "Contribution for export and marketing activities"
+      },
+      "annualBudget": {
+        "display": "Part of Quebecor Fund's ~C$5M annual budget; >C$20.4M disbursed since creation"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Varies by project"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds per year",
+        "notes": "Joint programme with CMF allocating C$900K in export assistance (2025 round). Supports export initiatives and marketing for audiovisual content adapted to international markets."
+      },
+      "eligibility": "Canadian production companies with completed content suitable for international distribution. Supports export initiatives outside Quebec and internationally.",
+      "officialUrl": "https://www.fondsquebecor.ca/en/",
+      "status": "active"
+    },
+    {
+      "id": "ab-fttc",
+      "name": "Alberta Film and Television Tax Credit (FTTC)",
+      "governingBody": "Government of Alberta",
+      "level": "provincial",
+      "region": "alberta",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation"],
+      "rate": {
+        "base": 22,
+        "enhanced": 30,
+        "display": "22% of eligible production costs (base); 30% if majority of principal photography/key animation takes place in Alberta"
+      },
+      "annualBudget": {
+        "amount": 105000000,
+        "display": "C$105M for fiscal year ending March 31, 2026. Budget 2026 reduced allocation due to unused funds."
+      },
+      "minSpend": {
+        "amount": 499999,
+        "display": "Minimum C$499,999 total production costs (excluding GST)",
+        "basis": "total production cost"
+      },
+      "cap": {
+        "display": "Subject to annual programme allocation (C$105M for 2025-26); unused funds do not roll over"
+      },
+      "deadlines": {
+        "frequency": "Rolling (must apply within 120 days of commencing principal photography in Alberta)",
+        "notes": "Application must be submitted no more than 120 days after commencing principal photography in Alberta"
+      },
+      "eligibility": "New productions only. Portion of principal photography or key animation must be completed in Alberta. Cannot have received Alberta Production Grant or Screen-Based Production Grant for same project. Available to both domestic and foreign productions.",
+      "officialUrl": "https://www.alberta.ca/film-television-tax-credit",
+      "alternateUrl": "https://open.alberta.ca/publications/film-and-television-tax-credit-program-guidelines",
+      "status": "active"
+    },
+    {
+      "id": "ab-amf-production-grant",
+      "name": "Alberta Media Fund - Alberta Made Production Grant",
+      "governingBody": "Government of Alberta",
+      "level": "provincial",
+      "region": "alberta",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "documentary", "animation", "short-film"],
+      "rate": {
+        "display": "Grant funding for small-budget Alberta productions"
+      },
+      "annualBudget": {
+        "display": "Part of Alberta Media Fund overall budget"
+      },
+      "minSpend": {
+        "display": "Must be Alberta-based production"
+      },
+      "cap": {
+        "amount": 125000,
+        "display": "Up to C$125,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling or periodic intake",
+        "notes": "Cannot be combined with FTTC for same project"
+      },
+      "eligibility": "Alberta-based production companies. Small-budget productions. Cannot be combined with FTTC for same project.",
+      "officialUrl": "https://www.alberta.ca/alberta-media-fund",
+      "status": "active"
+    },
+    {
+      "id": "ab-amf-script-development",
+      "name": "Alberta Media Fund - Project Script Development Grant",
+      "governingBody": "Government of Alberta",
+      "level": "provincial",
+      "region": "alberta",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "documentary"],
+      "rate": {
+        "display": "Grant for script development"
+      },
+      "annualBudget": {
+        "display": "Part of Alberta Media Fund overall budget"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 55000,
+        "display": "Up to C$55,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Periodic intake"
+      },
+      "eligibility": "Alberta-based screenwriters and production companies.",
+      "officialUrl": "https://www.alberta.ca/alberta-media-fund",
+      "status": "active"
+    },
+    {
+      "id": "mb-cost-of-salaries",
+      "name": "Manitoba Film and Video Production Tax Credit - Cost-of-Salaries",
+      "governingBody": "Manitoba Film & Music (MFM) / Province of Manitoba",
+      "level": "provincial",
+      "region": "manitoba",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "web-series"],
+      "rate": {
+        "base": 45,
+        "frequentFilming": 10,
+        "manitobaProducer": 5,
+        "ruralNorthern": 5,
+        "maxCombined": 65,
+        "display": "45% base on eligible Manitoba labour + 10% frequent filming bonus (3rd film in 2 years) + 5% Manitoba producer bonus + 5% rural/northern bonus. Max combined: 65%."
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "display": "Minimum 25% of corporation's T4 Summary paid to eligible Manitoba employees (excluding documentaries)"
+      },
+      "cap": {
+        "display": "No per-project or annual cap"
+      },
+      "deadlines": {
+        "frequency": "Rolling (certification through Manitoba Film & Music)"
+      },
+      "eligibility": "Corporation with permanent establishment in Manitoba, incorporated in Canada, primarily carrying on film/video production business. Minimum 25% T4 to Manitoba employees. No Canadian content requirements. No minimum or maximum budget. Mutually exclusive with Manitoba Cost-of-Production credit for same production.",
+      "officialUrl": "https://www.mbfilmmusic.ca/film-tv/film-tv-tax-credits/manitoba-cost-of-salaries-tax-credit",
+      "alternateUrl": "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/corporations/provincial-territorial-corporation-tax/manitoba-provincial-corporation-tax/manitoba-film-video-production-tax-credit.html",
+      "status": "active"
+    },
+    {
+      "id": "mb-cost-of-production",
+      "name": "Manitoba Film and Video Production Tax Credit - Cost-of-Production",
+      "governingBody": "Manitoba Film & Music (MFM) / Province of Manitoba",
+      "level": "provincial",
+      "region": "manitoba",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "web-series"],
+      "rate": {
+        "base": 30,
+        "manitobaProducerBonus": 8,
+        "maxCombined": 38,
+        "display": "30% base on all eligible Manitoba expenditures (including labour) + 8% Manitoba producer bonus. Max combined: 38%."
+      },
+      "annualBudget": {
+        "display": "No fixed annual budget; demand-driven refundable tax credit"
+      },
+      "minSpend": {
+        "display": "Minimum 25% of corporation's T4 Summary paid to eligible Manitoba employees"
+      },
+      "cap": {
+        "display": "No per-project or annual cap"
+      },
+      "deadlines": {
+        "frequency": "Rolling (certification through Manitoba Film & Music)"
+      },
+      "eligibility": "Corporation with permanent establishment in Manitoba, incorporated in Canada. All-spend base (broader than salaries-only credit). Manitoba producer bonus requires Manitoba-incorporated company with >50% Manitoba-resident shareholders. No content requirements. Permanent programme (no expiry). Compatible with federal CPTC and PSTC.",
+      "officialUrl": "https://www.mbfilmmusic.ca/film-tv/film-tv-tax-credits/manitoba-cost-of-production-tax-credit",
+      "status": "active"
+    },
+    {
+      "id": "ns-incentive-fund",
+      "name": "Nova Scotia Film and Television Production Incentive Fund",
+      "governingBody": "Nova Scotia Department of Communities, Culture, Tourism and Heritage",
+      "level": "provincial",
+      "region": "nova-scotia",
+      "category": "cash-rebate",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation"],
+      "rate": {
+        "streamI": 26,
+        "streamII": 25,
+        "distantLocation": 10,
+        "rural": 2,
+        "longDuration": 1,
+        "contentIncentive": 3,
+        "display": "Stream I (NS-owned): 26% base + up to 16% bonuses. Stream II (non-NS-owned): 25% base + up to 16% bonuses. Bonuses: up to 10% distant location + 2% rural + 1% long duration (>30 days) + 3% NS content."
+      },
+      "annualBudget": {
+        "display": "Continued for 5 years until 2025-26 (subject to review in fiscal 2025-26)"
+      },
+      "minSpend": {
+        "amount": 25000,
+        "display": "Minimum C$25,000 Nova Scotia spend (before HST)",
+        "basis": "Nova Scotia spend"
+      },
+      "cap": {
+        "display": "Subject to annual fund allocation"
+      },
+      "deadlines": {
+        "frequency": "Rolling applications",
+        "notes": "Stream I: NS-owned and controlled, min 50% HOD positions held by Nova Scotians. Stream II: companies not meeting NS ownership/control requirements."
+      },
+      "eligibility": "Must have permanent establishment in Nova Scotia. Stream I: Nova Scotia-owned and controlled production with min 50% head of department positions filled by Nova Scotians. Stream II: productions not meeting NS ownership criteria (max 8 HOD positions filled by NS residents). Not a tax credit; operates as an incentive fund (cash rebate).",
+      "officialUrl": "https://cch.novascotia.ca/film-and-television-production-incentive-fund",
+      "alternateUrl": "https://screennovascotia.com/incentives/",
+      "status": "active"
+    },
+    {
+      "id": "ns-content-creator-fund",
+      "name": "Screen Nova Scotia Content Creator Fund (CCF)",
+      "governingBody": "Screen Nova Scotia",
+      "level": "provincial",
+      "region": "nova-scotia",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "documentary", "animation", "short-film"],
+      "rate": {
+        "display": "Top-up contribution for qualifying Nova Scotia productions"
+      },
+      "annualBudget": {
+        "display": "Part of Screen Nova Scotia's annual budget"
+      },
+      "minSpend": {
+        "display": "Must be eligible for NS Film and Television Production Incentive Fund"
+      },
+      "cap": {
+        "display": "Varies by project"
+      },
+      "deadlines": {
+        "frequency": "Annual intake",
+        "notes": "2026 applications opened November 25, 2025 via CCF portal. Guidelines updated for 2026."
+      },
+      "eligibility": "Nova Scotia-based creators with qualifying productions. Acts as top-up to the provincial incentive fund.",
+      "officialUrl": "https://screennovascotia.com/incentives/",
+      "alternateUrl": "https://screennovascotia.com/wp-content/uploads/2025/12/2026-SNS-CCF-guidelines-and-business-policies_12_17_2025.pdf",
+      "status": "active"
+    },
+    {
+      "id": "sk-production-grant",
+      "name": "Creative Saskatchewan Feature Film & Television Production Grant",
+      "governingBody": "Creative Saskatchewan",
+      "level": "provincial",
+      "region": "saskatchewan",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation"],
+      "rate": {
+        "saskStream": 30,
+        "serviceStream": 25,
+        "frequentFilming": 10,
+        "rural": 5,
+        "postProduction": 5,
+        "maxSask": 40,
+        "maxService": 35,
+        "display": "Saskatchewan Stream: up to 30% of eligible SK expenditures. Service Production Stream: up to 25%. Bonuses: +10% frequent filming (3+ productions/year), +5% rural (50km+ from Regina/Saskatoon), +5% SK post-production. Max combined: 40% (SK) / 35% (Service)."
+      },
+      "annualBudget": {
+        "amount": 2000000,
+        "display": "~C$2M annual budget for production grant programme"
+      },
+      "minSpend": {
+        "display": "Varies by stream"
+      },
+      "cap": {
+        "amount": 5000000,
+        "display": "Up to C$5,000,000 per project"
+      },
+      "deadlines": {
+        "frequency": "Annual (guidelines approved April 1, 2025 for 2025-26 fiscal year)",
+        "notes": "Grant programme (not a tax credit). Saskatchewan eliminated the SFETC in 2012; replaced by Creative Saskatchewan grants."
+      },
+      "eligibility": "Two streams: Saskatchewan Stream (SK-owned companies) and Service Production Stream (external companies). No active provincial tax credit (SFETC eliminated in 2012). Grant-based system administered by Creative Saskatchewan.",
+      "officialUrl": "https://www.creativesask.ca/feature-film-tv-production-grant-guidelines/",
+      "alternateUrl": "https://www.filmtvsask.com/",
+      "status": "active",
+      "notes": "Saskatchewan eliminated its Film Employment Tax Credit (SFETC) in 2012. The province now relies entirely on grant-based funding through Creative Saskatchewan."
+    },
+    {
+      "id": "nb-production-incentive",
+      "name": "New Brunswick Film, Television & New Media Industry Support Program - Production Incentive",
+      "governingBody": "Government of New Brunswick",
+      "level": "provincial",
+      "region": "new-brunswick",
+      "category": "cash-rebate",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary", "animation"],
+      "rate": {
+        "nbAllSpend": 30,
+        "nbLabour": 40,
+        "serviceAllSpend": 25,
+        "serviceLabour": 40,
+        "display": "NB companies: up to 30% all-spend or 40% labour-based. Service productions: up to 25% all-spend or 40% labour-based. Eligible salaries capped at 50% of eligible production costs."
+      },
+      "annualBudget": {
+        "display": "Target C$20M annually by 2026 (doubled from C$2.5M to C$5M in 2022-23, with planned increases)"
+      },
+      "minSpend": {
+        "display": "Must have permanent establishment in New Brunswick"
+      },
+      "cap": {
+        "amount": 800000,
+        "display": "C$800,000 per project for drama series (6+ episodes) and feature films"
+      },
+      "deadlines": {
+        "frequency": "Rolling applications"
+      },
+      "eligibility": "NB companies: incorporated in NB with permanent establishment, min 50% NB-resident voting shareholders. Service productions: external companies filming in NB. Applicants choose either all-spend or labour-based incentive (not both).",
+      "officialUrl": "https://www2.gnb.ca/content/gnb/en/services/services_renderer.201386.NB_Film,_Television_&_New_Media_Industry_Support_Program_-_Production_Incentive.html",
+      "status": "active"
+    },
+    {
+      "id": "nb-development-incentive",
+      "name": "New Brunswick Film, Television & New Media Industry Support Program - Development Incentive",
+      "governingBody": "Government of New Brunswick",
+      "level": "provincial",
+      "region": "new-brunswick",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "tv-film", "documentary"],
+      "rate": {
+        "drama": 50,
+        "other": 40,
+        "display": "50% of approved development budget for dramatic features/TV movies/series (max C$120,000); 40% for other genres (max C$50,000)"
+      },
+      "annualBudget": {
+        "display": "Part of NB Film programme budget (target C$20M total by 2026)"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "C$120,000 for drama; C$50,000 for other genres"
+      },
+      "deadlines": {
+        "frequency": "Rolling applications"
+      },
+      "eligibility": "Only incorporated NB companies with permanent establishment in NB and minimum 50% NB-resident voting shareholders.",
+      "officialUrl": "https://www2.gnb.ca/content/gnb/en/services/services_renderer.201386.NB_Film,_Television_&_New_Media_Industry_Support_Program_-_Production_Incentive.html",
+      "status": "active"
+    }
+  ]
+}
