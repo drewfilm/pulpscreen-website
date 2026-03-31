@@ -1091,8 +1091,8 @@ footer {
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="number">20+</div>
-          <div class="label">Territori UE / SEE</div>
+          <div class="number">50</div>
+          <div class="label">Territori Globali</div>
         </div>
         <div class="hero-stat">
           <div class="number">50%</div>
@@ -1643,6 +1643,139 @@ const countries = [
     cap: "Varia", cultural: "N/D",
     vfx: "N/D", timeline: "Varia",
     notes: "La Svezia non ha un incentivo nazionale alla produzione. I fondi cinematografici regionali (Film i Väst, Stockholm Film Fund) forniscono supporto per produzioni qualificanti. Forte infrastruttura produttiva, in particolare a Göteborg e Stoccolma. I trattati di coproduzione della Svezia e l'appartenenza all'UE danno accesso a Eurimages e Creative Europe."
+  },
+  {
+    name: "Georgia", flag: "🇬🇪", rate: "20–25%", rateNum: 25, type: "rebate",
+    typeName: "Rimborso", minSpend: "~€160K (GEL 500K per lungometraggi)",
+    cap: "~€330K approvazione automatica; importi superiori richiedono approvazione governativa", cultural: "Sì — Test culturale per +5%",
+    vfx: "Ammissibile; +1% bonus per post-produzione locale", timeline: "Entro 90 giorni dalla presentazione",
+    notes: "Programma Film in Georgia lanciato nel 2016. Rimborso base del 20% sulla spesa locale qualificata con un ulteriore 2–5% tramite test culturale. È necessario registrarsi come persona giuridica in Georgia. Almeno il 50% del budget totale deve essere disponibile al momento della domanda. Limite salariale per non residenti del 15% del budget qualificato. Location diverse dalle montagne alla costa del Mar Nero."
+  },
+  {
+    name: "Serbia", flag: "🇷🇸", rate: "25–30%", rateNum: 30, type: "rebate",
+    typeName: "Rimborso", minSpend: "€300K per lungometraggi; €50K per documentari",
+    cap: "Nessun limite per progetto; ~€17M programma annuale", cultural: "No",
+    vfx: "25% con minimo €150K", timeline: "Entro 60 giorni dall'approvazione",
+    notes: "Nuova regolamentazione adottata a marzo 2025. Rimborso base del 25% sulla spesa serba qualificata; 30% per lungometraggi che superano €5M di spesa. Domande tutto l'anno. Il richiedente deve essere una società registrata in Serbia. Uno degli incentivi più competitivi nei Balcani con infrastruttura di studi in crescita a Belgrado."
+  },
+  {
+    name: "Svizzera", flag: "🇨🇭", rate: "20–40%", rateNum: 40, type: "rebate",
+    typeName: "Rimborso / Supporto alla Produzione (PICS + Regionale)", minSpend: "Varia per cantone",
+    cap: "PICS: CHF 600K per progetto", cultural: "Sì — Requisiti di autorialità svizzera",
+    vfx: "Ammissibile sotto PICS e schemi regionali", timeline: "Varia per programma",
+    notes: "Sistema stratificato piuttosto che un singolo incentivo nazionale. PICS (nazionale) offre 20–40% con budget annuale di CHF 6M. I cantoni regionali offrono rimborsi aggiuntivi: Vallese 15–35%, Ginevra fino al 30%, Zurigo fino a CHF 30K. È possibile combinare PICS con incentivi regionali. Forti strutture di post-produzione e VFX."
+  },
+  {
+    name: "Bosnia ed Erzegovina", flag: "🇧🇦", rate: "30%", rateNum: 30, type: "rebate",
+    typeName: "Rimborso (Cantone di Sarajevo)", minSpend: "€50K spesa locale",
+    cap: "~€1M budget annuale", cultural: "No",
+    vfx: "Non specificato", timeline: "Incerto; il processo varia",
+    notes: "Rimborso del 30% disponibile attraverso il Cantone di Sarajevo/Film Fund Sarajevo. Tasso interessante ma limitato dal piccolo budget annuale (~€1M) e processi di candidatura incerti. Le produzioni spesso si riforniscono di troupe e attrezzature dalla vicina Croazia. L'accesso ai trattati di coproduzione rimane prezioso."
+  },
+  {
+    name: "Montenegro", flag: "🇲🇪", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Rimborso", minSpend: "€100K spesa qualificata",
+    cap: "Soggetto a budget annuale", cultural: "Sì — Minimo 15 punti",
+    vfx: "Non specificato", timeline: "Contattare il Centro Cinematografico del Montenegro",
+    notes: "Fino al 25% di rimborso sulla spesa qualificata per lungometraggi, documentari, film TV e serie. È necessario ottenere un punteggio minimo di 15 punti nel test culturale che copre l'uso delle capacità produttive montenegrine, troupe e talenti locali. Costa adriatica e paesaggi montani spettacolari."
+  },
+  {
+    name: "Macedonia del Nord", flag: "🇲🇰", rate: "20%", rateNum: 20, type: "rebate",
+    typeName: "Rimborso", minSpend: "€100K",
+    cap: "Budget annuale ~€1,6M", cultural: "No",
+    vfx: "Ammissibile come spesa locale", timeline: "Domanda 15 giorni prima delle riprese; pagamento post-completamento",
+    notes: "Rimborso del 20% sulla spesa macedone qualificata introdotto nel 2014. Base primo arrivato, primo servito. Il richiedente deve avere sede in Macedonia del Nord e aver prodotto almeno un lungometraggio. L'Agenzia del Cinema offre anche sovvenzioni alla produzione separate."
+  },
+  {
+    name: "Albania", flag: "🇦🇱", rate: "25–30%", rateNum: 30, type: "rebate",
+    typeName: "Rimborso", minSpend: "~€100K",
+    cap: "Soggetto a budget annuale", cultural: "No",
+    vfx: "Non specificato", timeline: "Domanda prima delle riprese principali",
+    notes: "Rimborso fino al 25–30% della spesa locale ammissibile amministrato dal Centro Nazionale Albanese di Cinematografia. Le produzioni internazionali devono collaborare con una società di produzione albanese partner. Location mediterranee attraenti (costa adriatica/ionica, Alpi albanesi) a costi inferiori rispetto all'Europa occidentale."
+  },
+  {
+    name: "Armenia", flag: "🇦🇲", rate: "25–35%", rateNum: 35, type: "rebate",
+    typeName: "Rimborso", minSpend: "Non specificato",
+    cap: "Non specificato", cultural: "Sì — +10% per cultura armena",
+    vfx: "Ammissibile", timeline: "Programma adottato ad aprile 2025",
+    notes: "Nuovo programma di rimborso adottato ad aprile 2025. Rimborso base del 25% su prodotti/servizi da società residenti in Armenia. Bonus aggiuntivo del 10% per progetti che promuovono la cultura armena (totale 35%). Copre coproduzioni estero-armene. Il settore creativo genera oltre il 60% dei ricavi audiovisivi da clienti internazionali."
+  },
+  {
+    name: "Turchia", flag: "🇹🇷", rate: "30% + 18% IVA", rateNum: 30, type: "rebate",
+    typeName: "Rimborso + Rimborso IVA", minSpend: "TL 6M per lungometraggi; TL 1M per documentari/serie",
+    cap: "Nessun limite specifico per progetto", cultural: "Sì — A punti (minimo 50/100)",
+    vfx: "Ammissibile", timeline: "Post-completamento con montaggio provvisorio",
+    notes: "Fino al 30% di rimborso su tutte le spese turche ammissibili ai sensi della Legge 5224, più rimborso IVA separato fino al 18%. Test culturale a punti che copre contenuto culturale, coinvolgimento di cittadini turchi e uso di infrastrutture locali. È necessario aver prodotto almeno 2 lungometraggi o 1 stagione di serie TV negli ultimi 5 anni. Importanti infrastrutture di studi a Istanbul e Antalya."
+  },
+  {
+    name: "Canada", flag: "🇨🇦", rate: "16–60% combinato", rateNum: 60, type: "credit",
+    typeName: "Credito d'Imposta Rimborsabile (Federale + Provinciale)", minSpend: "Nessun minimo federale",
+    cap: "Varia; PSTC senza limite", cultural: "CPTC richiede contenuto canadese; PSTC no",
+    vfx: "Sì — BC DAVE 16%, Ontario OCASE 18%, Quebec 16% bonus animazione", timeline: "18–24 mesi dalla dichiarazione",
+    notes: "Sistema federale a due livelli: CPTC (25% del lavoro qualificato, effettivo ~15% del budget) per produzioni con contenuto canadese; PSTC (16% del lavoro qualificato, senza limite) per produzioni di servizio straniere. Cumulabile con crediti provinciali: BC fino al 36%, Ontario fino al 35%, Quebec fino al 40%. Federale+provinciale combinati possono compensare fino al 60% dei costi. Membro associato Eurimages. La più grande rete di trattati bilaterali al mondo con oltre 60 paesi."
+  },
+  {
+    name: "Australia", flag: "🇦🇺", rate: "30–40%", rateNum: 40, type: "credit",
+    typeName: "Compensazione Fiscale Rimborsabile", minSpend: "AUD 1M–20M a seconda della compensazione",
+    cap: "Senza limite per tutte e tre le compensazioni", cultural: "Producer Offset richiede test SAC; Location Offset no",
+    vfx: "PDV Offset: 30% dedicato per post/VFX", timeline: "Domande tutto l'anno",
+    notes: "Tre compensazioni fiscali rimborsabili: Producer Offset 40% per lungometraggi / 30% per altri formati; Location Offset 30% per produzioni internazionali ad alto budget (aumentato dal 16,5% nel 2023); PDV Offset 30% per post/VFX realizzati in Australia indipendentemente dal luogo delle riprese. Spesa produttiva record di AUD 2,7 miliardi 2024/25. Trattati bilaterali con Regno Unito, Francia, Germania, Italia, Irlanda."
+  },
+  {
+    name: "Nuova Zelanda", flag: "🇳🇿", rate: "20–40%", rateNum: 40, type: "grant",
+    typeName: "Rimborso per la Produzione Cinematografica (NZSPR)", minSpend: "Varia per componente",
+    cap: "$6M nazionale; internazionale senza limite", cultural: "NZ nazionale richiede contenuto NZ",
+    vfx: "Rimborso PDV: 20% + 5% aumento da gennaio 2026", timeline: "Domande tutto l'anno",
+    notes: "Rinominato da NZSPG a NZSPR. Tre componenti: NZ nazionale (40% del QNZPE); Internazionale (20% base + 5% aumento = 25%); PDV (20% fino a $25M, 18% oltre). Infrastruttura produttiva di livello mondiale costruita grazie ai franchise de Il Signore degli Anelli e Avatar. Trattati bilaterali con Regno Unito, Francia."
+  },
+  {
+    name: "India", flag: "🇮🇳", rate: "30–40%", rateNum: 40, type: "rebate",
+    typeName: "Rimborso (Schema di Incentivi per Film Stranieri)", minSpend: "~$300K (INR 2,5 Crore)",
+    cap: "~$3,6M (INR 300M)", cultural: "5% bonus per Contenuto Indiano Significativo",
+    vfx: "Animazione digitale ammissibile", timeline: "Domanda prima delle riprese principali",
+    notes: "Incentivo federale del 30% di rimborso sulla spesa produttiva qualificata. 5% bonus per l'impiego di oltre il 15% di manodopera indiana. Ulteriore 5% per Contenuto Indiano Significativo (totale 40%). Aumentato dal 30% nel 2024. Vari governi statali offrono incentivi aggiuntivi. Trattati bilaterali con Regno Unito, Francia, Australia."
+  },
+  {
+    name: "Cina", flag: "🇨🇳", rate: "N/D", rateNum: 0, type: "shelter",
+    typeName: "Accordo di Coproduzione / Incentivi Municipali", minSpend: "N/D",
+    cap: "Municipale varia", cultural: "Sì — Criteri della China Film Administration",
+    vfx: "Gli incentivi municipali possono coprire post/VFX", timeline: "Varia",
+    notes: "Nessun rimborso nazionale formale. Il valore principale è l'accesso al mercato tramite lo status ufficiale di coproduzione attraverso la China Film Co-production Corporation, aggirando la quota di film stranieri. Il più grande mercato cinematografico del mondo: $7,45 miliardi di incassi nazionali. Alcuni comuni offrono incentivi locali. Il trattato di coproduzione fornisce accesso al mercato cinematografico cinese e ai finanziamenti pubblici."
+  },
+  {
+    name: "Corea del Sud", flag: "🇰🇷", rate: "25–30%", rateNum: 30, type: "grant",
+    typeName: "Sovvenzione per Location (KOFIC)", minSpend: "~$44K–$700K a seconda del livello",
+    cap: "~$176K–$265K a seconda del livello", cultural: "No",
+    vfx: "Ammissibile", timeline: "Domanda 30–90 giorni prima delle riprese",
+    notes: "Incentivo Location KOFIC: 25% per 10+ giorni di riprese e spesa di $700K+; 20% per 3+ giorni con spesa inferiore. Seul offre fino al 30%. Il capitale straniero deve superare l'80% del costo di produzione. Il budget annuale limitato rende critica la candidatura anticipata. Trattati bilaterali con Francia, Australia."
+  },
+  {
+    name: "Sudafrica", flag: "🇿🇦", rate: "25–35%", rateNum: 35, type: "rebate",
+    typeName: "Rimborso (Incentivo Cinematografico DTIC)", minSpend: "R1,5M per produzioni straniere",
+    cap: "R50M per progetto", cultural: "No",
+    vfx: "Bonus post-produzione: 27,5% a R10M+; 30% a R15M+", timeline: "Gravi ritardi (2025–2026)",
+    notes: "Il DTIC amministra l'incentivo per produzioni straniere: 25% della spesa sudafricana, che sale al 27,5–30% con spesa significativa in post-produzione locale. CRITICO: a partire dal 2025–2026, il sistema di rimborso è in crisi — oltre R660M di crediti non pagati, comitato inattivo da oltre un anno. Stato del programma incerto in attesa di risoluzione governativa. Trattati bilaterali con Regno Unito, Francia, Australia."
+  },
+  {
+    name: "Brasile", flag: "🇧🇷", rate: "20–35%", rateNum: 35, type: "rebate",
+    typeName: "Rimborso Comunale + Meccanismo Fiscale Federale", minSpend: "~$350K (BRL 2M) per rimborsi comunali",
+    cap: "Varia per programma", cultural: "Sì — Le coproduzioni richiedono 40% di equity + 2/3 troupe brasiliana",
+    vfx: "Ammissibile sotto i programmi di rimborso comunale", timeline: "Domanda prima della produzione",
+    notes: "Nessun rimborso nazionale strutturato. Rimborsi a livello comunale: Rio 30–35%, San Paolo 20–30% della spesa locale ammissibile. Incentivi federali tramite il Fondo del Settore Audiovisivo (FSA/ANCINE) e meccanismi fiscali. Le coproduzioni richiedono un partner brasiliano formale. L'arbitraggio valutario offre vantaggi di costo aggiuntivi. Trattato bilaterale con Regno Unito, Francia."
+  },
+  {
+    name: "Israele", flag: "🇮🇱", rate: "30–40%", rateNum: 40, type: "rebate",
+    typeName: "Rimborso (Fondo per Produzioni Straniere)", minSpend: "~$140K (500K shekel)",
+    cap: "~$4,8M per produzione", cultural: "No",
+    vfx: "+10% per post-produzione e animazione (totale 40%)", timeline: "80% durante le riprese; 20% al completamento",
+    notes: "Rimborso del 30% sui costi di produzione ammissibili. Ulteriore 10% per post-produzione e animazione. Lanciato originariamente nel 2022; lo stato del rinnovo dovrebbe essere confermato. Suddivisione del pagamento: 80% durante la produzione, 20% al completamento. Trattati bilaterali con Regno Unito, Francia, Australia."
+  },
+  {
+    name: "Argentina", flag: "🇦🇷", rate: "20–30%", rateNum: 30, type: "rebate",
+    typeName: "Rimborso (Nazionale + Comunale)", minSpend: "~$675K per Buenos Aires città",
+    cap: "~$625K tetto massimo (Buenos Aires)", cultural: "No",
+    vfx: "Ammissibile", timeline: "4–6 settimane approvazione iniziale; 6–12 mesi per il rimborso",
+    notes: "Multilivello: Nazionale fino al 30% tramite INCAA; Buenos Aires città 20% da gennaio 2023. Membro associato Eurimages. Nota: l'INCAA affronta minacce politiche ai finanziamenti a partire dal 2026. L'arbitraggio valutario offre vantaggi di costo significativi per le produzioni internazionali. Troupe tecniche eccellenti in cinematografia e scenografia."
   }
 ];
 
