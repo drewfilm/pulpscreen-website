@@ -1,0 +1,1536 @@
+{
+  "metadata": {
+    "title": "Germany Film Production Funding Programmes",
+    "lastUpdated": "2026-03-31",
+    "sources": [
+      "https://www.ffa.de",
+      "https://www.dfff-ffa.de",
+      "https://kulturstaatsminister.de",
+      "https://www.german-films.de",
+      "https://www.medienboard.de",
+      "https://www.fff-bayern.de",
+      "https://www.filmstiftung.de",
+      "https://moin-filmfoerderung.de",
+      "https://www.mdm-online.de",
+      "https://www.hessenfilm.de",
+      "https://film.mfg.de",
+      "https://www.nordmedia.de"
+    ]
+  },
+  "programmes": [
+    {
+      "id": "dfff-i",
+      "name": "Deutscher Filmfoerderfonds I (DFFF I)",
+      "nameTranslated": {
+        "en": "German Federal Film Fund I (DFFF I)"
+      },
+      "governingBody": "BKM / FFA",
+      "level": "national",
+      "category": "cash-rebate",
+      "format": ["feature-film", "documentary", "animation"],
+      "rate": {
+        "base": 30,
+        "display": "30% of approved German production costs (uniform rate since 1 Feb 2025)"
+      },
+      "annualBudget": {
+        "amount": 70000000,
+        "display": "EUR70M (from 2026; previously part of EUR133M combined DFFF/GMPF budget)"
+      },
+      "minSpend": {
+        "display": "Min total production costs: EUR1M (feature films), EUR200K (documentaries), EUR2M (animation). At least 25% of total production costs spent in Germany (20% if costs exceed EUR20M)"
+      },
+      "cap": {
+        "amount": 4000000,
+        "display": "EUR4M per film (DFFF I); projects qualifying for DFFF II cannot apply to DFFF I"
+      },
+      "deadlines": {
+        "frequency": "Rolling (no fixed deadlines)",
+        "notes": "Application must be submitted at least 6 weeks before start of principal photography. Processing time typically 4-8 weeks."
+      },
+      "eligibility": "German-based producers of national and international co-productions. Must pass cultural characteristics test. Must meet ecological/environmental standards. Eligible spend capped at 80% of total budget. Films must secure theatrical release in Germany.",
+      "officialUrl": "https://www.ffa.de/german-federal-film-fund-dfff-i.html",
+      "alternateUrl": "https://dfff.ffa.de/en.html",
+      "status": "active"
+    },
+    {
+      "id": "dfff-ii",
+      "name": "Deutscher Filmfoerderfonds II (DFFF II)",
+      "nameTranslated": {
+        "en": "German Federal Film Fund II (DFFF II)"
+      },
+      "governingBody": "BKM / FFA",
+      "level": "national",
+      "category": "cash-rebate",
+      "format": ["feature-film", "animation"],
+      "rate": {
+        "base": 30,
+        "display": "30% of approved German production costs (uniform rate since 1 Feb 2025)"
+      },
+      "annualBudget": {
+        "amount": 90000000,
+        "display": "EUR90M (from 2026; previously part of EUR133M combined DFFF/GMPF budget)"
+      },
+      "minSpend": {
+        "display": "Total production costs min EUR20M; German production costs commissioned from service provider min EUR8M (EUR2M for animated films)"
+      },
+      "cap": {
+        "amount": 25000000,
+        "display": "EUR25M per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling (no fixed deadlines)",
+        "notes": "Application must be submitted at least 6 weeks before start of principal photography"
+      },
+      "eligibility": "Production service providers based in Germany working on international productions with total budget of at least EUR20M and German costs of at least EUR8M. Must pass cultural characteristics test. Designed for large-scale international productions shooting in Germany.",
+      "officialUrl": "https://www.ffa.de/german-federal-film-fund-dfff-ii.html",
+      "alternateUrl": "https://dfff.ffa.de/en.html",
+      "status": "active"
+    },
+    {
+      "id": "gmpf",
+      "name": "German Motion Picture Fund (GMPF)",
+      "governingBody": "BKM / FFA",
+      "level": "national",
+      "category": "cash-rebate",
+      "format": ["tv-series", "tv-film"],
+      "rate": {
+        "base": 30,
+        "display": "30% of approved German production costs (uniform rate since 1 Feb 2025)"
+      },
+      "annualBudget": {
+        "amount": 90000000,
+        "display": "EUR90M (from 2026; previously part of EUR133M combined DFFF/GMPF budget)"
+      },
+      "minSpend": {
+        "display": "At least 25% of total budget must be German production costs"
+      },
+      "cap": {
+        "tvFilm": 5000000,
+        "series": 6000000,
+        "highEndSeries": 20000000,
+        "display": "EUR5M per film; EUR6M per series season; up to EUR20M for high-end fictional series with German costs >EUR40M and >=70 cultural test points"
+      },
+      "deadlines": {
+        "frequency": "Rolling (no fixed deadlines)",
+        "notes": "Application must be submitted at least 6 weeks before start of shooting. Producer's fee capped at 5% of production costs (max EUR350K)."
+      },
+      "eligibility": "German-based producers of non-theatrical series and TV/VoD films. Must score at least 40 points on cultural characteristics test (min 7 points in each of 3 categories: cultural content, creative talents, production). Must meet environmental standards. Subject to EU Commission regulatory approval.",
+      "officialUrl": "https://www.ffa.de/gmpf-en.html",
+      "alternateUrl": "https://www.ffa.de/german-motion-picture-fund-gmpf.html",
+      "status": "active",
+      "notes": "The GMPF supports high-end series and TV/VoD films to strengthen Germany as a production location. Combined with DFFF I and DFFF II, total federal incentive budget rises to EUR250M annually from 2026."
+    },
+    {
+      "id": "ffa-projektfilmfoerderung",
+      "name": "FFA Projektfilmfoerderung (Selective Project Film Funding)",
+      "nameTranslated": {
+        "en": "FFA Project Film Funding"
+      },
+      "governingBody": "FFA",
+      "level": "national",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary"],
+      "rate": {
+        "display": "Conditionally repayable loan; up to EUR1M per project"
+      },
+      "annualBudget": {
+        "display": "Part of FFA's total levy-financed budget (FFA total funding ~EUR76M/year from levies)"
+      },
+      "minSpend": {
+        "display": "N/A (assessed on artistic merit, production plan, and marketing concept)"
+      },
+      "cap": {
+        "amount": 1000000,
+        "display": "EUR1M per project"
+      },
+      "deadlines": {
+        "frequency": "5x/year (awarding committee meets approximately five times annually)",
+        "notes": "Applications assessed by jury/committee based on screenplay quality, production concept, and marketing plan"
+      },
+      "eligibility": "Producers based in Germany. Must present convincing screenplay, production concept, and marketing plan to the awarding committee. Film must secure German theatrical distribution.",
+      "officialUrl": "https://www.ffa.de/film-funding.html",
+      "status": "active"
+    },
+    {
+      "id": "ffa-referenzfilmfoerderung",
+      "name": "FFA Referenzfilmfoerderung (Reference/Automatic Film Funding)",
+      "nameTranslated": {
+        "en": "FFA Reference Film Funding"
+      },
+      "governingBody": "FFA",
+      "level": "national",
+      "category": "grant",
+      "subcategory": "automatic",
+      "format": ["feature-film", "documentary"],
+      "rate": {
+        "display": "Non-repayable grant based on reference points earned; 2025 point value EUR0.76/point"
+      },
+      "annualBudget": {
+        "amount": 30000000,
+        "display": "~EUR30M/year (2025: EUR16.7M to producers, remainder to distributors, directors, screenwriters)"
+      },
+      "minSpend": {
+        "display": "Min 25,000 reference points for fiction features; min 10,000 for debut films, children's films, or documentaries"
+      },
+      "cap": {
+        "amount": 2000000,
+        "display": "EUR2M per film (2025 maximum individual amount)"
+      },
+      "deadlines": {
+        "frequency": "Annual (allocated once per year, typically end of May)",
+        "notes": "Reference points generated from box office admissions, festival selections, prize wins, and FBW ratings. Funds must be called upon within 3 years."
+      },
+      "eligibility": "German production companies with previous films that have earned sufficient reference points through box office success, festival participation, and awards. Since 2025, screenwriters and directors also receive reference funds. Funds must be reinvested in new film projects or development.",
+      "officialUrl": "https://www.ffa.de/referenzfilmfoerderung.html",
+      "status": "active"
+    },
+    {
+      "id": "ffa-kurzfilm",
+      "name": "FFA Kurzfilmfoerderung (Short Film Funding)",
+      "nameTranslated": {
+        "en": "FFA Short Film Funding"
+      },
+      "governingBody": "FFA",
+      "level": "national",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["short-film", "animation"],
+      "rate": {
+        "display": "Non-repayable grant; up to EUR40K per project"
+      },
+      "annualBudget": {
+        "display": "Part of FFA budget"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 40000,
+        "display": "EUR40K per project"
+      },
+      "deadlines": {
+        "frequency": "2x/year (jury decision twice annually)",
+        "notes": "For artistically outstanding short films up to 30 minutes in all forms including animation and experimental"
+      },
+      "eligibility": "German-based producers. Short films up to 30 minutes. All forms eligible including animation and experimental film. Jury-based selection.",
+      "officialUrl": "https://www.ffa.de/film-funding.html",
+      "status": "active"
+    },
+    {
+      "id": "bkm-kulturelle-filmfoerderung",
+      "name": "BKM Kulturelle Filmfoerderung (Cultural Film Funding)",
+      "nameTranslated": {
+        "en": "BKM Cultural Film Funding"
+      },
+      "governingBody": "BKM / FFA",
+      "level": "national",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "short-film"],
+      "rate": {
+        "display": "Non-repayable grant; up to EUR500K per project (EUR1M in exceptional cases)"
+      },
+      "annualBudget": {
+        "display": "Part of ~EUR310M total annual federal film support (includes all BKM/FFA programmes)"
+      },
+      "minSpend": {
+        "display": "Generally for films with production costs up to EUR5M (higher budgets possible in exceptional cases)"
+      },
+      "cap": {
+        "amount": 1000000,
+        "display": "EUR500K standard; EUR1M in exceptional cases"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year (jury-based)",
+        "notes": "Since Jan 2025, administered by FFA under BKM mandate. Separate talent film programme administered by Kuratorium junger deutscher Film since Jan 2026."
+      },
+      "eligibility": "German production companies. Feature-length fiction films, documentaries, children's films, and short films eligible. Jury-based assessment focusing on artistic quality and cultural value. Must contribute to diversity of German cinema.",
+      "officialUrl": "https://www.ffa.de/kulturelle-filmfoerderung-der-bkm.html",
+      "alternateUrl": "https://kulturstaatsminister.de/film-und-medien/kulturelle-filmfoerderung",
+      "status": "active"
+    },
+    {
+      "id": "bkm-talentfilm",
+      "name": "Talentfilmfoerderung (Talent Film Funding)",
+      "nameTranslated": {
+        "en": "Talent Film Funding"
+      },
+      "governingBody": "Kuratorium junger deutscher Film / BKM",
+      "level": "national",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Non-repayable grant; up to EUR500K per project (EUR1M in exceptional cases)"
+      },
+      "annualBudget": {
+        "amount": 7500000,
+        "display": "EUR7.5M (federal) + EUR1.2M/year from federal states for screenplay development"
+      },
+      "minSpend": {
+        "display": "Production costs up to EUR2M (EUR1M in exceptional cases for debut/second films)"
+      },
+      "cap": {
+        "amount": 1000000,
+        "display": "EUR500K standard; EUR1M in exceptional cases"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year",
+        "notes": "New programme launched 1 Jan 2026. Administered by Kuratorium junger deutscher Film in cooperation with BKM."
+      },
+      "eligibility": "Up-and-coming German filmmakers. Debut and early-career feature film projects. Jury-based selection focusing on emerging talent.",
+      "officialUrl": "https://www.kuratorium-junger-film.de",
+      "status": "active"
+    },
+    {
+      "id": "german-films-distribution-support",
+      "name": "German Films Distribution Support",
+      "governingBody": "German Films Service + Marketing GmbH",
+      "level": "national",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Grant up to EUR15K; loan up to EUR50K per project"
+      },
+      "annualBudget": {
+        "display": "Part of German Films budget"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "grant": 15000,
+        "loan": 50000,
+        "display": "Grant: EUR15K; Loan: EUR50K per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling",
+        "notes": "Subsidizes theatrical release of German films in foreign countries by foreign distribution companies"
+      },
+      "eligibility": "Foreign distribution companies releasing German films theatrically in their territory. Must demonstrate viable distribution plan.",
+      "officialUrl": "https://www.german-films.de/distribution-support/",
+      "status": "active"
+    },
+    {
+      "id": "german-films-world-sales",
+      "name": "German Films World Sales Funding",
+      "governingBody": "German Films Service + Marketing GmbH / BKM",
+      "level": "national",
+      "category": "grant",
+      "subcategory": "automatic",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Basic sum plus reference funding per company"
+      },
+      "annualBudget": {
+        "amount": 250000,
+        "display": "EUR250K total annual budget (2025)"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Varies by company; total pool EUR250K"
+      },
+      "deadlines": {
+        "frequency": "Annual (one application per calendar year per company)",
+        "notes": "Launched 1 Oct 2025. Companies must prove at least 2 majority-German theatrical films in their 2024 line-up."
+      },
+      "eligibility": "German international sales companies with at least two feature-length majority-German theatrical productions in their market line-up in the previous year. One application per calendar year.",
+      "officialUrl": "https://www.german-films.de/",
+      "status": "active"
+    },
+    {
+      "id": "medienboard-production",
+      "name": "Medienboard Berlin-Brandenburg Filmfoerderung (Film Production Funding)",
+      "nameTranslated": {
+        "en": "Medienboard Berlin-Brandenburg Film Production Funding"
+      },
+      "governingBody": "Medienboard Berlin-Brandenburg GmbH",
+      "level": "regional",
+      "region": "Berlin-Brandenburg",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "animation", "short-film"],
+      "rate": {
+        "display": "Conditionally repayable interest-free loan; amount determined by committee"
+      },
+      "annualBudget": {
+        "amount": 33000000,
+        "display": "~EUR33M for film, series, and cinema (part of EUR47M total MBB budget)"
+      },
+      "minSpend": {
+        "display": "100% of loan must be spent in Berlin-Brandenburg. Regional effect may be waived in part if region has particular interest in project."
+      },
+      "cap": {
+        "display": "No published fixed cap per project; determined case-by-case by funding committee"
+      },
+      "deadlines": {
+        "frequency": "4x/year (committee meetings)",
+        "2026Deadlines": [
+          "14 October 2025 (1st meeting 2026)",
+          "10 February 2026 (2nd meeting 2026)",
+          "5 May 2026 (3rd meeting 2026)",
+          "14 July 2026 (4th meeting 2026)"
+        ],
+        "notes": "Mandatory consultation meeting with funding executive at least 2 weeks before deadline. Access to application portal granted after meeting."
+      },
+      "eligibility": "Companies with place of business, branch office, or operating facility in Berlin-Brandenburg at time of payment. German and international films eligible. Committee-based selection since mid-2025 under new leadership.",
+      "officialUrl": "https://www.medienboard.de/en/funding/film",
+      "status": "active"
+    },
+    {
+      "id": "medienboard-series",
+      "name": "Medienboard Berlin-Brandenburg Serienfoerderung (Series Funding)",
+      "nameTranslated": {
+        "en": "Medienboard Berlin-Brandenburg Series Funding"
+      },
+      "governingBody": "Medienboard Berlin-Brandenburg GmbH",
+      "level": "regional",
+      "region": "Berlin-Brandenburg",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["tv-series"],
+      "rate": {
+        "display": "Conditionally repayable interest-free loan; up to 30% of eligible expenses"
+      },
+      "annualBudget": {
+        "display": "Part of EUR33M film/series budget; series generate nearly 700% regional impact"
+      },
+      "minSpend": {
+        "display": "100% of loan must be spent in Berlin-Brandenburg"
+      },
+      "cap": {
+        "display": "No published fixed cap; determined by committee"
+      },
+      "deadlines": {
+        "frequency": "4x/year (same committee schedule as film production)",
+        "notes": "Supports development and production of high-end series (fictional and non-fictional) and serial formats"
+      },
+      "eligibility": "Companies with presence in Berlin-Brandenburg. High-end series (fiction, entertainment, factual) eligible. Committee-based assessment.",
+      "officialUrl": "https://www.medienboard.de/en/funding/series",
+      "status": "active"
+    },
+    {
+      "id": "medienboard-distribution",
+      "name": "Medienboard Berlin-Brandenburg Verleih- und Vertriebsfoerderung (Distribution Funding)",
+      "nameTranslated": {
+        "en": "Medienboard Berlin-Brandenburg Distribution & Sales Funding"
+      },
+      "governingBody": "Medienboard Berlin-Brandenburg GmbH",
+      "level": "regional",
+      "region": "Berlin-Brandenburg",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary"],
+      "rate": {
+        "display": "Conditionally repayable interest-free loan"
+      },
+      "annualBudget": {
+        "display": "Part of EUR33M film/series budget"
+      },
+      "minSpend": {
+        "display": "100% spent in Berlin-Brandenburg"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "3x/year",
+        "2026Deadlines": [
+          "16 December 2025 (1st meeting 2026)",
+          "28 April 2026 (2nd meeting 2026)",
+          "8 September 2026 (3rd meeting 2026)"
+        ]
+      },
+      "eligibility": "Distribution and sales companies based in Berlin-Brandenburg.",
+      "officialUrl": "https://www.medienboard.de/en/funding/film",
+      "status": "active"
+    },
+    {
+      "id": "medienboard-development",
+      "name": "Medienboard Berlin-Brandenburg Stoff- und Projektentwicklung (Script & Project Development)",
+      "nameTranslated": {
+        "en": "Medienboard Berlin-Brandenburg Script & Project Development"
+      },
+      "governingBody": "Medienboard Berlin-Brandenburg GmbH",
+      "level": "regional",
+      "region": "Berlin-Brandenburg",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "animation", "tv-series"],
+      "rate": {
+        "display": "Conditionally repayable interest-free loan for development"
+      },
+      "annualBudget": {
+        "display": "Part of EUR33M film/series budget"
+      },
+      "minSpend": {
+        "display": "100% spent in Berlin-Brandenburg"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "4x/year (same committee schedule as production)",
+        "notes": "Covers script development and project development for film and series"
+      },
+      "eligibility": "Companies with presence in Berlin-Brandenburg. All formats eligible.",
+      "officialUrl": "https://www.medienboard.de/en/funding/film",
+      "status": "active"
+    },
+    {
+      "id": "medienboard-digital",
+      "name": "Medienboard Berlin-Brandenburg Digitale Film- und Medienproduktion (Digital Film Production)",
+      "nameTranslated": {
+        "en": "Medienboard Berlin-Brandenburg Digital Film & Media Production"
+      },
+      "governingBody": "Medienboard Berlin-Brandenburg GmbH",
+      "level": "regional",
+      "region": "Berlin-Brandenburg",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "vfx-post", "animation"],
+      "rate": {
+        "display": "Grant up to 20% of production costs incurred in Berlin-Brandenburg"
+      },
+      "annualBudget": {
+        "display": "Part of MBB budget"
+      },
+      "minSpend": {
+        "display": "Must incur qualifying production costs in Berlin-Brandenburg"
+      },
+      "cap": {
+        "amount": 500000,
+        "display": "EUR500K per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling (ongoing applications)"
+      },
+      "eligibility": "Productions with significant digital/VFX work in Berlin-Brandenburg. Up to 20% of BB production costs.",
+      "officialUrl": "https://www.medienboard.de/en/funding/film",
+      "status": "active"
+    },
+    {
+      "id": "medienboard-german-polish",
+      "name": "German-Polish Film Fund (Medienboard/FFA/MDM)",
+      "governingBody": "Medienboard Berlin-Brandenburg / FFA / MDM / Polish Film Institute",
+      "level": "national",
+      "region": "Berlin-Brandenburg",
+      "category": "co-production-fund",
+      "format": ["feature-film", "documentary"],
+      "rate": {
+        "display": "Development and small-budget production support"
+      },
+      "annualBudget": {
+        "amount": 500000,
+        "display": "~EUR500K/year"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "display": "Varies by project"
+      },
+      "deadlines": {
+        "frequency": "Annual calls"
+      },
+      "eligibility": "German-Polish co-productions. German co-producer must apply. Supports development and small-budget production.",
+      "officialUrl": "https://www.medienboard.de/en/funding/internationale-programmes",
+      "status": "active"
+    },
+    {
+      "id": "fff-bayern-production-feature",
+      "name": "FFF Bayern Produktionsfoerderung Kinofilm (Feature Film Production Funding)",
+      "nameTranslated": {
+        "en": "FFF Bayern Feature Film Production Funding"
+      },
+      "governingBody": "FilmFernsehFonds Bayern GmbH",
+      "level": "regional",
+      "region": "Bavaria",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Conditionally repayable loan; up to 30% of eligible production costs"
+      },
+      "annualBudget": {
+        "amount": 42000000,
+        "display": "~EUR42M total FFF Bayern budget (across all programmes)"
+      },
+      "minSpend": {
+        "display": "150% of granted funding must be spent in Bavaria ('Bavaria Effect'). Min total production costs EUR5M for theatrical features."
+      },
+      "cap": {
+        "amount": 3000000,
+        "display": "EUR3M per project (increased from EUR2M as of 1 Jan 2025)"
+      },
+      "deadlines": {
+        "frequency": "4x/year (four funding committee meetings per year)",
+        "notes": "Applications via online portal in German only. Shooting days specified in application must be achieved."
+      },
+      "eligibility": "Producers with registered office, branch, or place of business in Germany. Min total production costs EUR5M for theatrical features. 150% Bavaria Effect required. Can be combined with national and other regional funding (up to 80% of budget). International co-productions require German producer.",
+      "officialUrl": "https://www.fff-bayern.de/en/funded-areas/production-feature-films/",
+      "status": "active"
+    },
+    {
+      "id": "fff-bayern-production-coprod",
+      "name": "FFF Bayern Internationale Koproduktionen (International Co-Production Funding)",
+      "nameTranslated": {
+        "en": "FFF Bayern International Theatrical Features and Series"
+      },
+      "governingBody": "FilmFernsehFonds Bayern GmbH",
+      "level": "regional",
+      "region": "Bavaria",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "tv-series"],
+      "rate": {
+        "display": "Conditionally repayable loan; up to 30% of eligible production costs"
+      },
+      "annualBudget": {
+        "display": "Part of EUR42M total FFF Bayern budget"
+      },
+      "minSpend": {
+        "display": "150% Bavaria Effect required"
+      },
+      "cap": {
+        "amount": 2000000,
+        "display": "EUR2M per co-production project"
+      },
+      "deadlines": {
+        "frequency": "4x/year"
+      },
+      "eligibility": "International co-productions with a German producer. Must achieve 150% Bavaria Effect.",
+      "officialUrl": "https://www.fff-bayern.de/en/funded-areas/international-theatrical-features-and-series/",
+      "status": "active"
+    },
+    {
+      "id": "fff-bayern-tv",
+      "name": "FFF Bayern TV-Film und Serienfoerderung (TV Film & Series Funding)",
+      "nameTranslated": {
+        "en": "FFF Bayern TV Film & Series Funding"
+      },
+      "governingBody": "FilmFernsehFonds Bayern GmbH",
+      "level": "regional",
+      "region": "Bavaria",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["tv-film", "tv-series"],
+      "rate": {
+        "display": "Conditionally repayable loan"
+      },
+      "annualBudget": {
+        "display": "Part of EUR42M total FFF Bayern budget"
+      },
+      "minSpend": {
+        "display": "150% Bavaria Effect required"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "4x/year"
+      },
+      "eligibility": "German-based producers. TV films and serial formats eligible. 150% Bavaria Effect applies.",
+      "officialUrl": "https://www.fff-bayern.de/en/funding/",
+      "status": "active"
+    },
+    {
+      "id": "fff-bayern-development",
+      "name": "FFF Bayern Drehbuch- und Projektentwicklung (Screenplay & Project Development)",
+      "nameTranslated": {
+        "en": "FFF Bayern Screenplay & Project Development"
+      },
+      "governingBody": "FilmFernsehFonds Bayern GmbH",
+      "level": "regional",
+      "region": "Bavaria",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "tv-series", "documentary"],
+      "rate": {
+        "display": "Grant or conditionally repayable loan for development"
+      },
+      "annualBudget": {
+        "display": "Part of EUR42M total FFF Bayern budget"
+      },
+      "minSpend": {
+        "display": "Bavaria Effect applies"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "4x/year"
+      },
+      "eligibility": "German-based producers and screenwriters. Covers screenplay development and project development/packaging.",
+      "officialUrl": "https://www.fff-bayern.de/en/funding/",
+      "status": "active"
+    },
+    {
+      "id": "fff-bayern-distribution",
+      "name": "FFF Bayern Verleih- und Vertriebsfoerderung (Distribution & Sales Funding)",
+      "nameTranslated": {
+        "en": "FFF Bayern Distribution & Sales Funding"
+      },
+      "governingBody": "FilmFernsehFonds Bayern GmbH",
+      "level": "regional",
+      "region": "Bavaria",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary"],
+      "rate": {
+        "display": "Conditionally repayable loan for distribution"
+      },
+      "annualBudget": {
+        "display": "Part of EUR42M total FFF Bayern budget"
+      },
+      "minSpend": {
+        "display": "Bavaria Effect applies"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "4x/year"
+      },
+      "eligibility": "Distribution and sales companies. Covers theatrical distribution and international sales.",
+      "officialUrl": "https://www.fff-bayern.de/en/funding/",
+      "status": "active"
+    },
+    {
+      "id": "fff-bayern-bbf",
+      "name": "Bayerischer BankenFonds (BBF)",
+      "nameTranslated": {
+        "en": "Bavarian Banks Fund"
+      },
+      "governingBody": "FilmFernsehFonds Bayern GmbH",
+      "level": "regional",
+      "region": "Bavaria",
+      "category": "equity",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Co-financing instrument for cinema film production and distribution"
+      },
+      "annualBudget": {
+        "amount": 10000000,
+        "display": "EUR10M financing volume"
+      },
+      "minSpend": {
+        "display": "Bavaria Effect applies"
+      },
+      "cap": {
+        "display": "Determined case-by-case within EUR10M total pool"
+      },
+      "deadlines": {
+        "frequency": "Ongoing"
+      },
+      "eligibility": "Supplementary financing for cinema film production and distribution. Founded in 2000 as collaboration between Bavarian banks and FFF Bayern.",
+      "officialUrl": "https://www.fff-bayern.de/en/funding/",
+      "status": "active"
+    },
+    {
+      "id": "nrw-production",
+      "name": "Film- und Medienstiftung NRW Produktionsfoerderung (Production Funding)",
+      "nameTranslated": {
+        "en": "Film- und Medienstiftung NRW Production Funding"
+      },
+      "governingBody": "Film- und Medienstiftung NRW GmbH",
+      "level": "regional",
+      "region": "Nordrhein-Westfalen",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "tv-film", "tv-series", "animation", "short-film"],
+      "rate": {
+        "display": "Conditionally repayable loan; 30-80% of verified costs depending on project type"
+      },
+      "annualBudget": {
+        "amount": 40000000,
+        "display": "~EUR40M total average (state subsidies EUR16.12M in 2026 plus broadcaster and other contributions)"
+      },
+      "minSpend": {
+        "display": "150% of granted funding must be spent in NRW ('NRW Effect'). Entitled to spend at least 20% in another EU country per EU rules."
+      },
+      "cap": {
+        "display": "Up to EUR1M for certain project types; varies by category"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year (2025: first round awarded EUR8.35M to 29 projects; 2026: first round EUR11.5M to 30 projects)",
+        "notes": "Funding guidelines in effect since 1 Jan 2024"
+      },
+      "eligibility": "German-based production companies. Feature films, documentaries, low-budget films, graduation films, shorts, TV movies and series, innovative serial formats, German-French series eligible. 150% NRW regional spend requirement. Must contribute to cultural quality and commercial viability of German cinema.",
+      "officialUrl": "https://www.filmstiftung.de/en/funding/",
+      "alternateUrl": "https://www.filmstiftung.de/en/funding/service-centre/funding-guidelines-2/",
+      "status": "active"
+    },
+    {
+      "id": "nrw-development",
+      "name": "Film- und Medienstiftung NRW Stoffentwicklung (Script Development)",
+      "nameTranslated": {
+        "en": "Film- und Medienstiftung NRW Script Development"
+      },
+      "governingBody": "Film- und Medienstiftung NRW GmbH",
+      "level": "regional",
+      "region": "Nordrhein-Westfalen",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "tv-series"],
+      "rate": {
+        "display": "Grant for script and project development"
+      },
+      "annualBudget": {
+        "display": "Part of EUR40M total NRW budget"
+      },
+      "minSpend": {
+        "display": "Spent as far as possible in NRW"
+      },
+      "cap": {
+        "amount": 150000,
+        "display": "Up to EUR150K for development"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "German-based producers and screenwriters.",
+      "officialUrl": "https://www.filmstiftung.de/en/funding/",
+      "status": "active"
+    },
+    {
+      "id": "nrw-distribution",
+      "name": "Film- und Medienstiftung NRW Verleihfoerderung (Distribution Funding)",
+      "nameTranslated": {
+        "en": "Film- und Medienstiftung NRW Distribution Funding"
+      },
+      "governingBody": "Film- und Medienstiftung NRW GmbH",
+      "level": "regional",
+      "region": "Nordrhein-Westfalen",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary"],
+      "rate": {
+        "display": "Conditionally repayable loan for distribution costs"
+      },
+      "annualBudget": {
+        "display": "Part of EUR40M total NRW budget"
+      },
+      "minSpend": {
+        "display": "NRW regional spend applies"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Distribution companies operating in NRW.",
+      "officialUrl": "https://www.filmstiftung.de/en/funding/",
+      "status": "active"
+    },
+    {
+      "id": "moin-production-high-end",
+      "name": "MOIN Filmfoerderung High End (Feature Film & Series Production - High End)",
+      "nameTranslated": {
+        "en": "MOIN Film Fund High End Production Funding"
+      },
+      "governingBody": "MOIN Filmfoerderung Hamburg Schleswig-Holstein GmbH",
+      "level": "regional",
+      "region": "Hamburg / Schleswig-Holstein",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "tv-series", "documentary"],
+      "rate": {
+        "display": "Conditionally repayable interest-free loan"
+      },
+      "annualBudget": {
+        "amount": 20000000,
+        "display": "~EUR20M total MOIN budget (doubled from EUR10M in 2025-2026 with Hamburg's EUR5M/year increase)"
+      },
+      "minSpend": {
+        "display": "150% of granted funding must be spent in Hamburg and Schleswig-Holstein (2024 average: 315% achieved)"
+      },
+      "cap": {
+        "display": "Determined by High End committee"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year (committee-based)",
+        "notes": "High End committee decides on feature films and series with production costs >EUR2.5M and cinema documentaries >EUR1.5M"
+      },
+      "eligibility": "German-based producers. Feature films and series with production costs over EUR2.5M; cinema documentaries over EUR1.5M. 150% regional spend required. Shareholders: Hamburg, Schleswig-Holstein, NDR, ZDF.",
+      "officialUrl": "https://moin-filmfoerderung.de/en",
+      "status": "active"
+    },
+    {
+      "id": "moin-production-directors-cut",
+      "name": "MOIN Filmfoerderung Director's Cut (Lower-Budget Production Funding)",
+      "nameTranslated": {
+        "en": "MOIN Film Fund Director's Cut Production Funding"
+      },
+      "governingBody": "MOIN Filmfoerderung Hamburg Schleswig-Holstein GmbH",
+      "level": "regional",
+      "region": "Hamburg / Schleswig-Holstein",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "tv-series", "documentary"],
+      "rate": {
+        "display": "Conditionally repayable interest-free loan"
+      },
+      "annualBudget": {
+        "display": "Part of EUR20M total MOIN budget"
+      },
+      "minSpend": {
+        "display": "150% of granted funding must be spent in Hamburg and Schleswig-Holstein"
+      },
+      "cap": {
+        "display": "Determined by Director's Cut committee"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year (committee-based)",
+        "notes": "Director's Cut committee decides on feature films and series with budget up to EUR2.5M; cinema documentaries under EUR1.5M"
+      },
+      "eligibility": "German-based producers. Feature films and series up to EUR2.5M budget; cinema documentaries under EUR1.5M. 150% regional spend required.",
+      "officialUrl": "https://moin-filmfoerderung.de/en",
+      "status": "active"
+    },
+    {
+      "id": "moin-short-film",
+      "name": "MOIN Kurzfilmfoerderung (Short Film Funding)",
+      "nameTranslated": {
+        "en": "MOIN Short Film Funding"
+      },
+      "governingBody": "MOIN Filmfoerderung Hamburg Schleswig-Holstein GmbH",
+      "level": "regional",
+      "region": "Hamburg / Schleswig-Holstein",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["short-film"],
+      "rate": {
+        "display": "Grant"
+      },
+      "annualBudget": {
+        "display": "Part of EUR20M total MOIN budget"
+      },
+      "minSpend": {
+        "display": "150% regional spend"
+      },
+      "cap": {
+        "display": "Determined by Kiel-based Short Film committee"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Short films. Committee based in Kiel decides on applications.",
+      "officialUrl": "https://moin-filmfoerderung.de/en",
+      "status": "active"
+    },
+    {
+      "id": "moin-innovative",
+      "name": "MOIN Innovative Audiovisuelle Formate (Innovative Audiovisual Formats)",
+      "nameTranslated": {
+        "en": "MOIN Innovative Audiovisual Formats"
+      },
+      "governingBody": "MOIN Filmfoerderung Hamburg Schleswig-Holstein GmbH",
+      "level": "regional",
+      "region": "Hamburg / Schleswig-Holstein",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["web-series", "vfx-post"],
+      "rate": {
+        "display": "Grant for innovative formats"
+      },
+      "annualBudget": {
+        "display": "Part of EUR20M total MOIN budget"
+      },
+      "minSpend": {
+        "display": "150% regional spend"
+      },
+      "cap": {
+        "display": "Determined by Kiel-based Innovative committee"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Innovative audiovisual formats. Committee based in Kiel.",
+      "officialUrl": "https://moin-filmfoerderung.de/en",
+      "status": "active"
+    },
+    {
+      "id": "moin-nordlichter",
+      "name": "Nordlichter Talentprogramm (Young Talent Programme)",
+      "nameTranslated": {
+        "en": "Nordlichter Young Talent Programme"
+      },
+      "governingBody": "NDR / MOIN Filmfoerderung / nordmedia",
+      "level": "regional",
+      "region": "Hamburg / Schleswig-Holstein / Lower Saxony / Bremen",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Grant up to EUR1.15M per debut project"
+      },
+      "annualBudget": {
+        "display": "EUR1.15M per project cycle"
+      },
+      "minSpend": {
+        "display": "Regional spend in northern Germany"
+      },
+      "cap": {
+        "amount": 1150000,
+        "display": "EUR1.15M per project"
+      },
+      "deadlines": {
+        "frequency": "Annual call",
+        "notes": "Applications open until 31 March 2026 for current cycle"
+      },
+      "eligibility": "Young filmmakers from northern Germany (Hamburg, Schleswig-Holstein, Lower Saxony, Bremen). Fictional debut projects. Joint programme of NDR, MOIN, and nordmedia.",
+      "officialUrl": "https://moin-filmfoerderung.de/en/fundings/further-support/young-talent-programme-nordlichter",
+      "status": "active"
+    },
+    {
+      "id": "mdm-production",
+      "name": "MDM Mitteldeutsche Medienfoerderung Produktionsfoerderung (Production Funding)",
+      "nameTranslated": {
+        "en": "MDM Central German Media Promotion Production Funding"
+      },
+      "governingBody": "Mitteldeutsche Medienfoerderung GmbH",
+      "level": "regional",
+      "region": "Saxony / Saxony-Anhalt / Thuringia",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "tv-film", "tv-series", "animation", "short-film"],
+      "rate": {
+        "display": "Conditionally repayable loan; varies by project"
+      },
+      "annualBudget": {
+        "amount": 16300000,
+        "display": "~EUR16.3M/year (2024 actual: EUR19.4M across 174 projects including EUR13.8M for 51 cinema/TV projects)"
+      },
+      "minSpend": {
+        "display": "At least 100% of approved funding amount must be spent in Central Germany (Saxony, Saxony-Anhalt, Thuringia)"
+      },
+      "cap": {
+        "debutFilm": 300000,
+        "pilot": 250000,
+        "display": "Up to EUR300K for debut feature films; EUR250K for pilot programmes; higher amounts for established productions (2025 max single amount: EUR750K)"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year (approx. 4-5 funding rounds annually)",
+        "notes": "March 2025: EUR5.2M to 41 projects; June 2025: EUR7M to 49 projects"
+      },
+      "eligibility": "Producers with regional connection to Saxony, Saxony-Anhalt, or Thuringia. All phases funded: development, production, distribution, marketing, screening. Must demonstrate regional cultural and economic effects.",
+      "officialUrl": "https://www.mdm-online.de",
+      "status": "active"
+    },
+    {
+      "id": "mdm-development",
+      "name": "MDM Stoff- und Projektentwicklung (Script & Project Development)",
+      "nameTranslated": {
+        "en": "MDM Script & Project Development"
+      },
+      "governingBody": "Mitteldeutsche Medienfoerderung GmbH",
+      "level": "regional",
+      "region": "Saxony / Saxony-Anhalt / Thuringia",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "tv-series"],
+      "rate": {
+        "display": "Grant for development"
+      },
+      "annualBudget": {
+        "display": "Part of EUR16.3M total MDM budget"
+      },
+      "minSpend": {
+        "display": "100% spent in Central Germany"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Producers and screenwriters with regional connection to Saxony, Saxony-Anhalt, or Thuringia.",
+      "officialUrl": "https://www.mdm-online.de",
+      "status": "active"
+    },
+    {
+      "id": "mdm-distribution",
+      "name": "MDM Verleih- und Vertriebsfoerderung (Distribution & Sales)",
+      "nameTranslated": {
+        "en": "MDM Distribution & Sales Funding"
+      },
+      "governingBody": "Mitteldeutsche Medienfoerderung GmbH",
+      "level": "regional",
+      "region": "Saxony / Saxony-Anhalt / Thuringia",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary"],
+      "rate": {
+        "display": "Conditionally repayable loan"
+      },
+      "annualBudget": {
+        "display": "Part of EUR16.3M total MDM budget"
+      },
+      "minSpend": {
+        "display": "100% spent in Central Germany"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Distribution and sales companies with regional connection.",
+      "officialUrl": "https://www.mdm-online.de",
+      "status": "active"
+    },
+    {
+      "id": "mdm-key-frames",
+      "name": "KEY FRAMES (MDR/MDM Animation Short Film Programme)",
+      "governingBody": "MDR / MDM",
+      "level": "regional",
+      "region": "Saxony / Saxony-Anhalt / Thuringia",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["short-film", "animation"],
+      "rate": {
+        "display": "Grant for animated short films"
+      },
+      "annualBudget": {
+        "display": "Annual programme cycle"
+      },
+      "minSpend": {
+        "display": "Must be produced in Central Germany"
+      },
+      "cap": {
+        "display": "Determined per cycle"
+      },
+      "deadlines": {
+        "frequency": "Annual call",
+        "notes": "KEY FRAMES 2026: completed films due by June 2026 for ARD Mediathek, MDR television, and social media"
+      },
+      "eligibility": "Animators and producers from Saxony, Saxony-Anhalt, and Thuringia. Short animated films telling socially relevant stories.",
+      "officialUrl": "https://www.mdm-online.de",
+      "status": "active"
+    },
+    {
+      "id": "hessenfilm-production",
+      "name": "HessenFilm und Medien Produktionsfoerderung (Production Funding)",
+      "nameTranslated": {
+        "en": "HessenFilm and Media Production Funding"
+      },
+      "governingBody": "HessenFilm und Medien GmbH",
+      "level": "regional",
+      "region": "Hesse",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "tv-film", "tv-series", "animation", "short-film"],
+      "rate": {
+        "display": "Conditionally repayable loan or grant; up to EUR1M per project"
+      },
+      "annualBudget": {
+        "amount": 10200000,
+        "display": "~EUR10.2M total HessenFilm budget (all programmes)"
+      },
+      "minSpend": {
+        "display": "100-125% of funding must be spent in Hesse. Effect exchange partnership with MFG Baden-Wuerttemberg: mutual recognition of up to 35% of funding amount."
+      },
+      "cap": {
+        "amount": 1000000,
+        "display": "Up to EUR1M per project"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year",
+        "notes": "Focus on young talent promotion and documentary films. Green Film ecological minimum standards required."
+      },
+      "eligibility": "German-based production companies. Feature films, documentaries, TV films, series, animation, short films eligible. 100-125% Hesse regional spend. Shareholders: State of Hesse (90%) and Hessischer Rundfunk (10%).",
+      "officialUrl": "https://www.hessenfilm.de/en/funding",
+      "status": "active"
+    },
+    {
+      "id": "hessenfilm-development",
+      "name": "HessenFilm und Medien Stoffentwicklung (Script & Project Development)",
+      "nameTranslated": {
+        "en": "HessenFilm Script & Project Development"
+      },
+      "governingBody": "HessenFilm und Medien GmbH",
+      "level": "regional",
+      "region": "Hesse",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "tv-series"],
+      "rate": {
+        "display": "Grant for treatment, story, and project development (incl. package funding)"
+      },
+      "annualBudget": {
+        "display": "Part of EUR10.2M total HessenFilm budget"
+      },
+      "minSpend": {
+        "display": "Hesse regional spend applies"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Producers and screenwriters based in or with connection to Hesse.",
+      "officialUrl": "https://www.hessenfilm.de/en/funding",
+      "status": "active"
+    },
+    {
+      "id": "hessenfilm-distribution",
+      "name": "HessenFilm und Medien Verleih- und Vertriebsfoerderung (Distribution & Sales)",
+      "nameTranslated": {
+        "en": "HessenFilm Distribution & Sales Funding"
+      },
+      "governingBody": "HessenFilm und Medien GmbH",
+      "level": "regional",
+      "region": "Hesse",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary"],
+      "rate": {
+        "display": "Grant or loan for distribution"
+      },
+      "annualBudget": {
+        "display": "Part of EUR10.2M total HessenFilm budget"
+      },
+      "minSpend": {
+        "display": "Hesse regional spend applies"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Distribution companies with Hesse connection.",
+      "officialUrl": "https://www.hessenfilm.de/en/funding",
+      "status": "active"
+    },
+    {
+      "id": "hessenfilm-postproduction",
+      "name": "HessenFilm und Medien Postproduktionsfoerderung (Post-Production Funding)",
+      "nameTranslated": {
+        "en": "HessenFilm Post-Production Funding"
+      },
+      "governingBody": "HessenFilm und Medien GmbH",
+      "level": "regional",
+      "region": "Hesse",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "animation", "vfx-post"],
+      "rate": {
+        "display": "Grant for post-production work in Hesse"
+      },
+      "annualBudget": {
+        "display": "Part of EUR10.2M total HessenFilm budget"
+      },
+      "minSpend": {
+        "display": "Post-production must take place in Hesse"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Productions with post-production work in Hesse.",
+      "officialUrl": "https://www.hessenfilm.de/en/funding",
+      "status": "active"
+    },
+    {
+      "id": "mfg-production",
+      "name": "MFG Filmfoerderung Baden-Wuerttemberg Produktionsfoerderung (Production Funding)",
+      "nameTranslated": {
+        "en": "MFG Baden-Wuerttemberg Film Production Funding"
+      },
+      "governingBody": "MFG Medien- und Filmgesellschaft Baden-Wuerttemberg mbH",
+      "level": "regional",
+      "region": "Baden-Wuerttemberg",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "animation", "short-film", "tv-film", "tv-series"],
+      "rate": {
+        "display": "Conditionally repayable loan; percentage varies by project"
+      },
+      "annualBudget": {
+        "amount": 15000000,
+        "display": "~EUR15-18M total MFG Filmfoerderung budget (EUR15M for film/TV; total with all programmes ~EUR18M)"
+      },
+      "minSpend": {
+        "display": "150% of funding must be spent in Baden-Wuerttemberg. Effect exchange partnership with HessenFilm: mutual recognition of up to 35%."
+      },
+      "cap": {
+        "display": "Determined case-by-case; varies by project type"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year",
+        "notes": "Applications considered by funding committee. Green Shooting standards binding since 1 Nov 2025 (25 mandatory requirements)."
+      },
+      "eligibility": "German-based producers. Feature films, documentaries, animated films, short films, TV productions eligible. 150% regional spend in Baden-Wuerttemberg. Shareholders: State of Baden-Wuerttemberg and SWR; cooperation with ZDF and arte since 1999.",
+      "officialUrl": "https://film.mfg.de/",
+      "alternateUrl": "https://www.mfg.de/en/information-in-english/",
+      "status": "active"
+    },
+    {
+      "id": "mfg-development",
+      "name": "MFG Filmfoerderung Projektentwicklung (Project Development)",
+      "nameTranslated": {
+        "en": "MFG Baden-Wuerttemberg Project Development Funding"
+      },
+      "governingBody": "MFG Medien- und Filmgesellschaft Baden-Wuerttemberg mbH",
+      "level": "regional",
+      "region": "Baden-Wuerttemberg",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "tv-series"],
+      "rate": {
+        "display": "Grant for screenplay and project development"
+      },
+      "annualBudget": {
+        "display": "Part of EUR15-18M total MFG budget"
+      },
+      "minSpend": {
+        "display": "Baden-Wuerttemberg regional spend applies"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Producers and screenwriters with connection to Baden-Wuerttemberg.",
+      "officialUrl": "https://film.mfg.de/",
+      "status": "active"
+    },
+    {
+      "id": "mfg-distribution",
+      "name": "MFG Filmfoerderung Verleih- und Vertriebsfoerderung (Distribution & Sales)",
+      "nameTranslated": {
+        "en": "MFG Baden-Wuerttemberg Distribution & Sales Funding"
+      },
+      "governingBody": "MFG Medien- und Filmgesellschaft Baden-Wuerttemberg mbH",
+      "level": "regional",
+      "region": "Baden-Wuerttemberg",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary"],
+      "rate": {
+        "display": "Loan for distribution"
+      },
+      "annualBudget": {
+        "display": "Part of EUR15-18M total MFG budget"
+      },
+      "minSpend": {
+        "display": "Regional spend applies"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Distribution companies.",
+      "officialUrl": "https://film.mfg.de/",
+      "status": "active"
+    },
+    {
+      "id": "mfg-animation-lineproducer",
+      "name": "MFG Line Producer Foerderung Animation/VFX",
+      "nameTranslated": {
+        "en": "MFG Line Producer Funding for Animation/VFX"
+      },
+      "governingBody": "MFG Medien- und Filmgesellschaft Baden-Wuerttemberg mbH",
+      "level": "regional",
+      "region": "Baden-Wuerttemberg",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["animation", "vfx-post"],
+      "rate": {
+        "display": "Grant for productions animated in BW or with high proportion of virtual shooting / digital image processing"
+      },
+      "annualBudget": {
+        "display": "Part of EUR15-18M total MFG budget"
+      },
+      "minSpend": {
+        "display": "Animation/VFX work must take place in Baden-Wuerttemberg"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Multiple rounds/year"
+      },
+      "eligibility": "Line producers and VFX/animation service providers for national and international projects. Targeted at productions animated domestically or with significant virtual shooting/digital image processing in Baden-Wuerttemberg.",
+      "officialUrl": "https://film.mfg.de/",
+      "status": "active"
+    },
+    {
+      "id": "mfg-talent",
+      "name": "MFG Nachwuchsfoerderung (Young Talent Programmes: Junger Dokumentarfilm, Fifty-Fifty)",
+      "nameTranslated": {
+        "en": "MFG Young Talent Funding (Young Documentary, Fifty-Fifty)"
+      },
+      "governingBody": "MFG Medien- und Filmgesellschaft Baden-Wuerttemberg mbH",
+      "level": "regional",
+      "region": "Baden-Wuerttemberg",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["documentary", "feature-film", "short-film"],
+      "rate": {
+        "display": "Grant for debut and early-career filmmakers"
+      },
+      "annualBudget": {
+        "display": "Part of EUR15-18M total MFG budget"
+      },
+      "minSpend": {
+        "display": "Baden-Wuerttemberg regional spend applies"
+      },
+      "cap": {
+        "display": "Determined per programme"
+      },
+      "deadlines": {
+        "frequency": "Annual calls"
+      },
+      "eligibility": "Young and emerging filmmakers. Junger Dokumentarfilm focuses on documentary; Fifty-Fifty on fiction debuts. Lotte Reiniger Foerderpreis and MFG-Star awards also available.",
+      "officialUrl": "https://film.mfg.de/",
+      "status": "active"
+    },
+    {
+      "id": "nordmedia-production",
+      "name": "nordmedia Produktionsfoerderung (Production Funding)",
+      "nameTranslated": {
+        "en": "nordmedia Production Funding"
+      },
+      "governingBody": "nordmedia Film- und Mediengesellschaft Niedersachsen/Bremen mbH",
+      "level": "regional",
+      "region": "Lower Saxony / Bremen",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "tv-film", "tv-series", "short-film", "animation"],
+      "rate": {
+        "display": "Conditionally repayable interest-free loan; up to 60% of expected German production costs for co-productions"
+      },
+      "annualBudget": {
+        "amount": 11000000,
+        "display": "~EUR11M total nordmedia annual budget (2025 third round: EUR4.2M to 52 projects)"
+      },
+      "minSpend": {
+        "display": "150% of granted funding must be spent in Lower Saxony and/or Bremen"
+      },
+      "cap": {
+        "display": "Determined case-by-case; up to 60% of German production costs for co-productions"
+      },
+      "deadlines": {
+        "frequency": "3x/year (jury meetings)",
+        "2026Deadlines": [
+          "11 March 2026 (Jury meeting I)",
+          "24 June 2026 (Jury meeting II)",
+          "11 November 2026 (Jury meeting III)"
+        ],
+        "notes": "Application deadlines several weeks before jury meetings. Ecological standards required; green motion label available."
+      },
+      "eligibility": "German co-producer required for international co-productions. 150% regional spend in Lower Saxony/Bremen. All phases funded: development, production, distribution, marketing. Shareholders: Lower Saxony, Bremen, NDR, Radio Bremen; ZDF as partner.",
+      "officialUrl": "https://www.english.nordmedia.de/pages/funding/subpages/international_co-productions__nordmedia_funding_regulations/",
+      "alternateUrl": "https://www.nordmedia.de",
+      "status": "active"
+    },
+    {
+      "id": "nordmedia-development",
+      "name": "nordmedia Stoffentwicklung (Script & Project Development)",
+      "nameTranslated": {
+        "en": "nordmedia Script & Project Development"
+      },
+      "governingBody": "nordmedia Film- und Mediengesellschaft Niedersachsen/Bremen mbH",
+      "level": "regional",
+      "region": "Lower Saxony / Bremen",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "tv-series"],
+      "rate": {
+        "display": "Grant for development"
+      },
+      "annualBudget": {
+        "display": "Part of EUR11M total nordmedia budget"
+      },
+      "minSpend": {
+        "display": "150% regional spend in Lower Saxony/Bremen"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "3x/year (aligned with jury meetings)"
+      },
+      "eligibility": "Producers and screenwriters with connection to Lower Saxony/Bremen.",
+      "officialUrl": "https://www.nordmedia.de",
+      "status": "active"
+    },
+    {
+      "id": "nordmedia-distribution",
+      "name": "nordmedia Verleih- und Vertriebsfoerderung (Distribution & Sales)",
+      "nameTranslated": {
+        "en": "nordmedia Distribution & Sales Funding"
+      },
+      "governingBody": "nordmedia Film- und Mediengesellschaft Niedersachsen/Bremen mbH",
+      "level": "regional",
+      "region": "Lower Saxony / Bremen",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary"],
+      "rate": {
+        "display": "Loan for distribution"
+      },
+      "annualBudget": {
+        "display": "Part of EUR11M total nordmedia budget"
+      },
+      "minSpend": {
+        "display": "Regional spend applies"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "3x/year"
+      },
+      "eligibility": "Distribution companies with connection to Lower Saxony/Bremen.",
+      "officialUrl": "https://www.nordmedia.de",
+      "status": "active"
+    },
+    {
+      "id": "nordmedia-mediatalents",
+      "name": "nordmedia mediatalents (Emerging Talent Programme)",
+      "nameTranslated": {
+        "en": "nordmedia mediatalents Emerging Talent Funding"
+      },
+      "governingBody": "nordmedia Film- und Mediengesellschaft Niedersachsen/Bremen mbH",
+      "level": "regional",
+      "region": "Lower Saxony / Bremen",
+      "category": "grant",
+      "subcategory": "selective",
+      "format": ["feature-film", "documentary", "short-film"],
+      "rate": {
+        "display": "Grant for emerging talent"
+      },
+      "annualBudget": {
+        "display": "Part of EUR11M total nordmedia budget"
+      },
+      "minSpend": {
+        "display": "Regional spend in Lower Saxony/Bremen"
+      },
+      "cap": {
+        "display": "Determined case-by-case"
+      },
+      "deadlines": {
+        "frequency": "Annual",
+        "notes": "Simplified application process from 2026: initial informal concept submission, then full application"
+      },
+      "eligibility": "First-time applicants and emerging talent from Lower Saxony/Bremen. Simplified barriers from 2026.",
+      "officialUrl": "https://www.nordmedia.de",
+      "status": "active"
+    }
+  ]
+}
