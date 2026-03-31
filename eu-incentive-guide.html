@@ -1082,15 +1082,15 @@ footer {
     <div class="hero-content">
       <div class="hero-tag">Feature Films · 2025–2026 Edition</div>
       <h1>EU Co-Production<br>& <span class="gradient-text">Incentive Guide</span></h1>
-      <p>Navigate European tax incentives, cash rebates, and co-production frameworks for feature film production. Verified data across 20+ territories to help you maximize your budget.</p>
+      <p>Navigate European tax incentives, cash rebates, and co-production frameworks for feature film production. Verified data across 50 territories to help you maximize your budget.</p>
       <div class="hero-actions">
         <a class="btn-primary" onclick="showPage('incentives')">Explore Incentives →</a>
         <a class="btn-secondary" onclick="showPage('copro')">Co-Production Guide</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="number">20+</div>
-          <div class="label">EU / EEA Territories</div>
+          <div class="number">50</div>
+          <div class="label">Global Territories</div>
         </div>
         <div class="hero-stat">
           <div class="number">50%</div>
@@ -1641,6 +1641,139 @@ const countries = [
     cap: "Varies", cultural: "N/A",
     vfx: "N/A", timeline: "Varies",
     notes: "Sweden has no national production incentive. Regional film funds (Film i Väst, Stockholm Film Fund) provide support for qualifying productions. Strong production infrastructure, particularly in Gothenburg and Stockholm. Sweden's co-production treaties and EU membership provide access to Eurimages and Creative Europe."
+  },
+  {
+    name: "Georgia", flag: "🇬🇪", rate: "20–25%", rateNum: 25, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "~€160K (GEL 500K for features)",
+    cap: "~€330K auto-approved; higher requires govt approval", cultural: "Yes — Cultural test for +5%",
+    vfx: "Eligible; +1% bonus for local post-production", timeline: "Within 90 days of submission",
+    notes: "Film in Georgia programme launched 2016. Base 20% cash rebate on qualified local spend with additional 2–5% via cultural test. Must register as legal entity in Georgia. At least 50% of total budget must be in place at application. Non-resident salary cap of 15% of qualified budget. Diverse locations from mountains to Black Sea coast."
+  },
+  {
+    name: "Serbia", flag: "🇷🇸", rate: "25–30%", rateNum: 30, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "€300K for features; €50K for docs",
+    cap: "No per-project cap; ~€17M annual programme", cultural: "No",
+    vfx: "25% at €150K minimum", timeline: "Within 60 days of approval",
+    notes: "New regulation adopted March 2025. 25% base rebate on qualified Serbian expenditure; 30% for features exceeding €5M spend. Year-round applications. Applicant must be Serbian-registered company. One of the most competitive incentives in the Balkans with growing studio infrastructure in Belgrade."
+  },
+  {
+    name: "Switzerland", flag: "🇨🇭", rate: "20–40%", rateNum: 40, type: "rebate",
+    typeName: "Cash Rebate / Production Support (PICS + Regional)", minSpend: "Varies by canton",
+    cap: "PICS: CHF 600K per project", cultural: "Yes — Swiss authorship requirements",
+    vfx: "Eligible under PICS and regional schemes", timeline: "Varies by programme",
+    notes: "Layered system rather than single national incentive. PICS (national) offers 20–40% with CHF 6M annual budget. Regional cantons offer additional rebates: Valais 15–35%, Geneva up to 30%, Zurich up to CHF 30K. Can stack PICS with regional incentives. Strong post-production and VFX facilities."
+  },
+  {
+    name: "Bosnia and Herzegovina", flag: "🇧🇦", rate: "30%", rateNum: 30, type: "rebate",
+    typeName: "Cash Rebate (Sarajevo Canton)", minSpend: "€50K local spend",
+    cap: "~€1M annual budget", cultural: "No",
+    vfx: "Not specified", timeline: "Uncertain; process varies",
+    notes: "30% cash rebate available through Sarajevo Canton/Film Fund Sarajevo. Attractive rate but limited by small annual budget (~€1M) and uncertain application processes. Productions often source crew and equipment from neighbouring Croatia. Co-production treaty access remains valuable."
+  },
+  {
+    name: "Montenegro", flag: "🇲🇪", rate: "25%", rateNum: 25, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "€100K qualified expenditure",
+    cap: "Subject to annual budget", cultural: "Yes — 15 points minimum",
+    vfx: "Not specified", timeline: "Contact Film Centre of Montenegro",
+    notes: "Up to 25% refund on qualified expenditure for features, docs, TV films and series. Must score minimum 15 points on cultural test covering use of Montenegrin production capacities, local crew and talent. Adriatic coastline and dramatic mountain landscapes."
+  },
+  {
+    name: "North Macedonia", flag: "🇲🇰", rate: "20%", rateNum: 20, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "€100K",
+    cap: "Annual grant budget ~€1.6M", cultural: "No",
+    vfx: "Eligible as local expenditure", timeline: "Apply 15 days before filming; paid post-completion",
+    notes: "20% cash rebate on qualifying Macedonian expenditure introduced 2014. First-come, first-served basis. Applicant must be North Macedonia-based and have produced at least one feature film. Film Agency also offers separate production grants."
+  },
+  {
+    name: "Albania", flag: "🇦🇱", rate: "25–30%", rateNum: 30, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "~€100K",
+    cap: "Subject to annual budget", cultural: "No",
+    vfx: "Not specified", timeline: "Apply before principal photography",
+    notes: "Cash rebate of up to 25–30% of eligible local spend administered by Albanian National Center of Cinematography. International productions must work with Albanian production company partner. Attractive Mediterranean locations (Adriatic/Ionian coast, Albanian Alps) at lower cost than Western Europe."
+  },
+  {
+    name: "Armenia", flag: "🇦🇲", rate: "25–35%", rateNum: 35, type: "rebate",
+    typeName: "Cash Rebate", minSpend: "Not specified",
+    cap: "Not specified", cultural: "Yes — +10% for Armenian culture",
+    vfx: "Eligible", timeline: "Programme adopted April 2025",
+    notes: "New rebate programme adopted April 2025. Base 25% cash rebate on products/services from Armenian resident companies. Additional 10% bonus for projects promoting Armenian culture (total 35%). Covers joint foreign-Armenian productions. Creative sector generates 60%+ of audiovisual revenue from international clients."
+  },
+  {
+    name: "Turkey", flag: "🇹🇷", rate: "30% + 18% VAT", rateNum: 30, type: "rebate",
+    typeName: "Cash Rebate + VAT Refund", minSpend: "TL 6M for features; TL 1M for docs/series",
+    cap: "No specific per-project cap", cultural: "Yes — Points-based (50/100 minimum)",
+    vfx: "Eligible", timeline: "Post-completion with rough cut",
+    notes: "Up to 30% cash rebate on all eligible Turkish expenses under Law 5224, plus separate VAT refund of up to 18%. Points-based cultural test covering cultural content, Turkish citizen involvement, and local infrastructure use. Must have produced at least 2 features or 1 TV series season in last 5 years. Major studio infrastructure in Istanbul and Antalya."
+  },
+  {
+    name: "Canada", flag: "🇨🇦", rate: "16–60% combined", rateNum: 60, type: "credit",
+    typeName: "Refundable Tax Credit (Federal + Provincial)", minSpend: "No federal minimum",
+    cap: "Varies; PSTC uncapped", cultural: "CPTC requires Canadian content; PSTC does not",
+    vfx: "Yes — BC DAVE 16%, Ontario OCASE 18%, Quebec 16% animation bonus", timeline: "18–24 months post filing",
+    notes: "Two-tier federal system: CPTC (25% of qualified labour, effective ~15% of budget) for Canadian-content productions; PSTC (16% of qualified labour, uncapped) for foreign service productions. Stackable with provincial credits: BC up to 36%, Ontario up to 35%, Quebec up to 40%. Combined federal+provincial can offset up to 60% of costs. Eurimages associate member. World's largest bilateral treaty network with 60+ countries."
+  },
+  {
+    name: "Australia", flag: "🇦🇺", rate: "30–40%", rateNum: 40, type: "credit",
+    typeName: "Refundable Tax Offset", minSpend: "AUD 1M–20M depending on offset",
+    cap: "Uncapped for all three offsets", cultural: "Producer Offset requires SAC test; Location Offset does not",
+    vfx: "PDV Offset: dedicated 30% for post/VFX", timeline: "Year-round applications",
+    notes: "Three refundable tax offsets: Producer Offset 40% for features / 30% for other formats; Location Offset 30% for large-budget international productions (increased from 16.5% in 2023); PDV Offset 30% for post/VFX done in Australia regardless of shoot location. Record AUD 2.7B production spend 2024/25. Bilateral treaties with UK, France, Germany, Italy, Ireland."
+  },
+  {
+    name: "New Zealand", flag: "🇳🇿", rate: "20–40%", rateNum: 40, type: "grant",
+    typeName: "Screen Production Rebate (NZSPR)", minSpend: "Varies by component",
+    cap: "$6M domestic; international uncapped", cultural: "NZ domestic requires NZ content",
+    vfx: "PDV Rebate: 20% + 5% uplift from Jan 2026", timeline: "Year-round applications",
+    notes: "Renamed from NZSPG to NZSPR. Three components: NZ domestic (40% of QNZPE); International (20% baseline + 5% uplift = 25%); PDV (20% up to $25M, 18% above). World-class production infrastructure built from Lord of the Rings and Avatar franchises. Bilateral treaties with UK, France."
+  },
+  {
+    name: "India", flag: "🇮🇳", rate: "30–40%", rateNum: 40, type: "rebate",
+    typeName: "Cash Rebate (Incentive Scheme for Foreign Films)", minSpend: "~$300K (INR 2.5 Crore)",
+    cap: "~$3.6M (INR 300M)", cultural: "5% bonus for Significant Indian Content",
+    vfx: "Digital animation eligible", timeline: "Must apply before principal photography",
+    notes: "Federal incentive of 30% cashback on qualifying production expenditure. 5% bonus for employing 15%+ Indian manpower. Additional 5% for Significant Indian Content (total 40%). Increased from 30% in 2024. Various state governments offer additional incentives. Bilateral treaties with UK, France, Australia."
+  },
+  {
+    name: "China", flag: "🇨🇳", rate: "N/A", rateNum: 0, type: "shelter",
+    typeName: "Co-Production Arrangement / Municipal Incentives", minSpend: "N/A",
+    cap: "Municipal varies", cultural: "Yes — China Film Administration criteria",
+    vfx: "Municipal incentives may cover post/VFX", timeline: "Varies",
+    notes: "No formal national cash rebate. Primary value is market access via official co-production status through China Film Co-production Corporation, bypassing foreign film quota. World's largest cinema market: $7.45B domestic box office. Some municipalities offer local incentives. Co-production treaty provides access to Chinese theatrical market and public funding."
+  },
+  {
+    name: "South Korea", flag: "🇰🇷", rate: "25–30%", rateNum: 30, type: "grant",
+    typeName: "Location Incentive Grant (KOFIC)", minSpend: "~$44K–$700K depending on tier",
+    cap: "~$176K–$265K depending on tier", cultural: "No",
+    vfx: "Eligible", timeline: "Apply 30–90 days before filming",
+    notes: "KOFIC Location Incentive: 25% for 10+ shooting days and $700K+ spend; 20% for 3+ days with lower spend. Seoul offers up to 30%. Foreign capital must exceed 80% of production cost. Limited annual budget means early application critical. Bilateral treaties with France, Australia."
+  },
+  {
+    name: "South Africa", flag: "🇿🇦", rate: "25–35%", rateNum: 35, type: "rebate",
+    typeName: "Cash Rebate (DTIC Film Incentive)", minSpend: "R1.5M for foreign productions",
+    cap: "R50M per project", cultural: "No",
+    vfx: "Post-production bonus: 27.5% at R10M+; 30% at R15M+", timeline: "Severe delays (2025–2026)",
+    notes: "DTIC administers foreign production incentive: 25% of SA spend, rising to 27.5–30% with significant local post-production spend. CRITICAL: As of 2025–2026, the rebate system is in crisis — R660M+ in unpaid claims, committee inactive over a year. Programme status uncertain pending government resolution. Bilateral treaties with UK, France, Australia."
+  },
+  {
+    name: "Brazil", flag: "🇧🇷", rate: "20–35%", rateNum: 35, type: "rebate",
+    typeName: "City Cash Rebate + Federal Tax Mechanism", minSpend: "~$350K (BRL 2M) for city rebates",
+    cap: "Varies by programme", cultural: "Yes — Co-productions require 40% equity + 2/3 Brazilian crew",
+    vfx: "Eligible under city rebate programmes", timeline: "Apply before production",
+    notes: "No structured national cash rebate. City-level rebates: Rio 30–35%, São Paulo 20–30% of eligible local spend. Federal incentives via Audiovisual Sector Fund (FSA/ANCINE) and tax mechanisms. Co-productions require formal Brazilian partner. Currency arbitrage provides additional cost advantages. Bilateral treaty with UK, France."
+  },
+  {
+    name: "Israel", flag: "🇮🇱", rate: "30–40%", rateNum: 40, type: "rebate",
+    typeName: "Cash Rebate (Fund for Foreign Productions)", minSpend: "~$140K (500K shekels)",
+    cap: "~$4.8M per production", cultural: "No",
+    vfx: "+10% for post-production and animation (total 40%)", timeline: "80% during filming; 20% on completion",
+    notes: "30% cash rebate on eligible production costs. Additional 10% for post-production and animation. Originally launched 2022; renewal status should be confirmed. Payment split: 80% during production, 20% upon completion. Bilateral treaties with UK, France, Australia."
+  },
+  {
+    name: "Argentina", flag: "🇦🇷", rate: "20–30%", rateNum: 30, type: "rebate",
+    typeName: "Cash Rebate (National + City-level)", minSpend: "~$675K for Buenos Aires city",
+    cap: "~$625K ceiling (Buenos Aires)", cultural: "No",
+    vfx: "Eligible", timeline: "4–6 weeks initial approval; 6–12 months for rebate",
+    notes: "Multi-layered: National up to 30% via INCAA; Buenos Aires city 20% since Jan 2023. Eurimages associate member. Note: INCAA faces political funding threats as of 2026. Currency arbitrage provides significant cost advantages for international productions. Strong technical crews in cinematography and art direction."
   }
 ];
 
