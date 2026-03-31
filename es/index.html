@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/nav.css">
 <title>PULPSCREEN — Produccion y Financiacion Cinematografica</title>
 <meta name="description" content="Pulpscreen — Produccion y Financiacion Cinematografica. Guias de coproduccion en la UE, herramientas de incentivos fiscales y experiencia en produccion.">
 <meta property="og:title" content="PULPSCREEN — Produccion y Financiacion Cinematografica">
@@ -86,250 +87,6 @@ body::after {
 
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; }
-
-/* ===== NAVIGATION ===== */
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9000;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 clamp(24px, 4vw, 64px);
-  background: rgba(5,5,5,0.6);
-  backdrop-filter: blur(24px) saturate(1.4);
-  -webkit-backdrop-filter: blur(24px) saturate(1.4);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  transition: background 0.4s;
-}
-
-.nav.scrolled {
-  background: rgba(5,5,5,0.92);
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.nav-logo img {
-  height: 32px;
-  width: auto;
-}
-
-.nav-logo-fallback {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-logo-mark {
-  width: 34px;
-  height: 34px;
-  background: var(--gradient);
-  border-radius: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 18px;
-  color: var(--black);
-  flex-shrink: 0;
-}
-
-.nav-wordmark {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 17px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.nav-link {
-  padding: 8px 18px;
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: var(--gray-300);
-  transition: color 0.3s;
-  white-space: nowrap;
-}
-
-.nav-link:hover { color: var(--white); }
-
-.nav-dropdown {
-  position: relative;
-}
-
-.nav-dropdown > .nav-link::after {
-  content: ' ▾';
-  font-size: 8px;
-}
-
-.nav-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 220px;
-  background: rgba(10,10,10,0.95);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 8px;
-  padding: 8px 0;
-  margin-top: 8px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-
-.nav-dropdown:hover .nav-dropdown-menu {
-  display: block;
-}
-
-.nav-dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--gray-300);
-  text-decoration: none;
-  transition: color 0.2s, background 0.2s;
-  white-space: nowrap;
-}
-
-.nav-dropdown-menu a:hover {
-  color: var(--white);
-  background: rgba(255,107,43,0.08);
-}
-
-.lang-switch {
-  position: relative;
-  margin-left: 12px;
-}
-
-.lang-current {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 1px;
-  color: var(--gray-300);
-  text-transform: uppercase;
-  transition: border-color 0.2s;
-}
-
-.lang-current:hover { border-color: rgba(255,255,255,0.2); }
-
-.lang-current .flag { font-size: 16px; line-height: 1; }
-
-.lang-current::after {
-  content: '';
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 4px solid var(--gray-300);
-  margin-left: 2px;
-}
-
-.lang-dropdown {
-  display: none;
-  position: absolute;
-  top: calc(100% + 6px);
-  right: 0;
-  min-width: 150px;
-  background: rgba(10,10,10,0.95);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 8px;
-  padding: 6px 0;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.5);
-  z-index: 1001;
-}
-
-.lang-switch.open .lang-dropdown { display: block; }
-
-.lang-dropdown a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--gray-300);
-  text-decoration: none;
-  transition: color 0.2s, background 0.2s;
-}
-
-.lang-dropdown a .flag { font-size: 16px; }
-
-.lang-dropdown a:hover {
-  color: var(--white);
-  background: rgba(255,107,43,0.08);
-}
-
-.lang-dropdown a.active {
-  color: var(--white);
-  background: rgba(255,255,255,0.06);
-}
-
-.nav-cta {
-  margin-left: 12px;
-  padding: 9px 22px;
-  background: var(--gradient);
-  border-radius: 6px;
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: var(--white);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.nav-cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(255,107,43,0.25);
-}
-
-/* Mobile nav */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-}
-
-.nav-toggle span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--white);
-  border-radius: 1px;
-  transition: all 0.3s;
-}
 
 /* ===== HERO ===== */
 .hero {
@@ -1012,46 +769,7 @@ img { max-width: 100%; height: auto; }
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
-<nav class="nav" id="nav">
-  <a href="/" class="nav-logo">
-    <img src="../images/Asset 3@5x.png" alt="Pulpscreen"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-    <div class="nav-logo-fallback" style="display:none;">
-      <div class="nav-logo-mark">P</div>
-      <span class="nav-wordmark">Pulpscreen</span>
-    </div>
-  </a>
-
-  <div class="nav-links">
-    <a href="/#services" class="nav-link">Servicios</a>
-    <div class="nav-dropdown">
-      <a href="eu-incentive-guide.html" class="nav-link">Guia de Coproduccion</a>
-      <div class="nav-dropdown-menu">
-        <a href="eu-incentive-guide.html">Inicio de la Guia</a>
-        <a href="eu-incentive-guide.html#incentives">Incentivos Fiscales</a>
-        <a href="eu-incentive-guide.html#compare">Comparar Paises</a>
-        <a href="eu-incentive-guide.html#copro">Marco de Coproduccion</a>
-        <a href="eu-incentive-guide.html#treaties">Tratados y Fondos</a>
-      </div>
-    </div>
-    <a href="#contact" class="nav-cta">Contactenos</a>
-  </div>
-
-    <div class="lang-switch">
-    <div class="lang-current"><span class="flag">🇪🇸</span> ES</div>
-    <div class="lang-dropdown">
-      <a href="/"><span class="flag">🇬🇧</span> English</a>
-      <a href="/fr/"><span class="flag">🇫🇷</span> Français</a>
-      <a href="/es/" class="active"><span class="flag">🇪🇸</span> Español</a>
-      <a href="/de/"><span class="flag">🇩🇪</span> Deutsch</a>
-      <a href="/it/"><span class="flag">🇮🇹</span> Italiano</a>
-    </div>
-  </div>
-  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<div id="main-nav"></div>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
@@ -1295,11 +1013,6 @@ img { max-width: 100%; height: auto; }
 </footer>
 
 <script>
-// Nav scroll effect
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
 
 // Intersection Observer for fade-in animations
 const observer = new IntersectionObserver((entries) => {
@@ -1350,49 +1063,9 @@ document.querySelectorAll('.service-card, .featured-card, .contact-inner').forEa
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
 });
-// Close mobile menu on anchor link click
-document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
-  a.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.remove('show');
-  });
-});
 
-// Language dropdown toggle (click, not hover)
-document.querySelectorAll('.lang-current').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    this.closest('.lang-switch').classList.toggle('open');
-  });
-});
-document.addEventListener('click', () => {
-  document.querySelectorAll('.lang-switch.open').forEach(el => el.classList.remove('open'));
-});
 
-// Language persistence
-(function() {
-  const currentLang = document.documentElement.lang || 'es';
-  const stored = localStorage.getItem('pulpscreen-lang');
-  const path = window.location.pathname;
-  const hash = window.location.hash;
-  const langs = ['en','fr','es','de','it'];
-
-  if (stored && stored !== currentLang && langs.includes(stored)) {
-    const basePath = path.replace(/^\/(fr|es|de|it)\//, '/');
-    const newPath = stored === 'en' ? basePath : '/' + stored + basePath;
-    window.location.replace(newPath + hash);
-    return;
-  }
-
-  document.querySelectorAll('.lang-switch a').forEach(a => {
-    a.addEventListener('click', function() {
-      const href = this.getAttribute('href');
-      const lang = href === '/' ? 'en' : (href.match(/^\/(fr|es|de|it)\//) || [])[1] || 'en';
-      localStorage.setItem('pulpscreen-lang', lang);
-    });
-  });
-
-  if (!stored) localStorage.setItem('pulpscreen-lang', currentLang);
-})();
 </script>
+<script src="/nav.js"></script>
 </body>
 </html>
