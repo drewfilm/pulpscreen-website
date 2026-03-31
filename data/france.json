@@ -1,0 +1,1164 @@
+{
+  "metadata": {
+    "title": "France Film Production Funding Programmes",
+    "lastUpdated": "2026-03-31",
+    "sources": [
+      "https://www.cnc.fr",
+      "https://www.filmfrance.net",
+      "https://www.iledefrance.fr",
+      "https://www.maregionsud.fr",
+      "https://alca-nouvelle-aquitaine.fr",
+      "https://www.auvergnerhonealpes-cinema.fr",
+      "https://www.laregion.fr",
+      "https://www.bretagne.bzh",
+      "https://www.pictanovo.com",
+      "https://www.grandest.fr"
+    ]
+  },
+  "programmes": [
+    {
+      "id": "cnc-trip",
+      "name": "TRIP (Tax Rebate for International Productions)",
+      "governingBody": "CNC / Film France",
+      "level": "national",
+      "category": "cash-rebate",
+      "format": ["feature-film", "tv-series", "animation", "short-film", "tv-special", "vr"],
+      "rate": {
+        "base": 30,
+        "enhanced": 40,
+        "display": "30% base; 40% if French VFX spend >EUR2M"
+      },
+      "annualBudget": {
+        "display": "~EUR120M (total tax expenditure for C2I/TRIP combined ~EUR579M in 2026)"
+      },
+      "minSpend": {
+        "display": "EUR250K eligible spend in France, or 50% of world budget if <EUR500K; min 5 shooting days for live action"
+      },
+      "cap": {
+        "amount": 30000000,
+        "display": "EUR30M per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling applications",
+        "notes": "Agrément delivered by CNC; rebate paid 6-9 months after audited cost reports"
+      },
+      "eligibility": "Foreign productions shooting in France via a French production services company (existing company, subsidiary, or SPV). Must pass a cultural test. Documentaries, commercials, and reality TV excluded. 2026 reform: above-the-line costs (including non-European actor salaries) now eligible.",
+      "officialUrl": "https://www.cnc.fr/web/en/tax-rebate/the-tax-rebate-for-international-productions-trip_190742",
+      "alternateUrl": "https://www.filmfrance.net/en/tax-rebate/tax-rebate-for-international-productions/",
+      "status": "active"
+    },
+    {
+      "id": "cnc-credit-impot-cinema",
+      "name": "Credit d'Impot Cinema (Cinema Tax Credit)",
+      "governingBody": "CNC",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["feature-film"],
+      "rate": {
+        "standard": 30,
+        "foreignLanguage": 20,
+        "display": "30% for French-language films; 20% for foreign-language films (with artistic justification)"
+      },
+      "annualBudget": {
+        "display": "Part of EUR579M total tax expenditure (all CNC tax credits combined, 2026)"
+      },
+      "minSpend": {
+        "display": "Eligible spend capped at 80% of production budget"
+      },
+      "cap": {
+        "amount": 30000000,
+        "display": "EUR30M per film"
+      },
+      "deadlines": {
+        "frequency": "Rolling (provisional agrément must be obtained before first day of shooting)",
+        "notes": "Agrément provisoire required before shooting begins; agrément définitif after completion"
+      },
+      "eligibility": "French production companies (sociétés commerciales) subject to IS (corporate tax) acting as producteur délégué (max 2 per film). Film must qualify for CNC automatic support. Public aid cumulation capped at 50% of budget (60% in certain cases). Eco-conditionality applies since Jan 2024.",
+      "officialUrl": "https://www.cnc.fr/professionnels/aides-et-financements/cinema/production/credit-dimpot-cinema_132769",
+      "status": "active"
+    },
+    {
+      "id": "cnc-credit-impot-audiovisuel",
+      "name": "Credit d'Impot Audiovisuel (Audiovisual Tax Credit)",
+      "governingBody": "CNC",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["tv-series", "tv-film", "documentary", "animation", "live-performance-adaptation"],
+      "rate": {
+        "fictionDocAnimation": 25,
+        "livePerformance": 10,
+        "display": "25% for fiction, documentary, animation; 10% for live performance adaptations"
+      },
+      "annualBudget": {
+        "display": "Part of EUR579M total tax expenditure (all CNC tax credits combined, 2026)"
+      },
+      "minSpend": {
+        "display": "Varies by genre (e.g. documentary: cost >EUR2,333/min and eligible spend >=EUR2,000/min)"
+      },
+      "cap": {
+        "fiction": "EUR1,250-1,500/min produced (varies by cost bracket)",
+        "documentary": "EUR1,450/min produced",
+        "animation": "EUR3,000/min (EUR6,000/min from Feb 2026)",
+        "livePerformance": "EUR1,450/min produced",
+        "display": "Per-minute caps vary by genre; see detail fields"
+      },
+      "deadlines": {
+        "frequency": "Rolling (provisional agrément before start of principal photography)",
+        "notes": "Agrément provisoire must be obtained before shooting begins"
+      },
+      "eligibility": "French production companies (sociétés commerciales) subject to IS, acting as producteur délégué. Works must benefit from CNC Fonds de Soutien Audiovisuel. Genres: fiction, documentary, animation, live performance adaptation.",
+      "officialUrl": "https://www.cnc.fr/professionnels/aides-et-financements/audiovisuel/production/credit-dimpot-audiovisuel_778316",
+      "status": "active"
+    },
+    {
+      "id": "cnc-c2i",
+      "name": "Credit d'Impot International (C2I)",
+      "governingBody": "CNC",
+      "level": "national",
+      "category": "tax-credit",
+      "format": ["feature-film", "tv-series", "animation"],
+      "rate": {
+        "base": 30,
+        "enhanced": 40,
+        "display": "30% base; 40% for VFX-heavy works (French VFX spend >EUR2M)"
+      },
+      "annualBudget": {
+        "display": "Combined with TRIP in EUR579M total (2026); C2I prorogated to 31 Dec 2028"
+      },
+      "minSpend": {
+        "display": "EUR250K eligible spend in France, or 50% of world budget if <EUR500K; min 5 shooting days for live action"
+      },
+      "cap": {
+        "amount": 30000000,
+        "display": "EUR30M per project"
+      },
+      "deadlines": {
+        "frequency": "Rolling (agrément required from CNC)",
+        "notes": "CNC Service de l'attractivité delivers agrément"
+      },
+      "eligibility": "French executive production company on behalf of a foreign production company. Fiction or animation only (no documentaries, commercials, institutional). Must pass cultural test. VFX-only projects eligible if >=15% of shots digitally processed.",
+      "officialUrl": "https://www.cnc.fr/professionnels/aides-et-financements/multi-sectoriel/production/credit-dimpot-international_778354",
+      "status": "active",
+      "notes": "The C2I is the tax-credit mechanism underlying the TRIP cash rebate. Prorogated until 31 Dec 2028."
+    },
+    {
+      "id": "cnc-avance-sur-recettes-avant",
+      "name": "Avance sur Recettes avant Realisation (Advance on Receipts - Pre-production)",
+      "governingBody": "CNC",
+      "level": "national",
+      "category": "selective-fund",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Interest-free repayable advance; average EUR500K, max EUR700K per film"
+      },
+      "annualBudget": {
+        "amount": 29000000,
+        "display": "~EUR29M/year (avant + apres combined)"
+      },
+      "minSpend": {
+        "display": "N/A (film must be in French or French regional language)"
+      },
+      "cap": {
+        "amount": 700000,
+        "display": "EUR700K per film (average EUR500K)"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year (single-day deposit windows 08:00-17:00)",
+        "notes": "~700 applications/year; ~52 films selected before realisation in 2025. 3 commissions: ASR1 (1st films), ASR2 (2nd-3rd films), ASR3 (4th+ films)"
+      },
+      "eligibility": "Authors (French/EU nationals or resident foreigners) or French production companies (producteur délégué). Film must be in French or French regional language. Repayable from box office receipts (25% above EUR50K, up to 80% of advance). Eco-conditionality since Jan 2024.",
+      "officialUrl": "https://www.cnc.fr/professionnels/aides-et-financements/cinema/production/avance-sur-recettes-avant-realisation_191260",
+      "status": "active"
+    },
+    {
+      "id": "cnc-avance-sur-recettes-apres",
+      "name": "Avance sur Recettes apres Realisation (Advance on Receipts - Post-production)",
+      "governingBody": "CNC",
+      "level": "national",
+      "category": "selective-fund",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Interest-free repayable advance"
+      },
+      "annualBudget": {
+        "display": "Included in EUR29M/year combined ASR budget; ~24 films selected after realisation in 2025"
+      },
+      "minSpend": {
+        "display": "Film must show financing deficit beyond producer salary"
+      },
+      "cap": {
+        "display": "Determined case-by-case by CNC president after committee review"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year",
+        "notes": "Must have a distribution contract for theatrical release"
+      },
+      "eligibility": "French producteur délégué with completed film. Must demonstrate financing deficit. Distribution contract required. Eco-conditionality applies.",
+      "officialUrl": "https://www.cnc.fr/professionnels/aides-et-financements/cinema/production/avance-sur-recettes-apres-realisation_191252",
+      "status": "active"
+    },
+    {
+      "id": "cnc-soutien-automatique-cinema",
+      "name": "Soutien Automatique a la Production de Long Metrage (Automatic Support - Cinema)",
+      "governingBody": "CNC",
+      "level": "national",
+      "category": "automatic-fund",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Calculated from box office, TV broadcasts, and home video sales of previous films"
+      },
+      "annualBudget": {
+        "display": "Part of EUR810.3M total CNC Fonds de Soutien (2026)"
+      },
+      "minSpend": {
+        "display": "N/A (generated automatically from exploitation of previous works)"
+      },
+      "cap": {
+        "display": "No fixed cap; amount depends on commercial performance of previous films"
+      },
+      "deadlines": {
+        "frequency": "Automatic/continuous (triggered by agrément de production)"
+      },
+      "eligibility": "French production companies with previous films holding agrément de production. Funds credited to producer's CNC account and must be reinvested in new feature film production (or short films/development).",
+      "officialUrl": "https://www.cnc.fr/professionnels/aides-et-financements/cinema/production/soutien-automatique-a-la-production-de-long-metrage_191532",
+      "status": "active"
+    },
+    {
+      "id": "cnc-soutien-automatique-audiovisuel",
+      "name": "Compte Automatique Audiovisuel - COSIP (Automatic Support - Audiovisual)",
+      "governingBody": "CNC",
+      "level": "national",
+      "category": "automatic-fund",
+      "format": ["tv-series", "tv-film", "documentary", "animation"],
+      "rate": {
+        "display": "Generated from TV broadcasts of previous works"
+      },
+      "annualBudget": {
+        "display": "Part of EUR810.3M total CNC Fonds de Soutien (2026)"
+      },
+      "minSpend": {
+        "display": "Account opening thresholds: Fiction EUR200K, Documentary EUR80K, Animation EUR200K"
+      },
+      "cap": {
+        "display": "No fixed cap; up to 40% of account balance can be used for development"
+      },
+      "deadlines": {
+        "frequency": "Continuous (diffusion declarations due quarterly; annual recap by 15 January)"
+      },
+      "eligibility": "French commercial production companies (sociétés commerciales) with works previously broadcast on French TV channels and recognised as reference works by CNC.",
+      "officialUrl": "https://www.cnc.fr/professionnels/aides-et-financements/audiovisuel/production/fiction-compte-automatique-aide-a-la-production_191460",
+      "status": "active"
+    },
+    {
+      "id": "cnc-aide-cinemas-du-monde",
+      "name": "Aide aux Cinemas du Monde (ACM) (World Cinema Support)",
+      "governingBody": "CNC / Institut Francais",
+      "level": "national",
+      "category": "selective-fund",
+      "format": ["feature-film", "animation", "documentary"],
+      "rate": {
+        "display": "Grant (non-repayable)"
+      },
+      "annualBudget": {
+        "display": "~60 projects supported per year across 4 sessions"
+      },
+      "minSpend": {
+        "display": "Films >=EUR2.5M budget must obtain CNC agrément de production (EUR4M threshold for animation)"
+      },
+      "cap": {
+        "beforeRealisation": 300000,
+        "beforeRealisationFrenchInitiative": 500000,
+        "afterRealisation": 70000,
+        "display": "Before realisation: EUR300K (EUR500K for French-initiative films >=EUR2.5M budget). After realisation: EUR70K"
+      },
+      "deadlines": {
+        "frequency": "4 sessions per year",
+        "notes": "New rules for projects deposited from 1 Jan 2026 onward"
+      },
+      "eligibility": "French production company in co-production with foreign company. Director must be foreign national (or French national filming in a foreign language). Film language must be an official/used language of the director's country. Open to fiction, animation, documentary de création for theatrical release. Cumulative with avance sur recettes, regional aids, and C2I (up to 50% of budget, 80% in specific cases).",
+      "officialUrl": "https://www.cnc.fr/professionnels/aides-et-financements/multi-sectoriel/production/aide-aux-cinemas-du-monde_190862",
+      "status": "active"
+    },
+    {
+      "id": "idf-fonds-cinema-production",
+      "name": "Fonds de Soutien Cinema - Aide a la Production (Ile-de-France)",
+      "governingBody": "Region Ile-de-France",
+      "level": "regional",
+      "region": "Ile-de-France",
+      "category": "grant",
+      "format": ["feature-film", "animation", "documentary"],
+      "rate": {
+        "display": "Investment grant (non-repayable since 2025); % of budget and IDF spend"
+      },
+      "annualBudget": {
+        "amount": 16000000,
+        "display": "EUR16M total for cinema + audiovisual (largest regional fund in France)"
+      },
+      "minSpend": {
+        "display": "50% of budget spent in IDF (French/European projects); 30-40% for European co-productions"
+      },
+      "cap": {
+        "display": "No published fixed cap per project; no numerus clausus"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year",
+        "cinema2026": "Open until 22 April 2026; next session from 23 April 2026",
+        "notes": "For live-action: registration before first day of shooting"
+      },
+      "eligibility": "European production companies. Feature films (>=60 min), fiction, animation, documentary de création. For French/European projects: 50% spend + 50% shooting in IDF. Governed by délibération CP2024-247.",
+      "officialUrl": "https://www.iledefrance.fr/aides-et-appels-a-projets/fonds-de-soutien-cinema-aide-la-production",
+      "status": "active"
+    },
+    {
+      "id": "idf-fonds-cinema-international",
+      "name": "Fonds de Soutien Cinema International (Ile-de-France)",
+      "governingBody": "Region Ile-de-France",
+      "level": "regional",
+      "region": "Ile-de-France",
+      "category": "grant",
+      "format": ["feature-film", "animation", "documentary"],
+      "rate": {
+        "display": "Up to 50% of IDF spend"
+      },
+      "annualBudget": {
+        "display": "Part of EUR16M total IDF cinema/audiovisual budget"
+      },
+      "minSpend": {
+        "display": "30-40% of budget spent in IDF depending on configuration"
+      },
+      "cap": {
+        "amount": 250000,
+        "display": "EUR250K per project"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year",
+        "cinema2026": "Open until 17 June 2026; next session from 18 June 2026"
+      },
+      "eligibility": "International co-productions where the French share is minority. Feature films (>=60 min), fiction, animation, documentary de création. Non-repayable investment grant since 2025.",
+      "officialUrl": "https://www.iledefrance.fr/aides-et-appels-a-projets/fonds-de-soutien-cinema-international-aide-la-production",
+      "status": "active"
+    },
+    {
+      "id": "idf-fonds-audiovisuel-production",
+      "name": "Fonds de Soutien Audiovisuel - Aide a la Production (Ile-de-France)",
+      "governingBody": "Region Ile-de-France",
+      "level": "regional",
+      "region": "Ile-de-France",
+      "category": "grant",
+      "format": ["tv-series", "animation", "documentary", "web-series"],
+      "rate": {
+        "display": "Investment grant (non-repayable since 2025)"
+      },
+      "annualBudget": {
+        "display": "Part of EUR16M total IDF cinema/audiovisual budget"
+      },
+      "minSpend": {
+        "display": "50% of budget spent in IDF (French/European); 30-40% for European co-productions"
+      },
+      "cap": {
+        "display": "No published fixed cap per project"
+      },
+      "deadlines": {
+        "sessions2025_2026": [
+          "30 September 2025 (committee 11 Dec 2025, vote 9 Apr 2026)",
+          "14 April 2026 (committee late June 2026, vote Sep 2026)",
+          "30 June 2026 (committee Sep 2026, vote Nov 2026)"
+        ],
+        "frequency": "3 sessions/year"
+      },
+      "eligibility": "European production companies. Eligible: animation series (min 2min/ep, cumulative 60min), multi-part documentaries (min 26min/ep, cumulative 90min), web fiction/animation (unitaire >=60min or series >=5min/ep with cumulative >=100min).",
+      "officialUrl": "https://www.iledefrance.fr/aides-et-appels-a-projets/fonds-de-soutien-audiovisuel-aide-la-production",
+      "status": "active"
+    },
+    {
+      "id": "sud-lm-fiction",
+      "name": "Soutien a la Creation et a la Production de Long Metrage de Fiction (Region Sud PACA)",
+      "governingBody": "Region Sud Provence-Alpes-Cote d'Azur",
+      "level": "regional",
+      "region": "Region Sud (PACA)",
+      "category": "grant",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of Region Sud cinema/audiovisual budget (est. ~EUR5-6M total)"
+      },
+      "minSpend": {
+        "display": "100% of grant amount must be spent in region (within 80% of production budget)"
+      },
+      "cap": {
+        "writing": "EUR5K-7K (bourse d'ecriture)",
+        "development": "EUR10K-15K (EUR15K-20K for intl co-prod)",
+        "display": "Writing: EUR5K-7K; Development: EUR10K-15K (EUR15K-20K intl); Production: contact Region for exact cap"
+      },
+      "deadlines": {
+        "frequency": "2 sessions/year (15 April and 30 September)",
+        "notes": "Dates apply to cinema long metrage fiction and animation"
+      },
+      "eligibility": "Production companies (sociétés commerciales, min EUR45K capital). Must meet 2 of 4 territorial criteria (author domiciled in region, geographic/cultural link, regional HQ, prior regional aid). Max 3 concurrent regional aids without progress.",
+      "officialUrl": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-creation-et-a-la-production-de-long-metrage-de-fiction",
+      "status": "active"
+    },
+    {
+      "id": "sud-fiction-av",
+      "name": "Soutien a la Creation et a la Production de Fictions Audiovisuelles (Region Sud PACA)",
+      "governingBody": "Region Sud Provence-Alpes-Cote d'Azur",
+      "level": "regional",
+      "region": "Region Sud (PACA)",
+      "category": "grant",
+      "format": ["tv-film", "tv-series"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of Region Sud cinema/audiovisual budget"
+      },
+      "minSpend": {
+        "display": "100% of grant in regional spend"
+      },
+      "cap": {
+        "unitaire": "EUR40K-100K",
+        "serie": "EUR40K-150K",
+        "display": "Unitaire (>=60min): EUR40K-100K; Series (>=3 eps, >=26min cumul): EUR40K-150K"
+      },
+      "deadlines": {
+        "frequency": "2 sessions/year (15 April and 30 September)"
+      },
+      "eligibility": "Production companies meeting CNC FSA criteria. Territorial anchoring requirements apply.",
+      "officialUrl": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-creation-et-a-la-production-de-long-metrage-de-fiction",
+      "status": "active"
+    },
+    {
+      "id": "sud-documentaire",
+      "name": "Soutien a la Creation et a la Production d'Oeuvres Documentaires (Region Sud PACA)",
+      "governingBody": "Region Sud Provence-Alpes-Cote d'Azur",
+      "level": "regional",
+      "region": "Region Sud (PACA)",
+      "category": "grant",
+      "format": ["documentary"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of Region Sud cinema/audiovisual budget"
+      },
+      "minSpend": {
+        "display": "20% of budget in confirmed financing (excl. producer share and tax credit) at time of deposit"
+      },
+      "cap": {
+        "display": "Contact Region for exact production grant amounts"
+      },
+      "deadlines": {
+        "frequency": "2 sessions/year (15 April and 30 September)"
+      },
+      "eligibility": "Production companies or associations whose main activity is audiovisual production. Must have broadcaster commitment at deposit. Author must have prior festival/distribution/broadcast credits. Must meet 2 of 3 territorial criteria.",
+      "officialUrl": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-creation-et-a-la-production-doeuvres-documentaires",
+      "status": "active"
+    },
+    {
+      "id": "sud-animation",
+      "name": "Soutien a la Creation et a la Production d'Oeuvres d'Animation (Region Sud PACA)",
+      "governingBody": "Region Sud Provence-Alpes-Cote d'Azur",
+      "level": "regional",
+      "region": "Region Sud (PACA)",
+      "category": "grant",
+      "format": ["animation", "short-film"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of Region Sud cinema/audiovisual budget"
+      },
+      "minSpend": {
+        "display": "10% of budget in confirmed financing for short animation"
+      },
+      "cap": {
+        "display": "Contact Region for exact amounts"
+      },
+      "deadlines": {
+        "frequency": "2 sessions/year (15 April and 30 September)"
+      },
+      "eligibility": "Production companies. Short and long animation, animation series.",
+      "officialUrl": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-creation-et-a-la-production-doeuvres-danimation",
+      "status": "active"
+    },
+    {
+      "id": "sud-court-metrage",
+      "name": "Soutien a la Production de Court Metrage de Fiction (Region Sud PACA)",
+      "governingBody": "Region Sud Provence-Alpes-Cote d'Azur",
+      "level": "regional",
+      "region": "Region Sud (PACA)",
+      "category": "grant",
+      "format": ["short-film"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of Region Sud cinema/audiovisual budget"
+      },
+      "minSpend": {
+        "display": "Regional spend requirements apply"
+      },
+      "cap": {
+        "display": "Contact Region for exact amounts"
+      },
+      "deadlines": {
+        "frequency": "2 sessions/year (15 April and 30 September)"
+      },
+      "eligibility": "Production companies. Short fiction films as defined by Code du cinéma.",
+      "officialUrl": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-production-de-court-metrage-de-fiction",
+      "status": "active"
+    },
+    {
+      "id": "na-production",
+      "name": "Fonds de Soutien au Cinema et a l'Audiovisuel - Aide a la Production (Nouvelle-Aquitaine)",
+      "governingBody": "Region Nouvelle-Aquitaine / ALCA",
+      "level": "regional",
+      "region": "Nouvelle-Aquitaine",
+      "category": "grant",
+      "format": ["feature-film", "short-film", "tv-series", "tv-film", "documentary", "animation"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "regionShare": 6300000,
+        "totalWithPartners": 10000000,
+        "display": "EUR6.3M (Region share); ~EUR10M total with Departements and Bordeaux Metropole"
+      },
+      "minSpend": {
+        "lmFiction": "120% of aid in regional spend",
+        "lmDocumentaire": "120%",
+        "lmAnimation": "160%",
+        "courtMetrage": "120% (100% for emergence volet)",
+        "ficAudiovisuelle": "160%",
+        "display": "120% of aid for LM fiction/doc/CM; 160% for animation and TV fiction"
+      },
+      "cap": {
+        "lmFiction": 200000,
+        "lmFictionIntl": 150000,
+        "development": 40000,
+        "display": "LM fiction: EUR200K (EUR150K for intl co-prod); Development: EUR40K"
+      },
+      "deadlines": {
+        "sessions2026": [
+          "January session: 12 January 2026",
+          "April session: 30 March 2026 (LM fiction); 7 April 2026 (others)",
+          "September session: 7 September 2026 (most); 21 September 2026 (TV fiction)"
+        ],
+        "frequency": "3 sessions/year"
+      },
+      "eligibility": "Production companies with projects for feature films, shorts, or audiovisual works for professional public distribution. Committee of 3-5 professionals per genre. Projects assessed on artistic merit and regional strategy alignment.",
+      "officialUrl": "https://alca-nouvelle-aquitaine.fr/fr/cinema-audiovisuel/fonds-de-soutien-au-cinema-et-l-audiovisuel/l-aide-la-production",
+      "alternateUrl": "https://les-aides.nouvelle-aquitaine.fr/culture/fonds-de-soutien-la-creation-et-la-production-pour-le-cinema-et-laudiovisuel",
+      "status": "active"
+    },
+    {
+      "id": "aura-facca-court-metrage",
+      "name": "FACCA - Aide a la Production de Court-Metrage (Auvergne-Rhone-Alpes)",
+      "governingBody": "Region Auvergne-Rhone-Alpes",
+      "level": "regional",
+      "region": "Auvergne-Rhone-Alpes",
+      "category": "grant",
+      "format": ["short-film"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of FACCA budget (~EUR1.6M for FACCA; ~EUR6.8M total regional cinema budget)"
+      },
+      "minSpend": {
+        "display": "160% of aid in regional spend"
+      },
+      "cap": {
+        "min": 15000,
+        "max": 45000,
+        "display": "EUR15K-45K per project"
+      },
+      "deadlines": {
+        "sessions2026": [
+          "Session 1: deposit 22-26 Sep 2025, committee 2 Feb 2026",
+          "Session 2: deposit 16-20 Feb 2026, committee 11 Jun 2026"
+        ],
+        "frequency": "2 sessions/year"
+      },
+      "eligibility": "Commercial production companies. Short fiction, animation, documentary. Under regime SA.112218 (2024-2026).",
+      "officialUrl": "https://www.auvergnerhonealpes.fr/aides/produire-un-court-metrage",
+      "status": "active"
+    },
+    {
+      "id": "aura-facca-documentaire",
+      "name": "FACCA - Aide a la Production Audiovisuelle Documentaire (Auvergne-Rhone-Alpes)",
+      "governingBody": "Region Auvergne-Rhone-Alpes",
+      "level": "regional",
+      "region": "Auvergne-Rhone-Alpes",
+      "category": "grant",
+      "format": ["documentary", "live-performance-adaptation"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of FACCA budget (~EUR1.6M)"
+      },
+      "minSpend": {
+        "display": "160% of aid in regional spend"
+      },
+      "cap": {
+        "display": "Cumulated development + production aid capped at production aid ceiling"
+      },
+      "deadlines": {
+        "sessions2026": [
+          "Session 1: deposit by 12 Dec 2025, committee late Feb 2026",
+          "Session 2: deposit by 17 Apr 2026, committee mid-Jun 2026"
+        ],
+        "frequency": "2 sessions/year"
+      },
+      "eligibility": "Production companies. Documentary de création or audiovisual adaptation of live performance. CNC partnership.",
+      "officialUrl": "https://www.auvergnerhonealpes.fr/aides/developper-ou-produire-un-documentaire-de-creation-ou-une-adaptation-de-spectacle-vivant-pour",
+      "status": "active"
+    },
+    {
+      "id": "aura-cinema-coproduction",
+      "name": "Auvergne-Rhone-Alpes Cinema - Coproduction Long Metrage",
+      "governingBody": "Auvergne-Rhone-Alpes Cinema (with Region AuRA and CNC)",
+      "level": "regional",
+      "region": "Auvergne-Rhone-Alpes",
+      "category": "co-production-investment",
+      "format": ["feature-film", "animation", "documentary"],
+      "rate": {
+        "display": "Co-production investment (recoupable from exploitation)"
+      },
+      "annualBudget": {
+        "amount": 3000000,
+        "display": "~EUR3M+ annual investment capacity (Region + CNC + recettes)"
+      },
+      "minSpend": {
+        "display": "Project must have >=20% financing secured (excl. producer share)"
+      },
+      "cap": {
+        "average": 220000,
+        "display": "Average EUR220K per film; 12-15 films co-produced per year"
+      },
+      "deadlines": {
+        "sessions2026": [
+          "6 January 2026 (committee 24 Feb 2026)",
+          "14 April 2026 (committee 16 Jun 2026)",
+          "1 September 2026 (committee 2 Nov 2026)"
+        ],
+        "frequency": "3 sessions/year"
+      },
+      "eligibility": "Production companies eligible for CNC agrément des investissements. Feature films (live action, animation, documentary) with territorial link to Auvergne-Rhone-Alpes region.",
+      "officialUrl": "https://www.auvergnerhonealpes-cinema.fr/professionnels/financement-des-projets/fonds-cinema-coproduction/",
+      "status": "active"
+    },
+    {
+      "id": "aura-cinema-ecriture-dev",
+      "name": "Auvergne-Rhone-Alpes Cinema - Soutien a l'Ecriture et au Developpement",
+      "governingBody": "Auvergne-Rhone-Alpes Cinema",
+      "level": "regional",
+      "region": "Auvergne-Rhone-Alpes",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "animation"],
+      "rate": {
+        "display": "Selective grant for 1st, 2nd or 3rd feature film"
+      },
+      "annualBudget": {
+        "display": "~8 projects/year"
+      },
+      "minSpend": {
+        "display": "N/A"
+      },
+      "cap": {
+        "amount": 20000,
+        "display": "EUR20K per project"
+      },
+      "deadlines": {
+        "sessions2026": [
+          "10 March 2026 (committee 28 Apr 2026)",
+          "8 July 2026 (committee 29 Sep 2026)"
+        ],
+        "frequency": "2 sessions/year"
+      },
+      "eligibility": "Production companies with first, second or third feature film projects. Audiovisual fiction and animation.",
+      "officialUrl": "https://www.auvergnerhonealpes-cinema.fr/professionnels/financement-des-projets/fonds-audiovisuel-ecrituredeveloppement/",
+      "status": "active"
+    },
+    {
+      "id": "occitanie-production-cinema",
+      "name": "Aide a la Creation Audiovisuelle - Production Cinema (Occitanie)",
+      "governingBody": "Region Occitanie / Pyrenees-Mediterranee",
+      "level": "regional",
+      "region": "Occitanie",
+      "category": "grant",
+      "format": ["feature-film", "animation", "documentary", "short-film"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "amount": 4500000,
+        "display": "~EUR4.5M/year (+ EUR720K ICC fund)"
+      },
+      "minSpend": {
+        "display": "Regional spend on eligible workforce and technical services based in Occitanie"
+      },
+      "cap": {
+        "lmFictionAnimation": { "min": 75000, "max": 250000 },
+        "lmDocumentaire": { "min": 30000, "max": 120000 },
+        "display": "LM Fiction/Animation: EUR75K-250K; LM Documentary: EUR30K-120K"
+      },
+      "deadlines": {
+        "fiction_lm_av_2026": ["1 Dec 2025", "1 May 2026", "1 Jul 2026", "1 Dec 2026"],
+        "fiction_cm_2026": ["15 Dec 2025", "1 Jun 2026", "15 Dec 2026"],
+        "documentaire_2026": ["1 Dec 2025", "1 May 2026", "1 Sep 2026", "1 Dec 2026"],
+        "animation_2026": ["1 Feb 2026", "1 Jun 2026", "1 Feb 2027"],
+        "frequency": "3-4 sessions/year depending on genre"
+      },
+      "eligibility": "Production déléguée or co-production déléguée. Must meet CNC soutien automatique/sélectif criteria and seek broadcaster commitment. Fiction, animation, documentary. Device valid until 31 Dec 2026.",
+      "officialUrl": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "alternateUrl": "https://www.occitanie-films.fr/commission-du-film-fonds-de-soutien-de-la-region-occitanie/",
+      "status": "active"
+    },
+    {
+      "id": "occitanie-production-tv",
+      "name": "Aide a la Creation Audiovisuelle - Production TV (Occitanie)",
+      "governingBody": "Region Occitanie / Pyrenees-Mediterranee",
+      "level": "regional",
+      "region": "Occitanie",
+      "category": "grant",
+      "format": ["tv-series", "tv-film", "documentary", "animation"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of EUR4.5M total regional cinema/AV budget"
+      },
+      "minSpend": {
+        "display": "Regional spend requirements apply"
+      },
+      "cap": {
+        "docTV": { "min": 15000, "max": 60000 },
+        "serieDocTV": { "min": 15000, "max": 120000 },
+        "fictionUnitaireTV": { "min": 40000, "max": 120000 },
+        "serieFictionTV": { "min": 40000, "max": 250000 },
+        "animationUnitaireTV": { "min": 26000, "max": 120000 },
+        "serieAnimationTV": { "min": 26000, "max": 250000 },
+        "display": "Doc TV: EUR15K-60K; Serie Doc: EUR15K-120K; Fiction unitaire TV: EUR40K-120K; Serie Fiction TV: EUR40K-250K; Animation unitaire TV: EUR26K-120K; Serie Animation TV: EUR26K-250K"
+      },
+      "deadlines": {
+        "frequency": "3-4 sessions/year depending on genre (same calendar as cinema)"
+      },
+      "eligibility": "Same as cinema production aid. Must seek broadcaster/web-diffuser commitment.",
+      "officialUrl": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "status": "active"
+    },
+    {
+      "id": "bretagne-facca-lm",
+      "name": "FACCA - Production Long Metrage Independant (Bretagne)",
+      "governingBody": "Region Bretagne",
+      "level": "regional",
+      "region": "Bretagne",
+      "category": "grant",
+      "format": ["feature-film", "animation"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "amount": 4090000,
+        "display": "EUR4.09M total FACCA budget (2025); 111 projects across all stages"
+      },
+      "minSpend": {
+        "display": "Min 10% of film budget + 120% of aid in Bretagne spend (higher tiers: 25%/130% or 35%/100%)"
+      },
+      "cap": {
+        "display": "Contact Region for exact production cap; development: EUR20K (LM), EUR12K (AV)"
+      },
+      "deadlines": {
+        "frequency": "2 sessions/year for long metrage committee"
+      },
+      "eligibility": "French production companies. Must obtain CNC agrément des investissements. Fiction and animation long metrage. Shooting must not have started before deposit. Max 2 development aids per producer per year.",
+      "officialUrl": "https://www.bretagne.bzh/aides/fiches/cinema-facca-production-long-metrage-independant/",
+      "alternateUrl": "https://cinema.bretagne.bzh/en/financements/aides-cinema/",
+      "status": "active"
+    },
+    {
+      "id": "bretagne-facca-cm",
+      "name": "FACCA - Production Court Metrage (Bretagne)",
+      "governingBody": "Region Bretagne",
+      "level": "regional",
+      "region": "Bretagne",
+      "category": "grant",
+      "format": ["short-film"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of EUR4.09M total FACCA"
+      },
+      "minSpend": {
+        "display": "160% of aid in Bretagne spend"
+      },
+      "cap": {
+        "display": "Contact Region for exact amounts"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year"
+      },
+      "eligibility": "Production companies. Short fiction, animation, documentary.",
+      "officialUrl": "https://www.bretagne.bzh/aides/fiches/cinema-facca-production-court-metrage/",
+      "status": "active"
+    },
+    {
+      "id": "bretagne-facca-documentaire",
+      "name": "FACCA - Documentaire (Bretagne)",
+      "governingBody": "Region Bretagne",
+      "level": "regional",
+      "region": "Bretagne",
+      "category": "grant",
+      "format": ["documentary"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of EUR4.09M total FACCA"
+      },
+      "minSpend": {
+        "display": "Development: 100% of aid; Production: 160% of aid in Bretagne spend"
+      },
+      "cap": {
+        "display": "Contact Region for exact amounts"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year"
+      },
+      "eligibility": "Production companies. Documentary de création.",
+      "officialUrl": "https://www.bretagne.bzh/aides/fiches/cinema-facca-documentaire/",
+      "status": "active"
+    },
+    {
+      "id": "bretagne-fab",
+      "name": "Fonds Audiovisuel de Bretagne (FAB)",
+      "governingBody": "Region Bretagne",
+      "level": "regional",
+      "region": "Bretagne",
+      "category": "grant",
+      "format": ["documentary", "short-film"],
+      "rate": {
+        "display": "Selective grant for projects of cultural/heritage interest"
+      },
+      "annualBudget": {
+        "display": "Limited envelope (small number of projects)"
+      },
+      "minSpend": {
+        "display": "Bretagne territorial link required"
+      },
+      "cap": {
+        "display": "Contact Region for amounts"
+      },
+      "deadlines": {
+        "frequency": "Sessions aligned with FACCA calendar"
+      },
+      "eligibility": "Projects not selected by FACCA but with cultural/heritage interest for the territory.",
+      "officialUrl": "https://www.bretagne.bzh/aides/fiches/cinema-facca-fonds-audiovisuel-de-bretagne/",
+      "status": "active"
+    },
+    {
+      "id": "bretagne-falb",
+      "name": "Fonds d'Aide a l'Expression Audiovisuelle en Langue Bretonne (FALB)",
+      "governingBody": "Region Bretagne",
+      "level": "regional",
+      "region": "Bretagne",
+      "category": "grant",
+      "format": ["documentary", "animation", "tv-series", "dubbing"],
+      "rate": {
+        "display": "Selective grant for Breton-language works"
+      },
+      "annualBudget": {
+        "display": "Dedicated envelope"
+      },
+      "minSpend": {
+        "display": "Must be in Breton language"
+      },
+      "cap": {
+        "display": "Contact Region for amounts"
+      },
+      "deadlines": {
+        "frequency": "Sessions aligned with FACCA calendar"
+      },
+      "eligibility": "Productions and dubbing in Breton language.",
+      "officialUrl": "https://www.bretagne.bzh/aides/fiches/cinema-facca-fonds-audiovisuel-de-bretagne/",
+      "status": "active"
+    },
+    {
+      "id": "hdf-pictanovo-cinema-tv",
+      "name": "Fonds Cinema-TV (Pictanovo / Hauts-de-France)",
+      "governingBody": "Pictanovo / Region Hauts-de-France",
+      "level": "regional",
+      "region": "Hauts-de-France",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "tv-film", "animation"],
+      "rate": {
+        "display": "Selective grant; up to 50% of production costs (60% for cross-border, 100% for difficult works)"
+      },
+      "annualBudget": {
+        "production": 7205000,
+        "total": 8754500,
+        "display": "EUR7.2M production fund; EUR8.75M total (2026 projected)"
+      },
+      "minSpend": {
+        "display": "160% of aid in regional spend (within 80% of production budget)"
+      },
+      "cap": {
+        "lmFiction": 230000,
+        "lmFictionExceptional": 400000,
+        "tvFictionSerie": 300000,
+        "animationSerie": 330000,
+        "display": "LM fiction: EUR230K (exceptional EUR400K); TV fiction/series: EUR300K; Animation series: EUR330K"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year; must schedule meeting with coordinator 1 month before deadline",
+        "notes": "~20 feature films, unitaires and fiction series co-produced per year"
+      },
+      "eligibility": "Production companies. Must have 30% financing for LM fiction, 40% for TV fiction at deposit. CNC co-financing rule: EUR1 CNC per EUR2 Region. 11 feature films and 14 TV fiction series targeted annually.",
+      "officialUrl": "https://www.pictanovo.com/financer-un-projet/cinema-tv/",
+      "status": "active"
+    },
+    {
+      "id": "hdf-pictanovo-documentaire",
+      "name": "Fonds Documentaire (Pictanovo / Hauts-de-France)",
+      "governingBody": "Pictanovo / Region Hauts-de-France",
+      "level": "regional",
+      "region": "Hauts-de-France",
+      "category": "grant",
+      "format": ["documentary"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of EUR8.75M total; ~30 documentaries aided per year"
+      },
+      "minSpend": {
+        "display": "160% of aid in regional spend"
+      },
+      "cap": {
+        "ecriture": 7500,
+        "developpement": 7500,
+        "display": "Writing: EUR7.5K; Development: EUR7.5K; Production: contact Pictanovo"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year",
+        "notes": "Must schedule meeting with coordinator 1 month before deadline"
+      },
+      "eligibility": "Production companies. Documentary de création with territorial and economic impact in Hauts-de-France.",
+      "officialUrl": "https://www.pictanovo.com/financer-un-projet/documentaire/",
+      "status": "active"
+    },
+    {
+      "id": "hdf-pictanovo-court-metrage",
+      "name": "Fonds Court Metrage (Pictanovo / Hauts-de-France)",
+      "governingBody": "Pictanovo / Region Hauts-de-France",
+      "level": "regional",
+      "region": "Hauts-de-France",
+      "category": "grant",
+      "format": ["short-film"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Part of EUR8.75M total"
+      },
+      "minSpend": {
+        "display": "160% of aid in regional spend"
+      },
+      "cap": {
+        "amount": 30000,
+        "display": "EUR30K per project"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year"
+      },
+      "eligibility": "Production companies. Short fiction, animation, documentary.",
+      "officialUrl": "https://www.pictanovo.com/financer-un-projet/",
+      "status": "active"
+    },
+    {
+      "id": "hdf-pictanovo-ecriture-dev",
+      "name": "Fonds Ecriture et Developpement (Pictanovo / Hauts-de-France)",
+      "governingBody": "Pictanovo / Region Hauts-de-France",
+      "level": "regional",
+      "region": "Hauts-de-France",
+      "category": "grant",
+      "format": ["feature-film", "tv-series", "documentary", "animation"],
+      "rate": {
+        "display": "Selective grant; up to 100% of pre-production costs"
+      },
+      "annualBudget": {
+        "amount": 1139500,
+        "display": "EUR1.14M (writing/development); EUR280K (emergence fund)"
+      },
+      "minSpend": {
+        "display": "N/A for writing; development requirements apply"
+      },
+      "cap": {
+        "ecritureFiction": 15000,
+        "ecritureDoc": 7500,
+        "developpementFiction": 15000,
+        "developpementDoc": 7500,
+        "display": "Writing: EUR15K (fiction), EUR7.5K (doc); Development: EUR15K (fiction), EUR7.5K (doc)"
+      },
+      "deadlines": {
+        "frequency": "Multiple sessions/year"
+      },
+      "eligibility": "Authors, screenwriters, production companies. Fiction, documentary, new media.",
+      "officialUrl": "https://www.pictanovo.com/financer-un-projet/",
+      "status": "active"
+    },
+    {
+      "id": "ge-lm-fiction",
+      "name": "Aide a la Production de Longs Metrages Cinema - Fiction (Grand Est)",
+      "governingBody": "Region Grand Est",
+      "level": "regional",
+      "region": "Grand Est",
+      "category": "grant",
+      "format": ["feature-film"],
+      "rate": {
+        "display": "Selective grant (3 tiers based on territorial anchoring)"
+      },
+      "annualBudget": {
+        "display": "Contact Region for total fund size"
+      },
+      "minSpend": {
+        "display": "160% of aid in Grand Est spend (within 80% of production budget)"
+      },
+      "cap": {
+        "maximum": 300000,
+        "majority": 200000,
+        "minority": 100000,
+        "display": "Max anchoring: EUR300K; Majority anchoring: EUR200K; Minority anchoring: EUR100K"
+      },
+      "deadlines": {
+        "dates": ["15 November", "15 March", "15 June"],
+        "frequency": "3 sessions/year"
+      },
+      "eligibility": "Production companies eligible for CNC COSIP/agrément. Significant fabrication in Grand Est required. Total public aids <=50% of budget (60% for difficult/low-budget or cross-border European co-productions). Max 1/3 of fund per producer per year.",
+      "officialUrl": "https://www.grandest.fr/en/",
+      "alternateUrl": "https://www.image-est.fr/infos-reseau-fonds-de-soutien-grand-est-791-11-0-0.html",
+      "status": "active"
+    },
+    {
+      "id": "ge-lm-documentaire",
+      "name": "Aide a la Production de Longs Metrages Cinema - Documentaire (Grand Est)",
+      "governingBody": "Region Grand Est",
+      "level": "regional",
+      "region": "Grand Est",
+      "category": "grant",
+      "format": ["documentary"],
+      "rate": {
+        "display": "Selective grant (3 tiers based on territorial anchoring)"
+      },
+      "annualBudget": {
+        "display": "Contact Region for total fund size"
+      },
+      "minSpend": {
+        "display": "160% of aid in Grand Est spend"
+      },
+      "cap": {
+        "maximum": 100000,
+        "majority": 75000,
+        "minority": 50000,
+        "display": "Max anchoring: EUR100K; Majority anchoring: EUR75K; Minority anchoring: EUR50K"
+      },
+      "deadlines": {
+        "dates": ["15 November", "15 March", "15 June"],
+        "frequency": "3 sessions/year"
+      },
+      "eligibility": "Production companies. Long documentary films. Same public aid limits as fiction.",
+      "officialUrl": "https://www.grandest.fr/en/",
+      "status": "active"
+    },
+    {
+      "id": "ge-court-metrage",
+      "name": "Aide a la Production de Courts Metrages Cinema (Grand Est)",
+      "governingBody": "Region Grand Est",
+      "level": "regional",
+      "region": "Grand Est",
+      "category": "grant",
+      "format": ["short-film"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Contact Region for total fund size"
+      },
+      "minSpend": {
+        "display": "100% of aid in Grand Est spend"
+      },
+      "cap": {
+        "min": 20000,
+        "max": 40000,
+        "display": "EUR20K-40K per project"
+      },
+      "deadlines": {
+        "dates": ["15 February", "15 May", "15 October"],
+        "frequency": "3 sessions/year"
+      },
+      "eligibility": "Production companies. Short fiction and documentary. Total public aids <=80% of budget.",
+      "officialUrl": "https://www.grandest.fr/en/",
+      "status": "active"
+    },
+    {
+      "id": "ge-animation",
+      "name": "Aide au Developpement et a la Production d'Oeuvres d'Animation (Grand Est)",
+      "governingBody": "Region Grand Est",
+      "level": "regional",
+      "region": "Grand Est",
+      "category": "grant",
+      "format": ["animation"],
+      "rate": {
+        "display": "Selective grant"
+      },
+      "annualBudget": {
+        "display": "Contact Region for total fund size"
+      },
+      "minSpend": {
+        "display": "Significant fabrication in Grand Est required"
+      },
+      "cap": {
+        "display": "Contact Region for exact amounts"
+      },
+      "deadlines": {
+        "dates": ["15 November", "30 June"],
+        "frequency": "2 sessions/year (animation-specific dates)"
+      },
+      "eligibility": "Production companies. Animation works (short, feature, series). Must mobilise regional resources and talent.",
+      "officialUrl": "https://www.grandest.fr/en/",
+      "status": "active"
+    },
+    {
+      "id": "ge-cinema-de-genre",
+      "name": "Cinema de Genre - Aide a l'Ecriture, Developpement et Production (Grand Est)",
+      "governingBody": "Region Grand Est",
+      "level": "regional",
+      "region": "Grand Est",
+      "category": "grant",
+      "format": ["feature-film", "short-film"],
+      "rate": {
+        "display": "Selective grant for genre cinema (horror, sci-fi, fantasy, thriller)"
+      },
+      "annualBudget": {
+        "display": "Dedicated envelope within Grand Est cinema fund"
+      },
+      "minSpend": {
+        "display": "Grand Est territorial requirements apply"
+      },
+      "cap": {
+        "display": "Contact Region for amounts"
+      },
+      "deadlines": {
+        "frequency": "Aligned with main fund calendar"
+      },
+      "eligibility": "Genre film projects (horror, sci-fi, fantasy, thriller). Writing, development and production stages.",
+      "officialUrl": "https://www.grandest.fr/en/",
+      "status": "active"
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Pulpscreen Production Finance Database Schema v1.0",
+
+  "territory": {
+    "description": "A country or sovereign territory",
+    "properties": {
+      "id": { "type": "string", "description": "ISO 3166-1 alpha-2 code (e.g. 'fr', 'gb')" },
+      "name": {
+        "type": "object",
+        "description": "Translated names",
+        "properties": {
+          "en": { "type": "string" },
+          "fr": { "type": "string" },
+          "es": { "type": "string" },
+          "de": { "type": "string" },
+          "it": { "type": "string" }
+        }
+      },
+      "flag": { "type": "string", "description": "Flag emoji" },
+      "region": {
+        "type": "string",
+        "enum": ["western", "southern", "nordic", "eastern", "international"]
+      },
+      "currency": { "type": "string", "description": "ISO 4217 code (e.g. 'EUR', 'GBP')" },
+      "governingBodies": {
+        "type": "array",
+        "description": "National film bodies / agencies",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string", "description": "e.g. 'Centre national du cinéma (CNC)'" },
+            "url": { "type": "string", "format": "uri" },
+            "role": { "type": "string", "description": "e.g. 'National film authority'" }
+          }
+        }
+      },
+      "programmes": {
+        "type": "array",
+        "description": "ALL national-level programmes (incentives, grants, funds)",
+        "items": { "$ref": "#/programme" }
+      },
+      "regions": {
+        "type": "array",
+        "description": "Sub-national regions with their own programmes",
+        "items": { "$ref": "#/region" }
+      },
+      "treaties": {
+        "type": "object",
+        "properties": {
+          "conventionOriginal": { "type": "boolean" },
+          "conventionRevised": { "type": "boolean" },
+          "eurimages": { "type": "boolean" },
+          "creativeEurope": { "type": "boolean" },
+          "bilateral": {
+            "type": "array",
+            "items": { "type": "string", "description": "ISO codes of bilateral treaty partners" }
+          }
+        }
+      },
+      "lastVerified": { "type": "string", "format": "date", "description": "When this data was last checked" }
+    }
+  },
+
+  "region": {
+    "description": "A sub-national region (e.g. Région Sud, Quebec, Bavaria)",
+    "properties": {
+      "id": { "type": "string", "description": "Slug (e.g. 'region-sud', 'quebec')" },
+      "name": {
+        "type": "object",
+        "description": "Translated names"
+      },
+      "governingBody": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "url": { "type": "string", "format": "uri" }
+        }
+      },
+      "programmes": {
+        "type": "array",
+        "items": { "$ref": "#/programme" }
+      }
+    }
+  },
+
+  "programme": {
+    "description": "A specific funding programme (incentive, grant, fund, tax credit)",
+    "properties": {
+      "id": { "type": "string", "description": "Unique slug (e.g. 'cnc-trip', 'region-sud-cinema-fund')" },
+      "name": { "type": "string", "description": "Official programme name" },
+      "nameTranslated": {
+        "type": "object",
+        "description": "Translated programme name (if different from official)"
+      },
+      "category": {
+        "type": "string",
+        "enum": ["tax-credit", "cash-rebate", "grant", "tax-shelter", "loan", "equity", "co-production-fund"],
+        "description": "Primary classification"
+      },
+      "subcategory": {
+        "type": "string",
+        "enum": ["automatic", "selective", "regional", "bilateral-fund", "supra-national"],
+        "description": "How the funding is allocated"
+      },
+      "format": {
+        "type": "array",
+        "description": "Eligible formats",
+        "items": {
+          "type": "string",
+          "enum": ["feature-film", "tv-series", "tv-film", "documentary", "animation", "short-film", "vfx-post", "commercial", "web-series"]
+        }
+      },
+      "rate": {
+        "type": "object",
+        "properties": {
+          "min": { "type": "number", "description": "Minimum rate as percentage" },
+          "max": { "type": "number", "description": "Maximum rate as percentage" },
+          "display": { "type": "string", "description": "Human-readable rate (e.g. '30–40%')" },
+          "conditions": { "type": "string", "description": "What triggers higher/lower rates" }
+        }
+      },
+      "amount": {
+        "type": "object",
+        "description": "For grants/funds with fixed amounts rather than percentages",
+        "properties": {
+          "min": { "type": "number" },
+          "max": { "type": "number" },
+          "currency": { "type": "string" },
+          "display": { "type": "string" }
+        }
+      },
+      "annualBudget": {
+        "type": "object",
+        "description": "Total programme budget per year",
+        "properties": {
+          "amount": { "type": "number" },
+          "currency": { "type": "string" },
+          "display": { "type": "string" }
+        }
+      },
+      "minSpend": {
+        "type": "object",
+        "properties": {
+          "amount": { "type": "number" },
+          "currency": { "type": "string" },
+          "display": { "type": "string" },
+          "basis": { "type": "string", "description": "e.g. 'local spend', 'total budget', 'qualifying expenditure'" }
+        }
+      },
+      "cap": {
+        "type": "object",
+        "properties": {
+          "amount": { "type": "number" },
+          "currency": { "type": "string" },
+          "display": { "type": "string" },
+          "basis": { "type": "string" }
+        }
+      },
+      "culturalTest": {
+        "type": "object",
+        "properties": {
+          "required": { "type": "boolean" },
+          "type": { "type": "string", "enum": ["points", "checklist", "committee", "none"] },
+          "totalPoints": { "type": "number" },
+          "passingScore": { "type": "number" },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "maxPoints": { "type": "number" },
+                "criteria": { "type": "string" }
+              }
+            }
+          },
+          "notes": { "type": "string" }
+        }
+      },
+      "eligibility": {
+        "type": "object",
+        "properties": {
+          "nationality": { "type": "string", "description": "Who can apply (e.g. 'Any via local SPV', 'National only')" },
+          "coproduction": { "type": "boolean", "description": "Available to co-productions?" },
+          "serviceProduction": { "type": "boolean", "description": "Available to service/foreign productions?" },
+          "minBudget": { "type": "string" },
+          "genreRestrictions": { "type": "string" },
+          "other": { "type": "string" }
+        }
+      },
+      "vfx": {
+        "type": "object",
+        "properties": {
+          "eligible": { "type": "boolean" },
+          "separateRate": { "type": "string" },
+          "uplift": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      },
+      "timeline": {
+        "type": "object",
+        "properties": {
+          "applicationDeadlines": {
+            "type": "array",
+            "description": "Upcoming deadlines",
+            "items": {
+              "type": "object",
+              "properties": {
+                "date": { "type": "string", "format": "date" },
+                "session": { "type": "string", "description": "e.g. 'Session 2/3'" },
+                "notes": { "type": "string" }
+              }
+            }
+          },
+          "frequency": { "type": "string", "description": "e.g. 'Rolling', '3x/year', 'Annual'" },
+          "processingTime": { "type": "string", "description": "How long until decision/payment" },
+          "paymentTiming": { "type": "string", "description": "e.g. 'Post-completion', '80% during / 20% after'" }
+        }
+      },
+      "stackability": {
+        "type": "object",
+        "properties": {
+          "canStack": { "type": "boolean", "description": "Can be combined with other programmes?" },
+          "stacksWith": {
+            "type": "array",
+            "items": { "type": "string", "description": "IDs of compatible programmes" }
+          },
+          "maxPublicFunding": { "type": "string", "description": "EU state aid cap (usually 50%)" },
+          "notes": { "type": "string" }
+        }
+      },
+      "officialUrl": { "type": "string", "format": "uri", "description": "Direct link to programme page" },
+      "applicationUrl": { "type": "string", "format": "uri", "description": "Direct link to apply" },
+      "contactEmail": { "type": "string", "format": "email" },
+      "notes": {
+        "type": "object",
+        "description": "Translated notes/description"
+      },
+      "status": {
+        "type": "string",
+        "enum": ["active", "suspended", "announced", "expiring", "expired"],
+        "description": "Current programme status"
+      },
+      "lastVerified": { "type": "string", "format": "date" }
+    }
+  }
+}
