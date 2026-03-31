@@ -9,10 +9,8 @@
 <style>
 :root {
   --black: #0A0A0A;
-  --black-card: #111;
   --orange: #FF6B2B;
   --pink: #FF2D7B;
-  --gradient: linear-gradient(135deg, #FF6B2B 0%, #FF4757 50%, #FF2D7B 100%);
   --white: #FFFFFF;
   --gray-300: #AAAAAA;
   --gray-500: #666;
@@ -20,411 +18,178 @@
   --font-mono: 'Space Mono', monospace;
   --font-body: 'DM Sans', sans-serif;
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-body);
-  -webkit-font-smoothing: antialiased;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 24px;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.header h1 {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 12px;
-}
-
-.header p {
-  color: var(--gray-300);
-  font-size: 16px;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-/* Map container */
-.map-wrap {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.map-wrap svg {
-  width: 100%;
-  height: auto;
-}
-
-/* Country paths */
-.map-country {
-  fill: #1a1a1a;
-  stroke: rgba(255,255,255,0.06);
-  stroke-width: 0.5;
-  cursor: pointer;
-  transition: fill 0.25s, stroke 0.25s;
-}
-
-.map-country:hover {
-  fill: url(#mapGrad);
-  stroke: rgba(255,107,43,0.5);
-  stroke-width: 1;
-}
-
-.map-bg {
-  fill: #0f0f0f;
-  stroke: rgba(255,255,255,0.03);
-  stroke-width: 0.3;
-  pointer-events: none;
-}
-
-/* Tooltip */
-.map-tooltip {
-  position: fixed;
-  display: none;
-  background: rgba(10,10,10,0.95);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,107,43,0.2);
-  border-radius: 8px;
-  padding: 10px 16px;
-  pointer-events: none;
-  z-index: 100;
-  white-space: nowrap;
-}
-
-.map-tooltip .tt-name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 2px;
-}
-
-.map-tooltip .tt-rate {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.map-tooltip .tt-type {
-  font-size: 11px;
-  color: var(--gray-500);
-}
-
-/* Legend */
-.map-legend {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 24px;
-  font-size: 12px;
-  color: var(--gray-500);
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.legend-swatch {
-  width: 14px;
-  height: 14px;
-  border-radius: 3px;
-}
-
-/* Back link */
-.back-link {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 12px 28px;
-  background: var(--gradient);
-  border-radius: 8px;
-  color: var(--white);
-  text-decoration: none;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
+body { background: var(--black); color: var(--white); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+.container { max-width: 1000px; margin: 0 auto; padding: 60px 24px; }
+.header { text-align: center; margin-bottom: 40px; }
+.header h1 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+.header p { color: var(--gray-300); font-size: 16px; max-width: 500px; margin: 0 auto; }
+.map-wrap { position: relative; max-width: 850px; margin: 0 auto; }
+.map-wrap svg { width: 100%; height: auto; }
+.map-country { fill: #1e1e1e; stroke: rgba(255,107,43,0.15); stroke-width: 0.3; cursor: pointer; transition: fill 0.2s, stroke 0.2s, stroke-width 0.2s; }
+.map-country:hover { fill: url(#mapGrad); stroke: rgba(255,107,43,0.6); stroke-width: 0.8; }
+.map-bg { fill: #121212; stroke: rgba(255,255,255,0.04); stroke-width: 0.2; pointer-events: none; }
+.map-tooltip { position: fixed; display: none; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border: 1px solid rgba(255,107,43,0.25); border-radius: 10px; padding: 12px 18px; pointer-events: none; z-index: 100; white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+.tt-name { font-family: var(--font-display); font-weight: 700; font-size: 15px; margin-bottom: 3px; }
+.tt-rate { font-family: var(--font-mono); font-size: 13px; background: linear-gradient(90deg, #FF6B2B, #FF2D7B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.map-legend { display: flex; justify-content: center; gap: 28px; margin-top: 28px; font-size: 12px; color: var(--gray-500); flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 8px; }
+.legend-swatch { width: 14px; height: 14px; border-radius: 3px; }
+.back-link { display: inline-block; margin-top: 36px; padding: 12px 28px; background: linear-gradient(135deg, #FF6B2B, #FF2D7B); border-radius: 8px; color: var(--white); text-decoration: none; font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; }
 .back-link:hover { opacity: 0.9; }
 </style>
 </head>
 <body>
-
 <div class="container">
   <div class="header">
     <h1>European Incentive Map</h1>
     <p>Click a country to explore its film production incentives, tax credits, and cash rebates.</p>
   </div>
-
   <div class="map-wrap">
-    <svg viewBox="0 0 800 650" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="380 245 310 230" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#FF6B2B"/>
-          <stop offset="50%" stop-color="#FF4757"/>
-          <stop offset="100%" stop-color="#FF2D7B"/>
+        <linearGradient id="mapGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#FF6B2B"/>
+          <stop offset="0.5" stop-color="#FF4757"/>
+          <stop offset="1" stop-color="#FF2D7B"/>
         </linearGradient>
       </defs>
+<!-- BACKGROUND COUNTRIES -->
+<path id="ch" class="map-bg" d="M423.787,402.82l-3.771,4.011l0.078,0.405l1.547-0.483l1.393,1.937l2.352-0.83l1.625,1.263l0.667-0.38l2.005-3.146l-0.511-0.484l-1.979-0.051l-0.959-1.963L423.787,402.82L423.787,402.82z"/>
+<path id="rs" class="map-bg" d="M452.001,407.279l-1.772,1.332h-0.863l-0.588,1.832l2.092,2.43l0.139,1.928l-0.882,1.246l3.068,3.197l3.317-1.012l-0.274-4.721L452.001,407.279L452.001,407.279z"/>
+<path id="ba" class="map-bg" d="M442.708,411.084l-0.319,0.527l5.801,5.981l2.127-3.13l-0.078-1.234l-1.857-2.256L442.708,411.084L442.708,411.084z"/>
+<path id="me" class="map-bg" d="M449.68,416.677l-1.266,1.789l0.362,1.099l1.504,0.275l1.184-1.607L449.68,416.677z"/>
+<path id="mk" class="map-bg" d="M456.643,418.924l-2.912,0.959l0.139,2.473l0.683,0.873l3.458-1.606L456.643,418.924L456.643,418.924z"/>
+<path id="al" class="map-bg" d="M450.679,420.438v3.984l1.142,2.152l0.82-0.096l1.409-2.566l-0.821-1.15l-0.319-2.844l-1.089-1.012L450.679,420.438L450.679,420.438z"/>
+<path id="md" class="map-bg" d="M465.14,401.376l2.681,4.123l-0.226,2.334l0.96,0.043l2.272-3.847l-2.731-3.389L466.549,400L465.14,401.376L465.14,401.376z"/>
+<path id="by" class="map-bg" d="M456.418,382.861l1.297,2.135l-0.519,1.703l0.086,1.349l0.476,1.616l2.68-1.521l3.329,0.086l2.334,0.959h5.922l1.729-4.141l1.037-1.564v-1.045l-3.717-5.23l-3.285-1.305l-2.68-0.303l-2.335,0.743l0.088,2.351l-3.241,4.098L456.418,382.861L456.418,382.861z"/>
+<path id="ua" class="map-bg" d="M460.662,388.791l-2.507,1.409l0.622,2.663l-2.316,4.884l0.02,2.151l1.089,0.691l6.983,0.346l1.954-1.615l2.092,0.699l2.999,4.002l-2.194,3.942l2.61,0.761l3.414-3.933l1.954,0.354l1.815,1.262l-1.601,2.109l2.161,3.371h2.299l1.185-2.248l2.438-0.494l0.069-1.823l-4.529-0.7l0.14-1.963h4.391l4.737-3.794l2.092-1.824l0.345-5.757l-9.336-0.838l-3.829-5.402l-2.646-0.908l-3.207,0.139l-1.443,3.569l-6.57,0.087l-2.135-0.986L460.662,388.791L460.662,388.791z"/>
+<path id="tr" class="map-bg" d="M472.812,421.906l-2.305-1.426l-1.271-1.013l-2.138,0.916l0,0l-1.477,3.74l2.219-0.5l1.562-1.188l3.438,0.938l-1.946,1.877L465.719,425l-1.91,2.093v1.021l1.22,1.021v1.123l-0.511,1.332l0.511,1.123l1.625-0.812l1.625,1.737l-0.406,1.228l-0.604,0.82l0.907,1.021l4.461,0.916l3.139-1.331v-1.937l1.521,0.303l3.648,2.144l3.948-0.614l1.721-1.633l1.114,0.406v1.841h1.521l1.313-2.55l11.549-1.229l5.04-0.613l-1.331-1.746l-0.025-2.359l1.011-1.21l-3.682-2.956l0.197-2.551h-2.022l-3.354-1.643l0,0l-1.929,2.041l-7.088-0.209l-4.253-2.549l-4.082,0.366l-4.544,2.729L472.812,421.906z"/>
 
-      <!-- NON-INTERACTIVE BACKGROUND COUNTRIES -->
-      <!-- Switzerland -->
-      <path class="map-bg" d="M350 370 L365 362 L380 368 L382 380 L370 388 L355 385 Z"/>
-      <!-- Serbia -->
-      <path class="map-bg" d="M460 385 L475 375 L488 382 L492 400 L480 415 L465 408 L458 395 Z"/>
-      <!-- Bosnia -->
-      <path class="map-bg" d="M430 385 L445 375 L460 385 L458 400 L442 408 L430 400 Z"/>
-      <!-- Montenegro -->
-      <path class="map-bg" d="M445 408 L458 400 L465 412 L455 425 L442 418 Z"/>
-      <!-- North Macedonia -->
-      <path class="map-bg" d="M465 420 L480 415 L490 425 L485 440 L470 438 L462 428 Z"/>
-      <!-- Albania -->
-      <path class="map-bg" d="M455 425 L465 420 L470 438 L468 455 L455 450 L450 438 Z"/>
-      <!-- Moldova -->
-      <path class="map-bg" d="M530 310 L545 300 L555 312 L552 330 L540 335 L528 325 Z"/>
-      <!-- Belarus -->
-      <path class="map-bg" d="M500 240 L540 230 L570 245 L575 275 L545 290 L510 280 L495 260 Z"/>
-      <!-- Ukraine -->
-      <path class="map-bg" d="M545 290 L575 275 L620 280 L650 300 L640 340 L600 355 L555 345 L540 335 L530 310 Z"/>
-      <!-- Turkey (European part) -->
-      <path class="map-bg" d="M520 430 L550 420 L570 430 L565 450 L540 455 L520 445 Z"/>
-      <!-- Russia (Kaliningrad hint) -->
-      <path class="map-bg" d="M500 210 L515 205 L520 215 L510 222 L498 218 Z"/>
-
-      <!-- ===== INTERACTIVE COUNTRIES ===== -->
-
-      <!-- Iceland [27] -->
-      <path class="map-country" data-index="27" data-name="Iceland" data-rate="25%" data-flag="🇮🇸"
-            d="M80 80 L115 70 L145 78 L155 95 L140 115 L105 120 L75 108 L70 92 Z"/>
-
-      <!-- Norway [28] -->
-      <path class="map-country" data-index="28" data-name="Norway" data-rate="25%" data-flag="🇳🇴"
-            d="M390 50 L405 42 L420 55 L425 80 L418 110 L410 145 L400 175 L388 200 L380 215 L375 195 L378 165 L382 130 L385 95 L388 65 Z"/>
-
-      <!-- Sweden [30] -->
-      <path class="map-country" data-index="30" data-name="Sweden" data-rate="N/A" data-flag="🇸🇪"
-            d="M400 100 L415 95 L428 110 L435 140 L430 175 L422 210 L415 240 L405 255 L395 245 L390 215 L395 180 L398 145 L400 115 Z"/>
-
-      <!-- Finland [21] -->
-      <path class="map-country" data-index="21" data-name="Finland" data-rate="25%" data-flag="🇫🇮"
-            d="M440 70 L465 60 L485 75 L495 110 L490 150 L480 190 L465 215 L445 225 L435 210 L430 175 L435 140 L438 100 Z"/>
-
-      <!-- Denmark [29] -->
-      <path class="map-country" data-index="29" data-name="Denmark" data-rate="N/A" data-flag="🇩🇰"
-            d="M365 225 L378 218 L388 228 L392 245 L385 258 L372 260 L362 250 L360 238 Z"/>
-
-      <!-- Estonia [13] -->
-      <path class="map-country" data-index="13" data-name="Estonia" data-rate="30%" data-flag="🇪🇪"
-            d="M470 215 L495 210 L505 222 L500 235 L482 238 L468 228 Z"/>
-
-      <!-- Latvia [23] -->
-      <path class="map-country" data-index="23" data-name="Latvia" data-rate="25%" data-flag="🇱🇻"
-            d="M468 238 L500 235 L510 248 L505 262 L488 268 L470 260 L465 248 Z"/>
-
-      <!-- Lithuania [14] -->
-      <path class="map-country" data-index="14" data-name="Lithuania" data-rate="30%" data-flag="🇱🇹"
-            d="M465 260 L488 268 L498 280 L492 295 L475 300 L460 290 L458 275 Z"/>
-
-      <!-- United Kingdom [0] -->
-      <path class="map-country" data-index="0" data-name="United Kingdom" data-rate="25%" data-flag="🇬🇧"
-            d="M260 200 L275 185 L290 188 L298 205 L295 225 L288 245 L278 260 L268 275 L255 280 L248 268 L252 248 L255 230 L258 215 Z"/>
-      <!-- Scotland part -->
-      <path class="map-country" data-index="0" data-name="United Kingdom" data-rate="25%" data-flag="🇬🇧"
-            d="M255 165 L275 155 L290 165 L288 185 L275 195 L260 200 L250 190 L248 178 Z"/>
-
-      <!-- Ireland [1] -->
-      <path class="map-country" data-index="1" data-name="Ireland" data-rate="32–40%" data-flag="🇮🇪"
-            d="M215 215 L235 205 L248 215 L250 235 L242 252 L228 258 L215 250 L208 235 Z"/>
-
-      <!-- Netherlands [22] -->
-      <path class="map-country" data-index="22" data-name="Netherlands" data-rate="35%" data-flag="🇳🇱"
-            d="M325 265 L340 258 L348 268 L345 282 L335 288 L322 282 L320 272 Z"/>
-
-      <!-- Belgium [9] -->
-      <path class="map-country" data-index="9" data-name="Belgium" data-rate="25–45%" data-flag="🇧🇪"
-            d="M315 290 L335 288 L345 295 L342 308 L330 315 L318 308 L312 298 Z"/>
-
-      <!-- Luxembourg [20] -->
-      <path class="map-country" data-index="20" data-name="Luxembourg" data-rate="30%" data-flag="🇱🇺"
-            d="M340 308 L350 305 L355 315 L350 322 L340 320 L338 312 Z"/>
-
-      <!-- Germany [3] -->
-      <path class="map-country" data-index="3" data-name="Germany" data-rate="25–30%" data-flag="🇩🇪"
-            d="M355 260 L395 250 L415 265 L420 295 L415 330 L400 348 L380 355 L360 348 L345 330 L340 308 L342 295 L348 275 Z"/>
-
-      <!-- Poland [16] -->
-      <path class="map-country" data-index="16" data-name="Poland" data-rate="30%" data-flag="🇵🇱"
-            d="M420 265 L460 260 L490 275 L495 305 L485 330 L460 340 L435 335 L420 318 L415 295 Z"/>
-
-      <!-- Czech Republic [8] -->
-      <path class="map-country" data-index="8" data-name="Czech Republic" data-rate="25–35%" data-flag="🇨🇿"
-            d="M375 330 L400 325 L420 332 L425 348 L410 358 L388 360 L372 352 L370 340 Z"/>
-
-      <!-- Slovakia [24] -->
-      <path class="map-country" data-index="24" data-name="Slovakia" data-rate="33%" data-flag="🇸🇰"
-            d="M425 338 L450 330 L470 340 L472 355 L458 365 L438 362 L425 352 Z"/>
-
-      <!-- Austria [15] -->
-      <path class="map-country" data-index="15" data-name="Austria" data-rate="25–30%" data-flag="🇦🇹"
-            d="M365 360 L395 355 L420 358 L435 365 L430 380 L410 388 L385 385 L365 378 L358 368 Z"/>
-
-      <!-- France [2] -->
-      <path class="map-country" data-index="2" data-name="France" data-rate="30–40%" data-flag="🇫🇷"
-            d="M265 310 L295 295 L325 300 L340 320 L345 348 L338 380 L325 405 L305 420 L280 418 L260 400 L250 375 L252 345 L258 325 Z"/>
-
-      <!-- Spain [4] (including mainland) -->
-      <path class="map-country" data-index="4" data-name="Spain" data-rate="30–50%" data-flag="🇪🇸"
-            d="M220 420 L260 408 L290 420 L310 435 L305 465 L290 490 L265 500 L235 495 L210 480 L200 455 L205 435 Z"/>
-
-      <!-- Portugal [11] -->
-      <path class="map-country" data-index="11" data-name="Portugal" data-rate="25–30%" data-flag="🇵🇹"
-            d="M195 435 L210 430 L218 450 L215 475 L205 490 L192 485 L188 465 L190 448 Z"/>
-
-      <!-- Italy [6] -->
-      <path class="map-country" data-index="6" data-name="Italy" data-rate="40%" data-flag="🇮🇹"
-            d="M370 395 L390 388 L405 395 L412 415 L408 440 L398 460 L385 480 L375 495 L365 488 L368 465 L372 440 L370 418 Z"/>
-      <!-- Sicily -->
-      <path class="map-country" data-index="6" data-name="Italy" data-rate="40%" data-flag="🇮🇹"
-            d="M378 500 L395 495 L405 505 L398 515 L382 512 Z"/>
-      <!-- Sardinia -->
-      <path class="map-country" data-index="6" data-name="Italy" data-rate="40%" data-flag="🇮🇹"
-            d="M348 440 L360 435 L365 450 L358 465 L345 460 L342 448 Z"/>
-
-      <!-- Slovenia [25] -->
-      <path class="map-country" data-index="25" data-name="Slovenia" data-rate="25%" data-flag="🇸🇮"
-            d="M395 375 L415 370 L428 378 L425 390 L412 395 L398 390 Z"/>
-
-      <!-- Croatia [12] -->
-      <path class="map-country" data-index="12" data-name="Croatia" data-rate="25%" data-flag="🇭🇷"
-            d="M415 370 L435 365 L450 375 L455 395 L448 410 L435 420 L420 415 L412 400 L408 388 L415 378 Z"/>
-
-      <!-- Hungary [7] -->
-      <path class="map-country" data-index="7" data-name="Hungary" data-rate="30%" data-flag="🇭🇺"
-            d="M430 355 L458 348 L480 358 L488 378 L478 395 L455 398 L438 390 L428 378 Z"/>
-
-      <!-- Romania [17] -->
-      <path class="map-country" data-index="17" data-name="Romania" data-rate="35%" data-flag="🇷🇴"
-            d="M480 340 L510 330 L535 340 L545 360 L538 385 L515 395 L492 390 L480 370 L478 355 Z"/>
-
-      <!-- Bulgaria [26] -->
-      <path class="map-country" data-index="26" data-name="Bulgaria" data-rate="25%" data-flag="🇧🇬"
-            d="M492 395 L520 390 L540 400 L542 420 L528 435 L505 430 L490 418 L488 405 Z"/>
-
-      <!-- Greece [10] -->
-      <path class="map-country" data-index="10" data-name="Greece" data-rate="40%" data-flag="🇬🇷"
-            d="M468 435 L488 425 L505 435 L510 455 L502 475 L488 490 L475 485 L465 468 L462 450 Z"/>
-      <!-- Peloponnese -->
-      <path class="map-country" data-index="10" data-name="Greece" data-rate="40%" data-flag="🇬🇷"
-            d="M470 490 L485 488 L492 500 L485 515 L472 512 L465 500 Z"/>
-      <!-- Crete -->
-      <path class="map-country" data-index="10" data-name="Greece" data-rate="40%" data-flag="🇬🇷"
-            d="M478 535 L505 530 L518 538 L510 548 L485 545 L475 540 Z"/>
-
-      <!-- Cyprus [18] -->
-      <path class="map-country" data-index="18" data-name="Cyprus" data-rate="35%" data-flag="🇨🇾"
-            d="M575 480 L595 475 L608 482 L605 495 L590 500 L578 495 L572 488 Z"/>
-
-      <!-- Malta [19] -->
-      <path class="map-country" data-index="19" data-name="Malta" data-rate="40%" data-flag="🇲🇹"
-            d="M390 530 L398 526 L404 532 L400 540 L392 538 Z"/>
+<!-- INTERACTIVE COUNTRIES -->
+<g id="gb" class="map-country" data-index="0" data-name="United Kingdom" data-rate="25%" data-flag="🇬🇧">
+        <path class="mainland" d="M400.629,367.984l-1.582,2.395l0.631,0.959h3.648v1.6l-0.952,1.278l0.632,3.354l2.058,3.994l1.581,3.672l2.533,0.959l1.105,1.92l-0.155,1.755l-1.582,0.959l-0.156,0.795l1.106,0.64l-0.951,1.279l-2.221,0.959l-4.279-0.477l-6.664,3.035l-2.221-1.115l6.345-3.674l-0.796-0.477l-3.328-0.32l2.058-3.033l0.319-2.56l2.696-0.319l-0.475-4.953l-3.174-0.155l-0.95-1.115l0.155-3.674l-1.901,0.156l1.901-6.388l3.492-2.56L400.629,367.984L400.629,367.984z"/>
+        <path d="M393.974,378.693l-2.853,0.32l-0.156,2.56l1.901,1.278l2.058-0.475l0.796-1.436L393.974,378.693L393.974,378.693z"/>
+    </g>
+<path id="ie" class="map-country" data-index="1" data-name="Ireland" data-rate="32–40%" data-flag="🇮🇪" d="M394.915,383.085l-0.786,5.187l-6.975,2.56h-2.223l-1.582-1.115v-0.96l3.492-2.238l-0.951-1.92l0.156-2.714l3.018,0.155l1.383-3.25l-0.183,2.887l2.344,1.858L394.915,383.085L394.915,383.085z"/>
+<g id="fr" class="map-country" data-index="2" data-name="France" data-rate="30–40%" data-flag="🇫🇷">
+        <path class="mainland" d="M412.973,393.588l-1.91,0.467l-3.82,4.158l-1.149,0.078l-1.53-1.081l-0.993,0.233l-0.762,2.386l-5.584,0.155l0.156,1.236l3.82,2.543l4.435,3.543l-0.077,4.236l-2.368,4.157l5.126,2.464l5.204,0.154l1.606-1.85l3.286,0.078l0.916,0.848l3.285-0.233l1.686-2.162l-2.145-2.541l-0.155-1.616l0.458-1.771l-1.071-1.539l-1.833,0.535l-0.232-1.383l4.054-4.469v-2.697l-2.348-0.767l-1.432-0.987L412.973,393.588L412.973,393.588z"/>
+        <path d="M276.163,517.285l5.058,3.154l-2.646,5.255l-0.959,1.21l-2.809-1.615l0.079-5.663L276.163,517.285L276.163,517.285z"/>
+        <path d="M540.023,586.93l-1.972,0.129l-0.129,1.722l1.313,0.269l1.972-0.925L540.023,586.93L540.023,586.93z"/>
+        <path d="M516.857,562.666l0.656,1.461h1.055l0.526-1.857L516.857,562.666L516.857,562.666z"/>
+        <path d="M258.823,489.822l-0.917,0.847l0.683,1.383l1.296-0.38L258.823,489.822L258.823,489.822z"/>
+        <path d="M428.039,418.016l-1.687,1.695l-0.154,1.538l1.374,0.847l0.536-0.076l0.303-2.24L428.039,418.016L428.039,418.016z"/>
+        <path d="M254.095,484.065l-1.296,0.535l0.458,1.149l1.521-0.994l-0.303-0.311L254.095,484.065L254.095,484.065z"/>
+    </g>
+<path id="de" class="map-country" data-index="3" data-name="Germany" data-rate="25–30%" data-flag="🇩🇪" d="M422.257,384.234l3.086-0.5v-2.178l2.584-0.425l1.418,1.427l1.495,0.164l2.334-1.012l2.083,0.588l1.832,1.592l0.251,5.955l1.832,2.438l-2.411,0.337l-4.003,2.515l0.338,0.839l3.579,3.354l-0.251,1.677l-3.328,1.677l-3.085,0.086l-0.753,1.59h-1.581l-0.752-1.676l-2.749-0.675l-0.088-2.767l-1.39-0.77l0.114-1.861l-0.406-1.328l-1.982-1.824l0.414-2.854l2.161-1.011L422.257,384.234L422.257,384.234z"/>
+<g id="es" class="map-country" data-index="4" data-name="Spain" data-rate="30–50%" data-flag="🇪🇸">
+        <path class="mainland" d="M402.565,416.322h-11.014l-2.222-1.004l-1.071,0.078l-1.297,2.696l0.458,2.775l4.21,0.389l0.536,1.771l-1.833,10.33l0.078,1.851l2.981,1.617l3.439,0.232l6.881-1.694l3.363-4.233l0.077-4.313l5.965-5.395l0.302-2.386l-5.428-0.078L402.565,416.322L402.565,416.322z"/>
+        <path d="M374.265,458.444l-1.513,0.873l0.7,0.709L374.265,458.444L374.265,458.444z"/>
+        <path d="M369.009,458.608l-1.875,0.476l0.935,1.418h1.407L369.009,458.608L369.009,458.608z"/>
+        <path d="M364.549,457.191l-1.176,1.184l1.643,1.418l0.935-2.126L364.549,457.191L364.549,457.191z"/>
+        <path d="M413.578,426.877l-1.375,0.467l0.304,1.235h1.988l0.839-0.925L413.578,426.877L413.578,426.877z"/>
+    </g>
+<g id="it" class="map-country" data-index="6" data-name="Italy" data-rate="40%" data-flag="🇮🇹">
+        <path class="mainland" d="M423.233,409.391l-0.535,1.356l0.146,1.478l2.065,2.412l3.25-0.113l7.175,8.334l4.479,1.297l2.646,2.498l0.631,5.695l1.417-0.828l1.229-3.104l-0.303-2.229l2.101-0.19l0.304-1.263l-5.922-2.834l-5.619-5.523l-2.238-3.303l-0.545-3.137l2.861-0.684l-0.734-2.066l-1.755-1.478l-1.513-0.069l-2.108,0.58l-1.99,2.781l-1.201,0.795l-1.858-1.141L423.233,409.391L423.233,409.391z"/>
+        <path d="M440.668,431.898l-1.253-0.674l-4.278,0.674l0.146,1.158l3.847,1.937l0.579,0.631l1.012,0.147L440.668,431.898L440.668,431.898z"/>
+        <path d="M427.806,423.566l-2.289,1.158l0.303,4.469l1.833,0.311l1.374-1.312v-4.235L427.806,423.566L427.806,423.566z"/>
+    </g>
+<path id="hu" class="map-country" data-index="7" data-name="Hungary" data-rate="30%" data-flag="🇭🇺" d="M444.386,403.01l-1.003,1.573l0.078,2.403l1.599,0.82l4.919,0.147l6.854-5.774l0.034-1.279l-0.742-0.371l-4.953,2.248L444.386,403.01L444.386,403.01z"/>
+<path id="cz" class="map-country" data-index="8" data-name="Czech Republic" data-rate="25–35%" data-flag="🇨🇿" d="M437.202,398.921h2.567h1.263l2.049,1.461l3.795-3.155l-3.683-2.627l-3.648-1.765l-2.498,0.45l-3.389,2.178L437.202,398.921L437.202,398.921z"/>
+<path id="be" class="map-country" data-index="9" data-name="Belgium" data-rate="25–45%" data-flag="🇧🇪" d="M414.019,391.704l-0.554,1.383l5.947,3.925l0.4,0.051l0.375-1.094l0.837-0.588l-1.336-1.499h-0.916l-1.255-1.426L414.019,391.704L414.019,391.704z"/>
+<g id="gr" class="map-country" data-index="10" data-name="Greece" data-rate="40%" data-flag="🇬🇷">
+        <path class="mainland" d="M453.004,427.213l-0.096,1.15l4.003,2.014l1.911,0.734l-1.003,1.055l-2.23,0.227l-0.319,1.01l0.771,1.738l2.498,1.33l1.09,0.096l0.138-2.981l1.635-1.972l-4.46-5.272l0.589-1.789l1.046-0.043l1.591,1.279l1.002-0.501l0.319-1.79l3.732,0.534l1.134-3.239l-1.953,1.375l-5.731-0.14l-3.726,1.929L453.004,427.213L453.004,427.213z"/>
+        <path d="M461.69,438.442l1.408,0.043l0.589,0.873h2.05l1.363-0.501l0.459,0.553l-0.907,1.192l-4.002,0.139l-0.728-0.959l-0.77-0.458L461.69,438.442L461.69,438.442z"/>
+    </g>
+<g id="pt" class="map-country" data-index="11" data-name="Portugal" data-rate="25–30%" data-flag="🇵🇹">
+        <path class="mainland" d="M387.499,421.716l-0.536,7.478l-1.53,1.384l0.156,0.846l1.071,1.772l-0.691,2.16l1.149,0.39l2.68-0.312l-0.155-2.16l1.756-10.02l-0.382-1.383L387.499,421.716L387.499,421.716z"/>
+        <path d="M367.834,443.481l-0.934,1.185l0.934,1.185l1.408-0.709L367.834,443.481L367.834,443.481z"/>
+        <path d="M337.112,426.713l-1.175,1.184l2.107,1.185l0.234-1.649L337.112,426.713L337.112,426.713z"/>
+        <path d="M343.448,426.004l-1.408,0.941l1.175,0.941l1.876-0.476L343.448,426.004L343.448,426.004z"/>
+        <path d="M344.382,429.314l-0.7,1.892l0.935,1.185l1.175-0.941L344.382,429.314L344.382,429.314z"/>
+        <path d="M350.01,433.092l-0.467,1.184l0.701,0.709l1.875-1.184L350.01,433.092L350.01,433.092z"/>
+    </g>
+<path id="hr" class="map-country" data-index="12" data-name="Croatia" data-rate="25%" data-flag="🇭🇷" d="M443.417,407.816l-3.051,2.515h-3.095l-0.372,2.178l1.418,0.372l0.709-1.055l1.114,0.977l0.891,3.112l6.109,2.853l0.605-0.691l-6.197-6.396l0.631-1.166l5.888-0.226l0.596-1.876l-3.838,0.111L443.417,407.816L443.417,407.816z"/>
+<g id="ee" class="map-country" data-index="13" data-name="Estonia" data-rate="30%" data-flag="🇪🇪">
+        <path class="mainland" d="M462.562,363.299l-4.84-0.173l-3.068,1.875l-0.043,1.392l1.987,1.875l6.182,1.047L462.562,363.299L462.562,363.299z"/>
+        <path d="M452.236,364.042l-1.308,0.44l1.308,0.226l0.595,0.69l0.711-0.852l-0.709-1.215L452.236,364.042z"/>
+        <path d="M452.792,365.792l-1.862,0.833l-0.643,1.111l0.643,0.722l2.362-0.875l1.137-0.752L452.792,365.792z"/>
+    </g>
+<path id="lt" class="map-country" data-index="14" data-name="Lithuania" data-rate="30%" data-flag="🇱🇹" d="M452.14,375.236l-2.146,0.363l0.173,2.025l3.355,0.25l1.27,1.042l0.333,1.81l1.034,1.443l3.069-0.13l2.938-3.743l-0.172-2.222l-5.533-0.867L452.14,375.236z"/>
+<path id="at" class="map-country" data-index="15" data-name="Austria" data-rate="25–30%" data-flag="🇦🇹" d="M430.46,403.459l-0.562,1.167l0.483,0.83l2.015-0.415h1.711l1.857,1.572l3.95-0.717l2.904-1.729l0.743-1.167l-0.112-1.504l-2.611-1.954l-3.501,0.035l-0.294,1.988l-3.683,1.797L430.46,403.459L430.46,403.459z"/>
+<path id="pl" class="map-country" data-index="16" data-name="Poland" data-rate="30%" data-flag="🇵🇱" d="M457.109,390.184l0.733,1.348l0.174,1.435l-0.604,1.392l-1.383,2.664l-1.167,0.526l-1.514-0.657l-0.908,0.043l-2.204,0.83l-2.506-0.742l-4.062-2.879l-3.978-2.135l-1.6-2.438l-0.303-5.75l3.112-2.705l4.062-1.35l1.328-0.138l0.315,1.007l1.725,0.692l4.766,0.09l1.47-0.043l2.421,3.708l-0.604,1.521l0.259,1.789L457.109,390.184L457.109,390.184z"/>
+<path id="ro" class="map-country" data-index="17" data-name="Romania" data-rate="35%" data-flag="🇷🇴" d="M457.731,401.281l-0.226,1.279l-5.005,4.166l4.184,6.137l2.682,1.877h4.823l1.591-1.331l2.135-0.276l1.591,0.959l2.818-3.207l-0.545-1.607l-2.861-0.734l-1.953-0.095l0.094-2.749l-2.593-4.08L457.731,401.281L457.731,401.281z"/>
+<path id="cy" class="map-country" data-index="18" data-name="Cyprus" data-rate="35%" data-flag="🇨🇾" d="M484.555,437.794l1.062,0.771l-3.294,3.119l-1.573-0.052l-1.167-0.821l0.156-1.529l2.386-0.155L484.555,437.794L484.555,437.794z"/>
+<path id="mt" class="map-country" data-index="19" data-name="Malta" data-rate="40%" data-flag="🇲🇹" d="M440.815,438.339l-1.443,0.294l0.052,1.6l1.297,0.433l0.579-0.484L440.815,438.339L440.815,438.339z"/>
+<path id="lu" class="map-country" data-index="20" data-name="Luxembourg" data-rate="30%" data-flag="🇱🇺" d="M420.424,397.582l0.76,0.679l0.88,0.083l0.194-1.734l-0.253-0.974l-1.224,0.583L420.424,397.582z"/>
+<path id="fi" class="map-country" data-index="21" data-name="Finland" data-rate="25%" data-flag="🇫🇮" d="M453.072,340.202l1.79,0.786l1.104,2.074l-1.104,1.436l-5.55,6.068l-0.952,3.199l1.271,4.633l4.278,3.199l5.706-2.715l4.598-0.64l4.279-6.872l-3.173-7.512l-3.018-7.192l0.477-4.633l-1.901-0.32l-0.492-3.38l-2.559-4.175l-2.836,1.962l-1.114,4.556l-3.008-1.807l-4.185-1.021l-0.934,1.09l1.607,1.453l2.931-0.053l2.359,3.812L453.072,340.202L453.072,340.202z"/>
+<path id="nl" class="map-country" data-index="22" data-name="Netherlands" data-rate="35%" data-flag="🇳🇱" d="M421.349,384.572l-3.915,1.928l0.829,0.752l0.088,1.928l-0.829-0.164l-0.917-1.426l-2.188,3.467l3.363,0.699l1.253,1.323l0.666,0.017l0.44-2.99l2.117-0.891L421.349,384.572L421.349,384.572z"/>
+<path id="lv" class="map-country" data-index="23" data-name="Latvia" data-rate="25%" data-flag="🇱🇻" d="M462.823,369.964l-6.362-1.037l-1.086,2.823l-1.833,0.548l-0.959-1.173l-0.962-1.811l-1.038,0.762l-0.589,3.132v1.708l2.242-0.375l4.665,0.083l5.617,1.044l2.249-0.657l-0.13-2.524L462.823,369.964L462.823,369.964z"/>
+<path id="sk" class="map-country" data-index="24" data-name="Slovakia" data-rate="33%" data-flag="🇸🇰" d="M443.607,400.875l0.597,0.527l0.077,0.898l6.596-0.146l4.875-2.102l-0.077-2.135l-0.934,0.415l-1.34-0.718l-0.821-0.035l-2.161,0.865l-2.938-0.709L443.607,400.875L443.607,400.875z"/>
+<path id="si" class="map-country" data-index="25" data-name="Slovenia" data-rate="25%" data-flag="🇸🇮" d="M442.708,405.076l-2.195,1.314l-4.097,0.898l0.82,2.368l2.87,0.034l2.646-2.213L442.708,405.076L442.708,405.076z"/>
+<path id="bg" class="map-country" data-index="26" data-name="Bulgaria" data-rate="25%" data-flag="🇧🇬" d="M457.092,414.066l0.139,4.305l1.452,3.025l5.454,0.095l2.455-1.737l2.412-0.959l-0.588-2.75l0.545-1.469l-1.228-0.641l-1.687,0.139l-1.323,1.332l-5.549,0.043L457.092,414.066L457.092,414.066z"/>
+<path id="is" class="map-country" data-index="27" data-name="Iceland" data-rate="25%" data-flag="🇮🇸" d="M366.261,340.521l-1.693-0.959l-2.283,1.443l-1.962,1.814l0.052,1.013l2.541,0.319l-0.156,1.815l-0.898,0.908l0.217,0.588l2.541,0.164v2.938l3.656,0.641l2.17,1.229l2.437,0.104l4.186-2.083l3.231-4.271l0.053-2.887l-1.963-1.66l-1.642-1.392l-0.743,0.536l-1.115,1.443l-1.271-0.164l-1.271-1.393l-1.642,0.156l-2.386,1.979l-1.437,1.547l-0.795-0.69l-0.053-1.712l0.795-0.536L366.261,340.521L366.261,340.521z"/>
+<g id="no" class="map-country" data-index="28" data-name="Norway" data-rate="25%" data-flag="🇳🇴">
+        <path class="mainland" d="M460.567,327.409l1.747-1.279l-0.157-1.435l-1.106-0.641l0.157-1.754h0.95v-0.96l-4.123-1.114l-6.181,0.64l-0.631,2.714l-1.428-0.477l-0.951-1.599l-3.017,0.155l-0.32,3.033l-1.426,0.641l-0.795-1.6l-6.345,5.109l1.271,1.436l-2.378,1.115l-5.393,10.701l-1.901,1.279l0.155,0.959l1.9,0.959l-0.475,2.074l-3.173-0.164l-0.952-1.115l-2.057,2.395l-1.271,0.959l-0.32,2.24l-1.105,0.64l-2.854,0.64l-1.426,4.479l0.951,7.348l1.106,3.354l1.271,1.279l2.853-0.156l4.124-3.994l1.581-2.713l0.478,3.992l2.697-4.789l0.154-13.424l2.195-1.383l0.657-7.408l6.655-9.586l3.173-1.115l1.427-1.755l4.754,1.115l2.377,1.435l0.796-3.992l3.968-2.396L460.567,327.409L460.567,327.409z"/>
+        <path d="M437.056,285.762l-1.426-1.435l-3.164,1.539h-5.809l-0.917,3.389l3.26,2.878l1.425-0.208l2.04-3.491l1.729,1.235l-1.229,2.464l-0.614,3.596l1.427,2.256l3.06-5.135l3.979-4.832l-1.531-1.33L437.056,285.762L437.056,285.762z"/>
+        <path d="M438.784,279.6l-2.55,2.359l1.529,2.359h2.749l1.124,1.539l3.363,1.746l3.871-2.256l2.654-2.256l-0.916-1.85l-2.654-1.539l-1.938,1.746l-1.321-1.644l-1.021,0.104l-1.322,2.878l-1.936-1.954l-0.208-1.331L438.784,279.6L438.784,279.6z"/>
+        <path d="M444.593,290.179l-2.04,1.851l-1.729,1.332l0.812,1.435l1.636,0.511l2.652-1.236l1.229-1.539l-1.124-1.85L444.593,290.179L444.593,290.179z"/>
+    </g>
+<g id="dk" class="map-country" data-index="29" data-name="Denmark" data-rate="N/A" data-flag="🇩🇰">
+        <path d="M427.123,370.076l-3.586,3.968l-0.13,2.584l1.635,4.263l2.559-0.484l-0.319-3.483l1.764-1.971l-0.034-1.548l-1.245-3.223L427.123,370.076L427.123,370.076z"/>
+        <path d="M428.979,377.354l-1.062,0.229v1.583l1.128,0.875l0.997-0.25l-0.243-1.503L428.979,377.354z"/>
+        <path d="M432.306,375.848l-0.949,0.23l-1.056,0.968l0.448,1.954l1.292,0.507l-1.334,0.535l-0.255,0.685h2.005l0.602-1.099l-0.768-0.378l0.25-0.962l0.916-1.205l-0.25-1.042L432.306,375.848z"/>
+    </g>
+<g id="se" class="map-country" data-index="30" data-name="Sweden" data-rate="N/A" data-flag="🇸🇪">
+        <path class="mainland" d="M445.232,329.52l1.693,1.563h3.173l1.746,3.354l0.477,5.748l-4.278,3.035v3.033l-3.017,4.158l-1.746,0.154l-2.378,3.994l0.155,3.838l4.124,3.035l-0.319,1.754l-1.582,2.396l-2.377,2.074l0.155,6.872l-3.647,1.279l-1.271,2.713h-1.747l-0.949-4.789l-3.969-6.084l3.26-5.455l0.225-13.477l2.248-1.236l0.545-7.709l6.405-9.172L445.232,329.52L445.232,329.52z"/>
+        <path d="M445.898,368.927l-1.824,1.443l0.917,2.118l1.616-1.573L445.898,368.927L445.898,368.927z"/>
+    </g>
 
     </svg>
-
-    <!-- Tooltip -->
     <div class="map-tooltip" id="map-tooltip">
       <div class="tt-name" id="tt-name"></div>
       <div class="tt-rate" id="tt-rate"></div>
     </div>
   </div>
-
   <div class="map-legend">
-    <div class="legend-item">
-      <div class="legend-swatch" style="background:#1a1a1a;border:1px solid rgba(255,255,255,0.1);"></div>
-      <span>Incentive available</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-swatch" style="background:linear-gradient(135deg,#FF6B2B,#FF2D7B);"></div>
-      <span>Selected / Hover</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-swatch" style="background:#0f0f0f;border:1px solid rgba(255,255,255,0.05);"></div>
-      <span>Not covered</span>
-    </div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#1e1e1e;border:1px solid rgba(255,107,43,0.2);"></div><span>Incentive available</span></div>
+    <div class="legend-item"><div class="legend-swatch" style="background:linear-gradient(135deg,#FF6B2B,#FF2D7B);"></div><span>Selected / Hover</span></div>
+    <div class="legend-item"><div class="legend-swatch" style="background:#121212;border:1px solid rgba(255,255,255,0.06);"></div><span>Not covered</span></div>
   </div>
-
   <div style="text-align:center;">
     <a href="/eu-incentive-guide.html" class="back-link">Open Full Guide</a>
   </div>
 </div>
-
 <script>
 const tooltip = document.getElementById('map-tooltip');
 const ttName = document.getElementById('tt-name');
 const ttRate = document.getElementById('tt-rate');
-
-// Hover
 document.querySelectorAll('.map-country').forEach(el => {
   el.addEventListener('mouseenter', function(e) {
-    const flag = this.dataset.flag;
-    const name = this.dataset.name;
-    const rate = this.dataset.rate;
-    ttName.textContent = flag + ' ' + name;
-    ttRate.textContent = rate === 'N/A' ? 'No national incentive' : 'Incentive rate: ' + rate;
+    ttName.textContent = this.dataset.flag + ' ' + this.dataset.name;
+    ttRate.textContent = this.dataset.rate === 'N/A' ? 'No national incentive' : 'Incentive rate: ' + this.dataset.rate;
     tooltip.style.display = 'block';
   });
-
   el.addEventListener('mousemove', function(e) {
-    tooltip.style.left = (e.clientX + 14) + 'px';
-    tooltip.style.top = (e.clientY - 10) + 'px';
+    tooltip.style.left = (e.clientX + 16) + 'px';
+    tooltip.style.top = (e.clientY - 12) + 'px';
   });
-
-  el.addEventListener('mouseleave', function() {
-    tooltip.style.display = 'none';
-  });
-
-  // Touch support
+  el.addEventListener('mouseleave', function() { tooltip.style.display = 'none'; });
   el.addEventListener('touchstart', function(e) {
     e.preventDefault();
-    const touch = e.touches[0];
-    const flag = this.dataset.flag;
-    const name = this.dataset.name;
-    const rate = this.dataset.rate;
-    ttName.textContent = flag + ' ' + name;
-    ttRate.textContent = rate === 'N/A' ? 'No national incentive' : 'Incentive rate: ' + rate;
+    const t = e.touches[0];
+    ttName.textContent = this.dataset.flag + ' ' + this.dataset.name;
+    ttRate.textContent = this.dataset.rate === 'N/A' ? 'No national incentive' : 'Incentive rate: ' + this.dataset.rate;
     tooltip.style.display = 'block';
-    tooltip.style.left = (touch.clientX + 14) + 'px';
-    tooltip.style.top = (touch.clientY - 50) + 'px';
-
-    // Auto-hide after 2s on mobile
-    setTimeout(() => { tooltip.style.display = 'none'; }, 2000);
+    tooltip.style.left = (t.clientX + 16) + 'px';
+    tooltip.style.top = (t.clientY - 50) + 'px';
+    setTimeout(() => { tooltip.style.display = 'none'; }, 2500);
   });
-
-  // Click -> go to guide
   el.addEventListener('click', function() {
-    const idx = this.dataset.index;
-    window.location.href = '/eu-incentive-guide.html#country-' + idx;
+    window.location.href = '/eu-incentive-guide.html#country-' + this.dataset.index;
   });
 });
-
-// Hide tooltip on scroll
 window.addEventListener('scroll', () => { tooltip.style.display = 'none'; });
 </script>
-
 </body>
 </html>
