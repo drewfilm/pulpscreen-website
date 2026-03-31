@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "Pulpscreen Production Finance Database Schema v1.0",
+  "$comment": "Pulpscreen Production Finance Database Schema v1.1 — expanded with cash flow, bankability, gap financing, and co-production structure fields",
 
   "territory": {
     "description": "A country or sovereign territory",
@@ -23,15 +23,24 @@
         "enum": ["western", "southern", "nordic", "eastern", "international"]
       },
       "currency": { "type": "string", "description": "ISO 4217 code (e.g. 'EUR', 'GBP')" },
+      "exchangeRateToEUR": {
+        "type": "number",
+        "description": "Approximate exchange rate to EUR for budget modeling"
+      },
+      "currencyVolatility": {
+        "type": "string",
+        "enum": ["stable", "moderate", "volatile"],
+        "description": "Currency risk level for production budgeting"
+      },
       "governingBodies": {
         "type": "array",
         "description": "National film bodies / agencies",
         "items": {
           "type": "object",
           "properties": {
-            "name": { "type": "string", "description": "e.g. 'Centre national du cinéma (CNC)'" },
+            "name": { "type": "string" },
             "url": { "type": "string", "format": "uri" },
-            "role": { "type": "string", "description": "e.g. 'National film authority'" }
+            "role": { "type": "string" }
           }
         }
       },
@@ -45,31 +54,17 @@
         "description": "Sub-national regions with their own programmes",
         "items": { "$ref": "#/region" }
       },
-      "treaties": {
-        "type": "object",
-        "properties": {
-          "conventionOriginal": { "type": "boolean" },
-          "conventionRevised": { "type": "boolean" },
-          "eurimages": { "type": "boolean" },
-          "creativeEurope": { "type": "boolean" },
-          "bilateral": {
-            "type": "array",
-            "items": { "type": "string", "description": "ISO codes of bilateral treaty partners" }
-          }
-        }
-      },
-      "lastVerified": { "type": "string", "format": "date", "description": "When this data was last checked" }
+      "treaties": { "$ref": "#/treatyAccess" },
+      "coProductionRules": { "$ref": "#/coProductionRules" },
+      "lastVerified": { "type": "string", "format": "date" }
     }
   },
 
   "region": {
     "description": "A sub-national region (e.g. Région Sud, Quebec, Bavaria)",
     "properties": {
-      "id": { "type": "string", "description": "Slug (e.g. 'region-sud', 'quebec')" },
-      "name": {
-        "type": "object",
-        "description": "Translated names"
-      },
+      "id": { "type": "string" },
+      "name": { "type": "object" },
       "governingBody": {
         "type": "object",
         "properties": {
@@ -89,19 +84,14 @@
     "properties": {
       "id": { "type": "string", "description": "Unique slug (e.g. 'cnc-trip', 'region-sud-cinema-fund')" },
       "name": { "type": "string", "description": "Official programme name" },
-      "nameTranslated": {
-        "type": "object",
-        "description": "Translated programme name (if different from official)"
-      },
+      "nameTranslated": { "type": "object" },
       "category": {
         "type": "string",
-        "enum": ["tax-credit", "cash-rebate", "grant", "tax-shelter", "loan", "equity", "co-production-fund"],
-        "description": "Primary classification"
+        "enum": ["tax-credit", "cash-rebate", "grant", "tax-shelter", "loan", "equity", "co-production-fund", "automatic-fund"]
       },
       "subcategory": {
         "type": "string",
-        "enum": ["automatic", "selective", "regional", "bilateral-fund", "supra-national"],
-        "description": "How the funding is allocated"
+        "enum": ["automatic", "selective", "regional", "bilateral-fund", "supra-national"]
       },
       "format": {
         "type": "array",
@@ -114,10 +104,10 @@
       "rate": {
         "type": "object",
         "properties": {
-          "min": { "type": "number", "description": "Minimum rate as percentage" },
-          "max": { "type": "number", "description": "Maximum rate as percentage" },
-          "display": { "type": "string", "description": "Human-readable rate (e.g. '30–40%')" },
-          "conditions": { "type": "string", "description": "What triggers higher/lower rates" }
+          "min": { "type": "number" },
+          "max": { "type": "number" },
+          "display": { "type": "string" },
+          "conditions": { "type": "string", "description": "What triggers higher/lower rates (e.g. 'VFX spend >€2M → 40%')" }
         }
       },
       "amount": {
@@ -132,7 +122,6 @@
       },
       "annualBudget": {
         "type": "object",
-        "description": "Total programme budget per year",
         "properties": {
           "amount": { "type": "number" },
           "currency": { "type": "string" },
@@ -157,6 +146,39 @@
           "basis": { "type": "string" }
         }
       },
+
+      "spendRequirements": {
+        "type": "object",
+        "description": "Local/regional spend obligations that must be met",
+        "properties": {
+          "localSpendMinPercent": {
+            "type": "number",
+            "description": "Minimum % of budget that must be spent locally (e.g. 50 for France regions, 150 for German Länder 'Effekt')"
+          },
+          "localSpendMultiplier": {
+            "type": "number",
+            "description": "For German regional funds: spend multiplier vs grant received (e.g. 1.5 = 150% rule)"
+          },
+          "localCrewPercent": {
+            "type": "number",
+            "description": "Minimum % of crew that must be local/national"
+          },
+          "shootingDaysMin": {
+            "type": "number",
+            "description": "Minimum filming days in territory/region"
+          },
+          "shootingDaysPercent": {
+            "type": "number",
+            "description": "Minimum % of total shooting days in territory (e.g. 50% for Île-de-France)"
+          },
+          "postProductionLocal": {
+            "type": "boolean",
+            "description": "Must post-production be done locally?"
+          },
+          "notes": { "type": "string" }
+        }
+      },
+
       "culturalTest": {
         "type": "object",
         "properties": {
@@ -178,17 +200,21 @@
           "notes": { "type": "string" }
         }
       },
+
       "eligibility": {
         "type": "object",
         "properties": {
-          "nationality": { "type": "string", "description": "Who can apply (e.g. 'Any via local SPV', 'National only')" },
-          "coproduction": { "type": "boolean", "description": "Available to co-productions?" },
-          "serviceProduction": { "type": "boolean", "description": "Available to service/foreign productions?" },
+          "nationality": { "type": "string" },
+          "coproduction": { "type": "boolean" },
+          "serviceProduction": { "type": "boolean" },
           "minBudget": { "type": "string" },
           "genreRestrictions": { "type": "string" },
+          "requiresLocalEntity": { "type": "boolean", "description": "Must applicant have a local company/SPV?" },
+          "requiresPriorWork": { "type": "string", "description": "e.g. 'Must have produced 1+ features'" },
           "other": { "type": "string" }
         }
       },
+
       "vfx": {
         "type": "object",
         "properties": {
@@ -198,51 +224,336 @@
           "notes": { "type": "string" }
         }
       },
+
+      "cashFlow": {
+        "type": "object",
+        "description": "When money actually arrives — critical for production cash flow planning and gap financing",
+        "properties": {
+          "paymentStructure": {
+            "type": "string",
+            "enum": ["post-completion", "interim-payments", "advance", "split", "tax-filing-cycle", "on-approval"],
+            "description": "How the incentive is disbursed"
+          },
+          "advanceAvailable": {
+            "type": "boolean",
+            "description": "Can any portion be received before completion?"
+          },
+          "advancePercent": {
+            "type": "number",
+            "description": "% available as advance/interim (e.g. 80 for Israel's 80/20 split)"
+          },
+          "estimatedPaymentDelay": {
+            "type": "object",
+            "description": "How long after trigger event until cash arrives",
+            "properties": {
+              "minMonths": { "type": "number" },
+              "maxMonths": { "type": "number" },
+              "display": { "type": "string", "description": "e.g. '6-12 months post-completion', '90 days after audit'" },
+              "notes": { "type": "string" }
+            }
+          },
+          "triggerEvent": {
+            "type": "string",
+            "description": "What triggers payment (e.g. 'delivery of completed film', 'tax return filing', 'audit completion')"
+          },
+          "cashFlowGap": {
+            "type": "string",
+            "description": "The gap between when spend occurs and when incentive is received — this is where gap financing is needed"
+          }
+        }
+      },
+
+      "bankability": {
+        "type": "object",
+        "description": "How reliably this incentive can be used as collateral for production financing",
+        "properties": {
+          "discountable": {
+            "type": "boolean",
+            "description": "Can this be discounted/advanced by a bank or financier pre-production?"
+          },
+          "discountRate": {
+            "type": "string",
+            "description": "Typical discount rate banks charge to advance this (e.g. '8-12% for UK AVEC', '15-20% for emerging markets')"
+          },
+          "bankAcceptance": {
+            "type": "string",
+            "enum": ["widely-accepted", "selective", "difficult", "not-bankable"],
+            "description": "How readily banks will lend against this incentive"
+          },
+          "typicalFinanciers": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Types of financiers who typically discount this (e.g. 'Major banks', 'Specialty lenders', 'Gap financiers')"
+          },
+          "provisionalCertificateAvailable": {
+            "type": "boolean",
+            "description": "Can you get a provisional/conditional certificate before production starts? (Critical for bank comfort)"
+          },
+          "gapFinancingOpportunity": {
+            "type": "object",
+            "description": "Opportunity for Pulpscreen Capital or similar lenders",
+            "properties": {
+              "viable": { "type": "boolean" },
+              "typicalLTV": { "type": "string", "description": "Loan-to-value ratio (e.g. '80% of certified incentive value')" },
+              "riskLevel": { "type": "string", "enum": ["low", "medium", "high"] },
+              "notes": { "type": "string", "description": "e.g. 'UK AVEC is gold-standard collateral. 90% LTV common. Pulpscreen Capital can bridge the 6-12 month gap between shoot and HMRC payment.'" }
+            }
+          },
+          "notes": { "type": "string" }
+        }
+      },
+
+      "processingReliability": {
+        "type": "object",
+        "description": "Real-world reliability — does this programme actually pay, on time, as promised?",
+        "properties": {
+          "reliability": {
+            "type": "string",
+            "enum": ["excellent", "good", "fair", "poor", "crisis"],
+            "description": "Overall reliability rating"
+          },
+          "paymentTrackRecord": {
+            "type": "string",
+            "description": "e.g. 'UK AVEC: excellent, HMRC pays within stated timeline', 'SA DTIC: crisis, R660M+ unpaid claims'"
+          },
+          "politicalRisk": {
+            "type": "string",
+            "enum": ["stable", "watch", "at-risk", "critical"],
+            "description": "Risk of programme being cut, defunded, or restructured"
+          },
+          "politicalRiskNotes": {
+            "type": "string",
+            "description": "e.g. 'Argentina INCAA faces existential funding threat from government'"
+          },
+          "bureacracyLevel": {
+            "type": "string",
+            "enum": ["streamlined", "moderate", "heavy", "opaque"],
+            "description": "How much paperwork/process is involved"
+          },
+          "disputeHistory": {
+            "type": "string",
+            "description": "Known issues, clawbacks, or disputes"
+          },
+          "producerSentiment": {
+            "type": "string",
+            "description": "Anecdotal reputation among producers (future: could be crowdsourced)"
+          }
+        }
+      },
+
       "timeline": {
         "type": "object",
         "properties": {
           "applicationDeadlines": {
             "type": "array",
-            "description": "Upcoming deadlines",
             "items": {
               "type": "object",
               "properties": {
                 "date": { "type": "string", "format": "date" },
-                "session": { "type": "string", "description": "e.g. 'Session 2/3'" },
+                "session": { "type": "string" },
                 "notes": { "type": "string" }
               }
             }
           },
-          "frequency": { "type": "string", "description": "e.g. 'Rolling', '3x/year', 'Annual'" },
-          "processingTime": { "type": "string", "description": "How long until decision/payment" },
-          "paymentTiming": { "type": "string", "description": "e.g. 'Post-completion', '80% during / 20% after'" }
+          "frequency": { "type": "string" },
+          "processingTime": { "type": "string" },
+          "paymentTiming": { "type": "string" },
+          "mustApplyBefore": {
+            "type": "string",
+            "enum": ["pre-production", "principal-photography", "post-production", "completion", "anytime"],
+            "description": "Latest stage at which you can apply"
+          }
         }
       },
+
       "stackability": {
         "type": "object",
         "properties": {
-          "canStack": { "type": "boolean", "description": "Can be combined with other programmes?" },
+          "canStack": { "type": "boolean" },
           "stacksWith": {
             "type": "array",
-            "items": { "type": "string", "description": "IDs of compatible programmes" }
+            "items": { "type": "string" }
           },
-          "maxPublicFunding": { "type": "string", "description": "EU state aid cap (usually 50%)" },
+          "excludesWith": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Programmes that are mutually exclusive (e.g. Canada CPTC vs PSTC)"
+          },
+          "maxPublicFunding": {
+            "type": "string",
+            "description": "EU state aid cap or equivalent"
+          },
+          "maxPublicFundingPercent": {
+            "type": "number",
+            "description": "As a number for calculation (e.g. 50)"
+          },
           "notes": { "type": "string" }
         }
       },
-      "officialUrl": { "type": "string", "format": "uri", "description": "Direct link to programme page" },
-      "applicationUrl": { "type": "string", "format": "uri", "description": "Direct link to apply" },
+
+      "officialUrl": { "type": "string", "format": "uri" },
+      "applicationUrl": { "type": "string", "format": "uri" },
       "contactEmail": { "type": "string", "format": "email" },
-      "notes": {
-        "type": "object",
-        "description": "Translated notes/description"
-      },
+      "notes": { "type": "object" },
       "status": {
         "type": "string",
-        "enum": ["active", "suspended", "announced", "expiring", "expired"],
-        "description": "Current programme status"
+        "enum": ["active", "suspended", "announced", "expiring", "expired"]
       },
       "lastVerified": { "type": "string", "format": "date" }
+    }
+  },
+
+  "treatyAccess": {
+    "description": "A territory's treaty and convention memberships",
+    "properties": {
+      "conventionOriginal": { "type": "boolean" },
+      "conventionRevised": { "type": "boolean" },
+      "eurimages": { "type": "boolean" },
+      "creativeEurope": { "type": "boolean" },
+      "bilateral": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    }
+  },
+
+  "coProductionRules": {
+    "description": "Rules governing how co-productions with this territory must be structured",
+    "properties": {
+      "bilateralMinParticipation": {
+        "type": "number",
+        "description": "Minimum % participation in bilateral co-pro (e.g. 20 for most, 30 for Australia)"
+      },
+      "bilateralMaxParticipation": {
+        "type": "number",
+        "description": "Maximum % participation in bilateral co-pro (e.g. 80)"
+      },
+      "multilateralMinParticipation": {
+        "type": "number",
+        "description": "Under revised Convention: 5% min for multilateral"
+      },
+      "multilateralMaxParticipation": {
+        "type": "number",
+        "description": "Under revised Convention: 80% max for multilateral"
+      },
+      "financialContributionMustMatchCreative": {
+        "type": "boolean",
+        "description": "Must financial % roughly equal creative contribution %?"
+      },
+      "minorityCoProBenefits": {
+        "type": "string",
+        "description": "What benefits the minority co-producer gets (e.g. 'Treated as national film, full tax credit access')"
+      },
+      "requiresNationalProducer": {
+        "type": "boolean",
+        "description": "Must have a producer who is a national/resident?"
+      },
+      "requiresCreativeElements": {
+        "type": "string",
+        "description": "Creative requirements (e.g. 'Director or writer must be national', 'At least 1 head of department')"
+      },
+      "officialCoProBody": {
+        "type": "string",
+        "description": "Who certifies co-production status (e.g. 'CNC', 'BFI', 'CAVCO')"
+      },
+      "officialCoProUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "notes": { "type": "string" }
+    }
+  },
+
+  "financeStack": {
+    "description": "Model for how a project's finance plan is assembled — used by the AI optimizer",
+    "$comment": "This is the OUTPUT schema, not stored per-programme. The AI generates this per-project.",
+    "properties": {
+      "projectBudget": { "type": "number" },
+      "currency": { "type": "string" },
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "programmeId": { "type": "string" },
+            "territory": { "type": "string" },
+            "type": { "type": "string" },
+            "estimatedAmount": { "type": "number" },
+            "percentOfBudget": { "type": "number" },
+            "certaintyLevel": {
+              "type": "string",
+              "enum": ["confirmed", "highly-likely", "probable", "speculative"],
+              "description": "How confident are we this will come through?"
+            },
+            "cashFlowTiming": {
+              "type": "string",
+              "description": "When this money arrives relative to production timeline"
+            },
+            "requiresGapFinancing": {
+              "type": "boolean",
+              "description": "Does the producer need bridge financing until this pays out?"
+            },
+            "gapFinancingCost": {
+              "type": "string",
+              "description": "Estimated cost of bridging this (e.g. '8% of incentive value over 9 months')"
+            },
+            "pulpscreenCapitalOpportunity": {
+              "type": "boolean",
+              "description": "Is this a good fit for Pulpscreen Capital gap/bridge financing?"
+            }
+          }
+        }
+      },
+      "totalSoftMoney": { "type": "number" },
+      "totalSoftMoneyPercent": { "type": "number" },
+      "cashFlowTimeline": {
+        "type": "array",
+        "description": "Month-by-month cash flow projection showing when each source pays",
+        "items": {
+          "type": "object",
+          "properties": {
+            "month": { "type": "number", "description": "Month relative to start of production (0 = first day of principal photography)" },
+            "label": { "type": "string", "description": "e.g. 'Pre-production', 'Month 1 shoot', 'Post-production', 'Delivery + 6mo'" },
+            "cashIn": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source": { "type": "string" },
+                  "amount": { "type": "number" }
+                }
+              }
+            },
+            "cashOut": { "type": "number", "description": "Production spend this month" },
+            "netPosition": { "type": "number", "description": "Running cash position" },
+            "gapAmount": { "type": "number", "description": "If negative, this is the financing gap that needs bridging" }
+          }
+        }
+      },
+      "maxGap": {
+        "type": "number",
+        "description": "The peak cash shortfall — this is the number Pulpscreen Capital would finance"
+      },
+      "gapDuration": {
+        "type": "string",
+        "description": "How long the gap lasts (e.g. '8 months from wrap to final incentive payment')"
+      },
+      "recommendations": {
+        "type": "array",
+        "description": "AI-generated recommendations",
+        "items": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["optimize-spend", "add-territory", "remove-territory", "shift-vfx", "restructure-copro", "gap-financing", "timeline-risk", "political-risk"]
+            },
+            "description": { "type": "string" },
+            "impact": { "type": "string", "description": "e.g. '+€200K if VFX shifts to France'" },
+            "confidence": { "type": "string", "enum": ["high", "medium", "low"] }
+          }
+        }
+      }
     }
   }
 }
