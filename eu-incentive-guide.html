@@ -1840,10 +1840,8 @@ function showCountryDetail(idx) {
     </div>
   `;
 
-  // On mobile, scroll detail into view
-  if (window.innerWidth <= 900) {
-    detailEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  // Scroll detail panel into view
+  detailEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // ===== POPULATE COMPARISON TABLE =====
