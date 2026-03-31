@@ -4,183 +4,179 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Country Detail — PULPSCREEN</title>
+<title>Production Finance Database — PULPSCREEN</title>
 <link rel="stylesheet" href="/nav.css">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --black: #0A0A0A;
   --black-card: #111;
-  --black-border: #222;
+  --black-border: #1e1e1e;
   --orange: #FF6B2B;
   --pink: #FF2D7B;
   --gradient: linear-gradient(135deg, #FF6B2B 0%, #FF4757 50%, #FF2D7B 100%);
   --white: #FFF;
-  --gray-100: #F5F5F5;
   --gray-300: #AAA;
   --gray-500: #666;
-  --gray-700: #333;
   --font-display: 'Outfit', sans-serif;
   --font-mono: 'Space Mono', monospace;
   --font-body: 'DM Sans', sans-serif;
+  --green: #4CAF50;
+  --yellow: #FFB347;
+  --red: #F44336;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: var(--black); color: var(--white); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
 
-.container { max-width: 960px; margin: 0 auto; padding: 100px 24px 60px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 96px 24px 60px; }
 
-/* Country header */
-.country-header { margin-bottom: 40px; }
-.country-header h1 { font-family: var(--font-display); font-size: clamp(32px, 5vw, 48px); font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
-.country-meta { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
-.meta-tag { padding: 4px 12px; border-radius: 20px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
-.meta-tag.region { background: rgba(255,107,43,0.1); border: 1px solid rgba(255,107,43,0.25); color: var(--orange); }
-.meta-tag.updated { background: rgba(255,255,255,0.04); border: 1px solid var(--black-border); color: var(--gray-500); }
-.country-desc { color: var(--gray-300); font-size: 15px; line-height: 1.7; max-width: 640px; }
-
-/* Section headers */
-.section-header { display: flex; align-items: center; gap: 12px; margin: 48px 0 20px; }
-.section-header h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
-.section-count { font-family: var(--font-mono); font-size: 11px; color: var(--gray-500); letter-spacing: 1px; }
-
-/* Programme cards */
-.programme-card {
-  background: var(--black-card);
-  border: 1px solid var(--black-border);
-  border-radius: 14px;
-  padding: 24px;
-  margin-bottom: 16px;
-  transition: border-color 0.2s;
+/* Country tabs */
+.country-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 28px; }
+.country-tab {
+  padding: 7px 14px; background: transparent; border: 1px solid var(--black-border);
+  border-radius: 6px; color: var(--gray-500); font-family: var(--font-body); font-size: 13px;
+  cursor: pointer; transition: all 0.2s; text-decoration: none;
 }
-.programme-card:hover { border-color: rgba(255,107,43,0.3); }
+.country-tab:hover { border-color: rgba(255,107,43,0.3); color: var(--gray-300); }
+.country-tab.active { border-color: var(--orange); color: var(--white); background: rgba(255,107,43,0.06); }
 
-.programme-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 12px;
+/* Header */
+.page-header { margin-bottom: 28px; }
+.page-header h1 { font-family: var(--font-display); font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+.header-meta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.pill { padding: 3px 10px; border-radius: 12px; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase; }
+.pill-region { background: rgba(255,107,43,0.08); color: var(--orange); }
+.pill-count { background: rgba(255,255,255,0.04); color: var(--gray-500); }
+.pill-date { background: rgba(255,255,255,0.04); color: var(--gray-500); }
+
+/* Controls bar */
+.controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+.search-input {
+  flex: 1; min-width: 200px; padding: 9px 14px; background: var(--black-card);
+  border: 1px solid var(--black-border); border-radius: 6px; color: var(--white);
+  font-family: var(--font-body); font-size: 13px; outline: none;
 }
-.programme-name { font-family: var(--font-display); font-size: 17px; font-weight: 700; flex: 1; }
-.programme-rate {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 700;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  white-space: nowrap;
+.search-input:focus { border-color: rgba(255,107,43,0.4); }
+.search-input::placeholder { color: var(--gray-500); }
+
+.filter-select {
+  padding: 9px 30px 9px 12px; background: var(--black-card); border: 1px solid var(--black-border);
+  border-radius: 6px; color: var(--white); font-family: var(--font-body); font-size: 13px;
+  outline: none; cursor: pointer; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='%23666' d='M5 7L1 3h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+}
+.filter-select option { background: var(--black-card); }
+
+.result-count { font-family: var(--font-mono); font-size: 10px; color: var(--gray-500); letter-spacing: 1px; text-transform: uppercase; }
+
+/* Table */
+.table-wrap { border: 1px solid var(--black-border); border-radius: 10px; overflow: hidden; }
+
+table { width: 100%; border-collapse: collapse; }
+
+thead th {
+  padding: 10px 16px; text-align: left; font-family: var(--font-mono); font-size: 9px;
+  letter-spacing: 1.2px; text-transform: uppercase; color: var(--gray-500);
+  background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--black-border);
+  white-space: nowrap; cursor: pointer; user-select: none;
+}
+thead th:hover { color: var(--gray-300); }
+
+tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.03); cursor: pointer; transition: background 0.15s;
+}
+tbody tr:hover { background: rgba(255,107,43,0.03); }
+tbody tr:last-child { border-bottom: none; }
+
+td { padding: 12px 16px; font-size: 13px; color: var(--gray-300); vertical-align: top; }
+td:first-child { color: var(--white); font-weight: 500; }
+
+.td-name { max-width: 300px; }
+.td-name .main-name { font-weight: 600; color: var(--white); display: block; margin-bottom: 2px; }
+.td-name .sub-name { font-size: 11px; color: var(--gray-500); }
+
+.td-rate { font-family: var(--font-mono); font-weight: 700; font-size: 13px; color: var(--orange); white-space: nowrap; }
+
+.td-type { white-space: nowrap; }
+.type-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.type-dot.rebate { background: var(--orange); }
+.type-dot.credit { background: #6C63FF; }
+.type-dot.grant { background: var(--green); }
+.type-dot.other { background: var(--gray-500); }
+
+.td-level { font-size: 11px; }
+.level-national { color: var(--gray-300); }
+.level-regional { color: var(--yellow); }
+
+.td-deadline { font-size: 12px; white-space: nowrap; }
+
+.td-status .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 6px; }
+.status-active { background: var(--green); }
+.status-suspended { background: var(--red); }
+.status-other { background: var(--gray-500); }
+
+/* Expanded row detail */
+.detail-row { display: none; }
+.detail-row.open { display: table-row; }
+.detail-row td {
+  padding: 0 16px 20px;
+  background: rgba(255,255,255,0.015);
 }
 
-.programme-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
-.badge {
-  padding: 3px 10px;
-  border-radius: 4px;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-}
-.badge.category { background: rgba(255,107,43,0.1); color: var(--orange); }
-.badge.format { background: rgba(255,255,255,0.04); color: var(--gray-500); }
-.badge.status-active { background: rgba(76,175,80,0.1); color: #4CAF50; }
-.badge.status-suspended { background: rgba(244,67,54,0.1); color: #F44336; }
-
-.programme-grid {
+.detail-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-.programme-field label {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--gray-500);
-  margin-bottom: 4px;
-}
-.programme-field .value {
-  font-size: 13px;
-  color: var(--gray-300);
-  line-height: 1.5;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 16px 0;
 }
 
-.programme-eligibility {
-  font-size: 13px;
-  color: var(--gray-300);
-  line-height: 1.7;
+.detail-field label {
+  display: block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--gray-500); margin-bottom: 4px;
+}
+.detail-field .val { font-size: 13px; color: var(--gray-300); line-height: 1.6; }
+
+.detail-eligibility {
+  grid-column: 1 / -1;
   padding: 12px 16px;
   background: rgba(255,255,255,0.02);
   border-radius: 8px;
-  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--gray-300);
+  line-height: 1.7;
 }
 
-.programme-links { display: flex; gap: 12px; flex-wrap: wrap; }
-.programme-link {
+.detail-links {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+.detail-link {
+  padding: 6px 14px;
+  border: 1px solid rgba(255,107,43,0.3);
+  border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   color: var(--orange);
   text-decoration: none;
-  transition: color 0.2s;
-}
-.programme-link:hover { color: var(--white); }
-
-/* Region divider */
-.region-divider {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 40px 0 20px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--orange);
-}
-.region-divider::after { content: ''; flex: 1; height: 1px; background: var(--black-border); }
-
-/* Filter tabs */
-.filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
-.filter-tab {
-  padding: 6px 14px;
-  background: transparent;
-  border: 1px solid var(--black-border);
-  border-radius: 20px;
-  color: var(--gray-500);
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
   transition: all 0.2s;
 }
-.filter-tab:hover { border-color: rgba(255,107,43,0.3); color: var(--gray-300); }
-.filter-tab.active { background: rgba(255,107,43,0.12); border-color: rgba(255,107,43,0.4); color: var(--white); }
-
-/* Country selector */
-.country-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
-.country-btn {
-  padding: 8px 16px;
-  background: var(--black-card);
-  border: 1px solid var(--black-border);
-  border-radius: 8px;
-  color: var(--gray-300);
-  font-family: var(--font-body);
-  font-size: 13px;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-}
-.country-btn:hover { border-color: rgba(255,107,43,0.3); color: var(--white); }
-.country-btn.active { border-color: var(--orange); color: var(--white); background: rgba(255,107,43,0.08); }
+.detail-link:hover { background: rgba(255,107,43,0.08); color: var(--white); }
 
 /* Responsive */
-@media (max-width: 640px) {
-  .programme-grid { grid-template-columns: 1fr; }
-  .programme-header { flex-direction: column; gap: 8px; }
+@media (max-width: 768px) {
+  .table-wrap { overflow-x: auto; }
+  table { min-width: 700px; }
+  .detail-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .detail-inner { grid-template-columns: 1fr; }
+  .controls { flex-direction: column; }
 }
 </style>
 </head>
@@ -189,170 +185,199 @@ body { background: var(--black); color: var(--white); font-family: var(--font-bo
 <div id="main-nav"></div>
 
 <div class="container">
-  <!-- Country selector -->
-  <div class="country-selector">
-    <a class="country-btn active" href="?country=france">🇫🇷 France</a>
-    <a class="country-btn" href="?country=uk">🇬🇧 United Kingdom</a>
-    <a class="country-btn" href="?country=germany">🇩🇪 Germany</a>
-    <a class="country-btn" href="?country=canada">🇨🇦 Canada</a>
+  <div class="country-tabs" id="country-tabs">
+    <a class="country-tab" href="?country=france">🇫🇷 France</a>
+    <a class="country-tab" href="?country=uk">🇬🇧 United Kingdom</a>
+    <a class="country-tab" href="?country=germany">🇩🇪 Germany</a>
+    <a class="country-tab" href="?country=canada">🇨🇦 Canada</a>
   </div>
 
-  <!-- Country header (populated by JS) -->
-  <div class="country-header" id="country-header">
-    <h1 id="country-title">Loading...</h1>
-    <div class="country-meta" id="country-meta"></div>
+  <div class="page-header">
+    <h1 id="page-title">Loading...</h1>
+    <div class="header-meta" id="header-meta"></div>
   </div>
 
-  <!-- Filter tabs -->
-  <div class="filter-tabs" id="filter-tabs">
-    <button class="filter-tab active" data-filter="all">All Programmes</button>
-    <button class="filter-tab" data-filter="national">National</button>
-    <button class="filter-tab" data-filter="regional">Regional</button>
-    <button class="filter-tab" data-filter="cash-rebate">Rebates</button>
-    <button class="filter-tab" data-filter="tax-credit">Tax Credits</button>
-    <button class="filter-tab" data-filter="grant">Grants</button>
+  <div class="controls">
+    <input type="text" class="search-input" id="search" placeholder="Search programmes...">
+    <select class="filter-select" id="filter-type">
+      <option value="all">All Types</option>
+      <option value="cash-rebate">Cash Rebate</option>
+      <option value="tax-credit">Tax Credit</option>
+      <option value="grant">Grant</option>
+      <option value="selective-fund">Selective Fund</option>
+      <option value="automatic-fund">Automatic</option>
+    </select>
+    <select class="filter-select" id="filter-level">
+      <option value="all">All Levels</option>
+      <option value="national">National</option>
+      <option value="regional">Regional</option>
+    </select>
+    <select class="filter-select" id="filter-format">
+      <option value="all">All Formats</option>
+      <option value="feature-film">Feature Film</option>
+      <option value="tv-series">TV Series</option>
+      <option value="documentary">Documentary</option>
+      <option value="animation">Animation</option>
+      <option value="short-film">Short Film</option>
+    </select>
+    <span class="result-count" id="result-count"></span>
   </div>
 
-  <!-- Programme list (populated by JS) -->
-  <div id="programme-list"></div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Programme</th>
+          <th>Rate</th>
+          <th>Type</th>
+          <th>Level</th>
+          <th>Cap</th>
+          <th>Deadlines</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
 </div>
 
 <script src="/nav.js"></script>
 <script>
-const countryMap = {
+const countries = {
   france: { file: '/data/france.json', flag: '🇫🇷', name: 'France', region: 'Western Europe' },
   uk: { file: '/data/uk.json', flag: '🇬🇧', name: 'United Kingdom', region: 'Western Europe' },
   germany: { file: '/data/germany.json', flag: '🇩🇪', name: 'Germany', region: 'Western Europe' },
-  canada: { file: '/data/canada.json', flag: '🇨🇦', name: 'Canada', region: 'International Partner' },
+  canada: { file: '/data/canada.json', flag: '🇨🇦', name: 'Canada', region: 'International' },
 };
 
-const params = new URLSearchParams(window.location.search);
-const countrySlug = params.get('country') || 'france';
-const countryInfo = countryMap[countrySlug] || countryMap.france;
+const slug = new URLSearchParams(window.location.search).get('country') || 'france';
+const country = countries[slug] || countries.france;
 
-// Highlight active country button
-document.querySelectorAll('.country-btn').forEach(btn => {
-  if (btn.href.includes(countrySlug)) btn.classList.add('active');
-  else btn.classList.remove('active');
+// Highlight active tab
+document.querySelectorAll('.country-tab').forEach(t => {
+  if (t.href.includes(slug)) t.classList.add('active');
 });
 
-let allProgrammes = [];
+let programmes = [];
 
-async function loadCountry() {
-  try {
-    const res = await fetch(countryInfo.file);
-    const data = await res.json();
-    allProgrammes = data.programmes;
+async function init() {
+  const res = await fetch(country.file);
+  const data = await res.json();
+  programmes = data.programmes;
 
-    // Header
-    document.getElementById('country-title').textContent = countryInfo.flag + ' ' + countryInfo.name;
-    document.getElementById('country-meta').innerHTML = `
-      <span class="meta-tag region">${countryInfo.region}</span>
-      <span class="meta-tag updated">Updated: ${data.metadata?.lastUpdated || 'N/A'}</span>
-      <span class="meta-tag updated">${allProgrammes.length} programmes</span>
+  document.getElementById('page-title').textContent = country.flag + ' ' + country.name;
+  document.getElementById('header-meta').innerHTML =
+    `<span class="pill pill-region">${country.region}</span>` +
+    `<span class="pill pill-count">${programmes.length} programmes</span>` +
+    `<span class="pill pill-date">Updated ${data.metadata?.lastUpdated || '—'}</span>`;
+  document.title = country.name + ' — Production Finance — PULPSCREEN';
+
+  render();
+}
+
+function getTypeLabel(cat) {
+  const map = { 'cash-rebate':'Rebate', 'tax-credit':'Tax Credit', 'grant':'Grant', 'selective-fund':'Selective', 'automatic-fund':'Automatic', 'loan':'Loan', 'co-production-investment':'Co-Pro', 'tax-shelter':'Shelter', 'equity':'Equity' };
+  return map[cat] || cat || '—';
+}
+function getTypeDot(cat) {
+  if (cat?.includes('rebate')) return 'rebate';
+  if (cat?.includes('credit')) return 'credit';
+  if (cat?.includes('grant') || cat?.includes('selective') || cat?.includes('automatic')) return 'grant';
+  return 'other';
+}
+
+function getRate(p) {
+  if (p.rate?.display) return p.rate.display.replace(/EUR/g, '€');
+  if (p.rate?.base) return p.rate.base + '%';
+  if (p.amount?.display) return p.amount.display.replace(/EUR/g, '€');
+  return '—';
+}
+
+function getFriendlyName(p) {
+  // Extract a short English description from the programme name
+  const name = p.name || '';
+  // If name has parenthetical region, split it
+  const regionMatch = name.match(/\(([^)]+)\)$/);
+  const cleanName = regionMatch ? name.replace(regionMatch[0], '').trim() : name;
+  const region = regionMatch ? regionMatch[1] : (p.region || '');
+  return { cleanName, region };
+}
+
+function render() {
+  const tbody = document.getElementById('table-body');
+  const search = document.getElementById('search').value.toLowerCase();
+  const typeFilter = document.getElementById('filter-type').value;
+  const levelFilter = document.getElementById('filter-level').value;
+  const formatFilter = document.getElementById('filter-format').value;
+  tbody.innerHTML = '';
+
+  const filtered = programmes.filter(p => {
+    if (search && !p.name.toLowerCase().includes(search) && !(p.governingBody || '').toLowerCase().includes(search) && !(p.region || '').toLowerCase().includes(search)) return false;
+    if (typeFilter !== 'all' && p.category !== typeFilter) return false;
+    if (levelFilter !== 'all' && p.level !== levelFilter) return false;
+    if (formatFilter !== 'all' && p.format && !p.format.includes(formatFilter)) return false;
+    return true;
+  });
+
+  document.getElementById('result-count').textContent = filtered.length + ' of ' + programmes.length;
+
+  filtered.forEach((p, i) => {
+    const { cleanName, region } = getFriendlyName(p);
+    const formats = (p.format || []).map(f => f.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())).slice(0, 3);
+    const rate = getRate(p);
+    const deadline = p.deadlines?.frequency || '—';
+    const status = p.status || 'active';
+
+    // Main row
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="td-name">
+        <span class="main-name">${cleanName}</span>
+        ${region ? `<span class="sub-name">${region}${p.governingBody ? ' · ' + p.governingBody : ''}</span>` : (p.governingBody ? `<span class="sub-name">${p.governingBody}</span>` : '')}
+      </td>
+      <td class="td-rate">${rate}</td>
+      <td class="td-type"><span class="type-dot ${getTypeDot(p.category)}"></span>${getTypeLabel(p.category)}</td>
+      <td class="td-level"><span class="level-${p.level || 'national'}">${(p.level || 'national').charAt(0).toUpperCase() + (p.level || 'national').slice(1)}</span></td>
+      <td style="font-size:12px;">${(p.cap?.display || '—').replace(/EUR/g, '€')}</td>
+      <td class="td-deadline">${deadline}</td>
+      <td class="td-status"><span class="status-dot status-${status}"></span></td>
     `;
-    document.title = countryInfo.name + ' — Production Finance — PULPSCREEN';
+    tr.onclick = () => {
+      const detail = tr.nextElementSibling;
+      if (detail?.classList.contains('detail-row')) {
+        detail.classList.toggle('open');
+      }
+    };
+    tbody.appendChild(tr);
 
-    renderProgrammes('all');
-  } catch (e) {
-    document.getElementById('programme-list').innerHTML = '<p style="color:var(--gray-500);">Error loading data.</p>';
-  }
-}
-
-function renderProgrammes(filter) {
-  const list = document.getElementById('programme-list');
-  list.innerHTML = '';
-
-  let filtered = allProgrammes;
-  if (filter === 'national') filtered = allProgrammes.filter(p => p.level === 'national');
-  else if (filter === 'regional') filtered = allProgrammes.filter(p => p.level === 'regional');
-  else if (filter === 'cash-rebate' || filter === 'tax-credit' || filter === 'grant')
-    filtered = allProgrammes.filter(p => p.category === filter);
-
-  // Group by level and region
-  const national = filtered.filter(p => p.level === 'national');
-  const regional = filtered.filter(p => p.level === 'regional');
-
-  // Group regional by region name
-  const regionGroups = {};
-  regional.forEach(p => {
-    const r = p.region || 'Other';
-    if (!regionGroups[r]) regionGroups[r] = [];
-    regionGroups[r].push(p);
+    // Detail row (hidden, opens on click)
+    const detailTr = document.createElement('tr');
+    detailTr.className = 'detail-row';
+    detailTr.innerHTML = `<td colspan="7">
+      <div class="detail-inner">
+        ${p.annualBudget?.display ? `<div class="detail-field"><label>Annual Budget</label><div class="val">${p.annualBudget.display.replace(/EUR/g, '€')}</div></div>` : ''}
+        ${p.minSpend?.display ? `<div class="detail-field"><label>Min. Spend</label><div class="val">${p.minSpend.display.replace(/EUR/g, '€')}</div></div>` : ''}
+        ${p.cap?.display ? `<div class="detail-field"><label>Project Cap</label><div class="val">${p.cap.display.replace(/EUR/g, '€')}</div></div>` : ''}
+        ${deadline !== '—' ? `<div class="detail-field"><label>Deadline Details</label><div class="val">${p.deadlines?.frequency || ''}${p.deadlines?.notes ? '<br>' + p.deadlines.notes : ''}</div></div>` : ''}
+        ${formats.length ? `<div class="detail-field"><label>Eligible Formats</label><div class="val">${formats.join(', ')}</div></div>` : ''}
+        ${p.governingBody ? `<div class="detail-field"><label>Administered By</label><div class="val">${p.governingBody}</div></div>` : ''}
+        ${p.eligibility ? `<div class="detail-eligibility"><label style="display:block;font-family:var(--font-mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-500);margin-bottom:6px;">Eligibility</label>${p.eligibility}</div>` : ''}
+        <div class="detail-links">
+          ${p.officialUrl ? `<a href="${p.officialUrl}" target="_blank" rel="noopener" class="detail-link">Official Programme →</a>` : ''}
+          ${p.alternateUrl ? `<a href="${p.alternateUrl}" target="_blank" rel="noopener" class="detail-link">Alt. Source →</a>` : ''}
+          ${p.applicationUrl ? `<a href="${p.applicationUrl}" target="_blank" rel="noopener" class="detail-link">Apply →</a>` : ''}
+        </div>
+      </div>
+    </td>`;
+    tbody.appendChild(detailTr);
   });
-
-  if (national.length > 0) {
-    const header = document.createElement('div');
-    header.className = 'section-header';
-    header.innerHTML = `<h2>National Programmes</h2><span class="section-count">${national.length}</span>`;
-    list.appendChild(header);
-    national.forEach(p => list.appendChild(createCard(p)));
-  }
-
-  for (const [regionName, programmes] of Object.entries(regionGroups)) {
-    const divider = document.createElement('div');
-    divider.className = 'region-divider';
-    divider.innerHTML = `${regionName} <span class="section-count">(${programmes.length})</span>`;
-    list.appendChild(divider);
-    programmes.forEach(p => list.appendChild(createCard(p)));
-  }
-
-  if (filtered.length === 0) {
-    list.innerHTML = '<p style="color:var(--gray-500);padding:40px 0;">No programmes match this filter.</p>';
-  }
 }
 
-function createCard(p) {
-  const card = document.createElement('div');
-  card.className = 'programme-card';
+// Event listeners
+['search'].forEach(id => document.getElementById(id).addEventListener('input', render));
+['filter-type', 'filter-level', 'filter-format'].forEach(id => document.getElementById(id).addEventListener('change', render));
 
-  const rate = p.rate?.display || p.amount?.display || p.rate?.base ? (p.rate.base + '%') : '—';
-  const categoryLabel = {
-    'cash-rebate': 'Cash Rebate', 'tax-credit': 'Tax Credit', 'grant': 'Grant',
-    'selective-fund': 'Selective Fund', 'automatic-fund': 'Automatic', 'loan': 'Loan',
-    'co-production-investment': 'Co-Production', 'tax-shelter': 'Tax Shelter', 'equity': 'Equity'
-  }[p.category] || p.category || '—';
-
-  const formatLabels = (p.format || []).map(f => f.replace(/-/g, ' ')).join(', ');
-  const statusClass = p.status === 'active' ? 'status-active' : p.status === 'suspended' ? 'status-suspended' : '';
-
-  card.innerHTML = `
-    <div class="programme-header">
-      <div class="programme-name">${p.name}</div>
-      <div class="programme-rate">${rate}</div>
-    </div>
-    <div class="programme-badges">
-      <span class="badge category">${categoryLabel}</span>
-      ${formatLabels ? `<span class="badge format">${formatLabels}</span>` : ''}
-      ${p.status ? `<span class="badge ${statusClass}">${p.status}</span>` : ''}
-      ${p.governingBody ? `<span class="badge format">${p.governingBody}</span>` : ''}
-    </div>
-    <div class="programme-grid">
-      ${p.annualBudget?.display ? `<div class="programme-field"><label>Annual Budget</label><div class="value">${p.annualBudget.display}</div></div>` : ''}
-      ${p.minSpend?.display ? `<div class="programme-field"><label>Min. Spend</label><div class="value">${p.minSpend.display}</div></div>` : ''}
-      ${p.cap?.display ? `<div class="programme-field"><label>Cap</label><div class="value">${p.cap.display}</div></div>` : ''}
-      ${p.deadlines?.frequency ? `<div class="programme-field"><label>Deadlines</label><div class="value">${p.deadlines.frequency}</div></div>` : ''}
-    </div>
-    ${p.eligibility ? `<div class="programme-eligibility">${p.eligibility}</div>` : ''}
-    <div class="programme-links">
-      ${p.officialUrl ? `<a href="${p.officialUrl}" target="_blank" rel="noopener" class="programme-link">Official Programme Page →</a>` : ''}
-      ${p.alternateUrl ? `<a href="${p.alternateUrl}" target="_blank" rel="noopener" class="programme-link">Alternate Source →</a>` : ''}
-      ${p.applicationUrl ? `<a href="${p.applicationUrl}" target="_blank" rel="noopener" class="programme-link">Apply →</a>` : ''}
-    </div>
-  `;
-  return card;
-}
-
-// Filter tab handlers
-document.querySelectorAll('.filter-tab').forEach(tab => {
-  tab.addEventListener('click', function() {
-    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-    this.classList.add('active');
-    renderProgrammes(this.dataset.filter);
-  });
-});
-
-loadCountry();
+init();
 </script>
 
 </body>
