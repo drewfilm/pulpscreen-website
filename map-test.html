@@ -26,8 +26,8 @@ body { background: var(--black); color: var(--white); font-family: var(--font-bo
 .header p { color: var(--gray-300); font-size: 16px; max-width: 500px; margin: 0 auto; }
 .map-wrap { position: relative; max-width: 850px; margin: 0 auto; }
 .map-wrap svg { width: 100%; height: auto; }
-.map-country { fill: #1e1e1e; stroke: rgba(255,107,43,0.15); stroke-width: 0.3; cursor: pointer; transition: fill 0.2s, stroke 0.2s, stroke-width 0.2s; }
-.map-country:hover { fill: url(#mapGrad); stroke: rgba(255,107,43,0.6); stroke-width: 0.8; }
+.map-country { fill: #222; stroke: rgba(255,107,43,0.25); stroke-width: 0.4; cursor: pointer; transition: fill 0.2s, stroke 0.2s, stroke-width 0.2s; }
+.map-country:hover { fill: #FF6B2B; stroke: #FF853F; stroke-width: 0.8; }
 .map-bg { fill: #121212; stroke: rgba(255,255,255,0.04); stroke-width: 0.2; pointer-events: none; }
 .map-tooltip { position: fixed; display: none; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border: 1px solid rgba(255,107,43,0.25); border-radius: 10px; padding: 12px 18px; pointer-events: none; z-index: 100; white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
 .tt-name { font-family: var(--font-display); font-weight: 700; font-size: 15px; margin-bottom: 3px; }
@@ -37,6 +37,18 @@ body { background: var(--black); color: var(--white); font-family: var(--font-bo
 .legend-swatch { width: 14px; height: 14px; border-radius: 3px; }
 .back-link { display: inline-block; margin-top: 36px; padding: 12px 28px; background: linear-gradient(135deg, #FF6B2B, #FF2D7B); border-radius: 8px; color: var(--white); text-decoration: none; font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; }
 .back-link:hover { opacity: 0.9; }
+
+.country-label {
+  font-family: var(--font-mono);
+  font-size: 3.5px;
+  fill: rgba(255,255,255,0.5);
+  text-anchor: middle;
+  pointer-events: none;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+.country-label.small { font-size: 2.8px; }
+
 </style>
 </head>
 <body>
@@ -46,7 +58,7 @@ body { background: var(--black); color: var(--white); font-family: var(--font-bo
     <p>Click a country to explore its film production incentives, tax credits, and cash rebates.</p>
   </div>
   <div class="map-wrap">
-    <svg viewBox="380 245 310 230" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="240 268 260 235" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="mapGrad" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#FF6B2B"/>
@@ -145,6 +157,38 @@ body { background: var(--black); color: var(--white); font-family: var(--font-bo
         <path d="M445.898,368.927l-1.824,1.443l0.917,2.118l1.616-1.573L445.898,368.927L445.898,368.927z"/>
     </g>
 
+    
+      <!-- Country Labels -->
+      <text class="country-label" x="340" y="296">IS</text>
+      <text class="country-label" x="430" y="310">NO</text>
+      <text class="country-label" x="442" y="335">SE</text>
+      <text class="country-label" x="465" y="340">FI</text>
+      <text class="country-label" x="398" y="385">GB</text>
+      <text class="country-label" x="386" y="395">IE</text>
+      <text class="country-label" x="421" y="387">NL</text>
+      <text class="country-label" x="410" y="397">BE</text>
+      <text class="country-label" x="418" y="399">LU</text>
+      <text class="country-label" x="432" y="393">DE</text>
+      <text class="country-label" x="457" y="375">EE</text>
+      <text class="country-label" x="457" y="383">LV</text>
+      <text class="country-label" x="455" y="391">LT</text>
+      <text class="country-label" x="460" y="398">PL</text>
+      <text class="country-label" x="440" y="403">CZ</text>
+      <text class="country-label" x="446" y="405">SK</text>
+      <text class="country-label" x="420" y="410">AT</text>
+      <text class="country-label" x="435" y="410">HU</text>
+      <text class="country-label" x="408" y="425">FR</text>
+      <text class="country-label" x="440" y="412">SI</text>
+      <text class="country-label" x="445" y="418">HR</text>
+      <text class="country-label" x="460" y="420">RO</text>
+      <text class="country-label" x="460" y="430">BG</text>
+      <text class="country-label" x="430" y="440">IT</text>
+      <text class="country-label" x="375" y="450">ES</text>
+      <text class="country-label" x="355" y="440">PT</text>
+      <text class="country-label" x="455" y="448">GR</text>
+      <text class="country-label small" x="485" y="442">CY</text>
+      <text class="country-label small" x="441" y="443">MT</text>
+      <text class="country-label" x="428" y="377">DK</text>
     </svg>
     <div class="map-tooltip" id="map-tooltip">
       <div class="tt-name" id="tt-name"></div>
