@@ -149,22 +149,22 @@ nav {
 }
 
 .nav-cta {
-  padding: 8px 18px;
-  background: transparent;
-  border: 1px solid rgba(255,107,43,0.35);
+  padding: 9px 22px;
+  background: var(--gradient);
+  border: none;
   border-radius: 6px;
-  color: var(--orange);
+  color: var(--white);
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 1.5px;
+  font-size: 10.5px;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
   font-weight: 700;
-  transition: all 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.nav-cta:hover { background: rgba(255,107,43,0.1); border-color: var(--orange); color: var(--white); }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(255,107,43,0.25); }
 
 .lang-switch {
   position: relative;
@@ -268,7 +268,7 @@ nav {
   font-size: 10.5px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: var(--gray-300);
+  color: var(--white);
   text-decoration: none;
   transition: color 0.3s;
   white-space: nowrap;
